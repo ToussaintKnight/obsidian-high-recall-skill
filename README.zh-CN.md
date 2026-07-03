@@ -122,6 +122,10 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 
 在 K=50 时，本轮实验 Smart 的 mean recall 最高：Smart `0.91`、OHS `0.72`、RRF union `0.85`。RRF union 在 K=20 更强；Smart 则明显更快，并且 first-hit behavior 更好。
 
+**参数敏感性。** 上面的固定 operating point 不代表最优参数。我们额外做了 Smart-only sensitivity grid：扫 `per-channel ∈ {10,30,60,100}` 和 `neighbor-seeds ∈ {0,10,25,50}`，固定 `limit=120`，并评估 K=10/20/50/80/120。完整数据见：[sensitivity_smart_grid.csv](docs/benchmark/sensitivity_smart_grid.csv)、[sensitivity_smart_at50.csv](docs/benchmark/sensitivity_smart_at50.csv)、[sensitivity_settings.json](docs/benchmark/sensitivity_settings.json)。
+
+在 K=50 时，`per-channel=10` 和 `per-channel=30` 都达到 mean Recall `0.91`，但 `per-channel=10` 的 F1 更高（`0.29` vs `0.23`），阅读负担更低（35 vs 47 个返回结果）。更宽的 candidate pool 并不单调更好：`per-channel=60/100` 把 Recall@50 降到 `0.80/0.81`，同时返回 86/118 个结果。把 K 提高到 120 可以让 `per-channel=60/100` 的 Recall 恢复到 `1.00`，但 Precision 会降到 `0.077/0.056`。在这个 snapshot 里，`neighbor-seeds` 没有可测的 aggregate effect。
+
 ![Benchmark summary at K=20](docs/benchmark/figures/summary_at20.png)
 
 ![Average recall curve](docs/benchmark/figures/recall_curve.png)
@@ -131,6 +135,12 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 ![Latency by condition](docs/benchmark/figures/latency_by_condition.png)
 
 ![Recall heatmap at K=20](docs/benchmark/figures/recall_heatmap_at20.png)
+
+![Smart sensitivity tradeoff matrix](docs/benchmark/figures/sensitivity_tradeoff_matrix_at50.png)
+
+![Smart read-budget tradeoff curves](docs/benchmark/figures/sensitivity_k_tradeoff_curves.png)
+
+![Smart recall vs read burden](docs/benchmark/figures/sensitivity_read_burden_pareto_at50.png)
 
 **局限性。** Gold set 很小，而且是人工 seed 的，所以 Precision@K 偏保守：没有被标为 gold 但实际有用的 notes 会被算成 false positives。Vault 是 private 且 domain-skewed，所以这些结果更适合作为当前部署模式的 robustness smoke test。实际使用建议是：日常用 Smart/`auto`，只有在能接受额外延迟的 high-stakes recall 任务里才用 union/OHS。
 

@@ -1,0 +1,44 @@
+{
+  "benchmark_date": "2026-07-04",
+  "benchmark_type": "Smart backend parameter sensitivity over private local Obsidian vault; public aggregate metrics only",
+  "case_count": 8,
+  "gold_label_count": 53,
+  "backend": "smart",
+  "fixed_args": {
+    "limit": 120,
+    "profile": "quick"
+  },
+  "swept_parameters": {
+    "per_channel": [
+      10,
+      30,
+      60,
+      100
+    ],
+    "neighbor_seeds": [
+      0,
+      10,
+      25,
+      50
+    ],
+    "k": [
+      10,
+      20,
+      50,
+      80,
+      120
+    ]
+  },
+  "default_operating_point": {
+    "perChannel": 30,
+    "neighborSeeds": 0
+  },
+  "negative_attributes_reported": [
+    "precision dilution",
+    "noise_at_k",
+    "non_relevant_at_k",
+    "result_count/read_burden",
+    "latency"
+  ],
+  "privacy": "Raw queries, note paths, snippets, and gold note identifiers are not published."
+}

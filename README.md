@@ -122,6 +122,10 @@ An earlier 3-task pilot is archived in [pilot_smoke_test.md](docs/benchmark/pilo
 
 At K=50, Smart reached the highest mean recall in this run: Smart `0.91`, OHS `0.72`, RRF union `0.85`. RRF union was best at K=20, while Smart was much faster and had stronger first-hit behavior.
 
+**Parameter sensitivity.** The fixed operating point above is not assumed optimal. A Smart-only sensitivity grid swept `per-channel ∈ {10,30,60,100}` and `neighbor-seeds ∈ {0,10,25,50}` with `limit=120`, then scored K=10/20/50/80/120. Full data: [sensitivity_smart_grid.csv](docs/benchmark/sensitivity_smart_grid.csv), [sensitivity_smart_at50.csv](docs/benchmark/sensitivity_smart_at50.csv), and [sensitivity_settings.json](docs/benchmark/sensitivity_settings.json).
+
+At K=50, `per-channel=10` and `per-channel=30` both reached mean Recall `0.91`, but `per-channel=10` had higher F1 (`0.29` vs `0.23`) and lower read burden (35 vs 47 returned results). Wider candidate pools were not monotonically better: `per-channel=60/100` lowered Recall@50 to `0.80/0.81` while returning 86/118 results. Increasing K to 120 recovered Recall to `1.00` for `per-channel=60/100`, but Precision fell to `0.077/0.056`. In this snapshot, `neighbor-seeds` had no measurable aggregate effect.
+
 ![Benchmark summary at K=20](docs/benchmark/figures/summary_at20.png)
 
 ![Average recall curve](docs/benchmark/figures/recall_curve.png)
@@ -131,6 +135,12 @@ At K=50, Smart reached the highest mean recall in this run: Smart `0.91`, OHS `0
 ![Latency by condition](docs/benchmark/figures/latency_by_condition.png)
 
 ![Recall heatmap at K=20](docs/benchmark/figures/recall_heatmap_at20.png)
+
+![Smart sensitivity tradeoff matrix](docs/benchmark/figures/sensitivity_tradeoff_matrix_at50.png)
+
+![Smart read-budget tradeoff curves](docs/benchmark/figures/sensitivity_k_tradeoff_curves.png)
+
+![Smart recall vs read burden](docs/benchmark/figures/sensitivity_read_burden_pareto_at50.png)
 
 **Limitations.** The gold set is small and manually seeded, so Precision@K is conservative: unlabelled but useful retrieved notes count as false positives. The vault is private and domain-skewed, so these results should be interpreted as a robustness smoke test for this deployment pattern. The practical deployment recommendation is: use Smart/`auto` for daily recall, and use union/OHS only when extra latency is acceptable.
 
