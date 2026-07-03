@@ -1,11 +1,11 @@
 {
-  "benchmark_date": "2026-07-03",
+  "benchmark_date": "2026-07-04",
   "benchmark_type": "private local Obsidian vault; public aggregate metrics only",
-  "case_count": 8,
-  "gold_label_count": 53,
+  "case_count": 16,
+  "gold_label_count": 95,
   "query_language_mix": {
-    "zh": 1,
-    "zh+en": 1,
+    "zh": 6,
+    "zh+en": 4,
     "en": 6
   },
   "k_values": [
@@ -49,5 +49,5 @@
     "f1_at_k": "harmonic mean of precision@k and recall@k",
     "mrr": "reciprocal rank of the first gold-labeled relevant result"
   },
-  "privacy": "Raw note paths, snippets, and gold note identifiers are not published."
+  "privacy": "Raw note paths, snippets, queries, and gold note identifiers are not published."
 }

@@ -1,25 +1,49 @@
 case,case_family,query_language,condition,k,precision,recall,f1,mrr,relevantRetrieved,retrieved,goldTotal,latency_s
-embodied-data,Embodied data,zh+en,smart,20,0.25,0.5,0.3333333333333333,1.0,5,20,10,3.593
-embodied-data,Embodied data,zh+en,ohs,20,0.3,0.6,0.4,0.5,6,20,10,46.811
-embodied-data,Embodied data,zh+en,rrf-union,20,0.35,0.7,0.4666666666666667,0.5,7,20,10,50.404
+embodied-data,Embodied data,zh+en,smart,20,0.1,0.2,0.13333333333333333,1.0,2,20,10,1.033
+embodied-data,Embodied data,zh+en,ohs,20,0.3,0.6,0.4,0.5,6,20,10,47.019
+embodied-data,Embodied data,zh+en,rrf-union,20,0.3,0.6,0.4,0.5,6,20,10,48.052
 robot-demo-teleop,Robot demo/teleop,zh,smart,20,0.25,0.7142857142857143,0.37037037037037035,1.0,5,20,7,0.985
-robot-demo-teleop,Robot demo/teleop,zh,ohs,20,0.25,0.7142857142857143,0.37037037037037035,0.3333333333333333,5,20,7,53.953
-robot-demo-teleop,Robot demo/teleop,zh,rrf-union,20,0.3,0.8571428571428571,0.4444444444444444,0.5,6,20,7,54.938
-world-model-sim,World model/sim,en,smart,20,0.15,0.42857142857142855,0.2222222222222222,0.2,3,20,7,1.018
-world-model-sim,World model/sim,en,ohs,20,0.2,0.5714285714285714,0.29629629629629634,0.3333333333333333,4,20,7,55.211
-world-model-sim,World model/sim,en,rrf-union,20,0.2,0.5714285714285714,0.29629629629629634,0.3333333333333333,4,20,7,56.229
-spatial-3d-perception,Spatial/3D,en,smart,20,0.2,0.6666666666666666,0.30769230769230765,0.2,4,20,6,0.998
-spatial-3d-perception,Spatial/3D,en,ohs,20,0.2,0.6666666666666666,0.30769230769230765,0.2,4,20,6,58.406
-spatial-3d-perception,Spatial/3D,en,rrf-union,20,0.2,0.6666666666666666,0.30769230769230765,0.5,4,20,6,59.404
-tactile-manipulation,Tactile manipulation,en,smart,20,0.25,1.0,0.4,1.0,5,20,5,1.021
-tactile-manipulation,Tactile manipulation,en,ohs,20,0.15,0.6,0.24,0.25,3,20,5,88.136
-tactile-manipulation,Tactile manipulation,en,rrf-union,20,0.2,0.8,0.32000000000000006,1.0,4,20,5,89.157
-humanoid-foundation,Humanoid foundation,en,smart,20,0.2,0.5714285714285714,0.29629629629629634,1.0,4,20,7,1.077
-humanoid-foundation,Humanoid foundation,en,ohs,20,0.2,0.5714285714285714,0.29629629629629634,0.2,4,20,7,57.484
-humanoid-foundation,Humanoid foundation,en,rrf-union,20,0.2,0.5714285714285714,0.29629629629629634,1.0,4,20,7,58.561
-jepa-world-model,JEPA world model,en,smart,20,0.25,0.8333333333333334,0.3846153846153846,1.0,5,20,6,1.223
-jepa-world-model,JEPA world model,en,ohs,20,0.15,0.5,0.23076923076923075,0.1,3,20,6,51.889
-jepa-world-model,JEPA world model,en,rrf-union,20,0.2,0.6666666666666666,0.30769230769230765,0.25,4,20,6,53.112
-ai-productivity-tools,AI productivity,en,smart,20,0.05,0.2,0.08000000000000002,0.05,1,20,5,1.281
-ai-productivity-tools,AI productivity,en,ohs,20,0.05,0.2,0.08000000000000002,0.06666666666666667,1,20,5,26.805
-ai-productivity-tools,AI productivity,en,rrf-union,20,0.1,0.4,0.16000000000000003,0.06666666666666667,2,20,5,28.086
+robot-demo-teleop,Robot demo/teleop,zh,ohs,20,0.25,0.7142857142857143,0.37037037037037035,0.3333333333333333,5,20,7,63.506
+robot-demo-teleop,Robot demo/teleop,zh,rrf-union,20,0.3,0.8571428571428571,0.4444444444444444,0.5,6,20,7,64.491
+world-model-sim,World model/sim,en,smart,20,0.1,0.2857142857142857,0.14814814814814817,0.2,2,20,7,1.032
+world-model-sim,World model/sim,en,ohs,20,0.25,0.7142857142857143,0.37037037037037035,0.3333333333333333,5,20,7,54.009
+world-model-sim,World model/sim,en,rrf-union,20,0.15,0.42857142857142855,0.2222222222222222,0.3333333333333333,3,20,7,55.041
+spatial-3d-perception,Spatial/3D,en,smart,20,0.2,0.6666666666666666,0.30769230769230765,0.16666666666666666,4,20,6,0.959
+spatial-3d-perception,Spatial/3D,en,ohs,20,0.2,0.6666666666666666,0.30769230769230765,0.2,4,20,6,55.902
+spatial-3d-perception,Spatial/3D,en,rrf-union,20,0.2,0.6666666666666666,0.30769230769230765,0.5,4,20,6,56.861
+tactile-manipulation,Tactile manipulation,en,smart,20,0.25,1.0,0.4,1.0,5,20,5,0.97
+tactile-manipulation,Tactile manipulation,en,ohs,20,0.15,0.6,0.24,0.3333333333333333,3,20,5,58.28
+tactile-manipulation,Tactile manipulation,en,rrf-union,20,0.2,0.8,0.32000000000000006,1.0,4,20,5,59.25
+humanoid-foundation,Humanoid foundation,en,smart,20,0.2,0.5714285714285714,0.29629629629629634,1.0,4,20,7,1.052
+humanoid-foundation,Humanoid foundation,en,ohs,20,0.15,0.42857142857142855,0.2222222222222222,0.2,3,20,7,55.665
+humanoid-foundation,Humanoid foundation,en,rrf-union,20,0.15,0.42857142857142855,0.2222222222222222,1.0,3,20,7,56.717
+jepa-world-model,JEPA world model,en,smart,20,0.25,0.8333333333333334,0.3846153846153846,1.0,5,20,6,0.964
+jepa-world-model,JEPA world model,en,ohs,20,0.15,0.5,0.23076923076923075,0.1,3,20,6,46.39
+jepa-world-model,JEPA world model,en,rrf-union,20,0.2,0.6666666666666666,0.30769230769230765,0.25,4,20,6,47.354
+ai-productivity-tools,AI productivity,en,smart,20,0.05,0.2,0.08000000000000002,0.05,1,20,5,1.118
+ai-productivity-tools,AI productivity,en,ohs,20,0.05,0.2,0.08000000000000002,0.06666666666666667,1,20,5,18.5
+ai-productivity-tools,AI productivity,en,rrf-union,20,0.1,0.4,0.16000000000000003,0.06666666666666667,2,20,5,19.618
+zh-robot-companion,Robot companion,zh,smart,20,0.2,0.8,0.32000000000000006,1.0,4,20,5,1.044
+zh-robot-companion,Robot companion,zh,ohs,20,0.25,1.0,0.4,0.5,5,20,5,49.363
+zh-robot-companion,Robot companion,zh,rrf-union,20,0.25,1.0,0.4,1.0,5,20,5,50.407
+zh-jepa-representation,JEPA representation,zh,smart,20,0.2,0.8,0.32000000000000006,0.3333333333333333,4,20,5,0.974
+zh-jepa-representation,JEPA representation,zh,ohs,20,0.1,0.4,0.16000000000000003,0.125,2,20,5,72.684
+zh-jepa-representation,JEPA representation,zh,rrf-union,20,0.2,0.8,0.32000000000000006,1.0,4,20,5,73.658
+zh-spatial-3d-worlds,Spatial/3D zh,zh,smart,20,0.15,0.6,0.24,0.5,3,20,5,1.047
+zh-spatial-3d-worlds,Spatial/3D zh,zh,ohs,20,0.2,0.8,0.32000000000000006,0.14285714285714285,4,20,5,51.4
+zh-spatial-3d-worlds,Spatial/3D zh,zh,rrf-union,20,0.15,0.6,0.24,1.0,3,20,5,52.447
+zh-ai-product-agent-tools,AI tools zh,zh,smart,20,0.05,0.2,0.08000000000000002,0.1111111111111111,1,20,5,0.943
+zh-ai-product-agent-tools,AI tools zh,zh,ohs,20,0.05,0.2,0.08000000000000002,0.07692307692307693,1,20,5,14.509
+zh-ai-product-agent-tools,AI tools zh,zh,rrf-union,20,0.05,0.2,0.08000000000000002,0.14285714285714285,1,20,5,15.452
+zh-physical-ai-startups,Physical AI startups,zh,smart,20,0.25,0.7142857142857143,0.37037037037037035,1.0,5,20,7,0.973
+zh-physical-ai-startups,Physical AI startups,zh,ohs,20,0.25,0.7142857142857143,0.37037037037037035,0.5,5,20,7,83.897
+zh-physical-ai-startups,Physical AI startups,zh,rrf-union,20,0.3,0.8571428571428571,0.4444444444444444,1.0,6,20,7,84.87
+mixed-sim-data-engine,Sim data engine,zh+en,smart,20,0.05,0.2,0.08000000000000002,0.058823529411764705,1,20,5,0.991
+mixed-sim-data-engine,Sim data engine,zh+en,ohs,20,0.05,0.2,0.08000000000000002,0.09090909090909091,1,20,5,52.194
+mixed-sim-data-engine,Sim data engine,zh+en,rrf-union,20,0.1,0.4,0.16000000000000003,0.07692307692307693,2,20,5,53.185
+mixed-agent-skills,Agent skills,zh+en,smart,20,0.1,0.4,0.16000000000000003,1.0,2,20,5,0.941
+mixed-agent-skills,Agent skills,zh+en,ohs,20,0.1,0.4,0.16000000000000003,0.06666666666666667,2,20,5,17.968
+mixed-agent-skills,Agent skills,zh+en,rrf-union,20,0.1,0.4,0.16000000000000003,0.3333333333333333,2,20,5,18.909
+mixed-biosignal-dexterity,Biosignal dexterity,zh+en,smart,20,0.25,1.0,0.4,1.0,5,20,5,0.996
+mixed-biosignal-dexterity,Biosignal dexterity,zh+en,ohs,20,0.15,0.6,0.24,0.3333333333333333,3,20,5,51.337
+mixed-biosignal-dexterity,Biosignal dexterity,zh+en,rrf-union,20,0.15,0.6,0.24,1.0,3,20,5,52.333

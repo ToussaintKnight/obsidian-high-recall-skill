@@ -104,11 +104,11 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 
 这是一个小规模 private-vault retrieval benchmark，用来测试这套部署方式的召回行为，不代表所有 Obsidian vault 的普遍结论。原始 note path、snippet 和 gold note 标识没有公开；repo 里只放 aggregate metrics 和匿名 case-level data。
 
-早期 3-task pilot 结果归档在 [pilot_smoke_test.md](docs/benchmark/pilot_smoke_test.md)；下面的 8-task benchmark 是主结果。
+早期 3-task pilot 结果归档在 [pilot_smoke_test.md](docs/benchmark/pilot_smoke_test.md)；下面的 16-task benchmark 是主结果。
 
 **实验设置。** Vault snapshot 包含 255 个 Smart Connections files、6,220 个 Smart blocks、1,478 个 embedded blocks。Smart backend 使用 `TaylorAI/bge-micro-v2` embedding。OHS backend 使用 `obsidian-hybrid-search` `0.13.16`、`local:Xenova/multilingual-e5-small`，共 244 个 indexed files、1,450 个 chunks。每次运行固定 `limit=80`、`per-channel=30`、`neighbor-seeds=0`，评估 K=10/20/50。完整设置见：[settings.json](docs/benchmark/settings.json)。
 
-**数据。** 评估集包含 8 个手工标注 recall tasks，共 53 个 gold labels。Query 语言分布为 1 个中文 query、1 个中英混合 query、6 个英文 query，覆盖 embodied data、robot demonstrations、world models、spatial perception、tactile manipulation、humanoid robotics、JEPA/world-model notes、AI productivity tooling。
+**数据。** 评估集包含 16 个手工标注 recall tasks，共 95 个 gold labels。Query 语言分布为 6 个中文 query、6 个英文 query、4 个中英混合 query，覆盖 embodied data、robot demonstrations、world models、spatial/3D perception、tactile manipulation、humanoid robotics、JEPA/world-model notes、AI productivity tooling、robot companion use cases、Physical AI startups、simulation data engines、agent skills、biosignal dexterity。
 
 **Ablations。** 实验比较 3 个条件：Smart Connections recall (`smart`)、OHS hybrid/fulltext recall (`ohs`)、以及对 Smart 和 OHS 排名结果做 reciprocal-rank-fusion 的可部署 union (`rrf-union`)。完整 aggregate data 见：[summary_metrics.csv](docs/benchmark/summary_metrics.csv)。匿名 case-level metrics 见：[case_metrics_at20.csv](docs/benchmark/case_metrics_at20.csv)。
 
@@ -116,17 +116,21 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 
 | condition | Precision@20 | Recall@20 | F1@20 | MRR | mean latency |
 |---|---:|---:|---:|---:|---:|
-| Smart | 0.20 | 0.61 | 0.30 | 0.68 | 1.40s |
-| OHS | 0.19 | 0.55 | 0.28 | 0.25 | 54.84s |
-| RRF union | 0.22 | 0.65 | 0.32 | 0.52 | 56.24s |
+| Smart | 0.17 | 0.57 | 0.26 | 0.65 | 1.00s |
+| OHS | 0.17 | 0.55 | 0.25 | 0.24 | 49.54s |
+| RRF union | 0.18 | 0.61 | 0.28 | 0.61 | 50.54s |
 
-在 K=50 时，本轮实验 Smart 的 mean recall 最高：Smart `0.91`、OHS `0.72`、RRF union `0.85`。RRF union 在 K=20 更强；Smart 则明显更快，并且 first-hit behavior 更好。
+在 K=20 时，RRF union 的 mean Recall 和 F1 最高；Smart 大约快 50 倍，并且保留最强的 first-hit behavior。在 K=50 时，本轮扩样实验 Smart 的 mean recall 最高：Smart `0.87`、OHS `0.73`、RRF union `0.82`。实际 tradeoff 很清楚：日常 recall 用 Smart/`auto`；只有在能接受额外延迟时，再用 union/OHS。
 
 **参数敏感性。** 上面的固定 operating point 不代表最优参数。我们额外做了 Smart-only sensitivity grid：扫 `per-channel ∈ {10,30,60,100}` 和 `neighbor-seeds ∈ {0,10,25,50}`，固定 `limit=120`，并评估 K=10/20/50/80/120。完整数据见：[sensitivity_smart_grid.csv](docs/benchmark/sensitivity_smart_grid.csv)、[sensitivity_smart_at50.csv](docs/benchmark/sensitivity_smart_at50.csv)、[sensitivity_settings.json](docs/benchmark/sensitivity_settings.json)。
 
-在 K=50 时，`per-channel=10` 和 `per-channel=30` 都达到 mean Recall `0.91`，但 `per-channel=10` 的 F1 更高（`0.29` vs `0.23`），阅读负担更低（35 vs 47 个返回结果）。更宽的 candidate pool 并不单调更好：`per-channel=60/100` 把 Recall@50 降到 `0.80/0.81`，同时返回 86/118 个结果。把 K 提高到 120 可以让 `per-channel=60/100` 的 Recall 恢复到 `1.00`，但 Precision 会降到 `0.077/0.056`。在这个 snapshot 里，`neighbor-seeds` 没有可测的 aggregate effect。
+在 K=50 时，默认 `per-channel=30` 的 mean Recall 最高（`0.87`），但 `per-channel=10` 非常接近（`0.85`），同时 F1 更高（`0.25` vs `0.20`）、Precision 更高（`0.145` vs `0.112`）、阅读负担更低（36 vs 48 个返回结果）。更宽的 candidate pool 并不单调更好：`per-channel=60/100` 把 Recall@50 降到 `0.79/0.81`，同时返回 85/116 个结果。把 K 提高到 120 可以让 `per-channel=60/100` 的 Recall 恢复到 `0.96`，但 Precision 会降到 `0.068/0.050`。在这个 snapshot 里，`neighbor-seeds` 对 recall 或 ranking metrics 没有可测的 aggregate effect。
 
 ![Benchmark summary at K=20](docs/benchmark/figures/summary_at20.png)
+
+![Backend tradeoff at K=20](docs/benchmark/figures/backend_tradeoff_at20.png)
+
+![Recall by query language](docs/benchmark/figures/language_recall_at20.png)
 
 ![Average recall curve](docs/benchmark/figures/recall_curve.png)
 
@@ -142,7 +146,7 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 
 ![Smart recall vs read burden](docs/benchmark/figures/sensitivity_read_burden_pareto_at50.png)
 
-**局限性。** Gold set 很小，而且是人工 seed 的，所以 Precision@K 偏保守：没有被标为 gold 但实际有用的 notes 会被算成 false positives。Vault 是 private 且 domain-skewed，所以这些结果更适合作为当前部署模式的 robustness smoke test。实际使用建议是：日常用 Smart/`auto`，只有在能接受额外延迟的 high-stakes recall 任务里才用 union/OHS。
+**局限性。** Gold set 仍然较小，而且是人工 seed 的，所以 Precision@K 偏保守：没有被标为 gold 但实际有用的 notes 会被算成 false positives。Vault 是 private 且 domain-skewed，所以这些结果更适合作为当前部署模式的 robustness smoke test，不是所有 Obsidian vault 的通用 benchmark。
 
 ## 召回评估
 

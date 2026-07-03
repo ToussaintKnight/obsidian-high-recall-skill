@@ -104,11 +104,11 @@ Recommended operating mode:
 
 This benchmark is a small, private-vault retrieval study intended to test recall behavior, not a universal claim about all Obsidian vaults. Raw note paths, snippets, and gold note identifiers are not published; aggregate metrics and anonymized case-level data are included.
 
-An earlier 3-task pilot is archived in [pilot_smoke_test.md](docs/benchmark/pilot_smoke_test.md); the 8-task benchmark below is the primary result.
+An earlier 3-task pilot is archived in [pilot_smoke_test.md](docs/benchmark/pilot_smoke_test.md); the 16-task benchmark below is the primary result.
 
 **Setting.** The vault snapshot contained 255 Smart Connections files, 6,220 Smart blocks, and 1,478 embedded blocks. The Smart backend used `TaylorAI/bge-micro-v2` embeddings. The OHS backend used `obsidian-hybrid-search` `0.13.16`, `local:Xenova/multilingual-e5-small`, 244 indexed files, and 1,450 chunks. Each run used `limit=80`, `per-channel=30`, `neighbor-seeds=0`, and K values of 10, 20, and 50. Full setting: [settings.json](docs/benchmark/settings.json).
 
-**Data.** The evaluation used 8 manually labeled recall tasks with 53 total gold labels. The query mix was 1 Chinese query, 1 mixed Chinese/English query, and 6 English queries across embodied data, robot demonstrations, world models, spatial perception, tactile manipulation, humanoid robotics, JEPA/world-model notes, and AI productivity tooling.
+**Data.** The evaluation used 16 manually labeled recall tasks with 95 total gold labels. The query mix was 6 Chinese queries, 6 English queries, and 4 mixed Chinese/English queries across embodied data, robot demonstrations, world models, spatial/3D perception, tactile manipulation, humanoid robotics, JEPA/world-model notes, AI productivity tooling, robot companion use cases, Physical AI startups, simulation data engines, agent skills, and biosignal dexterity.
 
 **Ablations.** Three conditions were evaluated: Smart Connections recall (`smart`), OHS hybrid/fulltext recall (`ohs`), and a deployable reciprocal-rank-fusion union (`rrf-union`) over Smart and OHS result lists. Full aggregate data: [summary_metrics.csv](docs/benchmark/summary_metrics.csv). Case-level anonymized metrics: [case_metrics_at20.csv](docs/benchmark/case_metrics_at20.csv).
 
@@ -116,17 +116,21 @@ An earlier 3-task pilot is archived in [pilot_smoke_test.md](docs/benchmark/pilo
 
 | condition | Precision@20 | Recall@20 | F1@20 | MRR | mean latency |
 |---|---:|---:|---:|---:|---:|
-| Smart | 0.20 | 0.61 | 0.30 | 0.68 | 1.40s |
-| OHS | 0.19 | 0.55 | 0.28 | 0.25 | 54.84s |
-| RRF union | 0.22 | 0.65 | 0.32 | 0.52 | 56.24s |
+| Smart | 0.17 | 0.57 | 0.26 | 0.65 | 1.00s |
+| OHS | 0.17 | 0.55 | 0.25 | 0.24 | 49.54s |
+| RRF union | 0.18 | 0.61 | 0.28 | 0.61 | 50.54s |
 
-At K=50, Smart reached the highest mean recall in this run: Smart `0.91`, OHS `0.72`, RRF union `0.85`. RRF union was best at K=20, while Smart was much faster and had stronger first-hit behavior.
+At K=20, RRF union had the highest mean Recall and F1, while Smart was roughly 50x faster and kept the strongest first-hit behavior. At K=50, Smart reached the highest mean recall in this expanded run: Smart `0.87`, OHS `0.73`, RRF union `0.82`. The practical tradeoff is clear: use Smart/`auto` for fast daily recall, and use union/OHS when the extra latency is acceptable.
 
 **Parameter sensitivity.** The fixed operating point above is not assumed optimal. A Smart-only sensitivity grid swept `per-channel ∈ {10,30,60,100}` and `neighbor-seeds ∈ {0,10,25,50}` with `limit=120`, then scored K=10/20/50/80/120. Full data: [sensitivity_smart_grid.csv](docs/benchmark/sensitivity_smart_grid.csv), [sensitivity_smart_at50.csv](docs/benchmark/sensitivity_smart_at50.csv), and [sensitivity_settings.json](docs/benchmark/sensitivity_settings.json).
 
-At K=50, `per-channel=10` and `per-channel=30` both reached mean Recall `0.91`, but `per-channel=10` had higher F1 (`0.29` vs `0.23`) and lower read burden (35 vs 47 returned results). Wider candidate pools were not monotonically better: `per-channel=60/100` lowered Recall@50 to `0.80/0.81` while returning 86/118 results. Increasing K to 120 recovered Recall to `1.00` for `per-channel=60/100`, but Precision fell to `0.077/0.056`. In this snapshot, `neighbor-seeds` had no measurable aggregate effect.
+At K=50, the default `per-channel=30` reached the highest mean Recall (`0.87`), but `per-channel=10` was close (`0.85`) with better F1 (`0.25` vs `0.20`), better Precision (`0.145` vs `0.112`), and lower read burden (36 vs 48 returned results). Wider candidate pools were not monotonically better: `per-channel=60/100` lowered Recall@50 to `0.79/0.81` while returning 85/116 results. Increasing K to 120 recovered Recall to `0.96` for `per-channel=60/100`, but Precision fell to `0.068/0.050`. In this snapshot, `neighbor-seeds` had no measurable aggregate effect on recall or ranking metrics.
 
 ![Benchmark summary at K=20](docs/benchmark/figures/summary_at20.png)
+
+![Backend tradeoff at K=20](docs/benchmark/figures/backend_tradeoff_at20.png)
+
+![Recall by query language](docs/benchmark/figures/language_recall_at20.png)
 
 ![Average recall curve](docs/benchmark/figures/recall_curve.png)
 
@@ -142,7 +146,7 @@ At K=50, `per-channel=10` and `per-channel=30` both reached mean Recall `0.91`, 
 
 ![Smart recall vs read burden](docs/benchmark/figures/sensitivity_read_burden_pareto_at50.png)
 
-**Limitations.** The gold set is small and manually seeded, so Precision@K is conservative: unlabelled but useful retrieved notes count as false positives. The vault is private and domain-skewed, so these results should be interpreted as a robustness smoke test for this deployment pattern. The practical deployment recommendation is: use Smart/`auto` for daily recall, and use union/OHS only when extra latency is acceptable.
+**Limitations.** The gold set is still small and manually seeded, so Precision@K is conservative: unlabelled but useful retrieved notes count as false positives. The vault is private and domain-skewed, so these results should be interpreted as a robustness smoke test for this deployment pattern, not a universal benchmark for all Obsidian vaults.
 
 ## Evaluate Recall
 
