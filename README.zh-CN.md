@@ -122,9 +122,11 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 
 在 K=20 时，RRF union 的 mean Recall 和 F1 最高；Smart 大约快 50 倍，并且保留最强的 first-hit behavior。在 K=50 时，本轮扩样实验 Smart 的 mean recall 最高：Smart `0.87`、OHS `0.73`、RRF union `0.82`。实际 tradeoff 很清楚：日常 recall 用 Smart/`auto`；只有在能接受额外延迟时，再用 union/OHS。
 
-**参数敏感性。** 上面的固定 operating point 不代表最优参数。我们额外做了 Smart-only sensitivity grid：扫 `per-channel ∈ {10,30,60,100}` 和 `neighbor-seeds ∈ {0,10,25,50}`，固定 `limit=120`，并评估 K=10/20/50/80/120。完整数据见：[sensitivity_smart_grid.csv](docs/benchmark/sensitivity_smart_grid.csv)、[sensitivity_smart_at50.csv](docs/benchmark/sensitivity_smart_at50.csv)、[sensitivity_settings.json](docs/benchmark/sensitivity_settings.json)。
+**参数敏感性。** 上面的固定 operating point 不代表最优参数。我们额外做了 Smart-only sensitivity grid：扫 `per-channel ∈ {10,30,60,100}` 和 `neighbor-seeds ∈ {0,10,25,50}`，固定 `limit=120`，并评估 K=10/20/50/80/120。完整 grid data 见：[sensitivity_smart_grid.csv](docs/benchmark/sensitivity_smart_grid.csv)。主图使用 collapse over `neighbor-seeds` 后的 K × per-channel 表：[sensitivity_smart_collapsed.csv](docs/benchmark/sensitivity_smart_collapsed.csv)；实验设置和 no-op diagnostic 见：[sensitivity_settings.json](docs/benchmark/sensitivity_settings.json)。
 
-在 K=50 时，默认 `per-channel=30` 的 mean Recall 最高（`0.87`），但 `per-channel=10` 非常接近（`0.85`），同时 F1 更高（`0.25` vs `0.20`）、Precision 更高（`0.145` vs `0.112`）、阅读负担更低（36 vs 48 个返回结果）。更宽的 candidate pool 并不单调更好：`per-channel=60/100` 把 Recall@50 降到 `0.79/0.81`，同时返回 85/116 个结果。把 K 提高到 120 可以让 `per-channel=60/100` 的 Recall 恢复到 `0.96`，但 Precision 会降到 `0.068/0.050`。在这个 snapshot 里，`neighbor-seeds` 对 recall 或 ranking metrics 没有可测的 aggregate effect。
+`neighbor-seeds` 在这轮 Smart-only 实验里产生了完全相同的 ranking：跨 `neighbor-seeds` 的 Precision、Recall、F1、MRR、retrieved count、result count 最大变化都是 `0.0`。这符合当前 wrapper 路径：`neighbor-seeds` 只会在 merged results 暴露 links/backlinks 时加入 graph neighbors；而这个 snapshot 的 Smart-only channel results 没有改变 graph-neighbor candidate set。因此主图把 `neighbor-seeds` collapse 掉，把它作为 diagnostic control，而不是有意义的优化轴。
+
+在 K=50 时，默认 `per-channel=30` 的 mean Recall 最高（`0.87`），但 `per-channel=10` 非常接近（`0.85`），同时 F1 更高（`0.25` vs `0.20`）、Precision 更高（`0.145` vs `0.112`）、阅读负担更低（36 vs 48 个返回结果）。更宽的 candidate pool 并不单调更好：`per-channel=60/100` 把 Recall@50 降到 `0.79/0.81`，同时返回 85/116 个结果。把 K 提高到 120 可以让 `per-channel=60/100` 的 Recall 恢复到 `0.96`，但 Precision 会降到 `0.068/0.050`。
 
 ![Benchmark summary at K=20](docs/benchmark/figures/summary_at20.png)
 
@@ -140,7 +142,7 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 
 ![Recall heatmap at K=20](docs/benchmark/figures/recall_heatmap_at20.png)
 
-![Smart sensitivity tradeoff matrix](docs/benchmark/figures/sensitivity_tradeoff_matrix_at50.png)
+![Smart sensitivity K by per-channel tradeoff matrix](docs/benchmark/figures/sensitivity_tradeoff_matrix_at50.png)
 
 ![Smart read-budget tradeoff curves](docs/benchmark/figures/sensitivity_k_tradeoff_curves.png)
 

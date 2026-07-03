@@ -29,6 +29,18 @@
       120
     ]
   },
+  "primary_sensitivity_view": "K by per-channel, collapsed over neighbor-seeds because neighbor-seeds had no measurable Smart-only effect in this snapshot.",
+  "neighbor_seed_diagnostic": {
+    "interpretation": "neighbor-seeds is a graph-neighbor expansion knob, but Smart-only channel results in this snapshot did not expose links/backlinks that changed the merged ranking.",
+    "max_metric_range_across_neighbor_seeds": {
+      "precision_mean": 0.0,
+      "recall_mean": 0.0,
+      "f1_mean": 0.0,
+      "mrr_mean": 0.0,
+      "retrieved_mean": 0.0,
+      "result_count_mean": 0.0
+    }
+  },
   "default_operating_point": {
     "perChannel": 30,
     "neighborSeeds": 0

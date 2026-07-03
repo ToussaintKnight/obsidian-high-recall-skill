@@ -122,9 +122,11 @@ An earlier 3-task pilot is archived in [pilot_smoke_test.md](docs/benchmark/pilo
 
 At K=20, RRF union had the highest mean Recall and F1, while Smart was roughly 50x faster and kept the strongest first-hit behavior. At K=50, Smart reached the highest mean recall in this expanded run: Smart `0.87`, OHS `0.73`, RRF union `0.82`. The practical tradeoff is clear: use Smart/`auto` for fast daily recall, and use union/OHS when the extra latency is acceptable.
 
-**Parameter sensitivity.** The fixed operating point above is not assumed optimal. A Smart-only sensitivity grid swept `per-channel ∈ {10,30,60,100}` and `neighbor-seeds ∈ {0,10,25,50}` with `limit=120`, then scored K=10/20/50/80/120. Full data: [sensitivity_smart_grid.csv](docs/benchmark/sensitivity_smart_grid.csv), [sensitivity_smart_at50.csv](docs/benchmark/sensitivity_smart_at50.csv), and [sensitivity_settings.json](docs/benchmark/sensitivity_settings.json).
+**Parameter sensitivity.** The fixed operating point above is not assumed optimal. A Smart-only sensitivity grid swept `per-channel ∈ {10,30,60,100}` and `neighbor-seeds ∈ {0,10,25,50}` with `limit=120`, then scored K=10/20/50/80/120. Full grid data: [sensitivity_smart_grid.csv](docs/benchmark/sensitivity_smart_grid.csv). The primary plot uses the collapsed K by per-channel table in [sensitivity_smart_collapsed.csv](docs/benchmark/sensitivity_smart_collapsed.csv); settings and the no-op diagnostic are in [sensitivity_settings.json](docs/benchmark/sensitivity_settings.json).
 
-At K=50, the default `per-channel=30` reached the highest mean Recall (`0.87`), but `per-channel=10` was close (`0.85`) with better F1 (`0.25` vs `0.20`), better Precision (`0.145` vs `0.112`), and lower read burden (36 vs 48 returned results). Wider candidate pools were not monotonically better: `per-channel=60/100` lowered Recall@50 to `0.79/0.81` while returning 85/116 results. Increasing K to 120 recovered Recall to `0.96` for `per-channel=60/100`, but Precision fell to `0.068/0.050`. In this snapshot, `neighbor-seeds` had no measurable aggregate effect on recall or ranking metrics.
+`neighbor-seeds` produced identical rankings in this Smart-only run: max observed range across `neighbor-seeds` was `0.0` for Precision, Recall, F1, MRR, retrieved count, and result count. This is expected for the current wrapper path because `neighbor-seeds` only adds graph neighbors when merged results expose links/backlinks; the Smart-only channel results in this snapshot did not change the graph-neighbor candidate set. The main sensitivity figure therefore collapses over `neighbor-seeds` and treats it as a diagnostic control, not a meaningful optimization axis.
+
+At K=50, the default `per-channel=30` reached the highest mean Recall (`0.87`), but `per-channel=10` was close (`0.85`) with better F1 (`0.25` vs `0.20`), better Precision (`0.145` vs `0.112`), and lower read burden (36 vs 48 returned results). Wider candidate pools were not monotonically better: `per-channel=60/100` lowered Recall@50 to `0.79/0.81` while returning 85/116 results. Increasing K to 120 recovered Recall to `0.96` for `per-channel=60/100`, but Precision fell to `0.068/0.050`.
 
 ![Benchmark summary at K=20](docs/benchmark/figures/summary_at20.png)
 
@@ -140,7 +142,7 @@ At K=50, the default `per-channel=30` reached the highest mean Recall (`0.87`), 
 
 ![Recall heatmap at K=20](docs/benchmark/figures/recall_heatmap_at20.png)
 
-![Smart sensitivity tradeoff matrix](docs/benchmark/figures/sensitivity_tradeoff_matrix_at50.png)
+![Smart sensitivity K by per-channel tradeoff matrix](docs/benchmark/figures/sensitivity_tradeoff_matrix_at50.png)
 
 ![Smart read-budget tradeoff curves](docs/benchmark/figures/sensitivity_k_tradeoff_curves.png)
 
