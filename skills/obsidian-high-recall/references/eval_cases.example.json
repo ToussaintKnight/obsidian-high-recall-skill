@@ -1,0 +1,11 @@
+[
+  {
+    "id": "my-topic",
+    "query": "broad natural language query for this topic",
+    "gold": [
+      "Known-Relevant-Note-Title",
+      "folder/or/path-substring",
+      "Another expected note name"
+    ]
+  }
+]

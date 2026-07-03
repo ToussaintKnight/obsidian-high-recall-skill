@@ -1,0 +1,53 @@
+{
+  "benchmark_date": "2026-07-03",
+  "benchmark_type": "private local Obsidian vault; public aggregate metrics only",
+  "case_count": 8,
+  "gold_label_count": 53,
+  "query_language_mix": {
+    "zh": 1,
+    "zh+en": 1,
+    "en": 6
+  },
+  "k_values": [
+    10,
+    20,
+    50
+  ],
+  "conditions": {
+    "smart": "Smart Connections .smart-env vector recall plus lexical fallback",
+    "ohs": "obsidian-hybrid-search quick profile, hybrid plus fulltext",
+    "rrf-union": "reciprocal-rank-fusion over Smart and OHS result lists"
+  },
+  "wrapper_args": {
+    "limit": 80,
+    "per_channel": 30,
+    "neighbor_seeds": 0,
+    "profile": "quick"
+  },
+  "smart_index": {
+    "files": 255,
+    "sources": 255,
+    "blocks": 6220,
+    "embedded_sources": 243,
+    "embedded_blocks": 1478,
+    "model": "TaylorAI/bge-micro-v2",
+    "embedding_dim": 384
+  },
+  "ohs_index": {
+    "total": 247,
+    "indexed": 244,
+    "chunks": 1450,
+    "links": 72,
+    "version": "0.13.16",
+    "model": "local:Xenova/multilingual-e5-small",
+    "embedding_dim": 384,
+    "context_length": 512
+  },
+  "metric_definitions": {
+    "precision_at_k": "gold-labeled relevant results in top-k divided by retrieved top-k count",
+    "recall_at_k": "gold-labeled relevant results in top-k divided by total gold labels for that case",
+    "f1_at_k": "harmonic mean of precision@k and recall@k",
+    "mrr": "reciprocal rank of the first gold-labeled relevant result"
+  },
+  "privacy": "Raw note paths, snippets, and gold note identifiers are not published."
+}

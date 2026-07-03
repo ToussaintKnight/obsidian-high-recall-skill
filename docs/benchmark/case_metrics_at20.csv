@@ -1,0 +1,25 @@
+case,case_family,query_language,condition,k,precision,recall,f1,mrr,relevantRetrieved,retrieved,goldTotal,latency_s
+embodied-data,Embodied data,zh+en,smart,20,0.25,0.5,0.3333333333333333,1.0,5,20,10,3.593
+embodied-data,Embodied data,zh+en,ohs,20,0.3,0.6,0.4,0.5,6,20,10,46.811
+embodied-data,Embodied data,zh+en,rrf-union,20,0.35,0.7,0.4666666666666667,0.5,7,20,10,50.404
+robot-demo-teleop,Robot demo/teleop,zh,smart,20,0.25,0.7142857142857143,0.37037037037037035,1.0,5,20,7,0.985
+robot-demo-teleop,Robot demo/teleop,zh,ohs,20,0.25,0.7142857142857143,0.37037037037037035,0.3333333333333333,5,20,7,53.953
+robot-demo-teleop,Robot demo/teleop,zh,rrf-union,20,0.3,0.8571428571428571,0.4444444444444444,0.5,6,20,7,54.938
+world-model-sim,World model/sim,en,smart,20,0.15,0.42857142857142855,0.2222222222222222,0.2,3,20,7,1.018
+world-model-sim,World model/sim,en,ohs,20,0.2,0.5714285714285714,0.29629629629629634,0.3333333333333333,4,20,7,55.211
+world-model-sim,World model/sim,en,rrf-union,20,0.2,0.5714285714285714,0.29629629629629634,0.3333333333333333,4,20,7,56.229
+spatial-3d-perception,Spatial/3D,en,smart,20,0.2,0.6666666666666666,0.30769230769230765,0.2,4,20,6,0.998
+spatial-3d-perception,Spatial/3D,en,ohs,20,0.2,0.6666666666666666,0.30769230769230765,0.2,4,20,6,58.406
+spatial-3d-perception,Spatial/3D,en,rrf-union,20,0.2,0.6666666666666666,0.30769230769230765,0.5,4,20,6,59.404
+tactile-manipulation,Tactile manipulation,en,smart,20,0.25,1.0,0.4,1.0,5,20,5,1.021
+tactile-manipulation,Tactile manipulation,en,ohs,20,0.15,0.6,0.24,0.25,3,20,5,88.136
+tactile-manipulation,Tactile manipulation,en,rrf-union,20,0.2,0.8,0.32000000000000006,1.0,4,20,5,89.157
+humanoid-foundation,Humanoid foundation,en,smart,20,0.2,0.5714285714285714,0.29629629629629634,1.0,4,20,7,1.077
+humanoid-foundation,Humanoid foundation,en,ohs,20,0.2,0.5714285714285714,0.29629629629629634,0.2,4,20,7,57.484
+humanoid-foundation,Humanoid foundation,en,rrf-union,20,0.2,0.5714285714285714,0.29629629629629634,1.0,4,20,7,58.561
+jepa-world-model,JEPA world model,en,smart,20,0.25,0.8333333333333334,0.3846153846153846,1.0,5,20,6,1.223
+jepa-world-model,JEPA world model,en,ohs,20,0.15,0.5,0.23076923076923075,0.1,3,20,6,51.889
+jepa-world-model,JEPA world model,en,rrf-union,20,0.2,0.6666666666666666,0.30769230769230765,0.25,4,20,6,53.112
+ai-productivity-tools,AI productivity,en,smart,20,0.05,0.2,0.08000000000000002,0.05,1,20,5,1.281
+ai-productivity-tools,AI productivity,en,ohs,20,0.05,0.2,0.08000000000000002,0.06666666666666667,1,20,5,26.805
+ai-productivity-tools,AI productivity,en,rrf-union,20,0.1,0.4,0.16000000000000003,0.06666666666666667,2,20,5,28.086

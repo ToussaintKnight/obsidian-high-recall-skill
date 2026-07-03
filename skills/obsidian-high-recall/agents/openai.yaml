@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian High Recall"
+  short_description: "High-recall semantic recall for Obsidian vaults"
+  default_prompt: "Use $obsidian-high-recall to find a broad recall pack from my Obsidian vault."

@@ -1,0 +1,16 @@
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Local benchmark outputs
+obsidian_recall_eval/
+raw_runs.json
+metrics.json
+metrics.csv
+/figures/
+
+# Local/private evaluation labels
+cases.local.json
+eval_cases.local.json
+references/eval_cases.local.json
+skills/**/references/eval_cases.local.json
