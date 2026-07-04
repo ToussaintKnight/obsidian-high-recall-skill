@@ -6,6 +6,20 @@ A portable Codex skill for high-recall retrieval over a local Obsidian vault.
 
 This is for workflows where missing relevant notes is worse than returning extra noise. It prefers Smart Connections local vectors when available, and falls back to `obsidian-hybrid-search` when needed.
 
+## Architecture Candidates
+
+Two candidate architecture diagrams are included for review. They show the same local-first retrieval flow, backend routing, privacy boundary, and public benchmark publishing path.
+
+**Option A - direct static diagram.** Denser and more explanatory.
+
+![Architecture option A: direct static diagram](docs/architecture/architecture_option_a_direct.png)
+
+**Option B - Archify-generated diagram.** Cleaner graph layout, generated from reusable Archify source.
+
+![Architecture option B: Archify-generated diagram](docs/architecture/architecture_option_b_archify.png)
+
+Sources: [architecture docs](docs/architecture/README.md), [Archify HTML](docs/architecture/architecture_option_b_archify.html), [Archify JSON](docs/architecture/architecture_option_b_archify.architecture.json).
+
 ## What It Does
 
 - Auto-discovers the active Obsidian vault from Obsidian app config.

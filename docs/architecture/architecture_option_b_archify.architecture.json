@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Obsidian High Recall Skill",
+    "subtitle": "Local-first recall architecture, backend routing, privacy boundary, and public benchmark artifacts",
+    "output": "architecture_option_b_archify.html",
+    "viewBox": [1600, 760]
+  },
+  "components": [
+    {
+      "id": "codex",
+      "type": "external",
+      "label": "Codex user",
+      "sublabel": "natural-language recall request",
+      "pos": [40, 285],
+      "size": [150, 70]
+    },
+    {
+      "id": "skill",
+      "type": "backend",
+      "label": "Skill runtime",
+      "sublabel": "SKILL.md + Node wrapper",
+      "tag": "auto / smart / ohs / both",
+      "pos": [260, 270],
+      "size": [165, 80]
+    },
+    {
+      "id": "vault",
+      "type": "database",
+      "label": "Obsidian vault",
+      "sublabel": "markdown notes stay local",
+      "tag": "private",
+      "pos": [260, 465],
+      "size": [165, 78]
+    },
+    {
+      "id": "smart",
+      "type": "backend",
+      "label": "Smart backend",
+      "sublabel": ".smart-env source + block vectors",
+      "tag": "fast vector recall",
+      "pos": [525, 150],
+      "size": [185, 82]
+    },
+    {
+      "id": "ohs",
+      "type": "backend",
+      "label": "OHS backend",
+      "sublabel": "hybrid + fulltext local index",
+      "tag": "slower fallback",
+      "pos": [525, 390],
+      "size": [185, 82]
+    },
+    {
+      "id": "merge",
+      "type": "messagebus",
+      "label": "Merge and rank",
+      "sublabel": "dedupe, RRF, channel weights",
+      "tag": "union recall",
+      "pos": [790, 270],
+      "size": [175, 80]
+    },
+    {
+      "id": "pack",
+      "type": "cloud",
+      "label": "Recall pack",
+      "sublabel": "JSON snippets, ranks, channels",
+      "tag": "returned to Codex",
+      "pos": [1080, 165],
+      "size": [185, 82]
+    },
+    {
+      "id": "eval",
+      "type": "security",
+      "label": "Private evaluation",
+      "sublabel": "private labels and run logs",
+      "tag": "not committed",
+      "pos": [1080, 395],
+      "size": [185, 82]
+    },
+    {
+      "id": "repo",
+      "type": "cloud",
+      "label": "Public repo",
+      "sublabel": "skill, docs, aggregate figures",
+      "tag": "shareable",
+      "pos": [1320, 270],
+      "size": [150, 80]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "security-group",
+      "label": "Private local machine: raw notes, snippets, queries, and labels stay here",
+      "wraps": ["codex", "skill", "vault", "smart", "ohs", "merge", "pack", "eval"],
+      "pad": 26
+    },
+    {
+      "kind": "region",
+      "label": "Public GitHub artifacts: aggregate/anonymized only",
+      "wraps": ["repo"],
+      "pad": 34
+    }
+  ],
+  "connections": [
+    {
+      "from": "codex",
+      "to": "skill",
+      "label": "query",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "skill",
+      "to": "vault",
+      "label": "discover vault",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "orthogonal-v",
+      "labelDy": -18
+    },
+    {
+      "from": "skill",
+      "to": "smart",
+      "label": "Smart available",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "skill",
+      "to": "ohs",
+      "label": "fallback / both",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "vault",
+      "to": "smart",
+      "label": ".smart-env",
+      "variant": "security",
+      "fromSide": "right",
+      "toSide": "bottom",
+      "route": "orthogonal-h",
+      "labelDy": 20
+    },
+    {
+      "from": "vault",
+      "to": "ohs",
+      "label": "local index",
+      "variant": "security",
+      "fromSide": "right",
+      "toSide": "bottom",
+      "route": "orthogonal-h",
+      "labelDy": 26
+    },
+    {
+      "from": "smart",
+      "to": "merge",
+      "label": "ranked hits",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "ohs",
+      "to": "merge",
+      "label": "hybrid/fulltext hits",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "merge",
+      "to": "pack",
+      "label": "recall pack",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "merge",
+      "to": "eval",
+      "label": "benchmark runs",
+      "variant": "security",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "eval",
+      "to": "repo",
+      "label": "aggregate CSV + PNG only",
+      "variant": "security",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "from": "skill",
+      "to": "repo",
+      "label": "portable skill package",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "top",
+      "route": "orthogonal-v",
+      "labelDy": -34
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Fast path",
+      "items": [
+        "Smart Connections vectors provide the default local semantic recall path.",
+        "The wrapper adds lexical fallback and returns ranked JSON."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Union mode",
+      "items": [
+        "OHS hybrid/fulltext complements Smart when latency is acceptable.",
+        "RRF/channel merge optimizes for high recall over clean precision."
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Privacy",
+      "items": [
+        "Raw notes, snippets, queries, labels, and run logs remain local.",
+        "GitHub receives only anonymized aggregate benchmark artifacts."
+      ]
+    }
+  ]
+}

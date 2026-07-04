@@ -6,6 +6,20 @@
 
 它适合“漏掉相关笔记比多返回噪声更糟”的场景。默认优先复用 Smart Connections 的本地向量索引；如果没有 Smart Connections 索引，则回退到 `obsidian-hybrid-search`。
 
+## 架构图候选
+
+下面两张候选图内容一致，都展示 local-first 检索流程、backend routing、privacy boundary，以及 public benchmark 发布路径。
+
+**Option A - 直接绘制静态图。** 信息密度更高，解释性更强。
+
+![架构图候选 A：直接绘制静态图](docs/architecture/architecture_option_a_direct.png)
+
+**Option B - Archify 生成图。** 结构更规整，由可复用 Archify source 生成。
+
+![架构图候选 B：Archify 生成图](docs/architecture/architecture_option_b_archify.png)
+
+Source files: [architecture docs](docs/architecture/README.md)、[Archify HTML](docs/architecture/architecture_option_b_archify.html)、[Archify JSON](docs/architecture/architecture_option_b_archify.architecture.json)。
+
 ## 它能做什么
 
 - 从 Obsidian app config 自动发现当前 vault。
