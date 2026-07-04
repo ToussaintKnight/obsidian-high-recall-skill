@@ -5,7 +5,7 @@
     "title": "Obsidian High Recall Skill",
     "subtitle": "Local-first recall architecture, backend routing, privacy boundary, and public benchmark artifacts",
     "output": "architecture_option_b_archify.html",
-    "viewBox": [1600, 760]
+    "viewBox": [1450, 560]
   },
   "components": [
     {
@@ -13,7 +13,7 @@
       "type": "external",
       "label": "Codex user",
       "sublabel": "natural-language recall request",
-      "pos": [40, 285],
+      "pos": [40, 200],
       "size": [150, 70]
     },
     {
@@ -22,7 +22,7 @@
       "label": "Skill runtime",
       "sublabel": "SKILL.md + Node wrapper",
       "tag": "auto / smart / ohs / both",
-      "pos": [260, 270],
+      "pos": [250, 185],
       "size": [165, 80]
     },
     {
@@ -31,7 +31,7 @@
       "label": "Obsidian vault",
       "sublabel": "markdown notes stay local",
       "tag": "private",
-      "pos": [260, 465],
+      "pos": [250, 380],
       "size": [165, 78]
     },
     {
@@ -40,7 +40,7 @@
       "label": "Smart backend",
       "sublabel": ".smart-env source + block vectors",
       "tag": "fast vector recall",
-      "pos": [525, 150],
+      "pos": [500, 65],
       "size": [185, 82]
     },
     {
@@ -49,7 +49,7 @@
       "label": "OHS backend",
       "sublabel": "hybrid + fulltext local index",
       "tag": "slower fallback",
-      "pos": [525, 390],
+      "pos": [500, 300],
       "size": [185, 82]
     },
     {
@@ -58,7 +58,7 @@
       "label": "Merge and rank",
       "sublabel": "dedupe, RRF, channel weights",
       "tag": "union recall",
-      "pos": [790, 270],
+      "pos": [740, 185],
       "size": [175, 80]
     },
     {
@@ -67,7 +67,7 @@
       "label": "Recall pack",
       "sublabel": "JSON snippets, ranks, channels",
       "tag": "returned to Codex",
-      "pos": [1080, 165],
+      "pos": [990, 70],
       "size": [185, 82]
     },
     {
@@ -76,16 +76,16 @@
       "label": "Private evaluation",
       "sublabel": "private labels and run logs",
       "tag": "not committed",
-      "pos": [1080, 395],
+      "pos": [990, 300],
       "size": [185, 82]
     },
     {
       "id": "repo",
       "type": "cloud",
       "label": "Public repo",
-      "sublabel": "skill, docs, aggregate figures",
+      "sublabel": "portable skill + figures",
       "tag": "shareable",
-      "pos": [1320, 270],
+      "pos": [1255, 185],
       "size": [150, 80]
     }
   ],
@@ -98,7 +98,7 @@
     },
     {
       "kind": "region",
-      "label": "Public GitHub artifacts: aggregate/anonymized only",
+      "label": "Public GitHub: aggregate only",
       "wraps": ["repo"],
       "pad": 34
     }
@@ -193,20 +193,10 @@
     {
       "from": "eval",
       "to": "repo",
-      "label": "aggregate CSV + PNG only",
+      "label": "aggregate only",
       "variant": "security",
       "fromSide": "right",
       "toSide": "left"
-    },
-    {
-      "from": "skill",
-      "to": "repo",
-      "label": "portable skill package",
-      "variant": "dashed",
-      "fromSide": "top",
-      "toSide": "top",
-      "route": "orthogonal-v",
-      "labelDy": -34
     }
   ],
   "cards": [
