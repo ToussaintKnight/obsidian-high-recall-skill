@@ -5,102 +5,102 @@
     "title": "Obsidian High Recall Skill",
     "subtitle": "Local-first recall architecture, backend routing, privacy boundary, and public benchmark artifacts",
     "output": "architecture_option_b_archify.html",
-    "viewBox": [1450, 560]
+    "viewBox": [1305, 460]
   },
   "components": [
     {
       "id": "codex",
       "type": "external",
       "label": "Codex user",
-      "sublabel": "natural-language recall request",
-      "pos": [40, 200],
-      "size": [150, 70]
+      "sublabel": "recall query",
+      "pos": [25, 187],
+      "size": [145, 64]
     },
     {
       "id": "skill",
       "type": "backend",
       "label": "Skill runtime",
-      "sublabel": "SKILL.md + Node wrapper",
-      "tag": "auto / smart / ohs / both",
-      "pos": [250, 185],
-      "size": [165, 80]
+      "sublabel": "SKILL.md + Node CLI",
+      "tag": "auto route",
+      "pos": [220, 178],
+      "size": [160, 82]
     },
     {
       "id": "vault",
       "type": "database",
       "label": "Obsidian vault",
-      "sublabel": "markdown notes stay local",
-      "tag": "private",
-      "pos": [250, 380],
-      "size": [165, 78]
+      "sublabel": "Markdown notes",
+      "tag": "private local",
+      "pos": [220, 310],
+      "size": [160, 72]
     },
     {
       "id": "smart",
       "type": "backend",
       "label": "Smart backend",
-      "sublabel": ".smart-env source + block vectors",
-      "tag": "fast vector recall",
-      "pos": [500, 65],
-      "size": [185, 82]
+      "sublabel": "Smart vectors",
+      "tag": "fast recall",
+      "pos": [440, 55],
+      "size": [170, 76]
     },
     {
       "id": "ohs",
       "type": "backend",
       "label": "OHS backend",
-      "sublabel": "hybrid + fulltext local index",
-      "tag": "slower fallback",
-      "pos": [500, 300],
-      "size": [185, 82]
+      "sublabel": "hybrid + fulltext",
+      "tag": "local fallback",
+      "pos": [440, 310],
+      "size": [170, 72]
     },
     {
       "id": "merge",
       "type": "messagebus",
-      "label": "Merge and rank",
-      "sublabel": "dedupe, RRF, channel weights",
-      "tag": "union recall",
-      "pos": [740, 185],
-      "size": [175, 80]
+      "label": "Merge + rank",
+      "sublabel": "dedupe + RRF",
+      "tag": "high recall",
+      "pos": [665, 178],
+      "size": [170, 82]
     },
     {
       "id": "pack",
       "type": "cloud",
       "label": "Recall pack",
-      "sublabel": "JSON snippets, ranks, channels",
-      "tag": "returned to Codex",
-      "pos": [990, 70],
-      "size": [185, 82]
+      "sublabel": "JSON hits + snippets",
+      "tag": "to Codex",
+      "pos": [890, 55],
+      "size": [170, 76]
     },
     {
       "id": "eval",
       "type": "security",
       "label": "Private evaluation",
-      "sublabel": "private labels and run logs",
-      "tag": "not committed",
-      "pos": [990, 300],
-      "size": [185, 82]
+      "sublabel": "gold labels + runs",
+      "tag": "local only",
+      "pos": [890, 310],
+      "size": [170, 72]
     },
     {
       "id": "repo",
       "type": "cloud",
       "label": "Public repo",
-      "sublabel": "portable skill + figures",
-      "tag": "shareable",
-      "pos": [1255, 185],
-      "size": [150, 80]
+      "sublabel": "skill + docs + figures",
+      "tag": "aggregate only",
+      "pos": [1115, 188],
+      "size": [150, 72]
     }
   ],
   "boundaries": [
     {
       "kind": "security-group",
-      "label": "Private local machine: raw notes, snippets, queries, and labels stay here",
+      "label": "Private local machine: raw notes, snippets, queries, labels stay local",
       "wraps": ["codex", "skill", "vault", "smart", "ohs", "merge", "pack", "eval"],
-      "pad": 26
+      "pad": 24
     },
     {
       "kind": "region",
-      "label": "Public GitHub: aggregate only",
+      "label": "Public GitHub: aggregate artifacts only",
       "wraps": ["repo"],
-      "pad": 34
+      "pad": 22
     }
   ],
   "connections": [
@@ -115,17 +115,17 @@
     {
       "from": "skill",
       "to": "vault",
-      "label": "discover vault",
+      "label": "vault",
       "variant": "security",
       "fromSide": "bottom",
       "toSide": "top",
       "route": "orthogonal-v",
-      "labelDy": -18
+      "labelDy": -6
     },
     {
       "from": "skill",
       "to": "smart",
-      "label": "Smart available",
+      "label": "smart",
       "variant": "emphasis",
       "fromSide": "right",
       "toSide": "left"
@@ -133,10 +133,11 @@
     {
       "from": "skill",
       "to": "ohs",
-      "label": "fallback / both",
+      "label": "fallback/both",
       "variant": "dashed",
       "fromSide": "right",
-      "toSide": "left"
+      "toSide": "left",
+      "labelDy": 10
     },
     {
       "from": "vault",
@@ -145,8 +146,8 @@
       "variant": "security",
       "fromSide": "right",
       "toSide": "bottom",
-      "route": "orthogonal-h",
-      "labelDy": 20
+      "via": [[410, 346], [410, 150], [525, 150]],
+      "labelAt": [470, 150]
     },
     {
       "from": "vault",
@@ -154,14 +155,14 @@
       "label": "local index",
       "variant": "security",
       "fromSide": "right",
-      "toSide": "bottom",
-      "route": "orthogonal-h",
-      "labelDy": 26
+      "toSide": "left",
+      "route": "straight",
+      "labelDy": 18
     },
     {
       "from": "smart",
       "to": "merge",
-      "label": "ranked hits",
+      "label": "vector hits",
       "variant": "emphasis",
       "fromSide": "right",
       "toSide": "left"
@@ -169,7 +170,7 @@
     {
       "from": "ohs",
       "to": "merge",
-      "label": "hybrid/fulltext hits",
+      "label": "hybrid hits",
       "variant": "dashed",
       "fromSide": "right",
       "toSide": "left"
@@ -177,7 +178,7 @@
     {
       "from": "merge",
       "to": "pack",
-      "label": "recall pack",
+      "label": "results",
       "variant": "emphasis",
       "fromSide": "right",
       "toSide": "left"
@@ -185,7 +186,7 @@
     {
       "from": "merge",
       "to": "eval",
-      "label": "benchmark runs",
+      "label": "benchmark",
       "variant": "security",
       "fromSide": "right",
       "toSide": "left"
@@ -193,7 +194,7 @@
     {
       "from": "eval",
       "to": "repo",
-      "label": "aggregate only",
+      "label": "aggregate",
       "variant": "security",
       "fromSide": "right",
       "toSide": "left"
