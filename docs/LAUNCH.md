@@ -84,3 +84,5 @@ I am looking for 5-10 testers with different vault sizes and operating systems. 
 - Number of users who run the fixture benchmark.
 - Number of anonymized benchmark reports.
 - Issues that reveal real compatibility gaps.
+
+Baseline metrics are recorded in [metrics/launch_baseline.md](metrics/launch_baseline.md). External collaboration strategy is recorded in [community/external_contribution_strategy.md](community/external_contribution_strategy.md).

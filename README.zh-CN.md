@@ -259,6 +259,8 @@ skills/
 - Roadmap：[ROADMAP.md](ROADMAP.md)
 - Launch playbook：[docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit：[docs/marketing](docs/marketing/README.md)
+- Launch baseline：[docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
+- External contribution strategy：[docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)
 - Public fixture vault：[docs/fixtures/demo-vault](docs/fixtures/demo-vault)
 - Citation metadata：[CITATION.cff](CITATION.cff)
 
