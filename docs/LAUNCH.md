@@ -13,6 +13,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 ## Launch Checklist
 
 - README first screen explains the user pain and 30-second demo.
+- Demo GIF is visible in the README and uses only public fixture data.
 - `npm test` passes on the public fixture vault.
 - `SECURITY.md` explains the privacy model.
 - `CONTRIBUTING.md` and issue templates are present.
@@ -35,6 +36,8 @@ I built a small local-first tool for a problem I keep hitting: when an Obsidian 
 Obsidian High Recall favors recall over precision. It reuses Smart Connections vectors when available, falls back to obsidian-hybrid-search, and can merge both result sets. Raw notes, snippets, queries, and private benchmark labels stay local.
 
 Repo: https://github.com/ToussaintKnight/obsidian-high-recall-skill
+
+Demo GIF: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/demo/fixture_demo.gif
 
 Try the public fixture first:
 

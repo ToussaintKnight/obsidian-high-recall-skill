@@ -14,6 +14,8 @@
 
 ## 30 秒 Demo
 
+![Fixture demo：安装、测试、查询、召回包](docs/demo/fixture_demo.gif)
+
 不需要私人 vault，先跑公开 fixture benchmark：
 
 ```bash

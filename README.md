@@ -14,6 +14,8 @@ It reuses Smart Connections vectors when available, falls back to `obsidian-hybr
 
 ## 30-Second Demo
 
+![Fixture demo: install, test, query, recall pack](docs/demo/fixture_demo.gif)
+
 Run the public fixture benchmark without any private vault:
 
 ```bash
