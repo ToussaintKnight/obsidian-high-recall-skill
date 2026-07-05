@@ -40,6 +40,14 @@ Avoid starting with large rewrites. The goal of the first 3-5 external PRs is no
 6. Respond quickly and respectfully to review.
 7. Link accepted work from the personal profile or project notes only after it is merged.
 
+## Active External Work
+
+| Date | Ecosystem | Repository | Work | Status | Link |
+|---|---|---|---|---|---|
+| 2026-07-05 | Obsidian resources | `kmaasrud/awesome-obsidian` | Add Obsidian High Recall to `External Tools > Other` as a local-first CLI/agent search tool. | Open PR | https://github.com/kmaasrud/awesome-obsidian/pull/119 |
+
+This PR is intentionally small: one table row, appended to the correct section, following the target repository's contribution guide. If merged, it creates an external discovery path from the Obsidian GitHub ecosystem into this project.
+
 ## How This Helps Obsidian High Recall
 
 External PRs build trust that cannot be created by polishing this repo alone. Maintainers and users are more likely to trust a privacy-sensitive local search tool when its author has visible accepted work in adjacent ecosystems.

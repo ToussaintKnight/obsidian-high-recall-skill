@@ -41,6 +41,12 @@ Interpretation:
 6. Anonymized benchmark reports in Issue #4.
 7. Stars and forks.
 
+## External Distribution Actions
+
+| Date | Action | Link | Status |
+|---|---|---|---|
+| 2026-07-05 | Submitted Obsidian High Recall to `kmaasrud/awesome-obsidian` under `External Tools > Other`. | https://github.com/kmaasrud/awesome-obsidian/pull/119 | Open PR |
+
 ## First Target
 
 The next practical milestone is 20 serious users who can:
