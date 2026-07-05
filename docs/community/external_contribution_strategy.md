@@ -47,8 +47,9 @@ Avoid starting with large rewrites. The goal of the first 3-5 external PRs is no
 | 2026-07-05 | Obsidian resources | `kmaasrud/awesome-obsidian` | Add Obsidian High Recall to `External Tools > Other` as a local-first CLI/agent search tool. | Open PR | https://github.com/kmaasrud/awesome-obsidian/pull/119 |
 | 2026-07-05 | Local-first / PKM resources | `alexanderop/awesome-local-first` | Add Obsidian High Recall under `Knowledge Management & Notes` as a local-first search tool for private Obsidian vaults. | Open PR | https://github.com/alexanderop/awesome-local-first/pull/39 |
 | 2026-07-05 | Codex skills | `ComposioHQ/awesome-codex-skills` | Add `obsidian-high-recall` under `Productivity & Collaboration` as an external Codex skill for local Obsidian vault retrieval. | Open PR | https://github.com/ComposioHQ/awesome-codex-skills/pull/159 |
+| 2026-07-05 | Codex CLI resources | `RoggeOhta/awesome-codex-cli` | Add `obsidian-high-recall` under `Specialized Skills` near memory/search-related Codex skills. | Open PR | https://github.com/RoggeOhta/awesome-codex-cli/pull/128 |
 
-These PRs are intentionally small: one table row each, placed in the target repository's closest matching section. If merged, they create external discovery paths from the Obsidian, local-first, and Codex skill GitHub ecosystems into this project.
+These PRs are intentionally small: one table row each, placed in the target repository's closest matching section. If merged, they create external discovery paths from the Obsidian, local-first, Codex skill, and Codex CLI GitHub ecosystems into this project.
 
 ## How This Helps Obsidian High Recall
 
