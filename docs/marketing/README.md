@@ -10,6 +10,10 @@ Share page:
 
 https://toussaintknight.github.io/obsidian-high-recall-skill/
 
+Community launch posts:
+
+[community_launch_posts.md](community_launch_posts.md)
+
 Regenerate:
 
 ```bash
@@ -95,7 +99,7 @@ I released Obsidian High Recall v0.1.0: local-first high-recall search for Obsid
 It favors recall over precision, reuses Smart Connections vectors when available, includes a public fixture benchmark, and keeps raw notes local.
 
 Looking for testers:
-https://github.com/ToussaintKnight/obsidian-high-recall-skill
+https://toussaintknight.github.io/obsidian-high-recall-skill/
 ```
 
 ```text
@@ -104,7 +108,7 @@ If you use Obsidian as research memory: normal search and AI agents can miss rel
 Obsidian High Recall is a local-first, recall-first search wrapper with Smart Connections reuse, OHS fallback, and privacy-safe benchmark docs.
 
 v0.1.0:
-https://github.com/ToussaintKnight/obsidian-high-recall-skill/releases/tag/v0.1.0
+https://toussaintknight.github.io/obsidian-high-recall-skill/
 ```
 
 ## Follow-Up Metrics

@@ -35,6 +35,8 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Smart Connections compatibility: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/7
 - Obsidian Forum launch task: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/8
 
+Full copy-ready launch posts are in [marketing/community_launch_posts.md](marketing/community_launch_posts.md).
+
 ## Obsidian Forum Draft
 
 Title:
