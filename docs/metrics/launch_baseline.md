@@ -50,6 +50,7 @@ Interpretation:
 | 2026-07-05 | Submitted `obsidian-high-recall` to `ComposioHQ/awesome-codex-skills` under `Productivity & Collaboration`. | https://github.com/ComposioHQ/awesome-codex-skills/pull/159 | Open PR |
 | 2026-07-05 | Submitted `obsidian-high-recall` to `RoggeOhta/awesome-codex-cli` under `Specialized Skills`. | https://github.com/RoggeOhta/awesome-codex-cli/pull/128 | Open PR |
 | 2026-07-05 | Posted a Codex Show-and-Tell tester call for local-first Obsidian vault recall. | https://github.com/openai/codex/discussions/31169 | Live |
+| 2026-07-05 | Added a relevant prior-art comment to the Codex first-class Obsidian integration feature request. | https://github.com/openai/codex/issues/18294#issuecomment-4886301723 | Live |
 
 ## First Target
 

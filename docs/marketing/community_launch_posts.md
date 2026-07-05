@@ -166,4 +166,5 @@ Please do not share private note paths, snippets, raw queries, vault names, or g
 | Obsidian Forum | TBD | TBD | 0 | TBD | TBD | TBD | First serious-user channel |
 | Reddit / PKM | TBD | TBD | TBD | TBD | TBD | TBD | Post after forum response |
 | Codex GitHub Discussions | https://github.com/openai/codex/discussions/31169 | 2026-07-05 | 0 | TBD | 1 | TBD | Show-and-Tell tester call for local-first vault recall |
+| Codex Obsidian feature request | https://github.com/openai/codex/issues/18294#issuecomment-4886301723 | 2026-07-05 | 0 | TBD | 1 | TBD | Prior-art comment on first-class Obsidian integration request |
 | HN | TBD | TBD | TBD | TBD | TBD | TBD | Use after first install reports |
