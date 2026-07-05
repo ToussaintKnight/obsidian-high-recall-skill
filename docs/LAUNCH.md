@@ -14,6 +14,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 
 - README first screen explains the user pain and 30-second demo.
 - Demo GIF is visible in the README and uses only public fixture data.
+- Social preview card exists at `docs/marketing/social_preview.png`; use it for GitHub social preview and community posts.
 - `npm test` passes on the public fixture vault.
 - `SECURITY.md` explains the privacy model.
 - `CONTRIBUTING.md` and issue templates are present.

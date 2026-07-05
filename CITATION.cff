@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If Obsidian High Recall helps your research or tooling, please cite the project."
+title: "Obsidian High Recall"
+version: "0.1.0"
+date-released: "2026-07-05"
+license: "MIT"
+url: "https://github.com/ToussaintKnight/obsidian-high-recall-skill"
+repository-code: "https://github.com/ToussaintKnight/obsidian-high-recall-skill"
+abstract: "Local-first high-recall search for Obsidian vaults, usable from Codex and CLI."
+authors:
+  - name: "ToussaintKnight"
+keywords:
+  - Obsidian
+  - local-first
+  - high-recall search
+  - AI agents
+  - private notes
+  - retrieval

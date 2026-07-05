@@ -7,5 +7,5 @@ This directory contains public, privacy-safe demo assets generated from the fixt
 Regenerate:
 
 ```bash
-python scripts/render_demo_gif.py
+npm run demo:gif
 ```
