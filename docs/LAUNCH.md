@@ -20,6 +20,19 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - A v0.1.0 GitHub release exists with the fixture demo command.
 - At least 5 starter issues are open for OS testing, docs, benchmark reports, and Smart Connections compatibility.
 
+## Current Public Launch Links
+
+- Release: https://github.com/ToussaintKnight/obsidian-high-recall-skill/releases/tag/v0.1.0
+- Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
+- Windows install test: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/1
+- Linux install test: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/2
+- macOS install test: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/3
+- Benchmark reports: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/4
+- Privacy redaction tests: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/5
+- OHS first-run diagnostics: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/6
+- Smart Connections compatibility: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/7
+- Obsidian Forum launch task: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/8
+
 ## Obsidian Forum Draft
 
 Title:
