@@ -44,10 +44,10 @@ Run the bundled smoke evaluation when comparing backends:
 
 ```bash
 node scripts/evaluate_recall.mjs ./obsidian_recall_eval
-node scripts/evaluate_recall.mjs ./obsidian_recall_eval --cases ./references/eval_cases.example.json
+node scripts/evaluate_recall.mjs ./obsidian_recall_eval --cases ./references/eval_cases.example.json --backends smart,ohs,rrf-union
 ```
 
-The evaluator writes `raw_runs.json`, `metrics.json`, and `metrics.csv` with Precision@K, Recall@K, F1@K, MRR, ranks, and latency for `smart` and `ohs`. Pass a custom cases file for any real vault-specific benchmark.
+The evaluator writes `raw_runs.json`, `metrics.json`, and `metrics.csv` with Precision@K, Recall@K, F1@K, MRR, ranks, and latency for `smart`, `ohs`, and evaluator-derived `rrf-union`. Pass `--vault`, `--cases`, `--backends`, `--ks`, `--limit`, `--per-channel`, and `--neighbor-seeds` for real vault-specific benchmarks.
 
 ## Recall Policy
 

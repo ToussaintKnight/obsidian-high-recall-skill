@@ -683,8 +683,15 @@ function dot(a, b) {
 
 async function smartVectorSearch(vault, opts, expansions) {
   const { info, records } = loadSmartRecords(vault);
-  if (!records.length) return { info, records: [] };
   const plan = makeSearchPlan(expansions, { ...opts, profile: opts.profile === "deep" ? "deep" : "quick" });
+  const lexical = lexicalSearch(vault, opts, expansions);
+  if (!records.length) {
+    return {
+      info,
+      records: [{ channel: "lexical", results: lexical }],
+      plan,
+    };
+  }
   const queryTexts =
     opts.profile === "deep"
       ? unique([...expansions.semanticQueries.slice(0, 8), expansions.fulltextTerms.slice(0, 16).join(" ")])
@@ -719,7 +726,7 @@ async function smartVectorSearch(vault, opts, expansions) {
     records: [
       { channel: "smart-source", results: source.slice(0, sourceLimit) },
       { channel: "smart-block", results: block.slice(0, blockLimit) },
-      { channel: "lexical", results: lexicalSearch(vault, opts, expansions) },
+      { channel: "lexical", results: lexical },
     ],
     plan,
   };
@@ -822,6 +829,7 @@ async function makePack(vault, db, opts) {
   }
 
   const merged = mergeResults(channelResults, opts.neighborSeeds);
+  const smartVectorCount = smartSearchInfo.embeddedSources + smartSearchInfo.embeddedBlocks;
   return {
     query: opts.query,
     generatedAt: new Date().toISOString(),
@@ -829,8 +837,12 @@ async function makePack(vault, db, opts) {
     db,
     backend: {
       selected: useSmart && useOhs ? "both" : useSmart ? "smart" : "ohs",
-      primary: useSmart ? "smart-connections" : "obsidian-hybrid-search",
-      package: useSmart ? "@huggingface/transformers + Smart Connections .smart-env" : "obsidian-hybrid-search",
+      primary: useSmart ? (smartVectorCount > 0 ? "smart-connections" : "lexical-fallback") : "obsidian-hybrid-search",
+      package: useSmart
+        ? smartVectorCount > 0
+          ? "@huggingface/transformers + Smart Connections .smart-env"
+          : "local lexical scan"
+        : "obsidian-hybrid-search",
       smartConnectionsDetected: detectSmartConnections(vault),
     },
     index: {

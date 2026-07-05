@@ -21,24 +21,65 @@ const defaultCases = [
 ];
 
 const cases = cli.casesFile ? loadCases(cli.casesFile) : defaultCases;
-const ks = [10, 20, 50];
+const ks = cli.ks;
 
 function parseArgs(argv) {
-  const opts = { outDir: null, casesFile: null };
+  const opts = {
+    outDir: null,
+    casesFile: null,
+    vault: null,
+    backends: ["smart", "ohs", "rrf-union"],
+    ks: [10, 20, 50],
+    limit: 80,
+    perChannel: 30,
+    neighborSeeds: 0,
+  };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === "--cases") {
       i += 1;
       if (!argv[i]) throw new Error("Missing value for --cases");
       opts.casesFile = argv[i];
+    } else if (arg === "--vault") {
+      i += 1;
+      if (!argv[i]) throw new Error("Missing value for --vault");
+      opts.vault = argv[i];
+    } else if (arg === "--backends") {
+      i += 1;
+      if (!argv[i]) throw new Error("Missing value for --backends");
+      opts.backends = parseList(argv[i]);
+    } else if (arg === "--ks") {
+      i += 1;
+      if (!argv[i]) throw new Error("Missing value for --ks");
+      opts.ks = parseList(argv[i]).map((value) => Number(value));
+    } else if (arg === "--limit") {
+      i += 1;
+      if (!argv[i]) throw new Error("Missing value for --limit");
+      opts.limit = Number(argv[i]);
+    } else if (arg === "--per-channel") {
+      i += 1;
+      if (!argv[i]) throw new Error("Missing value for --per-channel");
+      opts.perChannel = Number(argv[i]);
+    } else if (arg === "--neighbor-seeds") {
+      i += 1;
+      if (!argv[i]) throw new Error("Missing value for --neighbor-seeds");
+      opts.neighborSeeds = Number(argv[i]);
     } else if (arg === "-h" || arg === "--help") {
       console.log(`Usage:
-  evaluate_recall.mjs [out-dir] [--cases cases.json]
+  evaluate_recall.mjs [out-dir] [--cases cases.json] [--vault vault-path]
+  evaluate_recall.mjs [out-dir] --vault docs/fixtures/demo-vault --cases docs/fixtures/demo_cases.json --backends smart
 
 Cases JSON shape:
   [
     {"id":"example","query":"natural language query","gold":["note-title-or-path-substring"]}
-  ]`);
+  ]
+
+Options:
+  --backends LIST        Comma-separated smart,ohs,rrf-union. Default: smart,ohs,rrf-union.
+  --ks LIST              Comma-separated K values. Default: 10,20,50.
+  --limit N              Wrapper result limit. Default: 80.
+  --per-channel N        Per-channel candidate limit. Default: 30.
+  --neighbor-seeds N     Graph-neighbor seeds. Default: 0.`);
       process.exit(0);
     } else if (!opts.outDir) {
       opts.outDir = arg;
@@ -46,7 +87,29 @@ Cases JSON shape:
       throw new Error(`Unexpected argument: ${arg}`);
     }
   }
+  validateOptions(opts);
   return opts;
+}
+
+function parseList(value) {
+  return String(value)
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function validateOptions(opts) {
+  const allowed = new Set(["smart", "ohs", "rrf-union"]);
+  for (const backend of opts.backends) {
+    if (!allowed.has(backend)) throw new Error(`Unsupported backend: ${backend}`);
+  }
+  if (!opts.backends.length) throw new Error("--backends must include at least one backend");
+  if (!opts.ks.length || opts.ks.some((k) => !Number.isFinite(k) || k < 1)) {
+    throw new Error("--ks must contain positive integers");
+  }
+  if (!Number.isFinite(opts.limit) || opts.limit < 1) throw new Error("--limit must be positive");
+  if (!Number.isFinite(opts.perChannel) || opts.perChannel < 1) throw new Error("--per-channel must be positive");
+  if (!Number.isFinite(opts.neighborSeeds) || opts.neighborSeeds < 0) throw new Error("--neighbor-seeds must be non-negative");
 }
 
 function loadCases(filePath) {
@@ -61,24 +124,26 @@ function loadCases(filePath) {
   return parsed;
 }
 
-function runCase(backend, query) {
+function runBackend(backend, query, opts) {
   const t0 = Date.now();
+  const args = [
+    wrapper,
+    "query",
+    query,
+    "--backend",
+    backend,
+    "--limit",
+    String(opts.limit),
+    "--per-channel",
+    String(opts.perChannel),
+    "--neighbor-seeds",
+    String(opts.neighborSeeds),
+    "--json",
+  ];
+  if (opts.vault) args.push("--vault", opts.vault);
   const proc = spawnSync(
     "node",
-    [
-      wrapper,
-      "query",
-      query,
-      "--backend",
-      backend,
-      "--limit",
-      "80",
-      "--per-channel",
-      "30",
-      "--neighbor-seeds",
-      "0",
-      "--json",
-    ],
+    args,
     {
       encoding: "utf8",
       maxBuffer: 1024 * 1024 * 100,
@@ -93,6 +158,100 @@ function runCase(backend, query) {
   const start = stdout.indexOf("{");
   const json = JSON.parse(stdout.slice(start));
   return { backend, ms, json };
+}
+
+function runCase(backend, query, opts, cache) {
+  const key = `${backend}\0${query}`;
+  if (cache.has(key)) return cache.get(key);
+
+  let run;
+  if (backend === "rrf-union") {
+    const smart = runCase("smart", query, opts, cache);
+    const ohs = runCase("ohs", query, opts, cache);
+    if (smart.error || ohs.error) {
+      const error = [
+        smart.error ? `smart: ${smart.error}` : null,
+        ohs.error ? `ohs: ${ohs.error}` : null,
+      ]
+        .filter(Boolean)
+        .join("\n");
+      run = { backend, ms: smart.ms + ohs.ms, error };
+    } else {
+      run = {
+        backend,
+        ms: smart.ms + ohs.ms,
+        json: makeRrfUnion([smart, ohs]),
+      };
+    }
+  } else {
+    run = runBackend(backend, query, opts);
+  }
+
+  cache.set(key, run);
+  return run;
+}
+
+function makeRrfUnion(runs, rrfK = 60) {
+  const records = new Map();
+  for (const run of runs) {
+    const results = run.json?.results || [];
+    results.forEach((result, idx) => {
+      const rank = idx + 1;
+      const key = result.path || result.title || `${run.backend}-${idx}`;
+      if (!records.has(key)) {
+        records.set(key, {
+          ...result,
+          channels: [],
+          channelRanks: {},
+          matchedBy: [],
+          rrfScore: 0,
+        });
+      }
+      const rec = records.get(key);
+      rec.rrfScore += 1 / (rrfK + rank);
+      rec.channels = unique([...(rec.channels || []), run.backend, ...(result.channels || [])]);
+      rec.matchedBy = unique([...(rec.matchedBy || []), ...(result.matchedBy || [])]);
+      rec.channelRanks = { ...(rec.channelRanks || {}), [run.backend]: rank };
+      rec.bestScore = Math.max(Number(rec.bestScore || 0), Number(result.bestScore || result.score || 0));
+      rec.bestRank = Math.min(Number(rec.bestRank || rank), Number(result.bestRank || rank));
+      rec.snippet ||= result.snippet || null;
+      rec.title ||= result.title || null;
+    });
+  }
+  const merged = [...records.values()]
+    .sort((a, b) => b.rrfScore - a.rrfScore || (a.bestRank || 999999) - (b.bestRank || 999999))
+    .map((result, idx) => ({
+      ...result,
+      rank: idx + 1,
+      recallScore: Number((result.rrfScore * 1000).toFixed(3)),
+      rrfScore: Number(result.rrfScore.toFixed(6)),
+    }));
+
+  return {
+    query: runs[0]?.json?.query || null,
+    generatedAt: new Date().toISOString(),
+    backend: {
+      selected: "rrf-union",
+      primary: "smart+ohs",
+      package: "derived by evaluator",
+    },
+    channels: runs.map((run) => ({ channel: run.backend, count: run.json?.results?.length || 0 })),
+    results: merged,
+    resultCountBeforeLimit: merged.length,
+  };
+}
+
+function unique(values) {
+  const seen = new Set();
+  const out = [];
+  for (const value of values) {
+    if (!value) continue;
+    const key = String(value).toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(value);
+  }
+  return out;
 }
 
 function score(results, gold, k) {
@@ -116,8 +275,9 @@ const raw = [];
 const metrics = [];
 
 for (const testCase of cases) {
-  for (const backend of ["smart", "ohs"]) {
-    const run = runCase(backend, testCase.query);
+  const cache = new Map();
+  for (const backend of cli.backends) {
+    const run = runCase(backend, testCase.query, cli, cache);
     raw.push({ case: testCase.id, backend, query: testCase.query, gold: testCase.gold, ...run });
     if (run.error) {
       metrics.push({ case: testCase.id, backend, k: 0, ms: run.ms, error: run.error });
@@ -160,6 +320,7 @@ for (const m of metrics.filter((x) => x.k)) {
       .join(","),
   );
 }
-fs.writeFileSync(path.join(outDir, "metrics.csv"), rows.join("\n"), "utf8");
+fs.writeFileSync(path.join(outDir, "metrics.csv"), `${rows.join("\n")}\n`, "utf8");
 
-console.log(JSON.stringify({ outDir, metrics: metrics.filter((m) => m.k === 20) }, null, 2));
+const summaryK = ks.includes(20) ? 20 : ks[0];
+console.log(JSON.stringify({ outDir, backends: cli.backends, ks, metrics: metrics.filter((m) => m.k === summaryK) }, null, 2));

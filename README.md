@@ -1,46 +1,60 @@
-# Obsidian High Recall for Codex
+# Obsidian High Recall
 
 Language: [English](README.md) | [中文](README.zh-CN.md)
 
-A portable Codex skill for high-recall retrieval over a local Obsidian vault.
+[![CI](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Local-first](https://img.shields.io/badge/privacy-local--first-blue.svg)](SECURITY.md)
 
-This is for workflows where missing relevant notes is worse than returning extra noise. It prefers Smart Connections local vectors when available, and falls back to `obsidian-hybrid-search` when needed.
+Local-first high-recall search for Obsidian vaults, usable from Codex and CLI.
 
-## Architecture Candidates
+When your vault has thousands of notes, normal search and agent memory can miss the one note that matters. This project intentionally favors recall over precision: it would rather return extra context than silently miss a relevant note.
 
-Two candidate architecture diagrams are included for review. They show the same local-first retrieval flow, backend routing, privacy boundary, and public benchmark publishing path.
+It reuses Smart Connections vectors when available, falls back to `obsidian-hybrid-search`, and can merge both result sets for maximum recall.
 
-**Option A - direct static diagram.** Denser and more explanatory.
+## 30-Second Demo
 
-![Architecture option A: direct static diagram](docs/architecture/architecture_option_a_direct.png)
+Run the public fixture benchmark without any private vault:
 
-**Option B - Archify-generated diagram.** Cleaner graph layout, generated from reusable Archify source.
+```bash
+git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
+cd obsidian-high-recall-skill
+npm test
+```
 
-![Architecture option B: Archify-generated diagram](docs/architecture/architecture_option_b_archify.png)
+Query the fixture vault directly:
 
-Sources: [architecture docs](docs/architecture/README.md), [Archify HTML](docs/architecture/architecture_option_b_archify.html), [Archify JSON](docs/architecture/architecture_option_b_archify.architecture.json).
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI robot demonstrations" --vault docs/fixtures/demo-vault --backend smart --limit 10
+```
+
+Use it on your own vault:
+
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "robot foundation model demonstration data" --vault "/absolute/path/to/your-vault" --backend auto --limit 120 --json
+```
 
 ## What It Does
 
 - Auto-discovers the active Obsidian vault from Obsidian app config.
 - Reads Smart Connections `.smart-env` vectors when the plugin has indexed the vault.
+- Keeps a lexical fallback so fixture and no-vector cases are still testable.
 - Falls back to `obsidian-hybrid-search` through `npx`.
 - Supports `auto`, `smart`, `ohs`, and `both` backends.
 - Returns broad recall packs with snippets, channels, scores, ranks, and JSON output.
-- Keeps derived indexes and runtime packages outside the vault.
-
-## Requirements
-
-- Codex Desktop or another Codex environment that supports local skills.
-- Node.js available on `PATH`.
-- Obsidian vault stored on local disk.
-- Optional but recommended: Obsidian Smart Connections plugin, fully indexed.
-
-First run may download npm/Hugging Face packages for local inference. The skill does not intentionally upload vault contents; retrieval and embedding inference run locally after dependencies are available.
+- Stores derived indexes and runtime packages outside the vault.
 
 ## Install
 
-### Install From GitHub In Codex
+### CLI From GitHub
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill query "data collection for embodied AI" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
+```
+
+If your environment does not support GitHub-backed `npx`, clone the repo and use the local `node` commands shown above.
+
+### Codex Skill
 
 Ask Codex:
 
@@ -50,7 +64,7 @@ Use $skill-installer to install https://github.com/ToussaintKnight/obsidian-high
 
 Restart Codex after installation.
 
-### Manual Install
+### Manual Skill Install
 
 Windows PowerShell:
 
@@ -60,15 +74,29 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills" | Out-Null
 Copy-Item ".\obsidian-high-recall-skill\skills\obsidian-high-recall" "$env:USERPROFILE\.codex\skills\" -Recurse
 ```
 
-macOS/Linux:
+Restart Codex after installation.
 
-```bash
-git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
-mkdir -p ~/.codex/skills
-cp -R ./obsidian-high-recall-skill/skills/obsidian-high-recall ~/.codex/skills/
-```
+## Requirements
 
-Restart Codex.
+- Node.js 20+.
+- Obsidian vault stored on local disk.
+- Optional but recommended: Obsidian Smart Connections plugin, fully indexed.
+- Optional fallback: network access for first-time `npx obsidian-hybrid-search` and model/package downloads.
+
+The tool does not intentionally upload vault contents. See [SECURITY.md](SECURITY.md) for the privacy model and reporting process.
+
+## Backend Choice
+
+- `auto`: prefer Smart Connections vectors when `.smart-env` exists; otherwise use OHS.
+- `smart`: use Smart Connections local embeddings plus lexical fallback.
+- `ohs`: use `obsidian-hybrid-search` hybrid/fulltext search.
+- `both`: union Smart and OHS results; best recall, slower.
+
+Recommended operating mode:
+
+- Daily use: `--backend auto --limit 120`
+- High-stakes recall: `--backend both --limit 200`
+- Benchmarking: compare `smart`, `ohs`, and `rrf-union` with the evaluator.
 
 ## Use In Codex
 
@@ -101,18 +129,13 @@ If vault auto-discovery fails:
 node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/to/your-vault" --json
 ```
 
-## Backend Choice
+## Architecture
 
-- `auto`: prefer Smart Connections vectors when `.smart-env` exists; otherwise use OHS.
-- `smart`: use Smart Connections local embeddings plus lexical fallback.
-- `ohs`: use `obsidian-hybrid-search` hybrid/fulltext search.
-- `both`: union Smart and OHS results; best recall, slower.
+The architecture shows the local-first retrieval flow, backend routing, privacy boundary, and public benchmark publishing path.
 
-Recommended operating mode:
+![Architecture option B: Archify-generated diagram](docs/architecture/architecture_option_b_archify.png)
 
-- Daily use: `--backend auto --limit 120`
-- High-stakes recall: `--backend both --limit 200`
-- Benchmarking: compare `smart` vs `ohs` with the evaluator.
+Alternative direct diagram and editable Archify source are in [docs/architecture](docs/architecture/README.md).
 
 ## Benchmark Snapshot
 
@@ -166,7 +189,13 @@ At K=50, the default `per-channel=30` reached the highest mean Recall (`0.87`), 
 
 ## Evaluate Recall
 
-Create a cases file:
+Run the public fixture smoke test:
+
+```bash
+npm run smoke:fixture
+```
+
+Create a cases file for your own vault:
 
 ```json
 [
@@ -184,7 +213,7 @@ Create a cases file:
 Run:
 
 ```bash
-node scripts/evaluate_recall.mjs ./obsidian_recall_eval --cases ./cases.json
+node skills/obsidian-high-recall/scripts/evaluate_recall.mjs ./obsidian_recall_eval --vault "/absolute/path/to/your-vault" --cases ./cases.json --backends smart,ohs,rrf-union --ks 10,20,50
 ```
 
 Outputs:
@@ -193,11 +222,17 @@ Outputs:
 - `metrics.json`
 - `metrics.csv`
 
-Metrics include Precision@K, Recall@K, F1@K, MRR, gold-note ranks, retrieved count, and latency for `smart` and `ohs`.
+Metrics include Precision@K, Recall@K, F1@K, MRR, gold-note ranks, retrieved count, and latency for `smart`, `ohs`, and evaluator-derived `rrf-union`.
 
 ## Repository Layout
 
 ```text
+.github/
+  ISSUE_TEMPLATE/
+docs/
+  architecture/
+  benchmark/
+  fixtures/
 skills/
   obsidian-high-recall/
     SKILL.md
@@ -205,6 +240,14 @@ skills/
     references/
     scripts/
 ```
+
+## Community And Project Health
+
+- Security and privacy model: [SECURITY.md](SECURITY.md)
+- Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Roadmap: [ROADMAP.md](ROADMAP.md)
+- Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
+- Public fixture vault: [docs/fixtures/demo-vault](docs/fixtures/demo-vault)
 
 ## License
 

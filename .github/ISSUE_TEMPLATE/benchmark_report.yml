@@ -1,0 +1,36 @@
+name: Benchmark report
+description: Share anonymized recall behavior from your own vault.
+title: "[Benchmark]: "
+labels: ["benchmark"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share aggregate/anonymized metrics only. Do not paste private note paths, snippets, raw queries, vault names, or gold labels.
+  - type: input
+    id: vault_size
+    attributes:
+      label: Approximate vault size
+      placeholder: "e.g. 2,000 notes, 8,000 Smart blocks"
+  - type: input
+    id: backends
+    attributes:
+      label: Backends tested
+      placeholder: "smart, ohs, rrf-union"
+  - type: textarea
+    id: settings
+    attributes:
+      label: Settings
+      placeholder: "limit, per-channel, neighbor-seeds, K values"
+      render: text
+  - type: textarea
+    id: aggregate
+    attributes:
+      label: Aggregate metrics
+      placeholder: "Precision@K, Recall@K, F1, MRR, latency"
+      render: text
+  - type: textarea
+    id: takeaways
+    attributes:
+      label: Takeaways
+      description: What worked, failed, or surprised you?

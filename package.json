@@ -1,0 +1,47 @@
+{
+  "name": "obsidian-high-recall",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Local-first high-recall search for Obsidian vaults, usable from Codex and CLI.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "obsidian-high-recall": "skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs",
+    "obsidian-high-recall-eval": "skills/obsidian-high-recall/scripts/evaluate_recall.mjs"
+  },
+  "scripts": {
+    "check": "node --check skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs && node --check skills/obsidian-high-recall/scripts/evaluate_recall.mjs && node --check scripts/assert_fixture_metrics.mjs",
+    "smoke:fixture": "node skills/obsidian-high-recall/scripts/evaluate_recall.mjs .tmp/fixture-eval --vault docs/fixtures/demo-vault --cases docs/fixtures/demo_cases.json --backends smart --ks 5,10 --limit 20 --per-channel 20 --neighbor-seeds 0 && node scripts/assert_fixture_metrics.mjs .tmp/fixture-eval/metrics.json",
+    "test": "npm run check && npm run smoke:fixture"
+  },
+  "files": [
+    "skills/obsidian-high-recall",
+    "docs/fixtures",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CONTRIBUTING.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "obsidian",
+    "local-first",
+    "search",
+    "rag",
+    "codex",
+    "smart-connections",
+    "notes",
+    "pkm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToussaintKnight/obsidian-high-recall-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues"
+  },
+  "homepage": "https://github.com/ToussaintKnight/obsidian-high-recall-skill#readme"
+}

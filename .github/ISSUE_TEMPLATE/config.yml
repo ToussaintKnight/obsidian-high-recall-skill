@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security and privacy concern
+    url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/security
+    about: Use a private security advisory when sensitive details are involved.

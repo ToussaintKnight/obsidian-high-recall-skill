@@ -1,0 +1,17 @@
+[
+  {
+    "id": "embodied-data-demo",
+    "query": "data collection for embodied AI robot demonstrations",
+    "gold": ["Embodied AI Data Collection"]
+  },
+  {
+    "id": "world-model-sim",
+    "query": "simulation world model for robot training",
+    "gold": ["World Models and Simulation"]
+  },
+  {
+    "id": "agent-memory",
+    "query": "local-first AI search over private Obsidian notes",
+    "gold": ["Agent Memory Search"]
+  }
+]

@@ -1,6 +1,8 @@
 node_modules/
 .DS_Store
 Thumbs.db
+.tmp/
+.obsidian-hybrid-search.db
 
 # Local benchmark outputs
 obsidian_recall_eval/

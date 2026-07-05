@@ -1,46 +1,60 @@
-# Obsidian High Recall for Codex
+# Obsidian High Recall
 
 语言：[English](README.md) | [中文](README.zh-CN.md)
 
-这是一个可移植的 Codex skill，用于对本地 Obsidian vault 做高召回检索。
+[![CI](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Local-first](https://img.shields.io/badge/privacy-local--first-blue.svg)](SECURITY.md)
 
-它适合“漏掉相关笔记比多返回噪声更糟”的场景。默认优先复用 Smart Connections 的本地向量索引；如果没有 Smart Connections 索引，则回退到 `obsidian-hybrid-search`。
+面向 Obsidian vault 的 local-first 高召回检索，可从 Codex 和 CLI 使用。
 
-## 架构图候选
+当你的 vault 有成千上万条笔记时，普通搜索和 agent memory 很容易漏掉关键笔记。这个项目刻意把 recall 放在 precision 前面：宁愿多返回一些上下文，也不要静默漏掉相关笔记。
 
-下面两张候选图内容一致，都展示 local-first 检索流程、backend routing、privacy boundary，以及 public benchmark 发布路径。
+它会优先复用 Smart Connections 的本地向量索引；没有 Smart 索引时，回退到 `obsidian-hybrid-search`；需要最大召回时，也可以合并两路结果。
 
-**Option A - 直接绘制静态图。** 信息密度更高，解释性更强。
+## 30 秒 Demo
 
-![架构图候选 A：直接绘制静态图](docs/architecture/architecture_option_a_direct.png)
+不需要私人 vault，先跑公开 fixture benchmark：
 
-**Option B - Archify 生成图。** 结构更规整，由可复用 Archify source 生成。
+```bash
+git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
+cd obsidian-high-recall-skill
+npm test
+```
 
-![架构图候选 B：Archify 生成图](docs/architecture/architecture_option_b_archify.png)
+直接查询 fixture vault：
 
-Source files: [architecture docs](docs/architecture/README.md)、[Archify HTML](docs/architecture/architecture_option_b_archify.html)、[Archify JSON](docs/architecture/architecture_option_b_archify.architecture.json)。
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "数据采集 for 具身" --vault docs/fixtures/demo-vault --backend smart --limit 10
+```
+
+用于你自己的 vault：
+
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "机器人基础模型 演示数据" --vault "/absolute/path/to/your-vault" --backend auto --limit 120 --json
+```
 
 ## 它能做什么
 
 - 从 Obsidian app config 自动发现当前 vault。
 - 读取 Smart Connections 已生成的 `.smart-env` 本地向量。
+- 保留 lexical fallback，所以 fixture vault 和无向量缓存场景也可测试。
 - 通过 `npx` 回退调用 `obsidian-hybrid-search`。
 - 支持 `auto`、`smart`、`ohs`、`both` 四种 backend。
 - 返回带 snippet、channel、score、rank 的高召回结果包，也支持 JSON 输出。
-- 派生索引和运行时依赖放在 vault 外部，不污染笔记库。
-
-## 环境要求
-
-- Codex Desktop，或其他支持本地 skills 的 Codex 环境。
-- Node.js 在 `PATH` 上可用。
-- 本地磁盘上的 Obsidian vault。
-- 推荐安装并完成索引：Obsidian Smart Connections 插件。
-
-首次运行可能会下载 npm/Hugging Face 依赖用于本地推理。这个 skill 不会主动上传 vault 内容；依赖可用后，检索和 embedding 推理都在本地执行。
+- 派生索引和运行时依赖放在 vault 外部。
 
 ## 安装
 
-### 在 Codex 里从 GitHub 安装
+### 从 GitHub 直接跑 CLI
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill query "数据采集 for 具身" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
+```
+
+如果环境不支持 GitHub-backed `npx`，clone repo 后使用上面的本地 `node` 命令。
+
+### Codex Skill
 
 对 Codex 说：
 
@@ -50,7 +64,7 @@ Use $skill-installer to install https://github.com/ToussaintKnight/obsidian-high
 
 安装后重启 Codex。
 
-### 手动安装
+### 手动安装 Skill
 
 Windows PowerShell:
 
@@ -69,6 +83,28 @@ cp -R ./obsidian-high-recall-skill/skills/obsidian-high-recall ~/.codex/skills/
 ```
 
 然后重启 Codex。
+
+## 环境要求
+
+- Node.js 20+。
+- 本地磁盘上的 Obsidian vault。
+- 推荐安装并完成索引：Obsidian Smart Connections 插件。
+- OHS fallback 和首次模型/package 下载需要网络。
+
+这个工具不会主动上传 vault 内容。隐私模型和安全反馈流程见：[SECURITY.md](SECURITY.md)。
+
+## Backend 怎么选
+
+- `auto`：有 Smart Connections `.smart-env` 时优先用 Smart，否则用 OHS。
+- `smart`：使用 Smart Connections 本地 embedding，并加 lexical fallback。
+- `ohs`：使用 `obsidian-hybrid-search` 的 hybrid/fulltext 检索。
+- `both`：合并 Smart 和 OHS 结果；召回最好，但更慢。
+
+推荐：
+
+- 日常使用：`--backend auto --limit 120`
+- 高风险/高召回任务：`--backend both --limit 200`
+- 做评估：用 evaluator 比较 `smart`、`ohs` 和 `rrf-union`
 
 ## 在 Codex 里使用
 
@@ -101,18 +137,13 @@ node scripts/obsidian_high_recall.mjs query "机器人 遥操作 演示数据" -
 node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/to/your-vault" --json
 ```
 
-## Backend 怎么选
+## 架构
 
-- `auto`：有 Smart Connections `.smart-env` 时优先用 Smart，否则用 OHS。
-- `smart`：使用 Smart Connections 本地 embedding，并加 lexical fallback。
-- `ohs`：使用 `obsidian-hybrid-search` 的 hybrid/fulltext 检索。
-- `both`：合并 Smart 和 OHS 结果；召回最好，但更慢。
+这张图展示 local-first 检索流程、backend routing、privacy boundary，以及 public benchmark 发布路径。
 
-推荐：
+![架构图：Archify 生成图](docs/architecture/architecture_option_b_archify.png)
 
-- 日常使用：`--backend auto --limit 120`
-- 高风险/高召回任务：`--backend both --limit 200`
-- 做评估：用 evaluator 比较 `smart` 和 `ohs`
+另一个 direct diagram 和可编辑 Archify source 在 [docs/architecture](docs/architecture/README.md)。
 
 ## Benchmark Snapshot
 
@@ -166,7 +197,13 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 
 ## 召回评估
 
-先创建 cases 文件：
+先跑公开 fixture smoke test：
+
+```bash
+npm run smoke:fixture
+```
+
+然后为你自己的 vault 创建 cases 文件：
 
 ```json
 [
@@ -184,7 +221,7 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 运行：
 
 ```bash
-node scripts/evaluate_recall.mjs ./obsidian_recall_eval --cases ./cases.json
+node skills/obsidian-high-recall/scripts/evaluate_recall.mjs ./obsidian_recall_eval --vault "/absolute/path/to/your-vault" --cases ./cases.json --backends smart,ohs,rrf-union --ks 10,20,50
 ```
 
 输出：
@@ -193,11 +230,17 @@ node scripts/evaluate_recall.mjs ./obsidian_recall_eval --cases ./cases.json
 - `metrics.json`
 - `metrics.csv`
 
-指标包括 Precision@K、Recall@K、F1@K、MRR、gold note rank、返回数量和 `smart`/`ohs` 延迟。
+指标包括 Precision@K、Recall@K、F1@K、MRR、gold note rank、返回数量，以及 `smart`、`ohs`、evaluator-derived `rrf-union` 的延迟。
 
 ## Repo 结构
 
 ```text
+.github/
+  ISSUE_TEMPLATE/
+docs/
+  architecture/
+  benchmark/
+  fixtures/
 skills/
   obsidian-high-recall/
     SKILL.md
@@ -205,6 +248,14 @@ skills/
     references/
     scripts/
 ```
+
+## 社区和项目健康度
+
+- 安全和隐私模型：[SECURITY.md](SECURITY.md)
+- 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
+- Roadmap：[ROADMAP.md](ROADMAP.md)
+- Launch playbook：[docs/LAUNCH.md](docs/LAUNCH.md)
+- Public fixture vault：[docs/fixtures/demo-vault](docs/fixtures/demo-vault)
 
 ## License
 
