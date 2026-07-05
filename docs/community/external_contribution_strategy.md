@@ -45,8 +45,9 @@ Avoid starting with large rewrites. The goal of the first 3-5 external PRs is no
 | Date | Ecosystem | Repository | Work | Status | Link |
 |---|---|---|---|---|---|
 | 2026-07-05 | Obsidian resources | `kmaasrud/awesome-obsidian` | Add Obsidian High Recall to `External Tools > Other` as a local-first CLI/agent search tool. | Open PR | https://github.com/kmaasrud/awesome-obsidian/pull/119 |
+| 2026-07-05 | Local-first / PKM resources | `alexanderop/awesome-local-first` | Add Obsidian High Recall under `Knowledge Management & Notes` as a local-first search tool for private Obsidian vaults. | Open PR | https://github.com/alexanderop/awesome-local-first/pull/39 |
 
-This PR is intentionally small: one table row, appended to the correct section, following the target repository's contribution guide. If merged, it creates an external discovery path from the Obsidian GitHub ecosystem into this project.
+These PRs are intentionally small: one table row each, placed in the target repository's closest matching section. If merged, they create external discovery paths from the Obsidian and local-first GitHub ecosystems into this project.
 
 ## How This Helps Obsidian High Recall
 

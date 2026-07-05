@@ -46,6 +46,7 @@ Interpretation:
 | Date | Action | Link | Status |
 |---|---|---|---|
 | 2026-07-05 | Submitted Obsidian High Recall to `kmaasrud/awesome-obsidian` under `External Tools > Other`. | https://github.com/kmaasrud/awesome-obsidian/pull/119 | Open PR |
+| 2026-07-05 | Submitted Obsidian High Recall to `alexanderop/awesome-local-first` under `Knowledge Management & Notes`. | https://github.com/alexanderop/awesome-local-first/pull/39 | Open PR |
 
 ## First Target
 
