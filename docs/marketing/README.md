@@ -6,6 +6,10 @@ Social preview card:
 
 ![Social preview card](social_preview.png)
 
+Share page:
+
+https://toussaintknight.github.io/obsidian-high-recall-skill/
+
 Regenerate:
 
 ```bash
@@ -56,6 +60,7 @@ I built a small local-first tool for a problem I keep hitting: when an Obsidian 
 Obsidian High Recall favors recall over precision. It reuses Smart Connections vectors when available, falls back locally when not, and can also use obsidian-hybrid-search for hybrid/fulltext retrieval. Raw notes, snippets, queries, and private benchmark labels stay local.
 
 Repo: https://github.com/ToussaintKnight/obsidian-high-recall-skill
+Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
 Release: https://github.com/ToussaintKnight/obsidian-high-recall-skill/releases/tag/v0.1.0
 Demo GIF: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/demo/fixture_demo.gif
 

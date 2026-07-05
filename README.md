@@ -8,6 +8,8 @@ Language: [English](README.md) | [中文](README.zh-CN.md)
 
 Local-first high-recall search for Obsidian vaults, usable from Codex and CLI.
 
+Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
+
 When your vault has thousands of notes, normal search and agent memory can miss the one note that matters. This project intentionally favors recall over precision: it would rather return extra context than silently miss a relevant note.
 
 It reuses Smart Connections vectors when available, falls back to `obsidian-hybrid-search`, and can merge both result sets for maximum recall.
@@ -251,6 +253,7 @@ skills/
 - Roadmap: [ROADMAP.md](ROADMAP.md)
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit: [docs/marketing](docs/marketing/README.md)
+- Share page: [docs/index.html](docs/index.html)
 - Launch baseline: [docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy: [docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)
 - Public fixture vault: [docs/fixtures/demo-vault](docs/fixtures/demo-vault)

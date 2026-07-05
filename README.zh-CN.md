@@ -8,6 +8,8 @@
 
 面向 Obsidian vault 的 local-first 高召回检索，可从 Codex 和 CLI 使用。
 
+Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
+
 当你的 vault 有成千上万条笔记时，普通搜索和 agent memory 很容易漏掉关键笔记。这个项目刻意把 recall 放在 precision 前面：宁愿多返回一些上下文，也不要静默漏掉相关笔记。
 
 它会优先复用 Smart Connections 的本地向量索引；没有 Smart 索引时，回退到 `obsidian-hybrid-search`；需要最大召回时，也可以合并两路结果。
@@ -259,6 +261,7 @@ skills/
 - Roadmap：[ROADMAP.md](ROADMAP.md)
 - Launch playbook：[docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit：[docs/marketing](docs/marketing/README.md)
+- Share page：[docs/index.html](docs/index.html)
 - Launch baseline：[docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy：[docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)
 - Public fixture vault：[docs/fixtures/demo-vault](docs/fixtures/demo-vault)
