@@ -49,6 +49,7 @@ Interpretation:
 | 2026-07-05 | Submitted Obsidian High Recall to `alexanderop/awesome-local-first` under `Knowledge Management & Notes`. | https://github.com/alexanderop/awesome-local-first/pull/39 | Open PR |
 | 2026-07-05 | Submitted `obsidian-high-recall` to `ComposioHQ/awesome-codex-skills` under `Productivity & Collaboration`. | https://github.com/ComposioHQ/awesome-codex-skills/pull/159 | Open PR |
 | 2026-07-05 | Submitted `obsidian-high-recall` to `RoggeOhta/awesome-codex-cli` under `Specialized Skills`. | https://github.com/RoggeOhta/awesome-codex-cli/pull/128 | Open PR |
+| 2026-07-05 | Posted a Codex Show-and-Tell tester call for local-first Obsidian vault recall. | https://github.com/openai/codex/discussions/31169 | Live |
 
 ## First Target
 
