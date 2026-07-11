@@ -11,6 +11,8 @@ Obsidian High Recall is designed as a local-first tool for private Obsidian vaul
 - Benchmark outputs such as `raw_runs.json`, local cases files, and private labels are ignored by git and should not be committed.
 - CI runs `npm run privacy:scan` to block public-file leaks such as local absolute paths, common API tokens, `raw_runs.json`, and local cases files.
 
+For the full data classification, network behavior, leak scenarios, and safe-sharing checklist, see [docs/privacy_threat_model.md](docs/privacy_threat_model.md).
+
 ## Threat Model
 
 The main risks are accidental disclosure through logs, screenshots, benchmark artifacts, issue reports, or pull requests. Treat vault paths, note titles, snippets, private queries, and gold labels as sensitive unless they come from the public fixture vault in `docs/fixtures/demo-vault`.
@@ -26,6 +28,12 @@ npm run privacy:scan
 ```
 
 The scan checks tracked and unignored public candidate files, including binary metadata where ASCII strings are visible. It is a guardrail, not a substitute for reviewing screenshots, copied logs, release notes, and benchmark reports before publishing them.
+
+To verify that privacy documentation and public safety links stay present, run:
+
+```bash
+npm run privacy:docs
+```
 
 ## Reporting A Vulnerability
 

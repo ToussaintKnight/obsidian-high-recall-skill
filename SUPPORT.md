@@ -37,6 +37,7 @@ If a report requires sensitive details, open a minimal public issue asking for a
 ## Useful Links
 
 - Security model: [SECURITY.md](SECURITY.md)
+- Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Starter issues: [docs/community/starter_issues.md](docs/community/starter_issues.md)

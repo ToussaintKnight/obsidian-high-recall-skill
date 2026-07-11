@@ -5,7 +5,13 @@ import os from "node:os";
 import path from "node:path";
 
 const repoRoot = process.cwd();
-const blockedFilenames = new Set(["raw_runs.json", "cases.local.json", "eval_cases.local.json"]);
+const blockedFilenames = new Set([
+  "raw_runs.json",
+  "metrics.json",
+  "metrics.csv",
+  "cases.local.json",
+  "eval_cases.local.json",
+]);
 
 function runGit(args) {
   const proc = spawnSync("git", args, {

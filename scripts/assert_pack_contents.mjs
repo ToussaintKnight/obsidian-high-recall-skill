@@ -21,6 +21,7 @@ const required = [
   "README.zh-CN.md",
   "CHANGELOG.md",
   "docs/positioning.md",
+  "docs/privacy_threat_model.md",
   "docs/troubleshooting.md",
   "docs/benchmark/reporting_guide.md",
   "docs/robots.txt",

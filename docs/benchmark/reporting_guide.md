@@ -2,6 +2,8 @@
 
 External benchmark reports are useful because this project is intentionally optimized for high recall across real, messy Obsidian vaults. The public fixture proves that the tool runs; anonymized real-vault reports show whether the retrieval behavior generalizes.
 
+Before sharing anything from a private vault, review the safe-sharing checklist in [../privacy_threat_model.md](../privacy_threat_model.md).
+
 ## What To Run
 
 Start with the public fixture:

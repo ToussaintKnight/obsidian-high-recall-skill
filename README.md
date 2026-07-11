@@ -268,6 +268,7 @@ skills/
 - Security and privacy model: [SECURITY.md](SECURITY.md)
 - CI matrix: Linux, Windows, and macOS run `npm test`
 - Privacy leak gate: `npm run privacy:scan`
+- Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`
 - Documentation link gate: `npm run docs:links`
 - Changelog and release notes: [CHANGELOG.md](CHANGELOG.md), `npm run release:check`
 - Support: [SUPPORT.md](SUPPORT.md)
