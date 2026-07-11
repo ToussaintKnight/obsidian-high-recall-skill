@@ -305,6 +305,7 @@ skills/
 
 - 安全和隐私模型：[SECURITY.md](SECURITY.md)
 - 安装指南：[docs/install.md](docs/install.md)
+- NPM publish readiness：[docs/npm_publish.md](docs/npm_publish.md)，`npm run publish:check`
 - CI matrix：Linux、Windows、macOS 都运行 `npm test`
 - 隐私泄漏检查：`npm run privacy:scan`
 - Privacy threat model：[docs/privacy_threat_model.md](docs/privacy_threat_model.md)，`npm run privacy:docs`

@@ -17,7 +17,7 @@
 
 ## v0.3: Distribution
 
-- Publish an npm package if external testers confirm the GitHub install path works reliably.
+- Publish an npm package if external testers confirm the GitHub install path works reliably; readiness gates are tracked in [docs/npm_publish.md](docs/npm_publish.md).
 - Add a short demo video or GIF using only the public fixture vault.
 - Prepare launch posts for Obsidian, local-first AI, PKM, and agent-tooling communities.
 - Track issue-to-star conversion by launch channel and prioritize channels that produce real tester feedback.

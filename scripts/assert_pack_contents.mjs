@@ -23,6 +23,7 @@ const required = [
   "docs/positioning.md",
   "docs/faq.md",
   "docs/dependency_inventory.md",
+  "docs/npm_publish.md",
   "docs/install.md",
   "docs/recipes.md",
   "docs/testing_guide.md",

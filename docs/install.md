@@ -65,6 +65,8 @@ Use the clone path if your environment blocks GitHub-backed `npx`, if you want t
 
 If `npx` fails with a cache permission error, use the clone path above or set a writable npm cache. See [troubleshooting.md](troubleshooting.md).
 
+The package is prepared for future npm registry publishing, but the registry command should not be advertised until it is actually published and verified. NPM publish readiness is tracked in [npm_publish.md](npm_publish.md).
+
 ## Install As A Codex Skill
 
 Ask Codex:
@@ -144,6 +146,7 @@ Then report only privacy-safe fields through the issue templates. Useful setup f
 - Copy-paste usage recipes: [recipes.md](recipes.md)
 - Output schema and privacy flags: [output_contract.md](output_contract.md)
 - Runtime downloads and cache paths: [dependency_inventory.md](dependency_inventory.md)
+- NPM publish readiness: [npm_publish.md](npm_publish.md)
 - Ten-minute tester flow: [testing_guide.md](testing_guide.md)
 - Public OS/backend coverage: [compatibility.md](compatibility.md)
 - Troubleshooting: [troubleshooting.md](troubleshooting.md)
