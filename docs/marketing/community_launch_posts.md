@@ -18,6 +18,10 @@ Usage recipes:
 
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
 
+FAQ:
+
+https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/faq.md
+
 Output examples:
 
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/examples/README.md
@@ -60,6 +64,9 @@ https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/tes
 
 Usage recipes:
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
+
+FAQ:
+https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/faq.md
 
 Output examples:
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/examples/README.md

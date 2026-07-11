@@ -22,6 +22,8 @@ Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
 
 它不是要替代 Obsidian 原生 UI 或 Smart Connections，而是一个 portable recall layer：优先复用已有本地索引，补上 fallback/union retrieval，并返回 agent-ready context pack。更多说明见：[docs/positioning.md](docs/positioning.md) 和 [docs/comparison.md](docs/comparison.md)。
 
+常见隐私、backend、benchmark 和安装问题见：[docs/faq.md](docs/faq.md)。
+
 ## 30 秒 Demo
 
 ![Fixture demo：安装、测试、查询、召回包](docs/demo/fixture_demo.gif)
@@ -306,6 +308,7 @@ skills/
 - 隐私泄漏检查：`npm run privacy:scan`
 - Privacy threat model：[docs/privacy_threat_model.md](docs/privacy_threat_model.md)，`npm run privacy:docs`
 - 文档链接检查：`npm run docs:links`
+- FAQ 检查：`npm run faq:check`
 - 安装指南检查：`npm run install:check`
 - Public examples 检查：`npm run examples:check`
 - 用法 recipes 检查：`npm run recipes:check`
@@ -321,6 +324,7 @@ skills/
 - Starter issue playbook：[docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Repository setup checklist：[docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Maintenance playbook：[docs/community/maintenance.md](docs/community/maintenance.md)
+- FAQ：[docs/faq.md](docs/faq.md)
 - CLI reference：[docs/cli_reference.md](docs/cli_reference.md)
 - Public output examples：[docs/examples](docs/examples/README.md)
 - 用法 recipes：[docs/recipes.md](docs/recipes.md)

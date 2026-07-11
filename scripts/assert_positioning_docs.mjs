@@ -56,9 +56,11 @@ requireIncludes("README.zh-CN.md", zhReadme, [
 const marketing = read("docs/marketing/README.md");
 requireIncludes("docs/marketing/README.md", marketing, [
   "../comparison.md",
+  "../faq.md",
   "../recipes.md",
   "../examples/README.md",
   "Comparison and fit guide",
+  "FAQ",
   "Usage recipes",
   "Public output examples",
 ]);

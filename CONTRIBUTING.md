@@ -30,6 +30,12 @@ When changing install commands, first-run setup, or OS-specific onboarding docs,
 npm run install:check
 ```
 
+When changing FAQ answers about privacy, backends, benchmarks, installation, or limitations, run:
+
+```bash
+npm run faq:check
+```
+
 When changing usage recipes, copy-paste workflow commands, or scenario guidance, run:
 
 ```bash

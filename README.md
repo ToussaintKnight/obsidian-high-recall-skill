@@ -22,6 +22,8 @@ It reuses Smart Connections vectors when available, falls back to `obsidian-hybr
 
 It is not trying to replace Obsidian's native UI or Smart Connections. It is a portable recall layer that reuses local indexes when available, adds fallback/union retrieval, and returns agent-ready context packs. More detail: [docs/positioning.md](docs/positioning.md) and [docs/comparison.md](docs/comparison.md).
 
+Common privacy, backend, benchmark, and installation questions are answered in [docs/faq.md](docs/faq.md).
+
 ## 30-Second Demo
 
 ![Fixture demo: install, test, query, recall pack](docs/demo/fixture_demo.gif)
@@ -298,6 +300,7 @@ skills/
 - Privacy leak gate: `npm run privacy:scan`
 - Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`
 - Documentation link gate: `npm run docs:links`
+- FAQ gate: `npm run faq:check`
 - Install guide gate: `npm run install:check`
 - Public examples gate: `npm run examples:check`
 - Usage recipes gate: `npm run recipes:check`
@@ -313,6 +316,7 @@ skills/
 - Starter issue playbook: [docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Repository setup checklist: [docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Maintenance playbook: [docs/community/maintenance.md](docs/community/maintenance.md)
+- FAQ: [docs/faq.md](docs/faq.md)
 - CLI reference: [docs/cli_reference.md](docs/cli_reference.md)
 - Public output examples: [docs/examples](docs/examples/README.md)
 - Usage recipes: [docs/recipes.md](docs/recipes.md)

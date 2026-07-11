@@ -138,6 +138,7 @@ Then report only privacy-safe fields through the issue templates. Useful setup f
 
 ## Next References
 
+- FAQ: [faq.md](faq.md)
 - Command details: [cli_reference.md](cli_reference.md)
 - Public redacted output examples: [examples](examples/README.md)
 - Copy-paste usage recipes: [recipes.md](recipes.md)

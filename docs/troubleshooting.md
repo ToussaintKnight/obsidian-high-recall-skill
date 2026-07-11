@@ -2,6 +2,8 @@
 
 Use this page when the public fixture works but a real vault install, index, or query does not.
 
+For broader privacy, backend, benchmark, and installation questions, see [faq.md](faq.md).
+
 ## First Checks
 
 Run the fixture smoke test:
