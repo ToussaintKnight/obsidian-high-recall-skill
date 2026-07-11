@@ -31,16 +31,6 @@ COLORS = {
     "security": "#e11d48",
 }
 
-TYPE_LABELS = {
-    "external": "External",
-    "backend": "Backend",
-    "database": "Database",
-    "messagebus": "Message bus",
-    "cloud": "Cloud",
-    "security": "Security",
-}
-
-
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     candidates = [
         "C:/Windows/Fonts/consolab.ttf" if bold else "C:/Windows/Fonts/consola.ttf",
@@ -58,8 +48,6 @@ F_SUB = font(9)
 F_TAG = font(7)
 F_LABEL = font(8)
 F_BOUNDARY = font(9, True)
-F_LEGEND = font(9, True)
-F_LEGEND_ITEM = font(8)
 
 
 def s(value: float) -> int:
@@ -121,7 +109,7 @@ def boundary_rect(boundary, components):
         "x": min_x - pad,
         "y": min_y - pad,
         "w": max_x - min_x + pad * 2,
-        "h": max_y - min_y + pad + 20,
+        "h": max_y - min_y + pad * 2,
     }
 
 
@@ -239,19 +227,6 @@ def main():
 
     for conn in data.get("connections", []):
         draw_label(draw, conn)
-
-    legend_y = view_h - 16
-    x = 40
-    draw.text((s(x), s(legend_y - 13)), "Legend", fill=COLORS["text"], font=F_LEGEND, anchor="lm")
-    seen = []
-    for component in data["components"]:
-        ctype = component["type"]
-        if ctype not in seen:
-            seen.append(ctype)
-    for ctype in seen:
-        draw.rounded_rectangle((s(x), s(legend_y - 8), s(x + 14), s(legend_y + 1)), radius=s(2), fill=COLORS[f"{ctype}_fill"], outline=COLORS[ctype], width=1)
-        draw.text((s(x + 20), s(legend_y)), TYPE_LABELS[ctype], fill=COLORS["muted"], font=F_LEGEND_ITEM, anchor="lm")
-        x += 30 + len(TYPE_LABELS[ctype]) * 5 + 28
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     img.save(OUT)
