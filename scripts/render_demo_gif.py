@@ -43,9 +43,10 @@ frames = [
         "$ npm test",
         "",
         "> syntax checks",
+        "> package, privacy, docs, and CI workflow gates",
         "> public fixture recall smoke",
         "",
-        "Fixture smoke passed: 3 cases have Recall@10 > 0.",
+        "Fixture smoke passed: 5 public cases have Recall@10 > 0.",
     ],
     [
         "$ node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs \\",
