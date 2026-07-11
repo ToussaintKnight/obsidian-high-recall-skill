@@ -20,7 +20,7 @@ Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
 - 需要 Codex/CLI 在规划、写作、编码或总结前先拿到宽召回上下文的工作流。
 - 原始笔记、snippet、query 和 label 都必须留在本地的隐私敏感工作。
 
-它不是要替代 Obsidian 原生 UI 或 Smart Connections，而是一个 portable recall layer：优先复用已有本地索引，补上 fallback/union retrieval，并返回 agent-ready context pack。更多说明见：[docs/positioning.md](docs/positioning.md)。
+它不是要替代 Obsidian 原生 UI 或 Smart Connections，而是一个 portable recall layer：优先复用已有本地索引，补上 fallback/union retrieval，并返回 agent-ready context pack。更多说明见：[docs/positioning.md](docs/positioning.md) 和 [docs/comparison.md](docs/comparison.md)。
 
 ## 30 秒 Demo
 
@@ -285,6 +285,7 @@ skills/
 - Privacy threat model：[docs/privacy_threat_model.md](docs/privacy_threat_model.md)，`npm run privacy:docs`
 - 文档链接检查：`npm run docs:links`
 - Codex skill 结构检查：`npm run skill:check`
+- Positioning 和 comparison 检查：`npm run positioning:check`
 - Changelog 和 release notes：[CHANGELOG.md](CHANGELOG.md)，`npm run release:check`
 - 支持入口：[SUPPORT.md](SUPPORT.md)
 - 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
@@ -297,6 +298,7 @@ skills/
 - Marketing kit：[docs/marketing](docs/marketing/README.md)
 - Share page：[docs/index.html](docs/index.html)
 - Positioning and fit：[docs/positioning.md](docs/positioning.md)
+- Comparison and decision guide：[docs/comparison.md](docs/comparison.md)
 - 匿名 benchmark 报告指南：[docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)
 - Launch baseline：[docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy：[docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)

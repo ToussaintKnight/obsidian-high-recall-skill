@@ -2,6 +2,8 @@
 
 Obsidian High Recall is for people who use Obsidian as a long-running research memory and need an agent or CLI to retrieve broad context without silently missing relevant notes.
 
+For a reader-facing decision guide, see [comparison.md](comparison.md).
+
 ## Best Fit
 
 - Researchers, PhD students, engineers, founders, and analysts with large local vaults.

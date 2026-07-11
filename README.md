@@ -20,7 +20,7 @@ It reuses Smart Connections vectors when available, falls back to `obsidian-hybr
 - Codex/CLI workflows that need broad context before planning, writing, coding, or summarizing.
 - Privacy-sensitive work where raw notes, snippets, queries, and labels should stay local.
 
-It is not trying to replace Obsidian's native UI or Smart Connections. It is a portable recall layer that reuses local indexes when available, adds fallback/union retrieval, and returns agent-ready context packs. More detail: [docs/positioning.md](docs/positioning.md).
+It is not trying to replace Obsidian's native UI or Smart Connections. It is a portable recall layer that reuses local indexes when available, adds fallback/union retrieval, and returns agent-ready context packs. More detail: [docs/positioning.md](docs/positioning.md) and [docs/comparison.md](docs/comparison.md).
 
 ## 30-Second Demo
 
@@ -277,6 +277,7 @@ skills/
 - Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`
 - Documentation link gate: `npm run docs:links`
 - Codex skill structure gate: `npm run skill:check`
+- Positioning and comparison gate: `npm run positioning:check`
 - Changelog and release notes: [CHANGELOG.md](CHANGELOG.md), `npm run release:check`
 - Support: [SUPPORT.md](SUPPORT.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
@@ -289,6 +290,7 @@ skills/
 - Marketing kit: [docs/marketing](docs/marketing/README.md)
 - Share page: [docs/index.html](docs/index.html)
 - Positioning and fit: [docs/positioning.md](docs/positioning.md)
+- Comparison and decision guide: [docs/comparison.md](docs/comparison.md)
 - Anonymous benchmark reporting guide: [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)
 - Launch baseline: [docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy: [docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)

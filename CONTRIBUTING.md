@@ -24,6 +24,12 @@ When editing README or docs, run the local link check:
 npm run docs:links
 ```
 
+When changing public positioning, comparison, launch, or marketing copy, run:
+
+```bash
+npm run positioning:check
+```
+
 When changing evaluator, benchmark, or ranking behavior, run:
 
 ```bash

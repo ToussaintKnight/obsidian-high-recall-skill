@@ -18,6 +18,10 @@ Repository setup checklist:
 
 [../community/repository_setup.md](../community/repository_setup.md)
 
+Comparison and fit guide:
+
+[../comparison.md](../comparison.md)
+
 Regenerate:
 
 ```bash
