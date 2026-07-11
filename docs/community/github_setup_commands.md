@@ -41,7 +41,8 @@ GitHub does not expose every trust/discovery setting cleanly through the same CL
 - GitHub Pages serves the `docs/` site;
 - security advisories are enabled;
 - the `v0.1.0` release is visible;
-- issue chooser links and the tester discussion link resolve.
+- issue chooser links and the tester discussion link resolve;
+- seeded Discussions exist after running `npm run github:discussions -- --apply`.
 
 ## Why This Matters
 

@@ -78,6 +78,7 @@ function commandText() {
     "# - Confirm security advisories are enabled.",
     "# - Confirm the v0.1.0 release is visible.",
     "# - Confirm the issue chooser and tester discussion links resolve.",
+    "# - Run npm run github:discussions -- --apply and confirm seeded Discussions exist.",
   );
 
   return `${lines.join("\n")}\n`;
@@ -96,6 +97,7 @@ function plan() {
       "Confirm security advisories are enabled.",
       "Confirm the v0.1.0 release is visible.",
       "Confirm the issue chooser and tester discussion links resolve.",
+      "Run npm run github:discussions -- --apply and confirm seeded Discussions exist.",
     ],
   };
 }

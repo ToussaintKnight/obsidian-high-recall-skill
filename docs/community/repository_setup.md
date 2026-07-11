@@ -88,6 +88,18 @@ npm run github:issues -- --apply
 
 Details are in [starter_issue_commands.md](starter_issue_commands.md).
 
+## Discussions
+
+Discussion seeds live in [discussion_seeds.md](discussion_seeds.md). After Discussions are enabled, create missing seed threads with:
+
+```bash
+npm run github:discussions
+npm run github:discussions -- --json
+npm run github:discussions -- --apply
+```
+
+Details are in [discussion_commands.md](discussion_commands.md). The live repo should have threads for tester calls, install/privacy Q&A, qualitative recall wins/misses, and roadmap feedback.
+
 ## Release
 
 Release notes live in [../releases/v0.1.0.md](../releases/v0.1.0.md). After commits are pushed and CI is green, publish or inspect the GitHub release with:
@@ -122,6 +134,7 @@ npm run community:check
 npm run site:check
 npm run github:setup -- --json
 npm run github:issues -- --json
+npm run github:discussions -- --json
 ```
 
 Then confirm:
@@ -130,5 +143,6 @@ Then confirm:
 - The issue chooser shows bug, benchmark, feature, and tester feedback forms.
 - The issue chooser links to the compatibility matrix.
 - The tester discussion link opens.
+- The seeded Discussions cover tester calls, Q&A, recall wins/misses, and roadmap feedback.
 - The release page links to the fixture demo command.
 - The share page hero, demo GIF, architecture image, and benchmark figures load.

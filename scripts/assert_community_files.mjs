@@ -32,8 +32,10 @@ const requiredFiles = [
   "docs/community/maintenance.md",
   "docs/community/github_setup_commands.md",
   "docs/community/starter_issue_commands.md",
+  "docs/community/discussion_commands.md",
   "scripts/github_setup_commands.mjs",
   "scripts/github_starter_issues.mjs",
+  "scripts/github_discussions.mjs",
   ".github/dependabot.yml",
   ".github/labels.yml",
   ".github/pull_request_template.md",
@@ -44,6 +46,7 @@ const requiredFiles = [
   ".github/ISSUE_TEMPLATE/tester_feedback.yml",
   "docs/community/repository_setup.md",
   "docs/community/starter_issues.md",
+  "docs/community/discussion_seeds.md",
 ];
 
 for (const file of requiredFiles) requireFile(file);
@@ -136,6 +139,25 @@ requireIncludes("docs/community/starter_issues.md", starterIssues, [
   "Compatibility Matrix Report",
   "docs/testing_guide.md",
 ]);
+
+const discussionSeeds = read("docs/community/discussion_seeds.md");
+const discussionSections = discussionSeeds.match(/^## \d+\. /gmu) ?? [];
+if (discussionSections.length < 4) {
+  throw new Error(`discussion_seeds.md should contain at least 4 discussion seeds, found ${discussionSections.length}.`);
+}
+requireIncludes("docs/community/discussion_seeds.md", discussionSeeds, [
+  "# Discussion Seeds",
+  "Tester Call: Real Vault Smoke Reports",
+  "Q&A: Install, Backends, And Privacy",
+  "Share: Recall Wins And Misses",
+  "Roadmap Feedback: What Should Matter For v0.2",
+  "Privacy guardrail:",
+  "Do not paste private note paths",
+]);
+const discussionCategoryLines = discussionSeeds.match(/^Category:\s*.+$/gmu) ?? [];
+if (discussionCategoryLines.length !== discussionSections.length) {
+  throw new Error("Every discussion seed must include exactly one Category line.");
+}
 
 const maintenance = read("docs/community/maintenance.md");
 requireIncludes("docs/community/maintenance.md", maintenance, [
@@ -254,7 +276,9 @@ requireIncludes("docs/community/repository_setup.md", repoSetup, [
   ".github/labels.yml",
   "github_setup_commands.md",
   "starter_issue_commands.md",
+  "discussion_commands.md",
   "npm run github:issues -- --apply",
+  "npm run github:discussions -- --apply",
   "npm run github:setup -- --apply",
   ".github/dependabot.yml",
   "GitHub Pages",
@@ -269,6 +293,9 @@ if (packageJson.scripts?.["github:setup"] !== "node scripts/github_setup_command
 if (packageJson.scripts?.["github:issues"] !== "node scripts/github_starter_issues.mjs") {
   throw new Error("package.json must expose github:issues for repeatable starter issue creation.");
 }
+if (packageJson.scripts?.["github:discussions"] !== "node scripts/github_discussions.mjs") {
+  throw new Error("package.json must expose github:discussions for repeatable Discussion seed creation.");
+}
 
 const githubSetupDocs = read("docs/community/github_setup_commands.md");
 requireIncludes("docs/community/github_setup_commands.md", githubSetupDocs, [
@@ -281,6 +308,7 @@ requireIncludes("docs/community/github_setup_commands.md", githubSetupDocs, [
   "docs/marketing/social_preview.png",
   "GitHub Pages",
   "security advisories",
+  "npm run github:discussions -- --apply",
   "npm run community:check",
 ]);
 
@@ -356,6 +384,49 @@ for (const issue of starterIssuePlan.issues) {
     if (!labelSet.has(label)) {
       throw new Error(`Starter issue "${issue.title}" references unknown label: ${label}`);
     }
+  }
+}
+
+const discussionDocs = read("docs/community/discussion_commands.md");
+requireIncludes("docs/community/discussion_commands.md", discussionDocs, [
+  "# Discussion Commands",
+  "npm run github:discussions",
+  "npm run github:discussions -- --json",
+  "npm run github:discussions -- --apply",
+  "discussion_seeds.md",
+  "tester coordination",
+  "Privacy Guardrail",
+  "npm run community:check",
+  "GitHub GraphQL API",
+]);
+
+const discussionPlanProc = spawnSync(process.execPath, ["scripts/github_discussions.mjs", "--json"], {
+  encoding: "utf8",
+  maxBuffer: 1024 * 1024 * 5,
+});
+if (discussionPlanProc.status !== 0) {
+  throw new Error(`github_discussions --json failed:\n${discussionPlanProc.stderr || discussionPlanProc.stdout}`);
+}
+const discussionPlan = JSON.parse(discussionPlanProc.stdout);
+if (discussionPlan.repo !== "ToussaintKnight/obsidian-high-recall-skill") {
+  throw new Error(`Discussion seed plan has wrong repo: ${discussionPlan.repo}`);
+}
+if (discussionPlan.count !== discussionSections.length || discussionPlan.discussions.length !== discussionSections.length) {
+  throw new Error(`Discussion seed plan count does not match discussion_seeds.md: ${discussionPlan.count} vs ${discussionSections.length}`);
+}
+for (const title of [
+  "Tester Call: Real Vault Smoke Reports",
+  "Q&A: Install, Backends, And Privacy",
+  "Share: Recall Wins And Misses",
+  "Roadmap Feedback: What Should Matter For v0.2",
+]) {
+  if (!discussionPlan.discussions.some((discussion) => discussion.title === title)) {
+    throw new Error(`Discussion seed plan missing title: ${title}`);
+  }
+}
+for (const discussion of discussionPlan.discussions) {
+  if (!discussion.preferredCategory || !discussion.body.includes("Privacy guardrail:")) {
+    throw new Error(`Discussion seed "${discussion.title}" is missing category or privacy guardrail.`);
   }
 }
 

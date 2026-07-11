@@ -26,6 +26,7 @@
     "ci:workflow": "node scripts/assert_ci_workflow.mjs",
     "community:check": "node scripts/assert_community_files.mjs",
     "docs:links": "node scripts/assert_markdown_links.mjs",
+    "github:discussions": "node scripts/github_discussions.mjs",
     "github:issues": "node scripts/github_starter_issues.mjs",
     "github:release": "node scripts/github_release.mjs",
     "github:setup": "node scripts/github_setup_commands.mjs",

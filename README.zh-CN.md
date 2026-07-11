@@ -329,6 +329,7 @@ skills/
 - Issue templates 和 tester feedback：[new issue chooser](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose)
 - Starter issue playbook：[docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Starter issue commands：[docs/community/starter_issue_commands.md](docs/community/starter_issue_commands.md)
+- Discussion seeds：[docs/community/discussion_seeds.md](docs/community/discussion_seeds.md)，`npm run github:discussions`
 - Repository setup checklist：[docs/community/repository_setup.md](docs/community/repository_setup.md)
 - GitHub setup commands：[docs/community/github_setup_commands.md](docs/community/github_setup_commands.md)
 - Maintenance playbook：[docs/community/maintenance.md](docs/community/maintenance.md)

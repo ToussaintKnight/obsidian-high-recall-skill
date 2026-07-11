@@ -37,6 +37,8 @@ const required = [
   "docs/community/maintenance.md",
   "docs/community/github_setup_commands.md",
   "docs/community/starter_issue_commands.md",
+  "docs/community/discussion_commands.md",
+  "docs/community/discussion_seeds.md",
   "docs/marketing/launch_experiment.md",
   "docs/robots.txt",
   "docs/sitemap.xml",
