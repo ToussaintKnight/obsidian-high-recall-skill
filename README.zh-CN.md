@@ -272,6 +272,7 @@ skills/
 - 安全和隐私模型：[SECURITY.md](SECURITY.md)
 - 支持入口：[SUPPORT.md](SUPPORT.md)
 - 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
+- Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)
 - Roadmap：[ROADMAP.md](ROADMAP.md)
 - Launch playbook：[docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit：[docs/marketing](docs/marketing/README.md)

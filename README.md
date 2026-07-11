@@ -264,6 +264,7 @@ skills/
 - Security and privacy model: [SECURITY.md](SECURITY.md)
 - Support: [SUPPORT.md](SUPPORT.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
 - Roadmap: [ROADMAP.md](ROADMAP.md)
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit: [docs/marketing](docs/marketing/README.md)

@@ -7,7 +7,7 @@ import os from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-const COMMANDS = new Set(["query", "status", "reindex", "detect"]);
+const COMMANDS = new Set(["query", "status", "reindex", "detect", "help"]);
 const DEFAULT_SNIPPET_LENGTH = 320;
 const SMART_MODEL_KEY = "TaylorAI/bge-micro-v2";
 
@@ -32,6 +32,10 @@ function parseArgs(argv) {
   };
 
   const args = [...argv];
+  if (args.length === 0) {
+    opts.command = "help";
+    return opts;
+  }
   if (args[0] && COMMANDS.has(args[0])) {
     opts.command = args.shift();
   }
@@ -86,11 +90,15 @@ function splitExtra(value) {
 
 function printHelp() {
   console.log(`Usage:
+  obsidian_high_recall.mjs help
+  obsidian_high_recall.mjs detect [--vault PATH] [--db PATH]
   obsidian_high_recall.mjs status [--vault PATH] [--db PATH] [--json]
   obsidian_high_recall.mjs reindex [--vault PATH] [--db PATH] [--force]
-  obsidian_high_recall.mjs query "query text" [--limit 120] [--per-channel 80] [--json]
+  obsidian_high_recall.mjs query "query text" [--vault PATH] [--backend auto] [--limit 120] [--json]
 
 Options:
+  --vault PATH          Absolute path to an Obsidian vault.
+  --db PATH             Optional OHS database path.
   --extra TEXT           Add comma/semicolon-separated query expansions.
   --rerank              Enable obsidian-hybrid-search reranker for hybrid mode.
   --profile quick|deep  quick is default; deep runs more fan-out calls.
@@ -929,6 +937,10 @@ function compact(text, max) {
 
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
+  if (opts.command === "help") {
+    printHelp();
+    return;
+  }
   const vault = resolveVault(opts.vault);
   const db = path.resolve(opts.db || defaultDbPath(vault));
 

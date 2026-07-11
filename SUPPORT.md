@@ -30,6 +30,7 @@ If a report requires sensitive details, open a minimal public issue asking for a
 ## Useful Links
 
 - Security model: [SECURITY.md](SECURITY.md)
+- Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
 - Benchmark reports: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/4

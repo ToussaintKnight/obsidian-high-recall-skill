@@ -11,7 +11,7 @@
 
 - Collect public benchmark reports from different vault sizes and operating systems.
 - Add stronger tests for bilingual queries, Smart Connections cache variants, and OHS fallback behavior.
-- Document failure modes for missing Smart vectors, stale OHS indexes, and large vaults.
+- Keep [docs/troubleshooting.md](docs/troubleshooting.md) current for missing Smart vectors, stale OHS indexes, and large vaults.
 
 ## v0.3: Distribution
 

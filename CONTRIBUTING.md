@@ -28,6 +28,7 @@ node skills/obsidian-high-recall/scripts/evaluate_recall.mjs .tmp/fixture-eval -
 - Do not commit `raw_runs.json`, local cases files, local database files, `.smart-env`, or dependency caches.
 - Use `docs/fixtures/demo-vault` for reproducible tests and documentation examples.
 - Redact local paths and usernames from screenshots and logs.
+- Link to [docs/troubleshooting.md](docs/troubleshooting.md) when reporting install, vault detection, Smart Connections, or OHS fallback issues.
 
 ## Good First Contributions
 
