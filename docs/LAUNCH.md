@@ -46,6 +46,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Repeatable GitHub setup commands are in [community/github_setup_commands.md](community/github_setup_commands.md).
 - Dependabot and the weekly maintenance loop are documented in [community/maintenance.md](community/maintenance.md).
 - Starter issue drafts are maintained in [community/starter_issues.md](community/starter_issues.md), and at least 5 live starter issues are open for OS testing, docs, benchmark reports, and Smart Connections compatibility.
+- Repeatable starter issue creation commands are in [community/starter_issue_commands.md](community/starter_issue_commands.md).
 - Tester onboarding points to [testing_guide.md](testing_guide.md) for the ten-minute fixture, CLI, doctor, and real-vault smoke-test path.
 - Compatibility reporting points to [compatibility.md](compatibility.md) so external testers know which OS/backend cells still need reports.
 
@@ -68,6 +69,7 @@ Launch experiment and conversion tracking are in [marketing/launch_experiment.md
 Repository setup notes are in [community/repository_setup.md](community/repository_setup.md).
 Repeatable GitHub setup commands are in [community/github_setup_commands.md](community/github_setup_commands.md).
 Copy-ready starter issue drafts are in [community/starter_issues.md](community/starter_issues.md).
+Repeatable starter issue creation commands are in [community/starter_issue_commands.md](community/starter_issue_commands.md).
 
 ## Obsidian Forum Draft
 

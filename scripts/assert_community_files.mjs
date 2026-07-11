@@ -31,7 +31,9 @@ const requiredFiles = [
   "docs/compatibility.md",
   "docs/community/maintenance.md",
   "docs/community/github_setup_commands.md",
+  "docs/community/starter_issue_commands.md",
   "scripts/github_setup_commands.mjs",
+  "scripts/github_starter_issues.mjs",
   ".github/dependabot.yml",
   ".github/labels.yml",
   ".github/pull_request_template.md",
@@ -251,6 +253,8 @@ requireIncludes("docs/community/repository_setup.md", repoSetup, [
   "docs/marketing/social_preview.png",
   ".github/labels.yml",
   "github_setup_commands.md",
+  "starter_issue_commands.md",
+  "npm run github:issues -- --apply",
   "npm run github:setup -- --apply",
   ".github/dependabot.yml",
   "GitHub Pages",
@@ -261,6 +265,9 @@ requireIncludes("docs/community/repository_setup.md", repoSetup, [
 const packageJson = JSON.parse(read("package.json"));
 if (packageJson.scripts?.["github:setup"] !== "node scripts/github_setup_commands.mjs") {
   throw new Error("package.json must expose github:setup for repeatable repository setup.");
+}
+if (packageJson.scripts?.["github:issues"] !== "node scripts/github_starter_issues.mjs") {
+  throw new Error("package.json must expose github:issues for repeatable starter issue creation.");
 }
 
 const githubSetupDocs = read("docs/community/github_setup_commands.md");
@@ -300,6 +307,55 @@ if (setupPlan.labels.length !== labelNames.length) {
 for (const label of labelNames) {
   if (!setupPlan.labels.some((item) => item.name === label)) {
     throw new Error(`GitHub setup plan missing label from labels.yml: ${label}`);
+  }
+}
+
+const starterIssueDocs = read("docs/community/starter_issue_commands.md");
+requireIncludes("docs/community/starter_issue_commands.md", starterIssueDocs, [
+  "# Starter Issue Commands",
+  "npm run github:issues",
+  "npm run github:issues -- --json",
+  "npm run github:issues -- --apply",
+  "starter_issues.md",
+  "doctor --json",
+  "npm run community:check",
+  "at least five starter issues",
+]);
+
+const starterIssuePlanProc = spawnSync(process.execPath, ["scripts/github_starter_issues.mjs", "--json"], {
+  encoding: "utf8",
+  maxBuffer: 1024 * 1024 * 5,
+});
+if (starterIssuePlanProc.status !== 0) {
+  throw new Error(`github_starter_issues --json failed:\n${starterIssuePlanProc.stderr || starterIssuePlanProc.stdout}`);
+}
+const starterIssuePlan = JSON.parse(starterIssuePlanProc.stdout);
+if (starterIssuePlan.repo !== "ToussaintKnight/obsidian-high-recall-skill") {
+  throw new Error(`Starter issue plan has wrong repo: ${starterIssuePlan.repo}`);
+}
+if (starterIssuePlan.count !== issueSections.length || starterIssuePlan.issues.length !== issueSections.length) {
+  throw new Error(`Starter issue plan count does not match starter_issues.md: ${starterIssuePlan.count} vs ${issueSections.length}`);
+}
+for (const title of [
+  "Windows Install And Fixture Smoke Test",
+  "Smart Connections Compatibility Report",
+  "Anonymized Benchmark Report",
+  "Privacy Redaction Checklist Test",
+  "Obsidian Forum Launch Feedback",
+  "Compatibility Matrix Report",
+]) {
+  if (!starterIssuePlan.issues.some((issue) => issue.title === title)) {
+    throw new Error(`Starter issue plan missing title: ${title}`);
+  }
+}
+for (const issue of starterIssuePlan.issues) {
+  if (!issue.body.includes("Privacy note:")) {
+    throw new Error(`Starter issue "${issue.title}" is missing privacy note in generated body.`);
+  }
+  for (const label of issue.labels) {
+    if (!labelSet.has(label)) {
+      throw new Error(`Starter issue "${issue.title}" references unknown label: ${label}`);
+    }
   }
 }
 

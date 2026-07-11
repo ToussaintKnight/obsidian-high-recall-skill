@@ -76,6 +76,18 @@ Details are in [github_setup_commands.md](github_setup_commands.md). At minimum,
 - Releases: keep `v0.1.0` visible and update release notes when package behavior changes.
 - Dependabot: configured by [.github/dependabot.yml](../../.github/dependabot.yml) for npm and GitHub Actions updates.
 
+## Starter Issues
+
+Starter issue drafts live in [starter_issues.md](starter_issues.md). After labels are synced, create missing live issues with:
+
+```bash
+npm run github:issues
+npm run github:issues -- --json
+npm run github:issues -- --apply
+```
+
+Details are in [starter_issue_commands.md](starter_issue_commands.md).
+
 ## Maintenance
 
 The maintenance source of truth is [maintenance.md](maintenance.md). It defines the weekly CI, Dependabot, issue triage, release, and privacy/security loop.
@@ -97,6 +109,7 @@ npm test
 npm run community:check
 npm run site:check
 npm run github:setup -- --json
+npm run github:issues -- --json
 ```
 
 Then confirm:
