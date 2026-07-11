@@ -219,6 +219,12 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 npm run smoke:fixture
 ```
 
+CI 也会运行一个 deterministic RRF union smoke test，不需要触发 OHS 下载：
+
+```bash
+npm run rrf:check
+```
+
 然后为你自己的 vault 创建 cases 文件：
 
 ```json

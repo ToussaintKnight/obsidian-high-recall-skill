@@ -24,6 +24,12 @@ When editing README or docs, run the local link check:
 npm run docs:links
 ```
 
+When changing evaluator, benchmark, or ranking behavior, run:
+
+```bash
+npm run rrf:check
+```
+
 When changing package version, release notes, or user-visible behavior, update `CHANGELOG.md` and run:
 
 ```bash

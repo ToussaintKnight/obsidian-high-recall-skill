@@ -211,6 +211,12 @@ Run the public fixture smoke test:
 npm run smoke:fixture
 ```
 
+CI also runs a deterministic RRF union smoke test without requiring OHS downloads:
+
+```bash
+npm run rrf:check
+```
+
 Create a cases file for your own vault:
 
 ```json

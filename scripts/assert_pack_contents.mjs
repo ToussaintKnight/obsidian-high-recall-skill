@@ -32,6 +32,7 @@ const required = [
   "docs/fixtures/demo_cases.json",
   "skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs",
   "skills/obsidian-high-recall/scripts/evaluate_recall.mjs",
+  "skills/obsidian-high-recall/scripts/rrf_union.mjs",
 ];
 
 const missing = required.filter((file) => !files.has(file));

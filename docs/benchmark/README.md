@@ -12,3 +12,5 @@ This directory contains anonymized aggregate results from a private local Obsidi
 - `pilot_smoke_test.md`: aggregate-only archive of the earlier 3-task pilot.
 - `reporting_guide.md`: how external users can share aggregate/anonymized benchmark reports safely.
 - `figures/`: PNG figures referenced by the root README files.
+
+The public fixture smoke path uses Smart-only retrieval to avoid network/model downloads in CI. The evaluator-derived `rrf-union` merge logic is covered separately by `npm run rrf:check`, which uses synthetic public data and the same shared RRF module used by `evaluate_recall.mjs`.
