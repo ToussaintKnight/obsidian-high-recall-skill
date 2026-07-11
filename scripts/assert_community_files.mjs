@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 
 function read(file) {
@@ -29,6 +30,8 @@ const requiredFiles = [
   "docs/testing_guide.md",
   "docs/compatibility.md",
   "docs/community/maintenance.md",
+  "docs/community/github_setup_commands.md",
+  "scripts/github_setup_commands.mjs",
   ".github/dependabot.yml",
   ".github/labels.yml",
   ".github/pull_request_template.md",
@@ -247,11 +250,58 @@ requireIncludes("docs/community/repository_setup.md", repoSetup, [
   "Local-first high-recall search for Obsidian vaults, usable from Codex and CLI.",
   "docs/marketing/social_preview.png",
   ".github/labels.yml",
+  "github_setup_commands.md",
+  "npm run github:setup -- --apply",
   ".github/dependabot.yml",
   "GitHub Pages",
   "Security advisories",
   "compatibility matrix",
 ]);
+
+const packageJson = JSON.parse(read("package.json"));
+if (packageJson.scripts?.["github:setup"] !== "node scripts/github_setup_commands.mjs") {
+  throw new Error("package.json must expose github:setup for repeatable repository setup.");
+}
+
+const githubSetupDocs = read("docs/community/github_setup_commands.md");
+requireIncludes("docs/community/github_setup_commands.md", githubSetupDocs, [
+  "# GitHub Setup Commands",
+  "npm run github:setup",
+  "node scripts/github_setup_commands.mjs",
+  "node scripts/github_setup_commands.mjs --json",
+  "npm run github:setup -- --apply",
+  ".github/labels.yml",
+  "docs/marketing/social_preview.png",
+  "GitHub Pages",
+  "security advisories",
+  "npm run community:check",
+]);
+
+const setupPlanProc = spawnSync(process.execPath, ["scripts/github_setup_commands.mjs", "--json"], {
+  encoding: "utf8",
+  maxBuffer: 1024 * 1024 * 5,
+});
+if (setupPlanProc.status !== 0) {
+  throw new Error(`github_setup_commands --json failed:\n${setupPlanProc.stderr || setupPlanProc.stdout}`);
+}
+const setupPlan = JSON.parse(setupPlanProc.stdout);
+for (const field of ["repo", "description", "homepage", "topics", "labels", "manualChecks"]) {
+  if (!(field in setupPlan)) throw new Error(`GitHub setup plan missing field: ${field}`);
+}
+if (setupPlan.repo !== "ToussaintKnight/obsidian-high-recall-skill") {
+  throw new Error(`GitHub setup plan has wrong repo: ${setupPlan.repo}`);
+}
+for (const topic of ["obsidian", "local-first", "rag", "pkm", "codex", "smart-connections", "ai-agents", "semantic-search"]) {
+  if (!setupPlan.topics.includes(topic)) throw new Error(`GitHub setup plan missing topic: ${topic}`);
+}
+if (setupPlan.labels.length !== labelNames.length) {
+  throw new Error(`GitHub setup plan label count ${setupPlan.labels.length} does not match labels.yml count ${labelNames.length}.`);
+}
+for (const label of labelNames) {
+  if (!setupPlan.labels.some((item) => item.name === label)) {
+    throw new Error(`GitHub setup plan missing label from labels.yml: ${label}`);
+  }
+}
 
 const roadmap = read("ROADMAP.md");
 if (roadmap.includes("Add CI, issue templates")) {

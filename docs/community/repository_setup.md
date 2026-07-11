@@ -37,13 +37,15 @@ npm run site:check
 
 The source of truth is [.github/labels.yml](../../.github/labels.yml). It covers every label used by issue templates and the starter issue playbook.
 
-After `gh auth login -h github.com`, sync labels manually or with a label-sync tool. A simple manual path is:
+After `gh auth login -h github.com`, generate or apply the repeatable setup commands:
 
 ```bash
-gh label list --repo ToussaintKnight/obsidian-high-recall-skill
+npm run github:setup
+node scripts/github_setup_commands.mjs
+npm run github:setup -- --apply
 ```
 
-Then create or update labels to match `.github/labels.yml`. At minimum, the live repo should have:
+Details are in [github_setup_commands.md](github_setup_commands.md). At minimum, the live repo should have:
 
 - `bug`
 - `enhancement`
@@ -94,6 +96,7 @@ Before posting externally:
 npm test
 npm run community:check
 npm run site:check
+npm run github:setup -- --json
 ```
 
 Then confirm:

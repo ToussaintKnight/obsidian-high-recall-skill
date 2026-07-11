@@ -26,6 +26,7 @@
     "ci:workflow": "node scripts/assert_ci_workflow.mjs",
     "community:check": "node scripts/assert_community_files.mjs",
     "docs:links": "node scripts/assert_markdown_links.mjs",
+    "github:setup": "node scripts/github_setup_commands.mjs",
     "output:check": "node scripts/assert_output_contract.mjs",
     "privacy:docs": "node scripts/assert_privacy_docs.mjs",
     "privacy:scan": "node scripts/assert_no_private_leaks.mjs",
