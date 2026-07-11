@@ -78,6 +78,19 @@ FAQ: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/doc
 Output examples: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/examples/README.md
 Usage recipes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
 
+## Conversion Ladder
+
+Use this order in launch posts and replies. It turns cold readers into useful early signal without asking everyone for the same thing.
+
+1. Visit the project page or README.
+2. Run the public fixture with `npm test`.
+3. Try one broad real-vault query with private notes kept local.
+4. Submit privacy-safe tester feedback or an anonymized benchmark report.
+5. Star/watch the repo if the tool is useful.
+6. Open a focused issue for repeated setup friction or missing backend support.
+
+Do not optimize for clone count alone. Serious-user reports, benchmark reports, issues, and star/watch conversion after actual reading are stronger launch signals.
+
 ## Obsidian Forum Post
 
 Title:

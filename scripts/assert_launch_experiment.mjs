@@ -44,6 +44,8 @@ const marketingReadme = read(path.join("docs", "marketing", "README.md"));
 requireIncludes("docs/marketing/README.md", marketingReadme, [
   "launch_experiment.md",
   "Launch experiment plan",
+  "Conversion Ladder",
+  "Star/watch the repo",
 ]);
 
 const launchPlaybook = read(path.join("docs", "LAUNCH.md"));
@@ -57,12 +59,22 @@ const rootReadme = read("README.md");
 requireIncludes("README.md", rootReadme, [
   "Launch experiment plan",
   "docs/marketing/launch_experiment.md",
+  "Early tester path",
+  "star/watch the repo",
 ]);
 
 const zhReadme = read("README.zh-CN.md");
 requireIncludes("README.zh-CN.md", zhReadme, [
   "Launch experiment plan",
   "docs/marketing/launch_experiment.md",
+  "早期 tester 路径",
+  "star/watch 这个 repo",
+]);
+
+const site = read(path.join("docs", "index.html"));
+requireIncludes("docs/index.html", site, [
+  "try one broad real-vault query",
+  "star/watch the repo",
 ]);
 
 console.log("Launch experiment smoke passed.");

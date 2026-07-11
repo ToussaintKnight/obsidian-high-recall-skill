@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added an early-tester conversion path across the README, project page, and marketing kit so launch visitors know how to run the fixture, try a real vault, report results, and star/watch after useful evaluation.
 - Added stronger launch-readiness gates for privacy leaks, package contents, installed CLI behavior, documentation links, CI workflow shape, and GitHub Pages metadata.
 - Added privacy-safe `doctor --json` diagnostics for bug reports and tester feedback.
 - Expanded the public fixture smoke path to cover 5 recall cases across English, Chinese, and mixed Chinese/English queries.
