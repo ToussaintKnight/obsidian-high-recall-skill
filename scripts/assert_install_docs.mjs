@@ -6,10 +6,11 @@ const requiredInstallSnippets = [
   "# Installation Guide",
   "Node.js 20",
   "npm test",
-  "npx --yes . help",
+  "node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help",
   "docs/fixtures/demo-vault",
   "doctor --vault",
   "github:ToussaintKnight/obsidian-high-recall-skill",
+  "cache permission error",
   "$skill-installer",
   "$obsidian-high-recall",
   "--backend auto",
@@ -43,6 +44,17 @@ if (!zhReadme.includes("[docs/install.md](docs/install.md)")) {
 const testingGuide = fs.readFileSync(path.join("docs", "testing_guide.md"), "utf8");
 if (!testingGuide.includes("[install.md](install.md)")) {
   throw new Error("docs/testing_guide.md is missing install.md link.");
+}
+
+const troubleshooting = fs.readFileSync(path.join("docs", "troubleshooting.md"), "utf8");
+for (const snippet of [
+  "npm Or npx Cache Permission Errors",
+  "npm_config_cache",
+  "avoid `npx .`",
+]) {
+  if (!troubleshooting.includes(snippet)) {
+    throw new Error(`docs/troubleshooting.md is missing npm cache troubleshooting snippet: ${snippet}`);
+  }
 }
 
 console.log("Install docs smoke passed.");

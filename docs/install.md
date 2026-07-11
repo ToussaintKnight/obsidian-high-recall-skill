@@ -30,25 +30,25 @@ npm test
 2. Confirm the CLI help path:
 
 ```bash
-npx --yes . help
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help
 ```
 
 3. Query the public fixture:
 
 ```bash
-npx --yes . query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10
 ```
 
 4. Run a privacy-safe diagnostic on your real vault:
 
 ```bash
-npx --yes . doctor --vault "/absolute/path/to/your-vault" --json
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs doctor --vault "/absolute/path/to/your-vault" --json
 ```
 
 5. Run your first real-vault query locally:
 
 ```bash
-npx --yes . query "your broad research query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "your broad research query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
 ```
 
 Do not paste real-vault query output into public issues. Use `doctor --json` for public diagnostics.
@@ -62,6 +62,8 @@ npx --yes github:ToussaintKnight/obsidian-high-recall-skill query "your broad re
 ```
 
 Use the clone path if your environment blocks GitHub-backed `npx`, if you want to run `npm test`, or if you plan to contribute.
+
+If `npx` fails with a cache permission error, use the clone path above or set a writable npm cache. See [troubleshooting.md](troubleshooting.md).
 
 ## Install As A Codex Skill
 
@@ -108,7 +110,7 @@ cp -R ./obsidian-high-recall-skill/skills/obsidian-high-recall ~/.codex/skills/
 To check Smart/OHS state without reading note contents:
 
 ```bash
-npx --yes . doctor --vault "/absolute/path/to/your-vault" --json
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs doctor --vault "/absolute/path/to/your-vault" --json
 ```
 
 ## Windows Notes
@@ -129,7 +131,7 @@ Before opening an issue, run:
 
 ```bash
 npm test
-npx --yes . doctor --vault "/absolute/path/to/your-vault" --json
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs doctor --vault "/absolute/path/to/your-vault" --json
 ```
 
 Then report only privacy-safe fields through the issue templates. Useful setup facts include operating system, Node.js version, Obsidian version, Smart Connections indexed/not indexed, backend used, and whether the public fixture passed.

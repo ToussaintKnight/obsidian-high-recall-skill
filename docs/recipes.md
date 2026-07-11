@@ -26,7 +26,7 @@ npm test
 Then run one public query:
 
 ```bash
-npx --yes . query "data collection for embodied AI robot demonstrations" --vault docs/fixtures/demo-vault --backend smart --limit 10
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI robot demonstrations" --vault docs/fixtures/demo-vault --backend smart --limit 10
 ```
 
 Expected stable fixture facts are documented in [demo/fixture_walkthrough.md](demo/fixture_walkthrough.md).
@@ -78,7 +78,7 @@ Use this when Codex should inspect local research memory before answering. Avoid
 When something fails, prefer `doctor --json`:
 
 ```bash
-npx --yes . doctor --vault "/absolute/path/to/your-vault" --json
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs doctor --vault "/absolute/path/to/your-vault" --json
 ```
 
 Review the output before posting. It should not contain private paths, snippets, note names, raw queries, vault names, usernames, tokens, or gold labels.
@@ -120,13 +120,13 @@ Share only aggregate metrics through the benchmark report template. Do not uploa
 If results are too noisy:
 
 ```bash
-npx --yes . query "your query" --vault "/absolute/path/to/your-vault" --backend auto --limit 60 --per-channel 30
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "your query" --vault "/absolute/path/to/your-vault" --backend auto --limit 60 --per-channel 30
 ```
 
 If recall is too low:
 
 ```bash
-npx --yes . query "your query with synonyms and adjacent terms" --vault "/absolute/path/to/your-vault" --backend both --limit 200 --per-channel 80
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "your query with synonyms and adjacent terms" --vault "/absolute/path/to/your-vault" --backend both --limit 200 --per-channel 80
 ```
 
 For systematic tuning, compare Precision@K, Recall@K, F1, MRR, retrieved count, and latency with the evaluator. The benchmark sensitivity notes in the README show why bigger candidate pools are not always better.

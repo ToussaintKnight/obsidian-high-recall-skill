@@ -92,6 +92,42 @@ If first-run setup fails:
 - Re-run with a stable network.
 - Avoid `--rerank` for smoke tests because it downloads a larger model.
 
+## npm Or npx Cache Permission Errors
+
+Symptom:
+
+```text
+npm error code EPERM
+npm error syscall mkdir
+npm error path ...npm-cache...
+```
+
+This usually means npm cannot write to its default cache directory. It can happen in locked-down Windows environments, antivirus-controlled folders, sandboxed terminals, or corporate machines.
+
+For local clone workflows, avoid `npx .` and run the checked-in script directly:
+
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10
+```
+
+For GitHub-backed `npx`, set a writable cache before running it.
+
+Windows PowerShell:
+
+```powershell
+$env:npm_config_cache = "$PWD\.tmp\npm-cache"
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill query "your broad research query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
+```
+
+macOS/Linux:
+
+```bash
+npm_config_cache=.tmp/npm-cache npx --yes github:ToussaintKnight/obsidian-high-recall-skill query "your broad research query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
+```
+
+If the cache error occurs during OHS fallback, run `--backend smart` on the public fixture first to confirm the wrapper works, then retry OHS after fixing npm cache/network access.
+
 ## Slow Queries Or Too Many Results
 
 Start with the fast daily path:

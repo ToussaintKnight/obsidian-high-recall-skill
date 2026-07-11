@@ -11,6 +11,7 @@ const requiredRecipes = [
   "Tune Read Burden",
   "--backend auto --limit 120",
   "--backend both --limit 200 --per-channel 80",
+  "node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query",
   "$obsidian-high-recall",
   "privacy.safeToShare: false",
   "doctor --json",

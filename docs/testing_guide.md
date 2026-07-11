@@ -29,8 +29,8 @@ Expected output and stable fixture result facts are listed in [demo/fixture_walk
 3. Check CLI entry points:
 
 ```bash
-npx --yes . help
-npx --yes . query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10
 ```
 
 For command and option details, see [cli_reference.md](cli_reference.md).
@@ -40,7 +40,7 @@ For the `query --json` recall pack schema and field-level privacy classification
 4. If you have a real vault, run a privacy-safe diagnostic:
 
 ```bash
-npx --yes . doctor --vault "/absolute/path/to/your-vault" --json
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs doctor --vault "/absolute/path/to/your-vault" --json
 ```
 
 Review the output before posting it. It should not contain local paths, note names, snippets, raw queries, vault names, usernames, tokens, or gold labels.
@@ -48,7 +48,7 @@ Review the output before posting it. It should not contain local paths, note nam
 5. Optionally run one broad real-vault query:
 
 ```bash
-npx --yes . query "your broad research query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120 --json
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "your broad research query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120 --json
 ```
 
 Do not paste the returned snippets or note paths into a public issue. Report only whether the result found useful notes, missed expected categories, was too noisy, or was too slow.
