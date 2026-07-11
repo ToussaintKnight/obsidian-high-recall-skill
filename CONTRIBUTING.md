@@ -30,6 +30,12 @@ When changing fixture demo assets, public fixture walkthroughs, or first-run dem
 npm run demo:check
 ```
 
+When changing CLI options, help output, package bins, or command reference docs, run:
+
+```bash
+npm run cli:check
+```
+
 When changing public positioning, comparison, launch, or marketing copy, run:
 
 ```bash

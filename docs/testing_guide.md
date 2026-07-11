@@ -29,6 +29,8 @@ npx --yes . help
 npx --yes . query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10
 ```
 
+For command and option details, see [cli_reference.md](cli_reference.md).
+
 4. If you have a real vault, run a privacy-safe diagnostic:
 
 ```bash

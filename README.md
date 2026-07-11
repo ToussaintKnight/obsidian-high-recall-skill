@@ -147,6 +147,8 @@ If vault auto-discovery fails:
 node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/to/your-vault" --json
 ```
 
+Full command and option details are in [docs/cli_reference.md](docs/cli_reference.md).
+
 ## Architecture
 
 The architecture shows the local-first retrieval flow, backend routing, privacy boundary, and public benchmark publishing path.
@@ -283,6 +285,7 @@ skills/
 - Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`
 - Documentation link gate: `npm run docs:links`
 - Demo walkthrough gate: `npm run demo:check`
+- CLI reference gate: `npm run cli:check`
 - Codex skill structure gate: `npm run skill:check`
 - Positioning and comparison gate: `npm run positioning:check`
 - Changelog and release notes: [CHANGELOG.md](CHANGELOG.md), `npm run release:check`
@@ -292,6 +295,7 @@ skills/
 - Starter issue playbook: [docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Repository setup checklist: [docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Maintenance playbook: [docs/community/maintenance.md](docs/community/maintenance.md)
+- CLI reference: [docs/cli_reference.md](docs/cli_reference.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
 - Testing guide: [docs/testing_guide.md](docs/testing_guide.md)
 - Roadmap: [ROADMAP.md](ROADMAP.md)

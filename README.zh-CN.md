@@ -155,6 +155,8 @@ node scripts/obsidian_high_recall.mjs query "机器人 遥操作 演示数据" -
 node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/to/your-vault" --json
 ```
 
+完整命令和选项见：[docs/cli_reference.md](docs/cli_reference.md)。
+
 ## 架构
 
 这张图展示 local-first 检索流程、backend routing、privacy boundary，以及 public benchmark 发布路径。
@@ -291,6 +293,7 @@ skills/
 - Privacy threat model：[docs/privacy_threat_model.md](docs/privacy_threat_model.md)，`npm run privacy:docs`
 - 文档链接检查：`npm run docs:links`
 - Demo walkthrough 检查：`npm run demo:check`
+- CLI reference 检查：`npm run cli:check`
 - Codex skill 结构检查：`npm run skill:check`
 - Positioning 和 comparison 检查：`npm run positioning:check`
 - Changelog 和 release notes：[CHANGELOG.md](CHANGELOG.md)，`npm run release:check`
@@ -300,6 +303,7 @@ skills/
 - Starter issue playbook：[docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Repository setup checklist：[docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Maintenance playbook：[docs/community/maintenance.md](docs/community/maintenance.md)
+- CLI reference：[docs/cli_reference.md](docs/cli_reference.md)
 - Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)
 - Testing guide：[docs/testing_guide.md](docs/testing_guide.md)
 - Roadmap：[ROADMAP.md](ROADMAP.md)
