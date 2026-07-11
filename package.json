@@ -28,6 +28,7 @@
     "docs:links": "node scripts/assert_markdown_links.mjs",
     "github:discussions": "node scripts/github_discussions.mjs",
     "github:issues": "node scripts/github_starter_issues.mjs",
+    "github:metrics": "node scripts/github_launch_metrics.mjs",
     "github:release": "node scripts/github_release.mjs",
     "github:setup": "node scripts/github_setup_commands.mjs",
     "output:check": "node scripts/assert_output_contract.mjs",

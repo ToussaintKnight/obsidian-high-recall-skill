@@ -72,12 +72,10 @@ Record a baseline immediately before each post, then collect results after 24 ho
 If GitHub auth is available, collect traffic with:
 
 ```bash
-gh api repos/ToussaintKnight/obsidian-high-recall-skill/traffic/views
-gh api repos/ToussaintKnight/obsidian-high-recall-skill/traffic/clones
-gh repo view ToussaintKnight/obsidian-high-recall-skill --json stargazerCount,forkCount,watchers,issues
+npm run github:metrics -- --collect
 ```
 
-If auth is unavailable, record the public repo page counts and leave private traffic fields as `TBD`.
+Details are in [../metrics/collection.md](../metrics/collection.md). If auth is unavailable, record the public repo page counts and leave private traffic fields as `TBD`.
 
 ## Conversion Metrics
 
@@ -123,6 +121,7 @@ Copy this block below the tracking table in [community_launch_posts.md](communit
 ## Related Files
 
 - Baseline metrics: [../metrics/launch_baseline.md](../metrics/launch_baseline.md)
+- Metrics collection: [../metrics/collection.md](../metrics/collection.md)
 - Copy-ready launch posts: [community_launch_posts.md](community_launch_posts.md)
 - Launch playbook: [../LAUNCH.md](../LAUNCH.md)
 - Repository setup checklist: [../community/repository_setup.md](../community/repository_setup.md)

@@ -337,6 +337,7 @@ skills/
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit: [docs/marketing](docs/marketing/README.md)
 - Launch experiment plan: [docs/marketing/launch_experiment.md](docs/marketing/launch_experiment.md), `npm run launch:check`
+- Launch metrics collection: [docs/metrics/collection.md](docs/metrics/collection.md), `npm run github:metrics`
 - Share page: [docs/index.html](docs/index.html)
 - AI-readable project summary: [docs/llms.txt](docs/llms.txt)
 - Positioning and fit: [docs/positioning.md](docs/positioning.md)

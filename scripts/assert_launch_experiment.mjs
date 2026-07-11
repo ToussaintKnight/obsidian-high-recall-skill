@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { spawnSync } from "node:child_process";
 
 function read(file) {
   if (!fs.existsSync(file)) {
@@ -30,7 +31,8 @@ requireIncludes(experimentPath, experiment, [
   "npm run community:check",
   "Measurement Window",
   "GitHub traffic API",
-  "gh api repos/ToussaintKnight/obsidian-high-recall-skill/traffic/views",
+  "npm run github:metrics -- --collect",
+  "../metrics/collection.md",
   "Conversion Metrics",
   "Star conversion",
   "Tester conversion",
@@ -40,9 +42,23 @@ requireIncludes(experimentPath, experiment, [
   "../metrics/launch_baseline.md",
 ]);
 
+const metricsCollection = read(path.join("docs", "metrics", "collection.md"));
+requireIncludes("docs/metrics/collection.md", metricsCollection, [
+  "# Launch Metrics Collection",
+  "npm run github:metrics",
+  "npm run github:metrics -- --json",
+  "npm run github:metrics -- --collect",
+  "Baseline",
+  "24h",
+  "7d",
+  "Star conversion",
+  "Clone count is diagnostic",
+]);
+
 const marketingReadme = read(path.join("docs", "marketing", "README.md"));
 requireIncludes("docs/marketing/README.md", marketingReadme, [
   "launch_experiment.md",
+  "../metrics/collection.md",
   "Launch experiment plan",
   "Conversion Ladder",
   "Star/watch the repo",
@@ -51,6 +67,8 @@ requireIncludes("docs/marketing/README.md", marketingReadme, [
 const launchPlaybook = read(path.join("docs", "LAUNCH.md"));
 requireIncludes("docs/LAUNCH.md", launchPlaybook, [
   "marketing/launch_experiment.md",
+  "metrics/collection.md",
+  "npm run github:metrics -- --collect",
   "npm run launch:check",
   "GitHub views, not only clones",
 ]);
@@ -59,6 +77,7 @@ const rootReadme = read("README.md");
 requireIncludes("README.md", rootReadme, [
   "Launch experiment plan",
   "docs/marketing/launch_experiment.md",
+  "docs/metrics/collection.md",
   "Early tester path",
   "star/watch the repo",
 ]);
@@ -67,6 +86,7 @@ const zhReadme = read("README.zh-CN.md");
 requireIncludes("README.zh-CN.md", zhReadme, [
   "Launch experiment plan",
   "docs/marketing/launch_experiment.md",
+  "docs/metrics/collection.md",
   "早期 tester 路径",
   "star/watch 这个 repo",
 ]);
@@ -76,5 +96,28 @@ requireIncludes("docs/index.html", site, [
   "try one broad real-vault query",
   "star/watch the repo",
 ]);
+
+const packageJson = JSON.parse(read("package.json"));
+if (packageJson.scripts?.["github:metrics"] !== "node scripts/github_launch_metrics.mjs") {
+  throw new Error("package.json must expose github:metrics for repeatable launch metric collection.");
+}
+
+const metricsPlanProc = spawnSync(process.execPath, ["scripts/github_launch_metrics.mjs", "--json"], {
+  encoding: "utf8",
+  maxBuffer: 1024 * 1024,
+});
+if (metricsPlanProc.status !== 0) {
+  throw new Error(`github_launch_metrics --json failed:\n${metricsPlanProc.stderr || metricsPlanProc.stdout}`);
+}
+const metricsPlan = JSON.parse(metricsPlanProc.stdout);
+if (metricsPlan.repo !== "ToussaintKnight/obsidian-high-recall-skill") {
+  throw new Error(`Launch metrics plan has wrong repo: ${metricsPlan.repo}`);
+}
+const planText = JSON.stringify(metricsPlan);
+for (const required of ["stars", "unique views", "tester-feedback issues"]) {
+  if (!planText.includes(required)) {
+    throw new Error(`Launch metrics plan missing signal: ${required}`);
+  }
+}
 
 console.log("Launch experiment smoke passed.");

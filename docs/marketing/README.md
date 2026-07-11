@@ -22,6 +22,10 @@ Launch experiment plan:
 
 [launch_experiment.md](launch_experiment.md)
 
+Launch metrics collection:
+
+[../metrics/collection.md](../metrics/collection.md)
+
 Repository setup checklist:
 
 [../community/repository_setup.md](../community/repository_setup.md)

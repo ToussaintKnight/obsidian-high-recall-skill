@@ -4,6 +4,8 @@ Snapshot date: 2026-07-05 Asia/Shanghai.
 
 This baseline records the state after the repository was made launch-ready but before broader external distribution.
 
+Repeatable metric collection is documented in [collection.md](collection.md). Use `npm run github:metrics -- --collect` before each channel post, after 24 hours, and after 7 days.
+
 ## GitHub Repository State
 
 - Stars: 0

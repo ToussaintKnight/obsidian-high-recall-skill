@@ -40,6 +40,7 @@ const required = [
   "docs/community/discussion_commands.md",
   "docs/community/discussion_seeds.md",
   "docs/marketing/launch_experiment.md",
+  "docs/metrics/collection.md",
   "docs/robots.txt",
   "docs/sitemap.xml",
   "docs/llms.txt",
