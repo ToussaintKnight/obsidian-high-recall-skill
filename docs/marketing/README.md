@@ -18,6 +18,7 @@ Regenerate:
 
 ```bash
 npm run social:card
+npm run site:check
 ```
 
 ## One-Liner

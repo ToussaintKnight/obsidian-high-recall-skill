@@ -22,6 +22,8 @@ const required = [
   "docs/positioning.md",
   "docs/troubleshooting.md",
   "docs/benchmark/reporting_guide.md",
+  "docs/robots.txt",
+  "docs/sitemap.xml",
   "docs/demo/fixture_demo.gif",
   "docs/architecture/architecture_option_b_archify.png",
   "docs/fixtures/README.md",
