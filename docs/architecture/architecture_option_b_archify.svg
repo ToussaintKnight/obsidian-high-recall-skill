@@ -1,4 +1,4 @@
-﻿<svg viewBox="0 0 1035 365" role="img" aria-label="Obsidian High Recall Skill â€” Local-first recall architecture, backend routing, privacy boundary, and public benchmark artifacts (architecture diagram)">
+<svg viewBox="0 0 970 360" role="img" aria-label="Obsidian High Recall Skill — Local-first recall architecture, backend routing, privacy boundary, and public benchmark artifacts (architecture diagram)">
         <!-- Definitions -->
         <defs>
           <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
@@ -22,115 +22,115 @@
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Boundaries (behind everything) -->
-        <rect x="12" y="26" width="842" height="296" rx="8" class="c-security-group" stroke-width="1"/>
-        <text x="20" y="44" class="t-security" font-size="9" font-weight="600">Private local machine: raw content stays local</text>
+        <rect x="8" y="26" width="764" height="302" rx="8" class="c-security-group" stroke-width="1"/>
+        <text x="16" y="44" class="t-security" font-size="9" font-weight="600">Private local machine: raw content stays local</text>
 
-        <rect x="854" y="111" width="170" height="116" rx="12" class="c-region" stroke-width="1"/>
-        <text x="862" y="129" class="t-cloud" font-size="9" font-weight="600">Public artifacts</text>
+        <rect x="786" y="120" width="164" height="112" rx="12" class="c-region" stroke-width="1"/>
+        <text x="794" y="138" class="t-cloud" font-size="9" font-weight="600">Public artifacts</text>
 
         <!-- Connection paths (before components for correct z-order) -->
-        <path d="M 142 171 L 168 171" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path d="M 232 207 L 232 224.5 L 232 224.5 L 232 242" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
-        <path d="M 296 171 L 312.5 171 Q 320.5 171 320.5 163 L 320.5 82 Q 320.5 74 328.5 74 L 345 74" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path d="M 296 171 L 312.5 171 Q 320.5 171 320.5 179 L 320.5 264 Q 320.5 272 328.5 272 L 345 272" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
-        <path d="M 296 272 L 314 272 Q 322 272 322 264 L 322 134 Q 322 126 330 126 L 406 126 Q 414 126 414 118 L 414 106" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
-        <path d="M 296 272 L 345 272" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
-        <path d="M 483 74 L 498.5 74 Q 506.5 74 506.5 82 L 506.5 163 Q 506.5 171 514.5 171 L 530 171" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path d="M 483 272 L 498.5 272 Q 506.5 272 506.5 264 L 506.5 179 Q 506.5 171 514.5 171 L 530 171" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
-        <path d="M 666 171 L 678 171 Q 686 171 686 163 L 686 82 Q 686 74 694 74 L 706 74" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path d="M 666 171 L 678 171 Q 686 171 686 179 L 686 264 Q 686 272 694 272 L 706 272" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
-        <path d="M 838 272 L 850 272 Q 858 272 858 264 L 858 179 Q 858 171 866 171 L 878 171" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        <path d="M 136 176 L 164 176" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path d="M 227 212 L 227 230 L 227 230 L 227 248" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        <path d="M 290 176 L 295 176 Q 300 176 300 171 L 300 82 Q 300 74 308 74 L 318 74" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path d="M 290 176 L 295 176 Q 300 176 300 181 L 300 270 Q 300 278 308 278 L 318 278" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path d="M 290 278 L 300 278 Q 308 278 308 270 L 308 126 Q 308 118 316 118 L 378 118 Q 384 118 384 112 L 384 106" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        <path d="M 290 278 L 318 278" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        <path d="M 450 74 L 455 74 Q 460 74 460 79 L 460 171 Q 460 176 465 176 L 470 176" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path d="M 450 278 L 455 278 Q 460 278 460 273 L 460 181 Q 460 176 465 176 L 470 176" class="a-dashed" stroke-width="1.5" marker-end="url(#arrowhead-dashed)"/>
+        <path d="M 602 176 L 609 176 Q 616 176 616 169 L 616 81 Q 616 74 623 74 L 630 74" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
+        <path d="M 602 176 L 609 176 Q 616 176 616 183 L 616 271 Q 616 278 623 278 L 630 278" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
+        <path d="M 756 278 L 773 278 Q 781 278 781 270 L 781 184 Q 781 176 789 176 L 806 176" class="a-security" stroke-width="1.5" marker-end="url(#arrowhead-security)"/>
 
         <!-- Components -->
-        <rect x="28" y="143" width="114" height="56" rx="6" class="c-mask"/>
-        <rect x="28" y="143" width="114" height="56" rx="6" class="c-external" stroke-width="1.5"/>
-        <text x="85" y="169" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Codex user</text>
-        <text x="85" y="185" class="t-muted" font-size="9" text-anchor="middle">recall query</text>
+        <rect x="24" y="148" width="112" height="56" rx="6" class="c-mask"/>
+        <rect x="24" y="148" width="112" height="56" rx="6" class="c-external" stroke-width="1.5"/>
+        <text x="80" y="174" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Codex user</text>
+        <text x="80" y="190" class="t-muted" font-size="9" text-anchor="middle">recall query</text>
 
-        <rect x="168" y="135" width="128" height="72" rx="6" class="c-mask"/>
-        <rect x="168" y="135" width="128" height="72" rx="6" class="c-backend" stroke-width="1.5"/>
-        <text x="232" y="169" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Skill runtime</text>
-        <text x="232" y="185" class="t-muted" font-size="9" text-anchor="middle">SKILL.md + Node CLI</text>
-        <text x="232" y="199" class="t-backend" font-size="7" text-anchor="middle">auto route</text>
+        <rect x="164" y="140" width="126" height="72" rx="6" class="c-mask"/>
+        <rect x="164" y="140" width="126" height="72" rx="6" class="c-backend" stroke-width="1.5"/>
+        <text x="227" y="174" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Skill runtime</text>
+        <text x="227" y="190" class="t-muted" font-size="9" text-anchor="middle">SKILL.md + Node CLI</text>
+        <text x="227" y="204" class="t-backend" font-size="7" text-anchor="middle">auto route</text>
 
-        <rect x="168" y="242" width="128" height="60" rx="6" class="c-mask"/>
-        <rect x="168" y="242" width="128" height="60" rx="6" class="c-database" stroke-width="1.5"/>
-        <text x="232" y="270" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Obsidian vault</text>
-        <text x="232" y="286" class="t-muted" font-size="9" text-anchor="middle">Markdown notes</text>
-        <text x="232" y="294" class="t-database" font-size="7" text-anchor="middle">private local</text>
+        <rect x="164" y="248" width="126" height="60" rx="6" class="c-mask"/>
+        <rect x="164" y="248" width="126" height="60" rx="6" class="c-database" stroke-width="1.5"/>
+        <text x="227" y="276" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Obsidian vault</text>
+        <text x="227" y="292" class="t-muted" font-size="9" text-anchor="middle">Markdown notes</text>
+        <text x="227" y="300" class="t-database" font-size="7" text-anchor="middle">private local</text>
 
-        <rect x="345" y="42" width="138" height="64" rx="6" class="c-mask"/>
-        <rect x="345" y="42" width="138" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
-        <text x="414" y="72" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Smart backend</text>
-        <text x="414" y="88" class="t-muted" font-size="9" text-anchor="middle">Smart vectors</text>
-        <text x="414" y="98" class="t-backend" font-size="7" text-anchor="middle">fast recall</text>
+        <rect x="318" y="42" width="132" height="64" rx="6" class="c-mask"/>
+        <rect x="318" y="42" width="132" height="64" rx="6" class="c-backend" stroke-width="1.5"/>
+        <text x="384" y="72" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Smart backend</text>
+        <text x="384" y="88" class="t-muted" font-size="9" text-anchor="middle">Smart vectors</text>
+        <text x="384" y="98" class="t-backend" font-size="7" text-anchor="middle">fast recall</text>
 
-        <rect x="345" y="242" width="138" height="60" rx="6" class="c-mask"/>
-        <rect x="345" y="242" width="138" height="60" rx="6" class="c-backend" stroke-width="1.5"/>
-        <text x="414" y="270" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">OHS backend</text>
-        <text x="414" y="286" class="t-muted" font-size="9" text-anchor="middle">hybrid + fulltext</text>
-        <text x="414" y="294" class="t-backend" font-size="7" text-anchor="middle">local fallback</text>
+        <rect x="318" y="248" width="132" height="60" rx="6" class="c-mask"/>
+        <rect x="318" y="248" width="132" height="60" rx="6" class="c-backend" stroke-width="1.5"/>
+        <text x="384" y="276" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">OHS backend</text>
+        <text x="384" y="292" class="t-muted" font-size="9" text-anchor="middle">hybrid + fulltext</text>
+        <text x="384" y="300" class="t-backend" font-size="7" text-anchor="middle">local fallback</text>
 
-        <rect x="530" y="135" width="136" height="72" rx="6" class="c-mask"/>
-        <rect x="530" y="135" width="136" height="72" rx="6" class="c-messagebus" stroke-width="1.5"/>
-        <text x="598" y="169" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Merge + rank</text>
-        <text x="598" y="185" class="t-muted" font-size="9" text-anchor="middle">dedupe + RRF</text>
-        <text x="598" y="199" class="t-messagebus" font-size="7" text-anchor="middle">high recall</text>
+        <rect x="470" y="140" width="132" height="72" rx="6" class="c-mask"/>
+        <rect x="470" y="140" width="132" height="72" rx="6" class="c-messagebus" stroke-width="1.5"/>
+        <text x="536" y="174" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Merge + rank</text>
+        <text x="536" y="190" class="t-muted" font-size="9" text-anchor="middle">dedupe + RRF</text>
+        <text x="536" y="204" class="t-messagebus" font-size="7" text-anchor="middle">high recall</text>
 
-        <rect x="706" y="42" width="132" height="64" rx="6" class="c-mask"/>
-        <rect x="706" y="42" width="132" height="64" rx="6" class="c-cloud" stroke-width="1.5"/>
-        <text x="772" y="72" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Recall pack</text>
-        <text x="772" y="88" class="t-muted" font-size="9" text-anchor="middle">JSON hits + snippets</text>
-        <text x="772" y="98" class="t-cloud" font-size="7" text-anchor="middle">to Codex</text>
+        <rect x="630" y="42" width="126" height="64" rx="6" class="c-mask"/>
+        <rect x="630" y="42" width="126" height="64" rx="6" class="c-cloud" stroke-width="1.5"/>
+        <text x="693" y="72" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Recall pack</text>
+        <text x="693" y="88" class="t-muted" font-size="9" text-anchor="middle">JSON hits + snippets</text>
+        <text x="693" y="98" class="t-cloud" font-size="7" text-anchor="middle">to Codex</text>
 
-        <rect x="706" y="242" width="132" height="60" rx="6" class="c-mask"/>
-        <rect x="706" y="242" width="132" height="60" rx="6" class="c-security" stroke-width="1.5"/>
-        <text x="772" y="270" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Private evaluation</text>
-        <text x="772" y="286" class="t-muted" font-size="9" text-anchor="middle">gold labels + runs</text>
-        <text x="772" y="294" class="t-security" font-size="7" text-anchor="middle">local only</text>
+        <rect x="630" y="248" width="126" height="60" rx="6" class="c-mask"/>
+        <rect x="630" y="248" width="126" height="60" rx="6" class="c-security" stroke-width="1.5"/>
+        <text x="693" y="276" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Private evaluation</text>
+        <text x="693" y="292" class="t-muted" font-size="9" text-anchor="middle">gold labels + runs</text>
+        <text x="693" y="300" class="t-security" font-size="7" text-anchor="middle">local only</text>
 
-        <rect x="878" y="135" width="122" height="72" rx="6" class="c-mask"/>
-        <rect x="878" y="135" width="122" height="72" rx="6" class="c-cloud" stroke-width="1.5"/>
-        <text x="939" y="169" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Public repo</text>
-        <text x="939" y="185" class="t-muted" font-size="9" text-anchor="middle">docs + figures</text>
-        <text x="939" y="199" class="t-cloud" font-size="7" text-anchor="middle">aggregate only</text>
+        <rect x="806" y="140" width="124" height="72" rx="6" class="c-mask"/>
+        <rect x="806" y="140" width="124" height="72" rx="6" class="c-cloud" stroke-width="1.5"/>
+        <text x="868" y="174" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Public repo</text>
+        <text x="868" y="190" class="t-muted" font-size="9" text-anchor="middle">docs + figures</text>
+        <text x="868" y="204" class="t-cloud" font-size="7" text-anchor="middle">aggregate only</text>
 
         <!-- Connection labels -->
-        <rect x="137" y="122" width="34" height="14" rx="3" class="c-mask"/>
-        <text x="154" y="132" class="t-backend" font-size="8" text-anchor="middle">query</text>
-        <rect x="193.4" y="216" width="77.2" height="14" rx="3" class="c-mask"/>
-        <text x="232" y="226" class="t-security" font-size="8" text-anchor="middle">discover vault</text>
-        <rect x="289" y="114" width="58" height="14" rx="3" class="c-mask"/>
-        <text x="318" y="124" class="t-backend" font-size="8" text-anchor="middle">Smart path</text>
-        <rect x="281.8" y="214" width="72.4" height="14" rx="3" class="c-mask"/>
-        <text x="318" y="224" class="t-messagebus" font-size="8" text-anchor="middle">fallback/both</text>
-        <rect x="343" y="116" width="58" height="14" rx="3" class="c-mask"/>
-        <text x="372" y="126" class="t-security" font-size="8" text-anchor="middle">.smart-env</text>
-        <rect x="368.6" y="222" width="62.8" height="14" rx="3" class="c-mask"/>
-        <text x="400" y="232" class="t-security" font-size="8" text-anchor="middle">local index</text>
-        <rect x="474.6" y="114" width="62.8" height="14" rx="3" class="c-mask"/>
-        <text x="506" y="124" class="t-backend" font-size="8" text-anchor="middle">vector hits</text>
-        <rect x="474.6" y="214" width="62.8" height="14" rx="3" class="c-mask"/>
-        <text x="506" y="224" class="t-messagebus" font-size="8" text-anchor="middle">hybrid hits</text>
-        <rect x="664.2" y="114" width="43.6" height="14" rx="3" class="c-mask"/>
-        <text x="686" y="124" class="t-backend" font-size="8" text-anchor="middle">results</text>
-        <rect x="659.4" y="214" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
-        <text x="686" y="224" class="t-security" font-size="8" text-anchor="middle">benchmark</text>
-        <rect x="812.2" y="214" width="91.6" height="14" rx="3" class="c-mask"/>
-        <text x="858" y="224" class="t-security" font-size="8" text-anchor="middle">aggregate CSV/PNG</text>
+        <rect x="133" y="122" width="34" height="14" rx="3" class="c-mask"/>
+        <text x="150" y="132" class="t-backend" font-size="8" text-anchor="middle">query</text>
+        <rect x="188.4" y="222" width="77.2" height="14" rx="3" class="c-mask"/>
+        <text x="227" y="232" class="t-security" font-size="8" text-anchor="middle">discover vault</text>
+        <rect x="259" y="112" width="82" height="14" rx="3" class="c-mask"/>
+        <text x="300" y="122" class="t-backend" font-size="8" text-anchor="middle">Smart available</text>
+        <rect x="263.8" y="214" width="72.4" height="14" rx="3" class="c-mask"/>
+        <text x="300" y="224" class="t-messagebus" font-size="8" text-anchor="middle">fallback/both</text>
+        <rect x="327" y="108" width="58" height="14" rx="3" class="c-mask"/>
+        <text x="356" y="118" class="t-security" font-size="8" text-anchor="middle">.smart-env</text>
+        <rect x="274.6" y="234" width="62.8" height="14" rx="3" class="c-mask"/>
+        <text x="306" y="244" class="t-security" font-size="8" text-anchor="middle">local index</text>
+        <rect x="424.6" y="112" width="62.8" height="14" rx="3" class="c-mask"/>
+        <text x="456" y="122" class="t-backend" font-size="8" text-anchor="middle">vector hits</text>
+        <rect x="424.6" y="214" width="62.8" height="14" rx="3" class="c-mask"/>
+        <text x="456" y="224" class="t-messagebus" font-size="8" text-anchor="middle">hybrid hits</text>
+        <rect x="594.2" y="112" width="43.6" height="14" rx="3" class="c-mask"/>
+        <text x="616" y="122" class="t-backend" font-size="8" text-anchor="middle">results</text>
+        <rect x="589.4" y="214" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
+        <text x="616" y="224" class="t-security" font-size="8" text-anchor="middle">benchmark</text>
+        <rect x="734.2" y="232" width="91.6" height="14" rx="3" class="c-mask"/>
+        <text x="780" y="242" class="t-security" font-size="8" text-anchor="middle">aggregate CSV/PNG</text>
 
         <!-- Legend -->
-        <text x="40" y="336" class="t-primary" font-size="9" font-weight="600">Legend</text>
-        <rect x="40" y="341" width="14" height="9" rx="2" class="c-external" stroke-width="1"/>
-        <text x="60" y="349" class="t-muted" font-size="8">External</text>
-        <rect x="138" y="341" width="14" height="9" rx="2" class="c-backend" stroke-width="1"/>
-        <text x="158" y="349" class="t-muted" font-size="8">Backend</text>
-        <rect x="231" y="341" width="14" height="9" rx="2" class="c-database" stroke-width="1"/>
-        <text x="251" y="349" class="t-muted" font-size="8">Database</text>
-        <rect x="329" y="341" width="14" height="9" rx="2" class="c-messagebus" stroke-width="1"/>
-        <text x="349" y="349" class="t-muted" font-size="8">Message bus</text>
-        <rect x="442" y="341" width="14" height="9" rx="2" class="c-cloud" stroke-width="1"/>
-        <text x="462" y="349" class="t-muted" font-size="8">Cloud</text>
-        <rect x="525" y="341" width="14" height="9" rx="2" class="c-security" stroke-width="1"/>
-        <text x="545" y="349" class="t-muted" font-size="8">Security</text>
+        <text x="40" y="331" class="t-primary" font-size="9" font-weight="600">Legend</text>
+        <rect x="40" y="336" width="14" height="9" rx="2" class="c-external" stroke-width="1"/>
+        <text x="60" y="344" class="t-muted" font-size="8">External</text>
+        <rect x="138" y="336" width="14" height="9" rx="2" class="c-backend" stroke-width="1"/>
+        <text x="158" y="344" class="t-muted" font-size="8">Backend</text>
+        <rect x="231" y="336" width="14" height="9" rx="2" class="c-database" stroke-width="1"/>
+        <text x="251" y="344" class="t-muted" font-size="8">Database</text>
+        <rect x="329" y="336" width="14" height="9" rx="2" class="c-messagebus" stroke-width="1"/>
+        <text x="349" y="344" class="t-muted" font-size="8">Message bus</text>
+        <rect x="442" y="336" width="14" height="9" rx="2" class="c-cloud" stroke-width="1"/>
+        <text x="462" y="344" class="t-muted" font-size="8">Cloud</text>
+        <rect x="525" y="336" width="14" height="9" rx="2" class="c-security" stroke-width="1"/>
+        <text x="545" y="344" class="t-muted" font-size="8">Security</text>
       </svg>

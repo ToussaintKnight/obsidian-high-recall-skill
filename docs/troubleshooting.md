@@ -2,7 +2,7 @@
 
 Use this page when the public fixture works but a real vault install, index, or query does not.
 
-For broader privacy, backend, benchmark, and installation questions, see [faq.md](faq.md).
+For broader privacy, backend, benchmark, and installation questions, see [faq.md](faq.md). For first-run downloads and local cache locations, see [dependency_inventory.md](dependency_inventory.md).
 
 ## First Checks
 

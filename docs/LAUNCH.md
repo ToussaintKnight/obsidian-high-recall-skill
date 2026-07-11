@@ -30,6 +30,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - GitHub Actions runs `npm test` on Linux, Windows, and macOS.
 - `npm run privacy:scan` passes before release or launch posts are updated.
 - `npm run privacy:docs` passes after [privacy_threat_model.md](privacy_threat_model.md), `SECURITY.md`, README, or launch privacy wording changes.
+- `npm run dependency:check` passes after dependency, model-download, runtime-cache, or privacy-link wording changes.
 - `npm run docs:links` passes after README, docs, benchmark figures, or marketing pages change.
 - `npm run faq:check` passes after privacy, backend, benchmark, installation, or limitation FAQ changes.
 - `npm run examples:check` passes after public redacted output examples or example links change.

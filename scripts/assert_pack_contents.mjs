@@ -22,6 +22,7 @@ const required = [
   "CHANGELOG.md",
   "docs/positioning.md",
   "docs/faq.md",
+  "docs/dependency_inventory.md",
   "docs/install.md",
   "docs/recipes.md",
   "docs/testing_guide.md",

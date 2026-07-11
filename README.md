@@ -65,6 +65,7 @@ node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "robot f
 - Documents the JSON recall pack schema and share-safety rules in [docs/output_contract.md](docs/output_contract.md).
 - Provides a privacy-safe `doctor --json` report for bug reports and tester feedback.
 - Stores derived indexes and runtime packages outside the vault.
+- Documents runtime downloads, local cache paths, and dependency review steps in [docs/dependency_inventory.md](docs/dependency_inventory.md).
 
 ## Install
 
@@ -299,6 +300,7 @@ skills/
 - CI matrix: Linux, Windows, and macOS run `npm test`
 - Privacy leak gate: `npm run privacy:scan`
 - Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`
+- Dependency and network inventory: [docs/dependency_inventory.md](docs/dependency_inventory.md), `npm run dependency:check`
 - Documentation link gate: `npm run docs:links`
 - FAQ gate: `npm run faq:check`
 - Install guide gate: `npm run install:check`

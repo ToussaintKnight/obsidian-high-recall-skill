@@ -18,6 +18,7 @@ const requiredInstallSnippets = [
   "macOS/Linux Notes",
   "Public redacted output examples",
   "Output schema and privacy flags",
+  "Runtime downloads and cache paths",
 ];
 
 for (const snippet of requiredInstallSnippets) {

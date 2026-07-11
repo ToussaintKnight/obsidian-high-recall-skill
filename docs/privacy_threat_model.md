@@ -35,6 +35,8 @@ Network access can still happen for setup and dependency resolution:
 
 These downloads are dependency-fetching events, not intentional vault-content uploads. The project does not sandbox third-party packages, package managers, Hugging Face model downloads, Obsidian plugins, or the local operating system. Users with highly sensitive vaults should review dependencies and run in a controlled environment.
 
+The concrete runtime download points, cache locations, and review checklist are documented in [dependency_inventory.md](dependency_inventory.md).
+
 ## Main Leak Scenarios
 
 - A local benchmark output such as `raw_runs.json`, `metrics.json`, `metrics.csv`, or `cases.local.json` is committed.
@@ -52,6 +54,7 @@ These downloads are dependency-fetching events, not intentional vault-content up
 - Issue templates and the PR template warn contributors not to paste private note data.
 - The public fixture vault supports demos, tests, screenshots, and reproduction without private data.
 - Published benchmark docs use aggregate/anonymized metrics only.
+- `npm run dependency:check` keeps [dependency_inventory.md](dependency_inventory.md) linked from the main privacy docs.
 
 ## Safe Sharing Checklist
 

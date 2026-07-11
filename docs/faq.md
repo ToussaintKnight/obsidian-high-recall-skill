@@ -18,7 +18,7 @@ Network access can still happen for dependency setup:
 - OHS fallback can download `obsidian-hybrid-search` and model/runtime packages on first use.
 - Smart vector search can download local inference packages/model files on first use.
 
-These are dependency downloads, not intentional note-content uploads. The project does not sandbox npm packages, model downloads, Obsidian plugins, or the local operating system. See [privacy_threat_model.md](privacy_threat_model.md) and [SECURITY.md](../SECURITY.md).
+These are dependency downloads, not intentional note-content uploads. The project does not sandbox npm packages, model downloads, Obsidian plugins, or the local operating system. See [dependency_inventory.md](dependency_inventory.md), [privacy_threat_model.md](privacy_threat_model.md), and [SECURITY.md](../SECURITY.md).
 
 ## Do I Need Smart Connections?
 

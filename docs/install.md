@@ -143,6 +143,7 @@ Then report only privacy-safe fields through the issue templates. Useful setup f
 - Public redacted output examples: [examples](examples/README.md)
 - Copy-paste usage recipes: [recipes.md](recipes.md)
 - Output schema and privacy flags: [output_contract.md](output_contract.md)
+- Runtime downloads and cache paths: [dependency_inventory.md](dependency_inventory.md)
 - Ten-minute tester flow: [testing_guide.md](testing_guide.md)
 - Public OS/backend coverage: [compatibility.md](compatibility.md)
 - Troubleshooting: [troubleshooting.md](troubleshooting.md)

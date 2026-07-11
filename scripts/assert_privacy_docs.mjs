@@ -17,6 +17,7 @@ requireIncludes("SECURITY.md", [
   "Privacy Model",
   "Threat Model",
   "docs/privacy_threat_model.md",
+  "docs/dependency_inventory.md",
   "npm run privacy:scan",
   "Security Advisories",
 ]);
@@ -29,6 +30,7 @@ requireIncludes("docs/privacy_threat_model.md", [
   "Controls In This Repo",
   "Safe Sharing Checklist",
   "Out Of Scope",
+  "dependency_inventory.md",
   "raw_runs.json",
   "metrics.json",
   "metrics.csv",
@@ -48,6 +50,7 @@ requireIncludes("README.zh-CN.md", [
 
 requireIncludes("docs/LAUNCH.md", [
   "npm run privacy:docs",
+  "npm run dependency:check",
   "privacy_threat_model.md",
 ]);
 
