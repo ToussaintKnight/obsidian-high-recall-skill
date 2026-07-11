@@ -313,6 +313,7 @@ skills/
 - Codex skill structure gate: `npm run skill:check`
 - Positioning and comparison gate: `npm run positioning:check`
 - Changelog and release notes: [CHANGELOG.md](CHANGELOG.md), `npm run release:check`
+- GitHub release commands: [docs/releases/publish_release.md](docs/releases/publish_release.md), `npm run github:release`
 - Support: [SUPPORT.md](SUPPORT.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Issue templates and tester feedback: [new issue chooser](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose)

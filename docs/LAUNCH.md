@@ -42,6 +42,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `SECURITY.md` explains the privacy model.
 - `CONTRIBUTING.md` and issue templates are present.
 - A v0.1.0 GitHub release exists with the fixture demo command.
+- Repeatable GitHub release commands are in [releases/publish_release.md](releases/publish_release.md).
 - Repository metadata and labels follow [community/repository_setup.md](community/repository_setup.md).
 - Repeatable GitHub setup commands are in [community/github_setup_commands.md](community/github_setup_commands.md).
 - Dependabot and the weekly maintenance loop are documented in [community/maintenance.md](community/maintenance.md).
@@ -64,6 +65,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Smart Connections compatibility: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/7
 - Obsidian Forum launch task: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/8
 
+Repeatable GitHub release commands are in [releases/publish_release.md](releases/publish_release.md).
 Full copy-ready launch posts are in [marketing/community_launch_posts.md](marketing/community_launch_posts.md).
 Launch experiment and conversion tracking are in [marketing/launch_experiment.md](marketing/launch_experiment.md).
 Repository setup notes are in [community/repository_setup.md](community/repository_setup.md).

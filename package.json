@@ -27,6 +27,7 @@
     "community:check": "node scripts/assert_community_files.mjs",
     "docs:links": "node scripts/assert_markdown_links.mjs",
     "github:issues": "node scripts/github_starter_issues.mjs",
+    "github:release": "node scripts/github_release.mjs",
     "github:setup": "node scripts/github_setup_commands.mjs",
     "output:check": "node scripts/assert_output_contract.mjs",
     "privacy:docs": "node scripts/assert_privacy_docs.mjs",

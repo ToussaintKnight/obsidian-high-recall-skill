@@ -33,6 +33,7 @@ const required = [
   "docs/privacy_threat_model.md",
   "docs/troubleshooting.md",
   "docs/benchmark/reporting_guide.md",
+  "docs/releases/publish_release.md",
   "docs/community/maintenance.md",
   "docs/community/github_setup_commands.md",
   "docs/community/starter_issue_commands.md",

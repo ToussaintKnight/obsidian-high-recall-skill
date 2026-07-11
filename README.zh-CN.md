@@ -321,6 +321,7 @@ skills/
 - Codex skill 结构检查：`npm run skill:check`
 - Positioning 和 comparison 检查：`npm run positioning:check`
 - Changelog 和 release notes：[CHANGELOG.md](CHANGELOG.md)，`npm run release:check`
+- GitHub release commands：[docs/releases/publish_release.md](docs/releases/publish_release.md)，`npm run github:release`
 - 支持入口：[SUPPORT.md](SUPPORT.md)
 - 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
 - Issue templates 和 tester feedback：[new issue chooser](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose)

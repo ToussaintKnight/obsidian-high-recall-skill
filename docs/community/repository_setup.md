@@ -88,6 +88,18 @@ npm run github:issues -- --apply
 
 Details are in [starter_issue_commands.md](starter_issue_commands.md).
 
+## Release
+
+Release notes live in [../releases/v0.1.0.md](../releases/v0.1.0.md). After commits are pushed and CI is green, publish or inspect the GitHub release with:
+
+```bash
+npm run github:release
+npm run github:release -- --json
+npm run github:release -- --apply
+```
+
+Details are in [../releases/publish_release.md](../releases/publish_release.md).
+
 ## Maintenance
 
 The maintenance source of truth is [maintenance.md](maintenance.md). It defines the weekly CI, Dependabot, issue triage, release, and privacy/security loop.
