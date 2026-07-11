@@ -27,13 +27,55 @@ function run(command, args, options = {}) {
 }
 
 function assertUsage(binName, args, expected) {
-  const binPath = path.join(installDir, "node_modules", ".bin", `${binName}${cmdExt}`);
+  const binPath = installedBinPath(binName);
   if (!fs.existsSync(binPath)) {
     throw new Error(`Installed package is missing bin: ${binPath}`);
   }
   const proc = run(binPath, args);
   if (!proc.stdout.includes(expected)) {
     throw new Error(`${binName} ${args.join(" ")} did not print expected usage text.\n${proc.stdout}`);
+  }
+}
+
+function installedBinPath(binName) {
+  return path.join(installDir, "node_modules", ".bin", `${binName}${cmdExt}`);
+}
+
+function assertInstalledFixtureQuery() {
+  const binPath = installedBinPath("obsidian-high-recall");
+  const packageDir = path.join(installDir, "node_modules", "obsidian-high-recall");
+  const fixtureVault = path.join(packageDir, "docs", "fixtures", "demo-vault");
+  if (!fs.existsSync(fixtureVault)) {
+    throw new Error(`Installed package is missing fixture vault: ${fixtureVault}`);
+  }
+
+  const proc = run(binPath, [
+    "query",
+    "data collection for embodied AI robot demonstrations",
+    "--vault",
+    fixtureVault,
+    "--db",
+    path.join(workDir, "fixture-smoke.db"),
+    "--backend",
+    "smart",
+    "--limit",
+    "5",
+    "--json",
+  ]);
+
+  let payload;
+  try {
+    payload = JSON.parse(proc.stdout);
+  } catch (err) {
+    throw new Error(`Installed fixture query did not return JSON: ${err.message}\n${proc.stdout}`);
+  }
+
+  const results = Array.isArray(payload.results) ? payload.results : [];
+  const found = results.some((result) =>
+    /Embodied AI Data Collection/.test(`${result.title || ""} ${result.path || ""}`),
+  );
+  if (!found) {
+    throw new Error(`Installed fixture query did not recall Embodied AI Data Collection.\n${proc.stdout}`);
   }
 }
 
@@ -68,6 +110,7 @@ try {
 
   assertUsage("obsidian-high-recall", ["help"], "obsidian_high_recall.mjs query");
   assertUsage("obsidian-high-recall-eval", ["--help"], "evaluate_recall.mjs");
+  assertInstalledFixtureQuery();
   console.log("Installed package bin smoke passed.");
 } finally {
   if (process.env.KEEP_PACKAGE_BIN_SMOKE !== "1") {
