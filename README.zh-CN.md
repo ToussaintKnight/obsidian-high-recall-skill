@@ -260,6 +260,10 @@ node skills/obsidian-high-recall/scripts/evaluate_recall.mjs ./obsidian_recall_e
 
 安全报告格式见：[docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)。
 
+## 帮忙测试
+
+早期最有价值的贡献，是从真实操作系统和 vault 设置里给出 privacy-safe install/recall report。先看 [docs/testing_guide.md](docs/testing_guide.md)，然后通过 [tester feedback template](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml) 分享结果。
+
 ## Repo 结构
 
 ```text
@@ -293,6 +297,7 @@ skills/
 - Starter issue playbook：[docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Repository setup checklist：[docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)
+- Testing guide：[docs/testing_guide.md](docs/testing_guide.md)
 - Roadmap：[ROADMAP.md](ROADMAP.md)
 - Launch playbook：[docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit：[docs/marketing](docs/marketing/README.md)

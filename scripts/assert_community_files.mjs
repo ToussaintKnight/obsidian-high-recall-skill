@@ -26,6 +26,7 @@ const requiredFiles = [
   "SUPPORT.md",
   "ROADMAP.md",
   "CITATION.cff",
+  "docs/testing_guide.md",
   ".github/labels.yml",
   ".github/pull_request_template.md",
   ".github/ISSUE_TEMPLATE/config.yml",
@@ -59,6 +60,7 @@ requireIncludes(
   read(".github/ISSUE_TEMPLATE/config.yml"),
   [
     "blank_issues_enabled: false",
+    "Testing guide",
     "Troubleshooting before filing",
     "Tester discussion",
     "Security and privacy concern",
@@ -121,6 +123,21 @@ requireIncludes("docs/community/starter_issues.md", starterIssues, [
   "Anonymized Benchmark Report",
   "Privacy Redaction Checklist Test",
   "Obsidian Forum Launch Feedback",
+  "docs/testing_guide.md",
+]);
+
+const testingGuide = read("docs/testing_guide.md");
+requireIncludes("docs/testing_guide.md", testingGuide, [
+  "# Testing Guide",
+  "Ten-Minute Path",
+  "npm test",
+  "doctor --vault",
+  "tester_feedback.yml",
+  "What Not To Report",
+  "raw_runs.json",
+  "cases.local.json",
+  "Privacy concern",
+  "benchmark/reporting_guide.md",
 ]);
 
 const labelsText = read(".github/labels.yml");

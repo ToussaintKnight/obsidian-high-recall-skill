@@ -10,6 +10,10 @@ Repository:
 
 https://github.com/ToussaintKnight/obsidian-high-recall-skill
 
+Testing guide:
+
+https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
+
 Tester discussion:
 
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
@@ -42,6 +46,9 @@ https://toussaintknight.github.io/obsidian-high-recall-skill/
 
 Repo:
 https://github.com/ToussaintKnight/obsidian-high-recall-skill
+
+Testing guide:
+https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
 
 It is a local-first recall-first search wrapper. It reuses Smart Connections vectors when available, falls back to local hybrid/fulltext search, and can merge both result sets when recall matters more than latency.
 
@@ -154,6 +161,7 @@ The most useful report is:
 - whether Smart Connections is installed and fully indexed
 - approximate vault size
 - whether `npm test` passed
+- whether the ten-minute testing guide was clear
 - whether one broad real-vault query found notes you would otherwise have missed
 
 Please do not share private note paths, snippets, raw queries, vault names, or gold labels.

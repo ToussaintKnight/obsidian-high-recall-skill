@@ -10,6 +10,7 @@ Goal: Verify a clean Windows machine can install dependencies and run the public
 
 Checklist:
 
+- Follow [docs/testing_guide.md](../testing_guide.md) through the fixture steps.
 - Run `npm ci`.
 - Run `npm test`.
 - Run `node skills/obsidian-high-recall/scripts/evaluate_recall.mjs .tmp/fixture-eval --vault docs/fixtures/demo-vault --cases docs/fixtures/demo_cases.json --backends smart --ks 5,10 --limit 20 --per-channel 20 --neighbor-seeds 0`.
@@ -25,6 +26,7 @@ Goal: Verify the same fixture path on macOS, including shell quoting for vault p
 
 Checklist:
 
+- Follow [docs/testing_guide.md](../testing_guide.md) through the fixture and CLI entry-point steps.
 - Run `npm ci`.
 - Run `npm test`.
 - Report whether `obsidian-high-recall --help` and `obsidian-high-recall-eval --help` work after install.
@@ -40,6 +42,7 @@ Goal: Verify the package on a common Linux desktop or WSL environment.
 
 Checklist:
 
+- Follow [docs/testing_guide.md](../testing_guide.md) through the fixture and CLI entry-point steps.
 - Run `npm ci`.
 - Run `npm test`.
 - Run `npm pack --dry-run`.
@@ -55,6 +58,7 @@ Goal: Collect aggregate compatibility reports across Smart Connections versions 
 
 Checklist:
 
+- Start from [docs/testing_guide.md](../testing_guide.md).
 - State Smart Connections version if known.
 - State whether Smart Connections has finished indexing.
 - Run `obsidian-high-recall doctor --vault "/absolute/path/to/your-vault" --json` and paste only privacy-safe output.

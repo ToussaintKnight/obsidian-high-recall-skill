@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Testing guide
+    url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
+    about: Start here for the ten-minute fixture, CLI, doctor, and real-vault smoke-test path.
   - name: Troubleshooting before filing
     url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/troubleshooting.md
     about: Check install, vault detection, Smart Connections, and OHS fallback notes first.

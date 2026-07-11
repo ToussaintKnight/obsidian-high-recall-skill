@@ -252,6 +252,10 @@ Real-vault reports are useful when they stay privacy-safe. If you try this on yo
 
 See [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md) for the exact safe report shape.
 
+## Help Test
+
+The most useful early contribution is a privacy-safe install and recall report from a real operating system and vault setup. Start with [docs/testing_guide.md](docs/testing_guide.md), then share results through the [tester feedback template](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml).
+
 ## Repository Layout
 
 ```text
@@ -285,6 +289,7 @@ skills/
 - Starter issue playbook: [docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Repository setup checklist: [docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
+- Testing guide: [docs/testing_guide.md](docs/testing_guide.md)
 - Roadmap: [ROADMAP.md](ROADMAP.md)
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit: [docs/marketing](docs/marketing/README.md)
