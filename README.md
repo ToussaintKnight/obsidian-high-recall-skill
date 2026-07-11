@@ -36,6 +36,8 @@ npm test
 
 The fixture smoke test uses public notes only and covers 5 recall cases: 3 English, 1 Chinese, and 1 mixed Chinese/English.
 
+Expected fixture output and pass criteria are documented in [docs/demo/fixture_walkthrough.md](docs/demo/fixture_walkthrough.md).
+
 Query the fixture vault directly:
 
 ```bash
@@ -280,6 +282,7 @@ skills/
 - Privacy leak gate: `npm run privacy:scan`
 - Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`
 - Documentation link gate: `npm run docs:links`
+- Demo walkthrough gate: `npm run demo:check`
 - Codex skill structure gate: `npm run skill:check`
 - Positioning and comparison gate: `npm run positioning:check`
 - Changelog and release notes: [CHANGELOG.md](CHANGELOG.md), `npm run release:check`

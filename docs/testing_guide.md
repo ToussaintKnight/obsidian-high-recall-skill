@@ -20,6 +20,8 @@ npm test
 
 This uses only `docs/fixtures/demo-vault`. Passing this step means the package, CLI wiring, fixture evaluator, privacy gate, docs gates, and basic recall path work on your machine.
 
+Expected output and stable fixture result facts are listed in [demo/fixture_walkthrough.md](demo/fixture_walkthrough.md).
+
 3. Check CLI entry points:
 
 ```bash

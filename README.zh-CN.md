@@ -36,6 +36,8 @@ npm test
 
 这个 fixture smoke test 只使用公开笔记，覆盖 5 个 recall cases：3 个英文、1 个中文、1 个中英混合。
 
+Fixture 的预期输出和通过标准见：[docs/demo/fixture_walkthrough.md](docs/demo/fixture_walkthrough.md)。
+
 直接查询 fixture vault：
 
 ```bash
@@ -288,6 +290,7 @@ skills/
 - 隐私泄漏检查：`npm run privacy:scan`
 - Privacy threat model：[docs/privacy_threat_model.md](docs/privacy_threat_model.md)，`npm run privacy:docs`
 - 文档链接检查：`npm run docs:links`
+- Demo walkthrough 检查：`npm run demo:check`
 - Codex skill 结构检查：`npm run skill:check`
 - Positioning 和 comparison 检查：`npm run positioning:check`
 - Changelog 和 release notes：[CHANGELOG.md](CHANGELOG.md)，`npm run release:check`

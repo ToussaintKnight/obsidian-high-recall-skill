@@ -24,6 +24,12 @@ When editing README or docs, run the local link check:
 npm run docs:links
 ```
 
+When changing fixture demo assets, public fixture walkthroughs, or first-run demo copy, run:
+
+```bash
+npm run demo:check
+```
+
 When changing public positioning, comparison, launch, or marketing copy, run:
 
 ```bash

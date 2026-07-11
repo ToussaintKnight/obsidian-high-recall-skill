@@ -14,6 +14,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 
 - README first screen explains the user pain and 30-second demo.
 - Demo GIF is visible in the README and uses only public fixture data.
+- Fixture walkthrough documents expected output and pass criteria at [demo/fixture_walkthrough.md](demo/fixture_walkthrough.md); `npm run demo:check` passes after demo changes.
 - Social preview card exists at `docs/marketing/social_preview.png`; use it for GitHub social preview and community posts.
 - `npm test` passes on the public fixture vault.
 - `npm run rrf:check` passes after evaluator, benchmark, or union-ranking changes.

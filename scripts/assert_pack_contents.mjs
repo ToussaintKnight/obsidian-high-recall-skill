@@ -28,6 +28,7 @@ const required = [
   "docs/robots.txt",
   "docs/sitemap.xml",
   "docs/demo/fixture_demo.gif",
+  "docs/demo/fixture_walkthrough.md",
   "docs/architecture/architecture_option_b_archify.png",
   "docs/fixtures/README.md",
   "docs/fixtures/demo_cases.json",
