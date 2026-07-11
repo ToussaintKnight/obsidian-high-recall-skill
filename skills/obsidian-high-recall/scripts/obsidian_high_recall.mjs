@@ -10,6 +10,7 @@ import { pathToFileURL } from "node:url";
 const COMMANDS = new Set(["query", "status", "reindex", "detect", "doctor", "help"]);
 const DEFAULT_SNIPPET_LENGTH = 320;
 const SMART_MODEL_KEY = "TaylorAI/bge-micro-v2";
+const OUTPUT_SCHEMA_VERSION = "0.1";
 
 function parseArgs(argv) {
   const opts = {
@@ -853,10 +854,18 @@ async function makePack(vault, db, opts) {
   const merged = mergeResults(channelResults, opts.neighborSeeds);
   const smartVectorCount = smartSearchInfo.embeddedSources + smartSearchInfo.embeddedBlocks;
   return {
+    schemaVersion: OUTPUT_SCHEMA_VERSION,
     query: opts.query,
     generatedAt: new Date().toISOString(),
     vault,
     db,
+    privacy: {
+      safeToShare: false,
+      rawQueryIncluded: true,
+      localPathsIncluded: true,
+      snippetsIncluded: true,
+      noteNamesIncluded: true,
+    },
     backend: {
       selected: useSmart && useOhs ? "both" : useSmart ? "smart" : "ohs",
       primary: useSmart ? (smartVectorCount > 0 ? "smart-connections" : "lexical-fallback") : "obsidian-hybrid-search",
@@ -957,6 +966,7 @@ function redactLocalText(text) {
 
 function makeDoctorReport(opts) {
   const report = {
+    schemaVersion: OUTPUT_SCHEMA_VERSION,
     generatedAt: new Date().toISOString(),
     privacy: {
       safeToShare: true,

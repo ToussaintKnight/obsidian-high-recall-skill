@@ -77,6 +77,8 @@ obsidian-high-recall query "data collection for embodied AI" --vault "/absolute/
 
 Returns a recall pack with ranked hits, snippets, channels, scores, ranks, anchors, and JSON metadata. Query output can include private snippets, note paths, raw query text, and local `vault`/`db` paths. Do not paste real-vault query output into public issues without redaction.
 
+The JSON recall pack schema, result fields, ranking semantics, and `privacy.safeToShare` flags are defined in [output_contract.md](output_contract.md).
+
 ## Query Options
 
 | Option | Default | Meaning |
@@ -104,6 +106,14 @@ Returns a recall pack with ranked hits, snippets, channels, scores, ranks, ancho
 | `smart` | Smart Connections has indexed the vault, or fixture/no-vector smoke tests | Fast; fixture may use lexical fallback when no `.smart-env` exists. |
 | `ohs` | You need local hybrid/fulltext fallback | Slower; may require first-run package/model downloads. |
 | `both` | Missing a relevant note is more costly than latency/noise | Best union recall path; slower and can return more noise. |
+
+## Output Contract
+
+`query --json` returns a local recall pack for agents and scripts. It intentionally includes private fields such as raw query text, vault-relative note paths, snippets, tags, links, backlinks, anchors, and local vault/database paths. The output declares `privacy.safeToShare: false`.
+
+`doctor --json` returns a separate diagnostic object intended for public bug reports after manual review. It declares `privacy.safeToShare: true` and omits local paths, note names, snippets, raw queries, vault names, usernames, tokens, and gold labels.
+
+The full schema and field-level privacy classification are in [output_contract.md](output_contract.md).
 
 ## `obsidian-high-recall-eval`
 
@@ -157,6 +167,7 @@ Keep these local unless you have manually redacted them. For public reports, sha
 
 - Use `doctor --json` for public bug reports.
 - Do not publish real-vault `query --json` output without redaction.
+- Treat `query --json` packs with `privacy.safeToShare: false` as local-only.
 - Do not commit `raw_runs.json`, `metrics.json`, `metrics.csv`, `cases.local.json`, OHS databases, `.smart-env`, model caches, or npm caches.
 - Use [demo/fixture_walkthrough.md](demo/fixture_walkthrough.md) when you need a public expected-output example.
 - Use [testing_guide.md](testing_guide.md) when reporting tester feedback.

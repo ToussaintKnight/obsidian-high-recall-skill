@@ -36,6 +36,12 @@ When changing CLI options, help output, package bins, or command reference docs,
 npm run cli:check
 ```
 
+When changing JSON output fields, recall pack privacy flags, or doctor report shape, update [docs/output_contract.md](docs/output_contract.md) and run:
+
+```bash
+npm run output:check
+```
+
 When changing public positioning, comparison, launch, or marketing copy, run:
 
 ```bash

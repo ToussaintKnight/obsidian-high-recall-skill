@@ -58,6 +58,7 @@ node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "robot f
 - Falls back to `obsidian-hybrid-search` through `npx`.
 - Supports `auto`, `smart`, `ohs`, and `both` backends.
 - Returns broad recall packs with snippets, channels, scores, ranks, and JSON output.
+- Documents the JSON recall pack schema and share-safety rules in [docs/output_contract.md](docs/output_contract.md).
 - Provides a privacy-safe `doctor --json` report for bug reports and tester feedback.
 - Stores derived indexes and runtime packages outside the vault.
 
@@ -148,6 +149,8 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 ```
 
 Full command and option details are in [docs/cli_reference.md](docs/cli_reference.md).
+
+The JSON recall pack schema, result fields, ranking semantics, and share-safety flags are documented in [docs/output_contract.md](docs/output_contract.md).
 
 ## Architecture
 
@@ -286,6 +289,7 @@ skills/
 - Documentation link gate: `npm run docs:links`
 - Demo walkthrough gate: `npm run demo:check`
 - CLI reference gate: `npm run cli:check`
+- Output contract gate: `npm run output:check`
 - Codex skill structure gate: `npm run skill:check`
 - Positioning and comparison gate: `npm run positioning:check`
 - Changelog and release notes: [CHANGELOG.md](CHANGELOG.md), `npm run release:check`
@@ -296,6 +300,7 @@ skills/
 - Repository setup checklist: [docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Maintenance playbook: [docs/community/maintenance.md](docs/community/maintenance.md)
 - CLI reference: [docs/cli_reference.md](docs/cli_reference.md)
+- Output contract: [docs/output_contract.md](docs/output_contract.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
 - Testing guide: [docs/testing_guide.md](docs/testing_guide.md)
 - Roadmap: [ROADMAP.md](ROADMAP.md)

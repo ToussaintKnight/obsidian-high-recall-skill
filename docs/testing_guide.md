@@ -31,6 +31,8 @@ npx --yes . query "data collection for embodied AI" --vault docs/fixtures/demo-v
 
 For command and option details, see [cli_reference.md](cli_reference.md).
 
+For the `query --json` recall pack schema and field-level privacy classification, see [output_contract.md](output_contract.md).
+
 4. If you have a real vault, run a privacy-safe diagnostic:
 
 ```bash
