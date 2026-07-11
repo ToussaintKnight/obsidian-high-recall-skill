@@ -264,6 +264,7 @@ skills/
 ## Community And Project Health
 
 - Security and privacy model: [SECURITY.md](SECURITY.md)
+- Privacy leak gate: `npm run privacy:scan`
 - Support: [SUPPORT.md](SUPPORT.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)

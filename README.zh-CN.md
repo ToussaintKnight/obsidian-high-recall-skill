@@ -272,6 +272,7 @@ skills/
 ## 社区和项目健康度
 
 - 安全和隐私模型：[SECURITY.md](SECURITY.md)
+- 隐私泄漏检查：`npm run privacy:scan`
 - 支持入口：[SUPPORT.md](SUPPORT.md)
 - 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
 - Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)

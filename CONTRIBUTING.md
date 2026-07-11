@@ -10,6 +10,12 @@ Run:
 npm test
 ```
 
+For privacy-sensitive changes, or before sharing a branch publicly, run the leak gate directly:
+
+```bash
+npm run privacy:scan
+```
+
 For skill-specific validation in Codex environments, also run:
 
 ```bash
@@ -28,6 +34,7 @@ node skills/obsidian-high-recall/scripts/evaluate_recall.mjs .tmp/fixture-eval -
 - Do not commit `raw_runs.json`, local cases files, local database files, `.smart-env`, or dependency caches.
 - Use `docs/fixtures/demo-vault` for reproducible tests and documentation examples.
 - Redact local paths and usernames from screenshots and logs.
+- Treat `npm run privacy:scan` as a public-file guardrail; still manually review images, issue text, and benchmark reports before publishing.
 - Link to [docs/troubleshooting.md](docs/troubleshooting.md) when reporting install, vault detection, Smart Connections, or OHS fallback issues.
 
 ## Good First Contributions

@@ -10,8 +10,9 @@
     "obsidian-high-recall-eval": "skills/obsidian-high-recall/scripts/evaluate_recall.mjs"
   },
   "scripts": {
-    "check": "node --check skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs && node --check skills/obsidian-high-recall/scripts/evaluate_recall.mjs && node --check scripts/assert_fixture_metrics.mjs && node --check scripts/assert_cli_help.mjs && node --check scripts/assert_pack_contents.mjs && node --check scripts/assert_package_bin.mjs && node scripts/assert_cli_help.mjs && node scripts/assert_pack_contents.mjs && node scripts/assert_package_bin.mjs",
+    "check": "node --check skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs && node --check skills/obsidian-high-recall/scripts/evaluate_recall.mjs && node --check scripts/assert_fixture_metrics.mjs && node --check scripts/assert_cli_help.mjs && node --check scripts/assert_pack_contents.mjs && node --check scripts/assert_package_bin.mjs && node --check scripts/assert_no_private_leaks.mjs && node scripts/assert_cli_help.mjs && node scripts/assert_pack_contents.mjs && node scripts/assert_package_bin.mjs && node scripts/assert_no_private_leaks.mjs",
     "demo:gif": "python scripts/render_demo_gif.py",
+    "privacy:scan": "node scripts/assert_no_private_leaks.mjs",
     "social:card": "python scripts/render_social_card.py",
     "architecture:png": "python scripts/render_architecture_diagram.py",
     "smoke:fixture": "node skills/obsidian-high-recall/scripts/evaluate_recall.mjs .tmp/fixture-eval --vault docs/fixtures/demo-vault --cases docs/fixtures/demo_cases.json --backends smart --ks 5,10 --limit 20 --per-channel 20 --neighbor-seeds 0 && node scripts/assert_fixture_metrics.mjs .tmp/fixture-eval/metrics.json",
