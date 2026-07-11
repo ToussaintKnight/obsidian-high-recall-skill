@@ -10,6 +10,8 @@ Run:
 npm test
 ```
 
+CI runs this same command on Linux, Windows, and macOS.
+
 For privacy-sensitive changes, or before sharing a branch publicly, run the leak gate directly:
 
 ```bash

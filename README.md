@@ -266,6 +266,7 @@ skills/
 ## Community And Project Health
 
 - Security and privacy model: [SECURITY.md](SECURITY.md)
+- CI matrix: Linux, Windows, and macOS run `npm test`
 - Privacy leak gate: `npm run privacy:scan`
 - Documentation link gate: `npm run docs:links`
 - Support: [SUPPORT.md](SUPPORT.md)

@@ -274,6 +274,7 @@ skills/
 ## 社区和项目健康度
 
 - 安全和隐私模型：[SECURITY.md](SECURITY.md)
+- CI matrix：Linux、Windows、macOS 都运行 `npm test`
 - 隐私泄漏检查：`npm run privacy:scan`
 - 文档链接检查：`npm run docs:links`
 - 支持入口：[SUPPORT.md](SUPPORT.md)
