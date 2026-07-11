@@ -33,6 +33,7 @@ const required = [
   "docs/troubleshooting.md",
   "docs/benchmark/reporting_guide.md",
   "docs/community/maintenance.md",
+  "docs/marketing/launch_experiment.md",
   "docs/robots.txt",
   "docs/sitemap.xml",
   "docs/demo/fixture_demo.gif",

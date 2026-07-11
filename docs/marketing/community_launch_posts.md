@@ -32,6 +32,8 @@ https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
 
 ## Launch Sequence
 
+Use [launch_experiment.md](launch_experiment.md) to record baseline metrics, 24-hour results, 7-day results, conversion ratios, and after-action notes for each channel.
+
 1. Obsidian Forum Share & Showcase.
 2. Obsidian-focused Reddit or PKM community.
 3. AI-agent / local-first tooling community.

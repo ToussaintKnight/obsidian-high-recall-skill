@@ -329,6 +329,7 @@ skills/
 - Roadmap: [ROADMAP.md](ROADMAP.md)
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit: [docs/marketing](docs/marketing/README.md)
+- Launch experiment plan: [docs/marketing/launch_experiment.md](docs/marketing/launch_experiment.md), `npm run launch:check`
 - Share page: [docs/index.html](docs/index.html)
 - Positioning and fit: [docs/positioning.md](docs/positioning.md)
 - Comparison and decision guide: [docs/comparison.md](docs/comparison.md)

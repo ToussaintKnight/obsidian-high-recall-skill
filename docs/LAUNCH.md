@@ -21,6 +21,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Demo GIF is visible in the README and uses only public fixture data.
 - Fixture walkthrough documents expected output and pass criteria at [demo/fixture_walkthrough.md](demo/fixture_walkthrough.md); `npm run demo:check` passes after demo changes.
 - Social preview card exists at `docs/marketing/social_preview.png`; use it for GitHub social preview and community posts.
+- Launch experiment plan is visible at [marketing/launch_experiment.md](marketing/launch_experiment.md); `npm run launch:check` passes after channel tracking or outreach-measurement changes.
 - `npm test` passes on the public fixture vault.
 - `npm run rrf:check` passes after evaluator, benchmark, or union-ranking changes.
 - `npm run skill:check` passes after `SKILL.md`, `agents/openai.yaml`, bundled references, scripts, or package hooks change.
@@ -62,6 +63,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Obsidian Forum launch task: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/8
 
 Full copy-ready launch posts are in [marketing/community_launch_posts.md](marketing/community_launch_posts.md).
+Launch experiment and conversion tracking are in [marketing/launch_experiment.md](marketing/launch_experiment.md).
 Repository setup notes are in [community/repository_setup.md](community/repository_setup.md).
 Copy-ready starter issue drafts are in [community/starter_issues.md](community/starter_issues.md).
 
@@ -119,3 +121,4 @@ I am looking for 5-10 testers with different vault sizes and operating systems. 
 - Issues that reveal real compatibility gaps.
 
 Baseline metrics are recorded in [metrics/launch_baseline.md](metrics/launch_baseline.md). External collaboration strategy is recorded in [community/external_contribution_strategy.md](community/external_contribution_strategy.md).
+Channel-by-channel conversion rules are recorded in [marketing/launch_experiment.md](marketing/launch_experiment.md).

@@ -14,6 +14,10 @@ Community launch posts:
 
 [community_launch_posts.md](community_launch_posts.md)
 
+Launch experiment plan:
+
+[launch_experiment.md](launch_experiment.md)
+
 Repository setup checklist:
 
 [../community/repository_setup.md](../community/repository_setup.md)
@@ -38,6 +42,7 @@ Regenerate:
 
 ```bash
 npm run social:card
+npm run launch:check
 npm run site:check
 ```
 
