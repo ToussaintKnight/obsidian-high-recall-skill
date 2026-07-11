@@ -19,6 +19,6 @@ Use this option if the README should be explanatory and self-contained at a glan
 
 ![Architecture option B](architecture_option_b_archify.png)
 
-This option was generated with Archify from [architecture_option_b_archify.architecture.json](architecture_option_b_archify.architecture.json). The interactive export is [architecture_option_b_archify.html](architecture_option_b_archify.html), and the static SVG export is [architecture_option_b_archify.svg](architecture_option_b_archify.svg).
+This option was generated with Archify from [architecture_option_b_archify.architecture.json](architecture_option_b_archify.architecture.json). The interactive export is [architecture_option_b_archify.html](architecture_option_b_archify.html), the static SVG export is [architecture_option_b_archify.svg](architecture_option_b_archify.svg), and the README PNG is rendered reproducibly with `npm run architecture:png`.
 
 Use this option if the README should emphasize a cleaner diagramming style and reusable source.
