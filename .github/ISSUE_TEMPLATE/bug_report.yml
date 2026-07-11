@@ -27,6 +27,12 @@ body:
       label: Obsidian and Smart Connections status
       placeholder: "Obsidian version, Smart Connections installed/indexed?"
   - type: textarea
+    id: doctor
+    attributes:
+      label: Privacy-safe doctor output
+      description: Run `obsidian-high-recall doctor --vault "/absolute/path/to/your-vault" --json` and paste the output. It should not contain local paths, snippets, queries, or note names.
+      render: json
+  - type: textarea
     id: command
     attributes:
       label: Command

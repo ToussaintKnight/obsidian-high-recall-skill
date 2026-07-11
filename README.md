@@ -56,6 +56,7 @@ node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "robot f
 - Falls back to `obsidian-hybrid-search` through `npx`.
 - Supports `auto`, `smart`, `ohs`, and `both` backends.
 - Returns broad recall packs with snippets, channels, scores, ranks, and JSON output.
+- Provides a privacy-safe `doctor --json` report for bug reports and tester feedback.
 - Stores derived indexes and runtime packages outside the vault.
 
 ## Install
@@ -132,6 +133,7 @@ From the installed skill directory:
 
 ```bash
 node scripts/obsidian_high_recall.mjs detect
+node scripts/obsidian_high_recall.mjs doctor --vault "/absolute/path/to/your-vault" --json
 node scripts/obsidian_high_recall.mjs status
 node scripts/obsidian_high_recall.mjs query "data collection for embodied AI" --backend auto --limit 120 --json
 node scripts/obsidian_high_recall.mjs query "robot teleoperation demonstrations" --backend both --limit 200 --per-channel 80 --json

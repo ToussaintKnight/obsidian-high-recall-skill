@@ -7,7 +7,7 @@ import os from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 
-const COMMANDS = new Set(["query", "status", "reindex", "detect", "help"]);
+const COMMANDS = new Set(["query", "status", "reindex", "detect", "doctor", "help"]);
 const DEFAULT_SNIPPET_LENGTH = 320;
 const SMART_MODEL_KEY = "TaylorAI/bge-micro-v2";
 
@@ -92,6 +92,7 @@ function printHelp() {
   console.log(`Usage:
   obsidian_high_recall.mjs help
   obsidian_high_recall.mjs detect [--vault PATH] [--db PATH]
+  obsidian_high_recall.mjs doctor [--vault PATH] [--json]
   obsidian_high_recall.mjs status [--vault PATH] [--db PATH] [--json]
   obsidian_high_recall.mjs reindex [--vault PATH] [--db PATH] [--force]
   obsidian_high_recall.mjs query "query text" [--vault PATH] [--backend auto] [--limit 120] [--json]
@@ -554,6 +555,19 @@ function getSmartInfo(vault) {
   return info;
 }
 
+function safeSmartInfo(info) {
+  return {
+    envDirPresent: Boolean(info.envDir),
+    multiDirPresent: Boolean(info.multiDir),
+    files: info.files,
+    sources: info.sources,
+    blocks: info.blocks,
+    embeddedSources: info.embeddedSources,
+    embeddedBlocks: info.embeddedBlocks,
+    modelKey: info.modelKey,
+  };
+}
+
 function parseAjson(text) {
   let s = text.trim();
   if (!s) return {};
@@ -935,10 +949,115 @@ function compact(text, max) {
   return s.length > max ? `${s.slice(0, max - 3)}...` : s;
 }
 
+function redactLocalText(text) {
+  return String(text || "")
+    .replace(/[A-Za-z]:\\[^\s"'<>]+/g, "<local-path>")
+    .replace(/\/(?:Users|home)\/[^\s"'<>]+/g, "<local-path>");
+}
+
+function makeDoctorReport(opts) {
+  const report = {
+    generatedAt: new Date().toISOString(),
+    privacy: {
+      safeToShare: true,
+      rawPathsIncluded: false,
+      snippetsIncluded: false,
+      noteNamesIncluded: false,
+      queryIncluded: false,
+    },
+    runtime: {
+      node: process.version,
+      platform: process.platform,
+      arch: process.arch,
+    },
+    vault: {
+      resolved: false,
+      source: opts.vault ? "cli" : process.env.OBSIDIAN_VAULT_PATH ? "env-or-config" : "auto",
+      hasObsidianDir: false,
+      markdownFiles: null,
+      error: null,
+    },
+    smart: null,
+    ohs: {
+      dbConfigured: false,
+      dbExists: false,
+      dbSizeBytes: null,
+      dbPathRedacted: true,
+      statusChecked: false,
+      statusNote: "doctor does not run OHS status, reindex, or search",
+    },
+    recommendations: [],
+  };
+
+  let vault;
+  try {
+    vault = resolveVault(opts.vault);
+  } catch (err) {
+    report.vault.error = redactLocalText(err?.message || String(err));
+    report.recommendations.push("Pass --vault PATH or set OBSIDIAN_VAULT_PATH, then rerun doctor.");
+    return report;
+  }
+
+  report.vault.resolved = true;
+  report.vault.hasObsidianDir = fs.existsSync(path.join(vault, ".obsidian"));
+  report.vault.markdownFiles = listMarkdownFiles(vault).length;
+
+  const smartInfo = getSmartInfo(vault);
+  const smartDetected = detectSmartConnections(vault);
+  report.smart = {
+    ...safeSmartInfo(smartInfo),
+    detectedPathCount: smartDetected.length,
+    smartConnectionsDetected: smartDetected.length > 0,
+  };
+
+  const db = path.resolve(opts.db || defaultDbPath(vault));
+  report.ohs.dbConfigured = true;
+  report.ohs.dbExists = fs.existsSync(db);
+  report.ohs.dbSizeBytes = report.ohs.dbExists ? fs.statSync(db).size : null;
+
+  if (!report.smart.embeddedSources && !report.smart.embeddedBlocks) {
+    report.recommendations.push("Smart Connections vectors were not detected; use --backend auto for OHS fallback or finish Smart Connections indexing.");
+  }
+  if (!report.vault.hasObsidianDir) {
+    report.recommendations.push("The resolved directory does not contain .obsidian; confirm --vault points at the vault root.");
+  }
+  if (!report.ohs.dbExists) {
+    report.recommendations.push("OHS database was not found yet; the first OHS/auto fallback query may build a local index.");
+  }
+
+  return report;
+}
+
+function printDoctor(report) {
+  console.log("Obsidian High Recall doctor");
+  console.log(`Node: ${report.runtime.node}`);
+  console.log(`Platform: ${report.runtime.platform}/${report.runtime.arch}`);
+  console.log(`Vault resolved: ${report.vault.resolved}`);
+  if (report.vault.error) console.log(`Vault error: ${report.vault.error}`);
+  if (report.vault.resolved) {
+    console.log(`Vault has .obsidian: ${report.vault.hasObsidianDir}`);
+    console.log(`Markdown files: ${report.vault.markdownFiles}`);
+    console.log(`Smart detected: ${report.smart.smartConnectionsDetected}`);
+    console.log(`Smart embedded sources/blocks: ${report.smart.embeddedSources}/${report.smart.embeddedBlocks}`);
+    console.log(`OHS db exists: ${report.ohs.dbExists}`);
+  }
+  console.log(`Privacy-safe to share: ${report.privacy.safeToShare}`);
+  if (report.recommendations.length) {
+    console.log("Recommendations:");
+    for (const item of report.recommendations) console.log(`- ${item}`);
+  }
+}
+
 async function main() {
   const opts = parseArgs(process.argv.slice(2));
   if (opts.command === "help") {
     printHelp();
+    return;
+  }
+  if (opts.command === "doctor") {
+    const report = makeDoctorReport(opts);
+    if (opts.json) console.log(JSON.stringify(report, null, 2));
+    else printDoctor(report);
     return;
   }
   const vault = resolveVault(opts.vault);

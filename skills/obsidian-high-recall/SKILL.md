@@ -18,19 +18,27 @@ The script auto-discovers the active Obsidian vault from Obsidian's app config a
 
 ## Workflow
 
-1. Run `status` before important work:
+1. Run `doctor` for privacy-safe setup diagnostics or user bug reports:
+
+```bash
+node scripts/obsidian_high_recall.mjs doctor --json
+```
+
+`doctor` does not print local paths, snippets, queries, or note names. Use `status` only when the user needs operational index details locally.
+
+2. Run `status` before important work:
 
 ```bash
 node scripts/obsidian_high_recall.mjs status
 ```
 
-2. Reindex when the vault changed materially or the index is empty:
+3. Reindex when the vault changed materially or the index is empty:
 
 ```bash
 node scripts/obsidian_high_recall.mjs reindex --force
 ```
 
-3. Query with a broad natural-language prompt. Prefer `--json` when another script or agent will consume the result:
+4. Query with a broad natural-language prompt. Prefer `--json` when another script or agent will consume the result:
 
 ```bash
 node scripts/obsidian_high_recall.mjs query "robot foundation model demonstrations and teleoperation data" --limit 200 --json

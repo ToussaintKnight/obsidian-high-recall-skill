@@ -11,7 +11,11 @@ for (const args of [[], ["help"], ["--help"]]) {
   if (proc.status !== 0) {
     throw new Error(`Expected help command ${JSON.stringify(args)} to exit 0, got ${proc.status}\n${proc.stderr || proc.stdout}`);
   }
-  if (!proc.stdout.includes("Usage:") || !proc.stdout.includes("obsidian_high_recall.mjs query")) {
+  if (
+    !proc.stdout.includes("Usage:") ||
+    !proc.stdout.includes("obsidian_high_recall.mjs query") ||
+    !proc.stdout.includes("obsidian_high_recall.mjs doctor")
+  ) {
     throw new Error(`Help output for ${JSON.stringify(args)} did not include expected usage text.`);
   }
   if (/Could not resolve Obsidian vault/.test(proc.stderr + proc.stdout)) {

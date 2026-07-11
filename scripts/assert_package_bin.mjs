@@ -43,8 +43,7 @@ function installedBinPath(binName) {
 
 function assertInstalledFixtureQuery() {
   const binPath = installedBinPath("obsidian-high-recall");
-  const packageDir = path.join(installDir, "node_modules", "obsidian-high-recall");
-  const fixtureVault = path.join(packageDir, "docs", "fixtures", "demo-vault");
+  const fixtureVault = installedFixtureVault();
   if (!fs.existsSync(fixtureVault)) {
     throw new Error(`Installed package is missing fixture vault: ${fixtureVault}`);
   }
@@ -79,6 +78,25 @@ function assertInstalledFixtureQuery() {
   }
 }
 
+function installedFixtureVault() {
+  const packageDir = path.join(installDir, "node_modules", "obsidian-high-recall");
+  return path.join(packageDir, "docs", "fixtures", "demo-vault");
+}
+
+function assertInstalledDoctor() {
+  const binPath = installedBinPath("obsidian-high-recall");
+  const proc = run(binPath, ["doctor", "--vault", installedFixtureVault(), "--json"]);
+  let payload;
+  try {
+    payload = JSON.parse(proc.stdout);
+  } catch (err) {
+    throw new Error(`Installed doctor did not return JSON: ${err.message}\n${proc.stdout}`);
+  }
+  if (!payload.privacy?.safeToShare || !payload.vault?.resolved || payload.vault.markdownFiles !== 3) {
+    throw new Error(`Installed doctor did not produce the expected privacy-safe fixture summary.\n${proc.stdout}`);
+  }
+}
+
 function safeCleanup(target) {
   const resolved = path.resolve(target);
   const rel = path.relative(tmpRoot, resolved);
@@ -110,6 +128,7 @@ try {
 
   assertUsage("obsidian-high-recall", ["help"], "obsidian_high_recall.mjs query");
   assertUsage("obsidian-high-recall-eval", ["--help"], "evaluate_recall.mjs");
+  assertInstalledDoctor();
   assertInstalledFixtureQuery();
   console.log("Installed package bin smoke passed.");
 } finally {

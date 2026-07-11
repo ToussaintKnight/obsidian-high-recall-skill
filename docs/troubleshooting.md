@@ -16,7 +16,15 @@ Check the CLI without touching a private vault:
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help
 ```
 
-If both pass, the repo and Node.js runtime are basically healthy. The remaining issue is likely vault discovery, Smart Connections state, OHS first-run setup, or query settings.
+Generate a privacy-safe diagnostic report for tester feedback or bug reports:
+
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs doctor --vault "/absolute/path/to/your-vault" --json
+```
+
+`doctor` does not run OHS, reindex, search, or read note contents. It reports environment, vault discovery, Smart index counts, and whether an OHS database already exists without printing local paths, snippets, queries, or note names.
+
+If these pass, the repo and Node.js runtime are basically healthy. The remaining issue is likely vault discovery, Smart Connections state, OHS first-run setup, or query settings.
 
 ## Vault Not Detected
 
@@ -109,6 +117,7 @@ Open a bug report with:
 - Obsidian version
 - Smart Connections installed/indexed status
 - backend used
+- `doctor --json` output
 - redacted command
 - redacted error output
 
