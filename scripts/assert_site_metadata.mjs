@@ -7,9 +7,11 @@ const socialImage = `${siteUrl}marketing/social_preview.png`;
 const index = fs.readFileSync(path.join("docs", "index.html"), "utf8");
 const robots = fs.readFileSync(path.join("docs", "robots.txt"), "utf8");
 const sitemap = fs.readFileSync(path.join("docs", "sitemap.xml"), "utf8");
+const llms = fs.readFileSync(path.join("docs", "llms.txt"), "utf8");
 
 const requiredIndexSnippets = [
   `<link rel="canonical" href="${siteUrl}">`,
+  `<link rel="alternate" type="text/plain" title="llms.txt" href="${siteUrl}llms.txt">`,
   `<meta name="robots" content="index,follow">`,
   `<meta property="og:url" content="${siteUrl}">`,
   `<meta property="og:image" content="${socialImage}">`,
@@ -25,6 +27,7 @@ const requiredIndexSnippets = [
   "Output examples",
   "docs/recipes.md",
   "Usage recipes",
+  "llms.txt",
 ];
 
 const missingIndex = requiredIndexSnippets.filter((snippet) => !index.includes(snippet));
@@ -42,6 +45,26 @@ if (!robots.includes(`Sitemap: ${siteUrl}sitemap.xml`)) {
 
 if (!sitemap.includes(`<loc>${siteUrl}</loc>`)) {
   throw new Error("sitemap.xml does not include the canonical project page.");
+}
+
+if (!sitemap.includes(`<loc>${siteUrl}llms.txt</loc>`)) {
+  throw new Error("sitemap.xml does not include llms.txt.");
+}
+
+const requiredLlmsSnippets = [
+  "# Obsidian High Recall",
+  "Local-first high-recall search for Obsidian vaults",
+  "## Quick Start",
+  "npm test",
+  "## Privacy",
+  "Raw notes stay local.",
+  "## Feedback Paths",
+  "tester_feedback.yml",
+  "benchmark_report.yml",
+];
+const missingLlms = requiredLlmsSnippets.filter((snippet) => !llms.includes(snippet));
+if (missingLlms.length) {
+  throw new Error(`llms.txt is missing required snippets:\n- ${missingLlms.join("\n- ")}`);
 }
 
 console.log("Site metadata smoke passed.");

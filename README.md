@@ -338,6 +338,7 @@ skills/
 - Marketing kit: [docs/marketing](docs/marketing/README.md)
 - Launch experiment plan: [docs/marketing/launch_experiment.md](docs/marketing/launch_experiment.md), `npm run launch:check`
 - Share page: [docs/index.html](docs/index.html)
+- AI-readable project summary: [docs/llms.txt](docs/llms.txt)
 - Positioning and fit: [docs/positioning.md](docs/positioning.md)
 - Comparison and decision guide: [docs/comparison.md](docs/comparison.md)
 - Anonymous benchmark reporting guide: [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)

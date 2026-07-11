@@ -42,6 +42,7 @@ const required = [
   "docs/marketing/launch_experiment.md",
   "docs/robots.txt",
   "docs/sitemap.xml",
+  "docs/llms.txt",
   "docs/demo/fixture_demo.gif",
   "docs/demo/fixture_walkthrough.md",
   "docs/examples/README.md",

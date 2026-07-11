@@ -10,6 +10,10 @@ Share page:
 
 https://toussaintknight.github.io/obsidian-high-recall-skill/
 
+AI-readable summary:
+
+https://toussaintknight.github.io/obsidian-high-recall-skill/llms.txt
+
 Community launch posts:
 
 [community_launch_posts.md](community_launch_posts.md)

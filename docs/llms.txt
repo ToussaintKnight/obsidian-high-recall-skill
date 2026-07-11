@@ -1,0 +1,82 @@
+# Obsidian High Recall
+
+> Local-first high-recall search for Obsidian vaults, usable from Codex and CLI.
+
+Obsidian High Recall helps agents and humans search large private Obsidian vaults without silently missing relevant notes. It favors recall over precision, reuses Smart Connections vectors when available, falls back to obsidian-hybrid-search, and can merge both result sets when missing context is more expensive than reading extra hits.
+
+## Primary Links
+
+- Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
+- GitHub repository: https://github.com/ToussaintKnight/obsidian-high-recall-skill
+- README: https://github.com/ToussaintKnight/obsidian-high-recall-skill#readme
+- Install guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/install.md
+- FAQ: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/faq.md
+- Testing guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
+- Usage recipes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
+- Output contract: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/output_contract.md
+- Security and privacy: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/SECURITY.md
+
+## Quick Start
+
+Run the public fixture without a private vault:
+
+```bash
+git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
+cd obsidian-high-recall-skill
+npm test
+```
+
+Run a fixture query:
+
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI robot demonstrations" --vault docs/fixtures/demo-vault --backend smart --limit 10
+```
+
+Run on a real local vault:
+
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "your broad research query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120 --json
+```
+
+## Backends
+
+- `auto`: prefer Smart Connections vectors when available; otherwise use OHS.
+- `smart`: use Smart Connections local embeddings plus lexical fallback.
+- `ohs`: use obsidian-hybrid-search hybrid/fulltext retrieval.
+- `both`: merge Smart and OHS results for maximum recall at higher latency.
+
+## Privacy
+
+- Raw notes stay local.
+- Private queries stay local.
+- Private snippets, local note paths, vault names, gold labels, and raw benchmark runs should not be posted publicly.
+- Public benchmark artifacts are aggregate or anonymized only.
+- Use `doctor --json` for privacy-safe diagnostics and only share output when `privacy.safeToShare` is true.
+
+## Benchmark Context
+
+The main benchmark is a private-vault recall study with 16 manually labeled tasks and 95 gold labels. It is intended to compare deployment choices, not to make universal claims about all Obsidian vaults.
+
+Key result at K=20:
+
+- Smart: Recall 0.57, F1 0.26, MRR 0.65, mean latency 1.00s.
+- OHS: Recall 0.55, F1 0.25, MRR 0.24, mean latency 49.54s.
+- RRF union: Recall 0.61, F1 0.28, MRR 0.61, mean latency 50.54s.
+
+Benchmark files:
+
+- Summary metrics: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/benchmark/summary_metrics.csv
+- Case-level metrics: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/benchmark/case_metrics_at20.csv
+- Settings: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/benchmark/settings.json
+- Reporting guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/benchmark/reporting_guide.md
+
+## Feedback Paths
+
+- Tester feedback: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml
+- Benchmark report: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=benchmark_report.yml
+- Issue chooser: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose
+- Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
+
+## Positioning
+
+Use this project when an agent or CLI needs broad local context from a private Obsidian vault and missing a relevant note is more costly than inspecting extra results. Use native Obsidian search for exact lookup, Smart Connections for Obsidian-native semantic workflows, and OHS directly when only the OHS CLI is needed.

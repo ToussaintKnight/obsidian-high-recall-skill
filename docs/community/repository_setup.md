@@ -33,6 +33,16 @@ npm run social:card
 npm run site:check
 ```
 
+## AI Discovery
+
+The GitHub Pages site publishes an AI-readable project summary at:
+
+```text
+https://toussaintknight.github.io/obsidian-high-recall-skill/llms.txt
+```
+
+Keep [../llms.txt](../llms.txt) aligned with README positioning, privacy guardrails, benchmark limitations, and tester feedback links.
+
 ## Labels
 
 The source of truth is [.github/labels.yml](../../.github/labels.yml). It covers every label used by issue templates and the starter issue playbook.

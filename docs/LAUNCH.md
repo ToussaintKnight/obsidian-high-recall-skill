@@ -37,6 +37,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `npm run examples:check` passes after public redacted output examples or example links change.
 - `npm run positioning:check` passes after positioning, comparison, launch, or marketing copy changes.
 - `npm run site:check` passes after the GitHub Pages share page, social preview card, sitemap, or robots file changes.
+- `docs/llms.txt` summarizes the project for AI tools and stays aligned with README positioning, privacy guardrails, benchmark limitations, and tester feedback links.
 - `npm run release:check` passes after `package.json`, `CHANGELOG.md`, or release notes change.
 - `npm run community:check` passes after issue template, PR template, support, or starter issue changes.
 - `SECURITY.md` explains the privacy model.

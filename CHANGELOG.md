@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added `docs/llms.txt` and site metadata checks so AI tools can discover the project summary, privacy model, quick start, benchmark context, and feedback paths.
 - Added repeatable GitHub Discussion seed drafts and commands for tester calls, install/privacy Q&A, recall wins/misses, and roadmap feedback.
 - Added an early-tester conversion path across the README, project page, and marketing kit so launch visitors know how to run the fixture, try a real vault, report results, and star/watch after useful evaluation.
 - Added stronger launch-readiness gates for privacy leaks, package contents, installed CLI behavior, documentation links, CI workflow shape, and GitHub Pages metadata.
