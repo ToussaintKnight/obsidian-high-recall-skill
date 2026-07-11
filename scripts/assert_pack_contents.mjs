@@ -19,6 +19,7 @@ const files = new Set((pack.files || []).map((file) => file.path));
 const required = [
   "README.md",
   "README.zh-CN.md",
+  "CHANGELOG.md",
   "docs/positioning.md",
   "docs/troubleshooting.md",
   "docs/benchmark/reporting_guide.md",

@@ -24,6 +24,12 @@ When editing README or docs, run the local link check:
 npm run docs:links
 ```
 
+When changing package version, release notes, or user-visible behavior, update `CHANGELOG.md` and run:
+
+```bash
+npm run release:check
+```
+
 For skill-specific validation in Codex environments, also run:
 
 ```bash

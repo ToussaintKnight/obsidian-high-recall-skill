@@ -277,6 +277,7 @@ skills/
 - CI matrix：Linux、Windows、macOS 都运行 `npm test`
 - 隐私泄漏检查：`npm run privacy:scan`
 - 文档链接检查：`npm run docs:links`
+- Changelog 和 release notes：[CHANGELOG.md](CHANGELOG.md)，`npm run release:check`
 - 支持入口：[SUPPORT.md](SUPPORT.md)
 - 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
 - Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)

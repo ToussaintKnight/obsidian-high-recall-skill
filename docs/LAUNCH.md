@@ -20,6 +20,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `npm run privacy:scan` passes before release or launch posts are updated.
 - `npm run docs:links` passes after README, docs, benchmark figures, or marketing pages change.
 - `npm run site:check` passes after the GitHub Pages share page, social preview card, sitemap, or robots file changes.
+- `npm run release:check` passes after `package.json`, `CHANGELOG.md`, or release notes change.
 - `SECURITY.md` explains the privacy model.
 - `CONTRIBUTING.md` and issue templates are present.
 - A v0.1.0 GitHub release exists with the fixture demo command.

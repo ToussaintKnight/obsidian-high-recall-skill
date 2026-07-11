@@ -269,6 +269,7 @@ skills/
 - CI matrix: Linux, Windows, and macOS run `npm test`
 - Privacy leak gate: `npm run privacy:scan`
 - Documentation link gate: `npm run docs:links`
+- Changelog and release notes: [CHANGELOG.md](CHANGELOG.md), `npm run release:check`
 - Support: [SUPPORT.md](SUPPORT.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
