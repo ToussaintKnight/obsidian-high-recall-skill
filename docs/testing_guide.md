@@ -2,6 +2,8 @@
 
 Use this guide if you want to help validate Obsidian High Recall on a new machine, operating system, vault size, Smart Connections state, or workflow. The goal is to collect useful public feedback without exposing private notes.
 
+If you are installing from scratch, start with [install.md](install.md), then return here for the tester reporting path.
+
 ## Ten-Minute Path
 
 1. Clone and install:

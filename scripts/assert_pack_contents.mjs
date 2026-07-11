@@ -21,6 +21,7 @@ const required = [
   "README.zh-CN.md",
   "CHANGELOG.md",
   "docs/positioning.md",
+  "docs/install.md",
   "docs/testing_guide.md",
   "docs/cli_reference.md",
   "docs/output_contract.md",

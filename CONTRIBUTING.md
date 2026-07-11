@@ -24,6 +24,12 @@ When editing README or docs, run the local link check:
 npm run docs:links
 ```
 
+When changing install commands, first-run setup, or OS-specific onboarding docs, run:
+
+```bash
+npm run install:check
+```
+
 When changing fixture demo assets, public fixture walkthroughs, or first-run demo copy, run:
 
 ```bash

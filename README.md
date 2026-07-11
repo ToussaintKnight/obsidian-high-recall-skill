@@ -64,6 +64,8 @@ node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "robot f
 
 ## Install
 
+Use [docs/install.md](docs/install.md) for the full first-run path, including public fixture validation, GitHub-backed `npx`, Codex skill installation, backend setup, and OS notes.
+
 ### CLI From GitHub
 
 ```bash
@@ -283,10 +285,12 @@ skills/
 ## Community And Project Health
 
 - Security and privacy model: [SECURITY.md](SECURITY.md)
+- Install guide: [docs/install.md](docs/install.md)
 - CI matrix: Linux, Windows, and macOS run `npm test`
 - Privacy leak gate: `npm run privacy:scan`
 - Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`
 - Documentation link gate: `npm run docs:links`
+- Install guide gate: `npm run install:check`
 - Demo walkthrough gate: `npm run demo:check`
 - CLI reference gate: `npm run cli:check`
 - Output contract gate: `npm run output:check`
