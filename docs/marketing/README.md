@@ -22,6 +22,10 @@ Comparison and fit guide:
 
 [../comparison.md](../comparison.md)
 
+Usage recipes:
+
+[../recipes.md](../recipes.md)
+
 Regenerate:
 
 ```bash
@@ -57,6 +61,7 @@ npm test
 
 Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
 Testing guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
+Usage recipes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
 
 ## Obsidian Forum Post
 
@@ -77,6 +82,7 @@ Repo: https://github.com/ToussaintKnight/obsidian-high-recall-skill
 Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
 Release: https://github.com/ToussaintKnight/obsidian-high-recall-skill/releases/tag/v0.1.0
 Testing guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
+Usage recipes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
 Demo GIF: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/demo/fixture_demo.gif
 
 Try the public fixture first:

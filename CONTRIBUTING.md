@@ -30,6 +30,12 @@ When changing install commands, first-run setup, or OS-specific onboarding docs,
 npm run install:check
 ```
 
+When changing usage recipes, copy-paste workflow commands, or scenario guidance, run:
+
+```bash
+npm run recipes:check
+```
+
 When changing fixture demo assets, public fixture walkthroughs, or first-run demo copy, run:
 
 ```bash

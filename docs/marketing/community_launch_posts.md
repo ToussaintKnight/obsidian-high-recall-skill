@@ -14,6 +14,10 @@ Testing guide:
 
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
 
+Usage recipes:
+
+https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
+
 Tester discussion:
 
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
@@ -49,6 +53,9 @@ https://github.com/ToussaintKnight/obsidian-high-recall-skill
 
 Testing guide:
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
+
+Usage recipes:
+https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
 
 It is a local-first recall-first search wrapper. It reuses Smart Connections vectors when available, falls back to local hybrid/fulltext search, and can merge both result sets when recall matters more than latency.
 

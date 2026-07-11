@@ -19,6 +19,8 @@ const requiredIndexSnippets = [
   `<script type="application/ld+json">`,
   `"@type": "SoftwareSourceCode"`,
   `"codeRepository": "https://github.com/ToussaintKnight/obsidian-high-recall-skill"`,
+  "docs/recipes.md",
+  "Usage recipes",
 ];
 
 const missingIndex = requiredIndexSnippets.filter((snippet) => !index.includes(snippet));

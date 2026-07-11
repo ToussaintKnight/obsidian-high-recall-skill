@@ -137,6 +137,7 @@ Then report only privacy-safe fields through the issue templates. Useful setup f
 ## Next References
 
 - Command details: [cli_reference.md](cli_reference.md)
+- Copy-paste usage recipes: [recipes.md](recipes.md)
 - Output schema and privacy flags: [output_contract.md](output_contract.md)
 - Ten-minute tester flow: [testing_guide.md](testing_guide.md)
 - Public OS/backend coverage: [compatibility.md](compatibility.md)

@@ -162,6 +162,10 @@ node scripts/obsidian_high_recall.mjs query "my query" --vault "/absolute/path/t
 
 JSON recall pack schema、结果字段、ranking 语义和分享安全标记见：[docs/output_contract.md](docs/output_contract.md)。
 
+## 用法 Recipes
+
+日常 recall、高风险召回 sweep、Codex preflight context、私有 benchmark、privacy-safe bug report 和 read-burden tuning 的 copy-paste 工作流见：[docs/recipes.md](docs/recipes.md)。
+
 ## 架构
 
 这张图展示 local-first 检索流程、backend routing、privacy boundary，以及 public benchmark 发布路径。
@@ -301,6 +305,7 @@ skills/
 - Privacy threat model：[docs/privacy_threat_model.md](docs/privacy_threat_model.md)，`npm run privacy:docs`
 - 文档链接检查：`npm run docs:links`
 - 安装指南检查：`npm run install:check`
+- 用法 recipes 检查：`npm run recipes:check`
 - Demo walkthrough 检查：`npm run demo:check`
 - CLI reference 检查：`npm run cli:check`
 - Output contract 检查：`npm run output:check`
@@ -314,6 +319,7 @@ skills/
 - Repository setup checklist：[docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Maintenance playbook：[docs/community/maintenance.md](docs/community/maintenance.md)
 - CLI reference：[docs/cli_reference.md](docs/cli_reference.md)
+- 用法 recipes：[docs/recipes.md](docs/recipes.md)
 - Output contract：[docs/output_contract.md](docs/output_contract.md)
 - Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)
 - Testing guide：[docs/testing_guide.md](docs/testing_guide.md)

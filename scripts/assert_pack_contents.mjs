@@ -22,6 +22,7 @@ const required = [
   "CHANGELOG.md",
   "docs/positioning.md",
   "docs/install.md",
+  "docs/recipes.md",
   "docs/testing_guide.md",
   "docs/compatibility.md",
   "docs/cli_reference.md",

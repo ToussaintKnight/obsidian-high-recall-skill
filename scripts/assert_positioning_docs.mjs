@@ -56,7 +56,9 @@ requireIncludes("README.zh-CN.md", zhReadme, [
 const marketing = read("docs/marketing/README.md");
 requireIncludes("docs/marketing/README.md", marketing, [
   "../comparison.md",
+  "../recipes.md",
   "Comparison and fit guide",
+  "Usage recipes",
 ]);
 
 console.log("Positioning docs smoke passed: comparison guide and public entry links checked.");

@@ -14,6 +14,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 
 - README first screen explains the user pain and 30-second demo.
 - Install guide is visible at [install.md](install.md) and `npm run install:check` passes after install/onboarding changes.
+- Usage recipes are visible at [recipes.md](recipes.md) and `npm run recipes:check` passes after workflow guidance changes.
 - Compatibility matrix is visible at [compatibility.md](compatibility.md) and separates CI fixture coverage from real-vault tester reports.
 - Demo GIF is visible in the README and uses only public fixture data.
 - Fixture walkthrough documents expected output and pass criteria at [demo/fixture_walkthrough.md](demo/fixture_walkthrough.md); `npm run demo:check` passes after demo changes.
@@ -23,6 +24,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `npm run skill:check` passes after `SKILL.md`, `agents/openai.yaml`, bundled references, scripts, or package hooks change.
 - `npm run cli:check` passes after CLI option, help output, package bin, or command-reference changes.
 - `npm run install:check` passes after install commands, first-run setup, or OS-specific onboarding docs change.
+- `npm run recipes:check` passes after usage recipes, copy-paste workflow commands, or scenario guidance changes.
 - GitHub Actions runs `npm test` on Linux, Windows, and macOS.
 - `npm run privacy:scan` passes before release or launch posts are updated.
 - `npm run privacy:docs` passes after [privacy_threat_model.md](privacy_threat_model.md), `SECURITY.md`, README, or launch privacy wording changes.
