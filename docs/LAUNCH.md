@@ -17,6 +17,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Social preview card exists at `docs/marketing/social_preview.png`; use it for GitHub social preview and community posts.
 - `npm test` passes on the public fixture vault.
 - `npm run rrf:check` passes after evaluator, benchmark, or union-ranking changes.
+- `npm run skill:check` passes after `SKILL.md`, `agents/openai.yaml`, bundled references, scripts, or package hooks change.
 - GitHub Actions runs `npm test` on Linux, Windows, and macOS.
 - `npm run privacy:scan` passes before release or launch posts are updated.
 - `npm run privacy:docs` passes after [privacy_threat_model.md](privacy_threat_model.md), `SECURITY.md`, README, or launch privacy wording changes.

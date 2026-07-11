@@ -30,6 +30,12 @@ When changing evaluator, benchmark, or ranking behavior, run:
 npm run rrf:check
 ```
 
+When changing the Codex skill, agent metadata, bundled references, or npm package hooks, run:
+
+```bash
+npm run skill:check
+```
+
 When changing package version, release notes, or user-visible behavior, update `CHANGELOG.md` and run:
 
 ```bash
@@ -42,7 +48,7 @@ When changing issue templates, PR checklist, support paths, or starter issues, r
 npm run community:check
 ```
 
-For skill-specific validation in Codex environments, also run:
+For additional validation inside a Codex installation, also run the system skill validator when available:
 
 ```bash
 python <codex-home>/skills/.system/skill-creator/scripts/quick_validate.py skills/obsidian-high-recall
