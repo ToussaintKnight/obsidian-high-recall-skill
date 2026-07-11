@@ -4,6 +4,8 @@ Use this guide if you want to help validate Obsidian High Recall on a new machin
 
 If you are installing from scratch, start with [install.md](install.md), then return here for the tester reporting path.
 
+Public OS/backend coverage is tracked in [compatibility.md](compatibility.md); a useful tester report should be specific enough to update that matrix without exposing private notes.
+
 ## Ten-Minute Path
 
 1. Clone and install:

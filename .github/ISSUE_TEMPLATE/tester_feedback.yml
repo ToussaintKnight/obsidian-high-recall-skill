@@ -49,6 +49,12 @@ body:
         - 500-2,000 notes
         - 2,000-10,000 notes
         - More than 10,000 notes
+  - type: input
+    id: compatibility_cell
+    attributes:
+      label: Compatibility matrix cell
+      description: Optional. Name the row/column this report can update.
+      placeholder: "Windows + Smart backend real vault, macOS + fixture npm test, etc."
   - type: textarea
     id: commands
     attributes:

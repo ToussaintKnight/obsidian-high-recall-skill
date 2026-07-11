@@ -100,6 +100,7 @@ Then confirm:
 
 - README badge links resolve.
 - The issue chooser shows bug, benchmark, feature, and tester feedback forms.
+- The issue chooser links to the compatibility matrix.
 - The tester discussion link opens.
 - The release page links to the fixture demo command.
 - The share page hero, demo GIF, architecture image, and benchmark figures load.

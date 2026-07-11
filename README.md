@@ -265,6 +265,8 @@ See [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md) for t
 
 The most useful early contribution is a privacy-safe install and recall report from a real operating system and vault setup. Start with [docs/testing_guide.md](docs/testing_guide.md), then share results through the [tester feedback template](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml).
 
+Public OS/backend coverage is tracked in [docs/compatibility.md](docs/compatibility.md).
+
 ## Repository Layout
 
 ```text
@@ -307,6 +309,7 @@ skills/
 - Output contract: [docs/output_contract.md](docs/output_contract.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
 - Testing guide: [docs/testing_guide.md](docs/testing_guide.md)
+- Compatibility matrix: [docs/compatibility.md](docs/compatibility.md)
 - Roadmap: [ROADMAP.md](ROADMAP.md)
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit: [docs/marketing](docs/marketing/README.md)

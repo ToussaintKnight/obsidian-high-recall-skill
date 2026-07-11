@@ -6,6 +6,9 @@ contact_links:
   - name: Troubleshooting before filing
     url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/troubleshooting.md
     about: Check install, vault detection, Smart Connections, and OHS fallback notes first.
+  - name: Compatibility matrix
+    url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/compatibility.md
+    about: See which OS/backend combinations still need privacy-safe tester reports.
   - name: Tester discussion
     url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
     about: Use this for broad tester coordination when no private details are needed.

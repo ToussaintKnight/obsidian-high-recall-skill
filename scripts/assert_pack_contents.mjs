@@ -23,6 +23,7 @@ const required = [
   "docs/positioning.md",
   "docs/install.md",
   "docs/testing_guide.md",
+  "docs/compatibility.md",
   "docs/cli_reference.md",
   "docs/output_contract.md",
   "docs/privacy_threat_model.md",

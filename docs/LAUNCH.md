@@ -14,6 +14,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 
 - README first screen explains the user pain and 30-second demo.
 - Install guide is visible at [install.md](install.md) and `npm run install:check` passes after install/onboarding changes.
+- Compatibility matrix is visible at [compatibility.md](compatibility.md) and separates CI fixture coverage from real-vault tester reports.
 - Demo GIF is visible in the README and uses only public fixture data.
 - Fixture walkthrough documents expected output and pass criteria at [demo/fixture_walkthrough.md](demo/fixture_walkthrough.md); `npm run demo:check` passes after demo changes.
 - Social preview card exists at `docs/marketing/social_preview.png`; use it for GitHub social preview and community posts.
@@ -37,6 +38,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Dependabot and the weekly maintenance loop are documented in [community/maintenance.md](community/maintenance.md).
 - Starter issue drafts are maintained in [community/starter_issues.md](community/starter_issues.md), and at least 5 live starter issues are open for OS testing, docs, benchmark reports, and Smart Connections compatibility.
 - Tester onboarding points to [testing_guide.md](testing_guide.md) for the ten-minute fixture, CLI, doctor, and real-vault smoke-test path.
+- Compatibility reporting points to [compatibility.md](compatibility.md) so external testers know which OS/backend cells still need reports.
 
 ## Current Public Launch Links
 

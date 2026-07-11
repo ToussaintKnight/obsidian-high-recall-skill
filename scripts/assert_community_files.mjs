@@ -27,6 +27,7 @@ const requiredFiles = [
   "ROADMAP.md",
   "CITATION.cff",
   "docs/testing_guide.md",
+  "docs/compatibility.md",
   "docs/community/maintenance.md",
   ".github/dependabot.yml",
   ".github/labels.yml",
@@ -64,6 +65,7 @@ requireIncludes(
     "blank_issues_enabled: false",
     "Testing guide",
     "Troubleshooting before filing",
+    "Compatibility matrix",
     "Tester discussion",
     "Security and privacy concern",
   ],
@@ -100,6 +102,7 @@ requireIncludes(
     "Real-vault recall worked",
     "Privacy-safe doctor output",
     "vault_size",
+    "compatibility_cell",
   ],
 );
 
@@ -125,6 +128,7 @@ requireIncludes("docs/community/starter_issues.md", starterIssues, [
   "Anonymized Benchmark Report",
   "Privacy Redaction Checklist Test",
   "Obsidian Forum Launch Feedback",
+  "Compatibility Matrix Report",
   "docs/testing_guide.md",
 ]);
 
@@ -156,6 +160,7 @@ requireIncludes(".github/dependabot.yml", dependabot, [
 const testingGuide = read("docs/testing_guide.md");
 requireIncludes("docs/testing_guide.md", testingGuide, [
   "# Testing Guide",
+  "compatibility.md",
   "Ten-Minute Path",
   "npm test",
   "doctor --vault",
@@ -165,6 +170,22 @@ requireIncludes("docs/testing_guide.md", testingGuide, [
   "cases.local.json",
   "Privacy concern",
   "benchmark/reporting_guide.md",
+]);
+
+const compatibility = read("docs/compatibility.md");
+requireIncludes("docs/compatibility.md", compatibility, [
+  "# Compatibility Matrix",
+  "CI fixture pass",
+  "Tester pass",
+  "Needs report",
+  "Windows, Node 20+",
+  "macOS, Node 20+",
+  "Linux desktop, Node 20+",
+  "Codex skill install",
+  "Smart backend real vault",
+  "OHS backend real vault",
+  "tester_feedback.yml",
+  "privacy.safeToShare: false",
 ]);
 
 const labelsText = read(".github/labels.yml");
@@ -229,6 +250,7 @@ requireIncludes("docs/community/repository_setup.md", repoSetup, [
   ".github/dependabot.yml",
   "GitHub Pages",
   "Security advisories",
+  "compatibility matrix",
 ]);
 
 const roadmap = read("ROADMAP.md");

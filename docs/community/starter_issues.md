@@ -125,3 +125,19 @@ Checklist:
 - Suggest edits that reduce jargon.
 
 Privacy note: launch screenshots and examples must use the fixture vault or synthetic content only.
+
+## 9. Compatibility Matrix Report
+
+Labels: `compatibility`, `tester-feedback`, `good first issue`
+
+Goal: Fill one missing OS/backend cell in [docs/compatibility.md](../compatibility.md) with a privacy-safe report.
+
+Checklist:
+
+- Start from [docs/install.md](../install.md).
+- Run `npm test` on the public fixture.
+- Run `obsidian-high-recall doctor --vault "/absolute/path/to/your-vault" --json` only if testing a real vault.
+- Report operating system, Node.js version, Obsidian version, Smart Connections indexed/not indexed, backend used, and pass/partial/fail status.
+- Say which compatibility matrix row and column your report updates.
+
+Privacy note: do not post real-vault `query --json` output, note paths, snippets, raw queries, vault names, usernames, or gold labels.

@@ -273,6 +273,8 @@ node skills/obsidian-high-recall/scripts/evaluate_recall.mjs ./obsidian_recall_e
 
 早期最有价值的贡献，是从真实操作系统和 vault 设置里给出 privacy-safe install/recall report。先看 [docs/testing_guide.md](docs/testing_guide.md)，然后通过 [tester feedback template](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml) 分享结果。
 
+公开 OS/backend 覆盖情况记录在 [docs/compatibility.md](docs/compatibility.md)。
+
 ## Repo 结构
 
 ```text
@@ -315,6 +317,7 @@ skills/
 - Output contract：[docs/output_contract.md](docs/output_contract.md)
 - Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)
 - Testing guide：[docs/testing_guide.md](docs/testing_guide.md)
+- Compatibility matrix：[docs/compatibility.md](docs/compatibility.md)
 - Roadmap：[ROADMAP.md](ROADMAP.md)
 - Launch playbook：[docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit：[docs/marketing](docs/marketing/README.md)
