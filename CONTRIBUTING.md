@@ -30,6 +30,12 @@ When changing package version, release notes, or user-visible behavior, update `
 npm run release:check
 ```
 
+When changing issue templates, PR checklist, support paths, or starter issues, run:
+
+```bash
+npm run community:check
+```
+
 For skill-specific validation in Codex environments, also run:
 
 ```bash
@@ -58,3 +64,5 @@ node skills/obsidian-high-recall/scripts/evaluate_recall.mjs .tmp/fixture-eval -
 - Add fixture cases that cover bilingual or non-English queries without private data.
 - Add tests around evaluator metrics, RRF union behavior, and privacy redaction.
 - Report compatibility issues with Obsidian, Smart Connections, Node.js, or OHS versions.
+
+Copy-ready starter issue drafts live in [docs/community/starter_issues.md](docs/community/starter_issues.md).

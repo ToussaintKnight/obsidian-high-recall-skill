@@ -1,5 +1,11 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
+  - name: Troubleshooting before filing
+    url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/troubleshooting.md
+    about: Check install, vault detection, Smart Connections, and OHS fallback notes first.
+  - name: Tester discussion
+    url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
+    about: Use this for broad tester coordination when no private details are needed.
   - name: Security and privacy concern
     url: https://github.com/ToussaintKnight/obsidian-high-recall-skill/security
     about: Use a private security advisory when sensitive details are involved.

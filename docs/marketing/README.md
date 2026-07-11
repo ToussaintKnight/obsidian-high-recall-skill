@@ -35,7 +35,7 @@ Obsidian High Recall helps agents and humans search large private Obsidian vault
 - Privacy model: raw notes, snippets, private queries, and local labels stay local.
 - Backends: Smart Connections, OHS fallback, and evaluator-derived RRF union.
 - Benchmark: private-vault aggregate results are published with anonymized metrics and limitations.
-- Community: v0.1.0 release, issue templates, tester discussion, and benchmark-report template are live.
+- Community: v0.1.0 release, issue templates, tester feedback form, tester discussion, starter issue playbook, and benchmark-report template are live.
 
 ## Primary Call To Action
 

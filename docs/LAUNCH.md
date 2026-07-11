@@ -21,10 +21,11 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `npm run docs:links` passes after README, docs, benchmark figures, or marketing pages change.
 - `npm run site:check` passes after the GitHub Pages share page, social preview card, sitemap, or robots file changes.
 - `npm run release:check` passes after `package.json`, `CHANGELOG.md`, or release notes change.
+- `npm run community:check` passes after issue template, PR template, support, or starter issue changes.
 - `SECURITY.md` explains the privacy model.
 - `CONTRIBUTING.md` and issue templates are present.
 - A v0.1.0 GitHub release exists with the fixture demo command.
-- At least 5 starter issues are open for OS testing, docs, benchmark reports, and Smart Connections compatibility.
+- Starter issue drafts are maintained in [community/starter_issues.md](community/starter_issues.md), and at least 5 live starter issues are open for OS testing, docs, benchmark reports, and Smart Connections compatibility.
 
 ## Current Public Launch Links
 
@@ -41,6 +42,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Obsidian Forum launch task: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/8
 
 Full copy-ready launch posts are in [marketing/community_launch_posts.md](marketing/community_launch_posts.md).
+Copy-ready starter issue drafts are in [community/starter_issues.md](community/starter_issues.md).
 
 ## Obsidian Forum Draft
 

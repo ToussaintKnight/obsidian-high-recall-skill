@@ -272,6 +272,8 @@ skills/
 - Changelog and release notes: [CHANGELOG.md](CHANGELOG.md), `npm run release:check`
 - Support: [SUPPORT.md](SUPPORT.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Issue templates and tester feedback: [new issue chooser](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose)
+- Starter issue playbook: [docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
 - Roadmap: [ROADMAP.md](ROADMAP.md)
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
@@ -281,6 +283,7 @@ skills/
 - Anonymous benchmark reporting guide: [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)
 - Launch baseline: [docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy: [docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)
+- Community file gate: `npm run community:check`
 - Public fixture vault: [docs/fixtures/demo-vault](docs/fixtures/demo-vault)
 - Citation metadata: [CITATION.cff](CITATION.cff)
 

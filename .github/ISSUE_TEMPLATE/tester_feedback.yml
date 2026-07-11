@@ -1,0 +1,70 @@
+name: Tester feedback
+description: Share an install, fixture, or real-vault smoke-test result.
+title: "[Tester]: "
+labels: ["tester-feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing. Do not paste private note paths, vault names, note snippets, raw queries, gold labels, tokens, or local usernames.
+        If real-vault details matter, share only aggregate counts, broad size buckets, and privacy-safe `doctor --json` output.
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Install and fixture smoke test passed
+        - Install passed but fixture smoke test failed
+        - Fixture passed but real-vault recall failed
+        - Real-vault recall worked
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "Windows 11, macOS 15, Ubuntu 24.04"
+    validations:
+      required: true
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      placeholder: "node --version"
+    validations:
+      required: true
+  - type: input
+    id: obsidian
+    attributes:
+      label: Obsidian and Smart Connections status
+      placeholder: "Obsidian version; Smart Connections installed/indexed/not installed"
+  - type: dropdown
+    id: vault_size
+    attributes:
+      label: Real-vault size bucket
+      options:
+        - Did not test a real vault
+        - Under 500 notes
+        - 500-2,000 notes
+        - 2,000-10,000 notes
+        - More than 10,000 notes
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands run
+      description: Redact vault paths, note names, and local usernames.
+      render: shell
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Privacy-safe doctor output
+      description: Optional. Run `obsidian-high-recall doctor --vault "/absolute/path/to/your-vault" --json`; confirm output contains no local paths, snippets, queries, or note names before posting.
+      render: json
+  - type: textarea
+    id: feedback
+    attributes:
+      label: What happened?
+      description: What worked, failed, confused you, or found a note you expected would be missed?
+    validations:
+      required: true

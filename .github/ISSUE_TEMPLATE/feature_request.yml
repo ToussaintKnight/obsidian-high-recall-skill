@@ -3,6 +3,10 @@ description: Suggest a capability or improvement.
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste private note paths, vault names, note snippets, raw queries, gold labels, tokens, or local usernames.
   - type: textarea
     id: problem
     attributes:
