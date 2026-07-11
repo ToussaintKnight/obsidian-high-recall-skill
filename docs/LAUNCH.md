@@ -17,6 +17,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Social preview card exists at `docs/marketing/social_preview.png`; use it for GitHub social preview and community posts.
 - `npm test` passes on the public fixture vault.
 - `npm run privacy:scan` passes before release or launch posts are updated.
+- `npm run docs:links` passes after README, docs, benchmark figures, or marketing pages change.
 - `SECURITY.md` explains the privacy model.
 - `CONTRIBUTING.md` and issue templates are present.
 - A v0.1.0 GitHub release exists with the fixture demo command.

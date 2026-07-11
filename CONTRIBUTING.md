@@ -16,6 +16,12 @@ For privacy-sensitive changes, or before sharing a branch publicly, run the leak
 npm run privacy:scan
 ```
 
+When editing README or docs, run the local link check:
+
+```bash
+npm run docs:links
+```
+
 For skill-specific validation in Codex environments, also run:
 
 ```bash

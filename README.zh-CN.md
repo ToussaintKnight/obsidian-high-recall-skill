@@ -275,6 +275,7 @@ skills/
 
 - 安全和隐私模型：[SECURITY.md](SECURITY.md)
 - 隐私泄漏检查：`npm run privacy:scan`
+- 文档链接检查：`npm run docs:links`
 - 支持入口：[SUPPORT.md](SUPPORT.md)
 - 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
 - Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)

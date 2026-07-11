@@ -267,6 +267,7 @@ skills/
 
 - Security and privacy model: [SECURITY.md](SECURITY.md)
 - Privacy leak gate: `npm run privacy:scan`
+- Documentation link gate: `npm run docs:links`
 - Support: [SUPPORT.md](SUPPORT.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
