@@ -15,6 +15,7 @@ const requiredInstallSnippets = [
   "--backend auto",
   "Windows Notes",
   "macOS/Linux Notes",
+  "Public redacted output examples",
   "Output schema and privacy flags",
 ];
 

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "0.1",
+  "generatedAt": "<generated-at>",
+  "privacy": {
+    "safeToShare": true,
+    "rawPathsIncluded": false,
+    "snippetsIncluded": false,
+    "noteNamesIncluded": false,
+    "queryIncluded": false
+  },
+  "runtime": {
+    "node": "<node-version>",
+    "platform": "<platform>",
+    "arch": "<arch>"
+  },
+  "vault": {
+    "resolved": true,
+    "source": "cli",
+    "hasObsidianDir": true,
+    "markdownFiles": 3,
+    "error": null
+  },
+  "smart": {
+    "envDirPresent": false,
+    "multiDirPresent": false,
+    "files": 0,
+    "sources": 0,
+    "blocks": 0,
+    "embeddedSources": 0,
+    "embeddedBlocks": 0,
+    "modelKey": "TaylorAI/bge-micro-v2",
+    "detectedPathCount": 0,
+    "smartConnectionsDetected": false
+  },
+  "ohs": {
+    "dbConfigured": true,
+    "dbExists": false,
+    "dbSizeBytes": null,
+    "dbPathRedacted": true,
+    "statusChecked": false,
+    "statusNote": "doctor does not run OHS status, reindex, or search"
+  },
+  "recommendations": [
+    "Smart Connections vectors were not detected; use --backend auto for OHS fallback or finish Smart Connections indexing.",
+    "OHS database was not found yet; the first OHS/auto fallback query may build a local index."
+  ]
+}

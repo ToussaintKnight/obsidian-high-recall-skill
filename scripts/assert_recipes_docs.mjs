@@ -17,6 +17,7 @@ const requiredRecipes = [
   "evaluate_recall.mjs",
   "Precision@K, Recall@K, F1, MRR",
   "Do not publish real-vault JSON recall packs",
+  "examples/README.md",
   "benchmark/reporting_guide.md",
 ];
 

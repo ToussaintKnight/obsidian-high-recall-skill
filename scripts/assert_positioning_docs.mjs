@@ -57,8 +57,10 @@ const marketing = read("docs/marketing/README.md");
 requireIncludes("docs/marketing/README.md", marketing, [
   "../comparison.md",
   "../recipes.md",
+  "../examples/README.md",
   "Comparison and fit guide",
   "Usage recipes",
+  "Public output examples",
 ]);
 
 console.log("Positioning docs smoke passed: comparison guide and public entry links checked.");

@@ -38,6 +38,8 @@ The fixture smoke test uses public notes only and covers 5 recall cases: 3 Engli
 
 Expected fixture output and pass criteria are documented in [docs/demo/fixture_walkthrough.md](docs/demo/fixture_walkthrough.md).
 
+Redacted public JSON examples are in [docs/examples](docs/examples/README.md).
+
 Query the fixture vault directly:
 
 ```bash
@@ -297,6 +299,7 @@ skills/
 - Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`
 - Documentation link gate: `npm run docs:links`
 - Install guide gate: `npm run install:check`
+- Public examples gate: `npm run examples:check`
 - Usage recipes gate: `npm run recipes:check`
 - Demo walkthrough gate: `npm run demo:check`
 - CLI reference gate: `npm run cli:check`
@@ -311,6 +314,7 @@ skills/
 - Repository setup checklist: [docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Maintenance playbook: [docs/community/maintenance.md](docs/community/maintenance.md)
 - CLI reference: [docs/cli_reference.md](docs/cli_reference.md)
+- Public output examples: [docs/examples](docs/examples/README.md)
 - Usage recipes: [docs/recipes.md](docs/recipes.md)
 - Output contract: [docs/output_contract.md](docs/output_contract.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)

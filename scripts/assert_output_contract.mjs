@@ -94,6 +94,7 @@ for (const snippet of [
   "Ranking Semantics",
   "Doctor Report",
   "Public Sharing Rules",
+  "examples/README.md",
   "raw_runs.json",
 ]) {
   if (!contract.includes(snippet)) {

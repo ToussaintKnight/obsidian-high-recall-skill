@@ -2,6 +2,8 @@
 
 This walkthrough shows what a successful first run looks like using only the public fixture vault in `docs/fixtures/demo-vault`. It is safe to share because the notes, queries, and gold labels are synthetic public data.
 
+Redacted JSON examples are checked in under [examples](../examples/README.md).
+
 ## Run The Fixture Smoke Test
 
 ```bash
@@ -66,6 +68,8 @@ Example redacted shape:
 ```
 
 The real JSON also includes local `vault` and `db` paths, timestamps, snippets, expansions, and scores. Do not paste real-vault JSON into public issues without redacting local paths, snippets, raw queries, note names, vault names, and usernames.
+
+For a fuller redacted JSON example, see [fixture_query_pack.redacted.json](../examples/fixture_query_pack.redacted.json).
 
 ## Interpret The Fixture Metrics
 

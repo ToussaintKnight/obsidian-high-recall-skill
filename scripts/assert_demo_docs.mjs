@@ -32,6 +32,7 @@ requireIncludes("docs/demo/fixture_walkthrough.md", walkthrough, [
   "World Models and Simulation",
   "Agent Memory Search",
   "lexical-fallback",
+  "../examples/fixture_query_pack.redacted.json",
   "Do not paste",
   "benchmark/reporting_guide.md",
   "../troubleshooting.md",

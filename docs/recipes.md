@@ -135,6 +135,7 @@ For systematic tuning, compare Precision@K, Recall@K, F1, MRR, retrieved count, 
 
 - Install guide: [install.md](install.md)
 - CLI reference: [cli_reference.md](cli_reference.md)
+- Public output examples: [examples](examples/README.md)
 - Output contract: [output_contract.md](output_contract.md)
 - Testing guide: [testing_guide.md](testing_guide.md)
 - Compatibility matrix: [compatibility.md](compatibility.md)

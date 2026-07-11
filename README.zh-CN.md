@@ -38,6 +38,8 @@ npm test
 
 Fixture 的预期输出和通过标准见：[docs/demo/fixture_walkthrough.md](docs/demo/fixture_walkthrough.md)。
 
+Redacted public JSON examples 见：[docs/examples](docs/examples/README.md)。
+
 直接查询 fixture vault：
 
 ```bash
@@ -305,6 +307,7 @@ skills/
 - Privacy threat model：[docs/privacy_threat_model.md](docs/privacy_threat_model.md)，`npm run privacy:docs`
 - 文档链接检查：`npm run docs:links`
 - 安装指南检查：`npm run install:check`
+- Public examples 检查：`npm run examples:check`
 - 用法 recipes 检查：`npm run recipes:check`
 - Demo walkthrough 检查：`npm run demo:check`
 - CLI reference 检查：`npm run cli:check`
@@ -319,6 +322,7 @@ skills/
 - Repository setup checklist：[docs/community/repository_setup.md](docs/community/repository_setup.md)
 - Maintenance playbook：[docs/community/maintenance.md](docs/community/maintenance.md)
 - CLI reference：[docs/cli_reference.md](docs/cli_reference.md)
+- Public output examples：[docs/examples](docs/examples/README.md)
 - 用法 recipes：[docs/recipes.md](docs/recipes.md)
 - Output contract：[docs/output_contract.md](docs/output_contract.md)
 - Troubleshooting：[docs/troubleshooting.md](docs/troubleshooting.md)

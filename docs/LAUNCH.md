@@ -13,6 +13,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 ## Launch Checklist
 
 - README first screen explains the user pain and 30-second demo.
+- Public output examples are visible at [examples](examples/README.md) and `npm run examples:check` passes after output-example changes.
 - Install guide is visible at [install.md](install.md) and `npm run install:check` passes after install/onboarding changes.
 - Usage recipes are visible at [recipes.md](recipes.md) and `npm run recipes:check` passes after workflow guidance changes.
 - Compatibility matrix is visible at [compatibility.md](compatibility.md) and separates CI fixture coverage from real-vault tester reports.
@@ -29,6 +30,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `npm run privacy:scan` passes before release or launch posts are updated.
 - `npm run privacy:docs` passes after [privacy_threat_model.md](privacy_threat_model.md), `SECURITY.md`, README, or launch privacy wording changes.
 - `npm run docs:links` passes after README, docs, benchmark figures, or marketing pages change.
+- `npm run examples:check` passes after public redacted output examples or example links change.
 - `npm run positioning:check` passes after positioning, comparison, launch, or marketing copy changes.
 - `npm run site:check` passes after the GitHub Pages share page, social preview card, sitemap, or robots file changes.
 - `npm run release:check` passes after `package.json`, `CHANGELOG.md`, or release notes change.

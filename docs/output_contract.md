@@ -11,6 +11,8 @@ This document defines the public machine-readable contract for Obsidian High Rec
 
 The query recall pack is designed for local agent context, not public sharing. The doctor report is designed for public bug reports after manual review.
 
+Public redacted examples are available in [examples](examples/README.md).
+
 ## Recall Pack Shape
 
 Run:

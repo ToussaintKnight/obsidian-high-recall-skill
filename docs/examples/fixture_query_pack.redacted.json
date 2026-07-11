@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "0.1",
+  "query": "data collection for embodied AI robot demonstrations",
+  "generatedAt": "<generated-at>",
+  "vault": "<local-fixture-vault-path>",
+  "db": "<local-ohs-db-path>",
+  "privacy": {
+    "safeToShare": false,
+    "rawQueryIncluded": true,
+    "localPathsIncluded": true,
+    "snippetsIncluded": true,
+    "noteNamesIncluded": true
+  },
+  "backend": {
+    "selected": "smart",
+    "primary": "lexical-fallback",
+    "package": "local lexical scan",
+    "smartConnectionsDetected": []
+  },
+  "index": {
+    "ohs": null,
+    "smart": {
+      "envDir": null,
+      "multiDir": null,
+      "files": 0,
+      "sources": 0,
+      "blocks": 0,
+      "embeddedSources": 0,
+      "embeddedBlocks": 0,
+      "modelKey": "TaylorAI/bge-micro-v2"
+    }
+  },
+  "expansions": {
+    "semanticQueries": [
+      "data collection for embodied AI robot demonstrations",
+      "data collection embodied AI robot demonstrations",
+      "embodied AI physical AI robotics robot learning",
+      "data collection dataset demonstrations trajectories teleoperation"
+    ],
+    "fulltextTerms": [
+      "data",
+      "collection",
+      "embodied",
+      "AI",
+      "robot",
+      "demonstrations",
+      "data collection",
+      "dataset",
+      "teleoperation",
+      "trajectories"
+    ],
+    "tags": [
+      "embodied AI",
+      "robotics"
+    ]
+  },
+  "profile": "quick",
+  "searchPlan": {
+    "ohs": {
+      "semanticQueries": [],
+      "hybridQueries": [
+        "data collection for embodied AI robot demonstrations data collection embodied AI robot demonstrations embodied AI physical AI robotics robot learning"
+      ],
+      "fulltextTerms": [
+        "data",
+        "collection",
+        "embodied",
+        "AI",
+        "robot",
+        "demonstrations"
+      ],
+      "titleQueries": [],
+      "tags": []
+    },
+    "smart": {
+      "semanticQueries": [],
+      "hybridQueries": [
+        "data collection for embodied AI robot demonstrations data collection embodied AI robot demonstrations embodied AI physical AI robotics robot learning"
+      ],
+      "fulltextTerms": [
+        "data",
+        "collection",
+        "embodied",
+        "AI",
+        "robot",
+        "demonstrations"
+      ],
+      "titleQueries": [],
+      "tags": []
+    }
+  },
+  "channels": [
+    {
+      "channel": "lexical",
+      "count": 3
+    }
+  ],
+  "results": [
+    {
+      "path": "Embodied AI Data Collection.md",
+      "title": "Embodied AI Data Collection",
+      "tags": [],
+      "snippet": "# Embodied AI Data Collection This note is a public fixture for testing high-recall search. It describes data collection for embodied AI systems, including robot demonstrations, teleoperation sessions, trajectory logs, tactile signals, and sensor recordings.",
+      "bestScore": 0.833333,
+      "bestRank": 1,
+      "channels": [
+        "lexical"
+      ],
+      "matchedBy": [
+        "lexical"
+      ],
+      "channelRanks": {
+        "lexical": 1
+      },
+      "links": [],
+      "backlinks": [],
+      "urls": [],
+      "anchors": [
+        {
+          "kind": "lexical",
+          "lineStart": 1,
+          "lineEnd": 6
+        }
+      ],
+      "graphReasons": [],
+      "recallScore": 6.647
+    },
+    {
+      "path": "World Models and Simulation.md",
+      "title": "World Models and Simulation",
+      "tags": [],
+      "snippet": "This fixture note covers simulation and world-model workflows for robot training.",
+      "bestScore": 0.222222,
+      "bestRank": 2,
+      "channels": [
+        "lexical"
+      ],
+      "matchedBy": [
+        "lexical"
+      ],
+      "channelRanks": {
+        "lexical": 2
+      },
+      "links": [],
+      "backlinks": [],
+      "urls": [],
+      "anchors": [
+        {
+          "kind": "lexical",
+          "lineStart": 3,
+          "lineEnd": 8
+        }
+      ],
+      "graphReasons": [],
+      "recallScore": 5.404
+    },
+    {
+      "path": "Agent Memory Search.md",
+      "title": "Agent Memory Search",
+      "tags": [],
+      "snippet": "This fixture note explains local-first AI search over private Obsidian notes.",
+      "bestScore": 0.055556,
+      "bestRank": 3,
+      "channels": [
+        "lexical"
+      ],
+      "matchedBy": [
+        "lexical"
+      ],
+      "channelRanks": {
+        "lexical": 3
+      },
+      "links": [],
+      "backlinks": [],
+      "urls": [],
+      "anchors": [
+        {
+          "kind": "lexical",
+          "lineStart": 3,
+          "lineEnd": 8
+        }
+      ],
+      "graphReasons": [],
+      "recallScore": 5.051
+    }
+  ],
+  "resultCountBeforeLimit": 3
+}
