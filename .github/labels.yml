@@ -22,6 +22,9 @@
 - name: security
   color: b60205
   description: Security reporting, dependency risk, or vulnerability handling.
+- name: dependencies
+  color: 0366d6
+  description: Dependabot, package, lockfile, or GitHub Actions dependency maintenance.
 - name: windows
   color: c5def5
   description: Windows install, path, shell, or environment behavior.

@@ -52,6 +52,8 @@ Then create or update labels to match `.github/labels.yml`. At minimum, the live
 - `tester-feedback`
 - `benchmark`
 - `privacy`
+- `security`
+- `dependencies`
 - `windows`
 - `macos`
 - `linux`
@@ -70,6 +72,19 @@ Then create or update labels to match `.github/labels.yml`. At minimum, the live
 - GitHub Pages: enabled from `main` / `docs` or the already configured Pages source.
 - Security advisories: enabled for private privacy/security reports.
 - Releases: keep `v0.1.0` visible and update release notes when package behavior changes.
+- Dependabot: configured by [.github/dependabot.yml](../../.github/dependabot.yml) for npm and GitHub Actions updates.
+
+## Maintenance
+
+The maintenance source of truth is [maintenance.md](maintenance.md). It defines the weekly CI, Dependabot, issue triage, release, and privacy/security loop.
+
+Before merging dependency or maintenance PRs:
+
+```bash
+npm test
+npm run privacy:scan
+npm run community:check
+```
 
 ## Launch Sanity Check
 

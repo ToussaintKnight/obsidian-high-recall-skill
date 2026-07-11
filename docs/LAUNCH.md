@@ -31,6 +31,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `CONTRIBUTING.md` and issue templates are present.
 - A v0.1.0 GitHub release exists with the fixture demo command.
 - Repository metadata and labels follow [community/repository_setup.md](community/repository_setup.md).
+- Dependabot and the weekly maintenance loop are documented in [community/maintenance.md](community/maintenance.md).
 - Starter issue drafts are maintained in [community/starter_issues.md](community/starter_issues.md), and at least 5 live starter issues are open for OS testing, docs, benchmark reports, and Smart Connections compatibility.
 - Tester onboarding points to [testing_guide.md](testing_guide.md) for the ten-minute fixture, CLI, doctor, and real-vault smoke-test path.
 

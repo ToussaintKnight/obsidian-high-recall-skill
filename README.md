@@ -291,6 +291,7 @@ skills/
 - Issue templates and tester feedback: [new issue chooser](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose)
 - Starter issue playbook: [docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Repository setup checklist: [docs/community/repository_setup.md](docs/community/repository_setup.md)
+- Maintenance playbook: [docs/community/maintenance.md](docs/community/maintenance.md)
 - Troubleshooting: [docs/troubleshooting.md](docs/troubleshooting.md)
 - Testing guide: [docs/testing_guide.md](docs/testing_guide.md)
 - Roadmap: [ROADMAP.md](ROADMAP.md)

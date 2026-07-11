@@ -27,6 +27,8 @@ const requiredFiles = [
   "ROADMAP.md",
   "CITATION.cff",
   "docs/testing_guide.md",
+  "docs/community/maintenance.md",
+  ".github/dependabot.yml",
   ".github/labels.yml",
   ".github/pull_request_template.md",
   ".github/ISSUE_TEMPLATE/config.yml",
@@ -126,6 +128,31 @@ requireIncludes("docs/community/starter_issues.md", starterIssues, [
   "docs/testing_guide.md",
 ]);
 
+const maintenance = read("docs/community/maintenance.md");
+requireIncludes("docs/community/maintenance.md", maintenance, [
+  "# Maintenance Playbook",
+  "Weekly Loop",
+  "Dependabot",
+  ".github/dependabot.yml",
+  "npm test",
+  "npm run privacy:scan",
+  "npm run demo:check",
+  "npm run release:check",
+  "Issue Triage",
+  "Security And Privacy Maintenance",
+  "At least five live starter issues",
+]);
+
+const dependabot = read(".github/dependabot.yml");
+requireIncludes(".github/dependabot.yml", dependabot, [
+  "version: 2",
+  "package-ecosystem: npm",
+  "package-ecosystem: github-actions",
+  "interval: weekly",
+  "dependencies",
+  "security",
+]);
+
 const testingGuide = read("docs/testing_guide.md");
 requireIncludes("docs/testing_guide.md", testingGuide, [
   "# Testing Guide",
@@ -151,6 +178,8 @@ const requiredLabels = [
   "tester-feedback",
   "benchmark",
   "privacy",
+  "security",
+  "dependencies",
   "windows",
   "macos",
   "linux",
@@ -197,6 +226,7 @@ requireIncludes("docs/community/repository_setup.md", repoSetup, [
   "Local-first high-recall search for Obsidian vaults, usable from Codex and CLI.",
   "docs/marketing/social_preview.png",
   ".github/labels.yml",
+  ".github/dependabot.yml",
   "GitHub Pages",
   "Security advisories",
 ]);

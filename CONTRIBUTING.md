@@ -60,6 +60,12 @@ When changing issue templates, PR checklist, support paths, or starter issues, r
 npm run community:check
 ```
 
+When changing Dependabot, labels, repository setup, or maintenance policy, update [docs/community/maintenance.md](docs/community/maintenance.md) and run:
+
+```bash
+npm run community:check
+```
+
 For additional validation inside a Codex installation, also run the system skill validator when available:
 
 ```bash

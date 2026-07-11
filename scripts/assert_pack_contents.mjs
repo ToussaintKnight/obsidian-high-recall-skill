@@ -25,6 +25,7 @@ const required = [
   "docs/privacy_threat_model.md",
   "docs/troubleshooting.md",
   "docs/benchmark/reporting_guide.md",
+  "docs/community/maintenance.md",
   "docs/robots.txt",
   "docs/sitemap.xml",
   "docs/demo/fixture_demo.gif",
