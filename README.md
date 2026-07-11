@@ -34,6 +34,8 @@ cd obsidian-high-recall-skill
 npm test
 ```
 
+The fixture smoke test uses public notes only and covers 5 recall cases: 3 English, 1 Chinese, and 1 mixed Chinese/English.
+
 Query the fixture vault directly:
 
 ```bash

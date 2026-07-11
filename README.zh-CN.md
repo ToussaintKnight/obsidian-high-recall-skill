@@ -34,6 +34,8 @@ cd obsidian-high-recall-skill
 npm test
 ```
 
+这个 fixture smoke test 只使用公开笔记，覆盖 5 个 recall cases：3 个英文、1 个中文、1 个中英混合。
+
 直接查询 fixture vault：
 
 ```bash

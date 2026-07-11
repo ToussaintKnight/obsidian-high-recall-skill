@@ -13,5 +13,15 @@
     "id": "agent-memory",
     "query": "local-first AI search over private Obsidian notes",
     "gold": ["Agent Memory Search"]
+  },
+  {
+    "id": "embodied-data-cn",
+    "query": "具身智能 数据采集 机器人演示 遥操作 轨迹",
+    "gold": ["Embodied AI Data Collection"]
+  },
+  {
+    "id": "agent-memory-mixed",
+    "query": "local-first 私有 Obsidian 笔记 高召回 search",
+    "gold": ["Agent Memory Search"]
   }
 ]
