@@ -228,6 +228,12 @@ Outputs:
 
 Metrics include Precision@K, Recall@K, F1@K, MRR, gold-note ranks, retrieved count, and latency for `smart`, `ohs`, and evaluator-derived `rrf-union`.
 
+## Share Anonymous Benchmark Reports
+
+Real-vault reports are useful when they stay privacy-safe. If you try this on your own vault, share aggregate metrics through the [benchmark report issue template](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=benchmark_report.yml). Do not publish raw runs, private cases files, note paths, snippets, raw queries, vault names, or gold labels.
+
+See [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md) for the exact safe report shape.
+
 ## Repository Layout
 
 ```text
@@ -254,6 +260,7 @@ skills/
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit: [docs/marketing](docs/marketing/README.md)
 - Share page: [docs/index.html](docs/index.html)
+- Anonymous benchmark reporting guide: [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)
 - Launch baseline: [docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy: [docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)
 - Public fixture vault: [docs/fixtures/demo-vault](docs/fixtures/demo-vault)

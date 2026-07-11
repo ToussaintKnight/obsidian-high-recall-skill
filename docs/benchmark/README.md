@@ -10,4 +10,5 @@ This directory contains anonymized aggregate results from a private local Obsidi
 - `sensitivity_smart_at50.csv`: K=50 slice for diagnostic checks.
 - `sensitivity_settings.json`: sensitivity experiment settings.
 - `pilot_smoke_test.md`: aggregate-only archive of the earlier 3-task pilot.
+- `reporting_guide.md`: how external users can share aggregate/anonymized benchmark reports safely.
 - `figures/`: PNG figures referenced by the root README files.

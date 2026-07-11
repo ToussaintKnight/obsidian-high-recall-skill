@@ -236,6 +236,12 @@ node skills/obsidian-high-recall/scripts/evaluate_recall.mjs ./obsidian_recall_e
 
 指标包括 Precision@K、Recall@K、F1@K、MRR、gold note rank、返回数量，以及 `smart`、`ohs`、evaluator-derived `rrf-union` 的延迟。
 
+## 分享匿名 Benchmark 报告
+
+真实 vault 的报告很有价值，但必须保持隐私安全。如果你在自己的 vault 上试用，请通过 [benchmark report issue template](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=benchmark_report.yml) 分享 aggregate metrics。不要公开 raw runs、private cases 文件、note path、snippet、raw query、vault name 或 gold label。
+
+安全报告格式见：[docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)。
+
 ## Repo 结构
 
 ```text
@@ -262,6 +268,7 @@ skills/
 - Launch playbook：[docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit：[docs/marketing](docs/marketing/README.md)
 - Share page：[docs/index.html](docs/index.html)
+- 匿名 benchmark 报告指南：[docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)
 - Launch baseline：[docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy：[docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)
 - Public fixture vault：[docs/fixtures/demo-vault](docs/fixtures/demo-vault)

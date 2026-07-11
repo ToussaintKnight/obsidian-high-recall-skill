@@ -7,6 +7,7 @@ body:
     attributes:
       value: |
         Share aggregate/anonymized metrics only. Do not paste private note paths, snippets, raw queries, vault names, or gold labels.
+        Reporting guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/benchmark/reporting_guide.md
   - type: input
     id: vault_size
     attributes:
