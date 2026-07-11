@@ -26,12 +26,14 @@ const requiredFiles = [
   "SUPPORT.md",
   "ROADMAP.md",
   "CITATION.cff",
+  ".github/labels.yml",
   ".github/pull_request_template.md",
   ".github/ISSUE_TEMPLATE/config.yml",
   ".github/ISSUE_TEMPLATE/bug_report.yml",
   ".github/ISSUE_TEMPLATE/benchmark_report.yml",
   ".github/ISSUE_TEMPLATE/feature_request.yml",
   ".github/ISSUE_TEMPLATE/tester_feedback.yml",
+  "docs/community/repository_setup.md",
   "docs/community/starter_issues.md",
 ];
 
@@ -119,6 +121,67 @@ requireIncludes("docs/community/starter_issues.md", starterIssues, [
   "Anonymized Benchmark Report",
   "Privacy Redaction Checklist Test",
   "Obsidian Forum Launch Feedback",
+]);
+
+const labelsText = read(".github/labels.yml");
+const labelNames = [...labelsText.matchAll(/^- name:\s*([^\r\n]+)/gmu)].map((match) => match[1].trim());
+const labelSet = new Set(labelNames);
+const requiredLabels = [
+  "bug",
+  "enhancement",
+  "documentation",
+  "good first issue",
+  "tester-feedback",
+  "benchmark",
+  "privacy",
+  "windows",
+  "macos",
+  "linux",
+  "smart-connections",
+  "compatibility",
+  "research",
+  "ohs",
+  "diagnostics",
+  "community",
+  "launch",
+];
+const missingRequiredLabels = requiredLabels.filter((label) => !labelSet.has(label));
+if (missingRequiredLabels.length) {
+  throw new Error(`.github/labels.yml is missing required labels:\n- ${missingRequiredLabels.join("\n- ")}`);
+}
+
+const templateLabelMatches = issueTemplates.flatMap((file) => {
+  const text = read(file);
+  return [...text.matchAll(/^labels:\s*\[([^\]]+)\]/gmu)].flatMap((match) =>
+    match[1]
+      .split(",")
+      .map((label) => label.trim().replace(/^["']|["']$/gu, ""))
+      .filter(Boolean)
+      .map((label) => ({ file, label })),
+  );
+});
+
+const starterLabelMatches = [...starterIssues.matchAll(/^Labels:\s*(.+)$/gmu)].flatMap((match) =>
+  [...match[1].matchAll(/`([^`]+)`/gu)].map((labelMatch) => ({
+    file: "docs/community/starter_issues.md",
+    label: labelMatch[1],
+  })),
+);
+
+const missingReferencedLabels = [...templateLabelMatches, ...starterLabelMatches]
+  .filter(({ label }) => !labelSet.has(label))
+  .map(({ file, label }) => `${file}: ${label}`);
+if (missingReferencedLabels.length) {
+  throw new Error(`Referenced labels are missing from .github/labels.yml:\n- ${missingReferencedLabels.join("\n- ")}`);
+}
+
+const repoSetup = read("docs/community/repository_setup.md");
+requireIncludes("docs/community/repository_setup.md", repoSetup, [
+  "Local-first high-recall search for Obsidian vaults, usable from Codex and CLI.",
+  "docs/marketing/social_preview.png",
+  ".github/labels.yml",
+  "GitHub Pages",
+  "Security advisories",
 ]);
 
 const roadmap = read("ROADMAP.md");

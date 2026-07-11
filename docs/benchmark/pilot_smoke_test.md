@@ -1,6 +1,6 @@
 # Pilot Smoke Test
 
-This table archives the earlier pilot evaluation used during initial development. It used 3 manually labeled recall tasks and an earlier vault/index snapshot. The expanded 8-task benchmark in the root README is the primary result and supersedes this pilot for headline claims.
+This table archives the earlier pilot evaluation used during initial development. It used 3 manually labeled recall tasks and an earlier vault/index snapshot. The expanded 16-task benchmark in the root README is the primary result and supersedes this pilot for headline claims.
 
 Only aggregate metrics are included here. Raw note paths, snippets, and gold note identifiers are intentionally excluded.
 

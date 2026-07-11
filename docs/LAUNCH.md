@@ -25,6 +25,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `SECURITY.md` explains the privacy model.
 - `CONTRIBUTING.md` and issue templates are present.
 - A v0.1.0 GitHub release exists with the fixture demo command.
+- Repository metadata and labels follow [community/repository_setup.md](community/repository_setup.md).
 - Starter issue drafts are maintained in [community/starter_issues.md](community/starter_issues.md), and at least 5 live starter issues are open for OS testing, docs, benchmark reports, and Smart Connections compatibility.
 
 ## Current Public Launch Links
@@ -42,6 +43,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Obsidian Forum launch task: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/8
 
 Full copy-ready launch posts are in [marketing/community_launch_posts.md](marketing/community_launch_posts.md).
+Repository setup notes are in [community/repository_setup.md](community/repository_setup.md).
 Copy-ready starter issue drafts are in [community/starter_issues.md](community/starter_issues.md).
 
 ## Obsidian Forum Draft

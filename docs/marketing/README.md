@@ -14,6 +14,10 @@ Community launch posts:
 
 [community_launch_posts.md](community_launch_posts.md)
 
+Repository setup checklist:
+
+[../community/repository_setup.md](../community/repository_setup.md)
+
 Regenerate:
 
 ```bash

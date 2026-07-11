@@ -1,0 +1,54 @@
+- name: bug
+  color: d73a4a
+  description: Something is broken or produces incorrect behavior.
+- name: enhancement
+  color: a2eeef
+  description: Feature request or capability improvement.
+- name: documentation
+  color: 0075ca
+  description: Documentation, examples, launch copy, or README improvements.
+- name: good first issue
+  color: 7057ff
+  description: Small, well-scoped contribution suitable for a new contributor.
+- name: tester-feedback
+  color: 0e8a16
+  description: Install, fixture, or real-vault smoke-test feedback from users.
+- name: benchmark
+  color: fbca04
+  description: Aggregate/anonymized recall metrics or benchmark methodology.
+- name: privacy
+  color: b60205
+  description: Privacy model, redaction, leak prevention, or sensitive-data handling.
+- name: security
+  color: b60205
+  description: Security reporting, dependency risk, or vulnerability handling.
+- name: windows
+  color: c5def5
+  description: Windows install, path, shell, or environment behavior.
+- name: macos
+  color: c5def5
+  description: macOS install, path, shell, or environment behavior.
+- name: linux
+  color: c5def5
+  description: Linux or WSL install, path, shell, or environment behavior.
+- name: smart-connections
+  color: 5319e7
+  description: Smart Connections backend, cache, embedding, or index compatibility.
+- name: compatibility
+  color: 5319e7
+  description: Version, OS, Obsidian, plugin, or runtime compatibility.
+- name: research
+  color: 1d76db
+  description: Benchmark design, recall evaluation, or research workflow feedback.
+- name: ohs
+  color: fef2c0
+  description: obsidian-hybrid-search fallback, indexing, or first-run behavior.
+- name: diagnostics
+  color: fef2c0
+  description: Doctor output, troubleshooting, error messages, or debugging reports.
+- name: community
+  color: 0e8a16
+  description: Launch posts, discussions, external testers, or outreach loops.
+- name: launch
+  color: f9d0c4
+  description: Release, distribution, social preview, or launch checklist work.
