@@ -14,6 +14,14 @@ Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
 
 它会优先复用 Smart Connections 的本地向量索引；没有 Smart 索引时，回退到 `obsidian-hybrid-search`；需要最大召回时，也可以合并两路结果。
 
+## 适合谁
+
+- 有大型本地 Obsidian vault 的研究者、工程师、founder 和分析师。
+- 需要 Codex/CLI 在规划、写作、编码或总结前先拿到宽召回上下文的工作流。
+- 原始笔记、snippet、query 和 label 都必须留在本地的隐私敏感工作。
+
+它不是要替代 Obsidian 原生 UI 或 Smart Connections，而是一个 portable recall layer：优先复用已有本地索引，补上 fallback/union retrieval，并返回 agent-ready context pack。更多说明见：[docs/positioning.md](docs/positioning.md)。
+
 ## 30 秒 Demo
 
 ![Fixture demo：安装、测试、查询、召回包](docs/demo/fixture_demo.gif)
@@ -268,6 +276,7 @@ skills/
 - Launch playbook：[docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit：[docs/marketing](docs/marketing/README.md)
 - Share page：[docs/index.html](docs/index.html)
+- Positioning and fit：[docs/positioning.md](docs/positioning.md)
 - 匿名 benchmark 报告指南：[docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)
 - Launch baseline：[docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy：[docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)

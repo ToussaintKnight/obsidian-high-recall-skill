@@ -14,6 +14,14 @@ When your vault has thousands of notes, normal search and agent memory can miss 
 
 It reuses Smart Connections vectors when available, falls back to `obsidian-hybrid-search`, and can merge both result sets for maximum recall.
 
+## Who It Is For
+
+- Researchers, engineers, founders, and analysts with large local Obsidian vaults.
+- Codex/CLI workflows that need broad context before planning, writing, coding, or summarizing.
+- Privacy-sensitive work where raw notes, snippets, queries, and labels should stay local.
+
+It is not trying to replace Obsidian's native UI or Smart Connections. It is a portable recall layer that reuses local indexes when available, adds fallback/union retrieval, and returns agent-ready context packs. More detail: [docs/positioning.md](docs/positioning.md).
+
 ## 30-Second Demo
 
 ![Fixture demo: install, test, query, recall pack](docs/demo/fixture_demo.gif)
@@ -260,6 +268,7 @@ skills/
 - Launch playbook: [docs/LAUNCH.md](docs/LAUNCH.md)
 - Marketing kit: [docs/marketing](docs/marketing/README.md)
 - Share page: [docs/index.html](docs/index.html)
+- Positioning and fit: [docs/positioning.md](docs/positioning.md)
 - Anonymous benchmark reporting guide: [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md)
 - Launch baseline: [docs/metrics/launch_baseline.md](docs/metrics/launch_baseline.md)
 - External contribution strategy: [docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)
