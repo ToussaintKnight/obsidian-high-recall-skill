@@ -6,6 +6,8 @@ const requiredInstallSnippets = [
   "# Installation Guide",
   "Node.js 20",
   "npm test",
+  "npm run demo:query",
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help",
   "docs/fixtures/demo-vault",
   "doctor --vault",

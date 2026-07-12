@@ -12,18 +12,21 @@ When running from a clone, use the script paths shown below. When running throug
 Run directly from GitHub:
 
 ```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
 npx --yes github:ToussaintKnight/obsidian-high-recall-skill query "your broad query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
 ```
 
 Run from a local clone:
 
 ```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs demo
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "your broad query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
 ```
 
 Run after package installation:
 
 ```bash
+obsidian-high-recall demo
 obsidian-high-recall query "your broad query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
 ```
 
@@ -36,6 +39,15 @@ obsidian-high-recall help
 ```
 
 Prints usage text and exits without resolving a vault or touching local notes.
+
+### `demo`
+
+```bash
+obsidian-high-recall demo
+obsidian-high-recall demo --json
+```
+
+Runs one safe query against the bundled public fixture vault. It defaults to `--backend smart`, `--limit 10`, `--per-channel 20`, and `--neighbor-seeds 0`, so it does not require a private vault, Obsidian auto-discovery, Smart Connections cache, or OHS first-run download. Use this before trying a real vault.
 
 ### `detect`
 

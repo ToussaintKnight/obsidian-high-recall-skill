@@ -42,12 +42,18 @@ Fixture 的预期输出和通过标准见：[docs/demo/fixture_walkthrough.md](d
 
 Redacted public JSON examples 见：[docs/examples](docs/examples/README.md)。
 
+先查看一个安全的 public recall pack：
+
+```bash
+npm run demo:query
+```
+
 **早期 tester 路径。** 如果 fixture 通过，请再用自己的真实 vault 跑一个宽泛 query，然后提交 privacy-safe [tester feedback](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml) 或匿名 [benchmark report](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=benchmark_report.yml)。如果工具有用，请 star/watch 这个 repo，帮助其他 Obsidian 用户发现它。
 
 直接查询 fixture vault：
 
 ```bash
-node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "数据采集 for 具身" --vault docs/fixtures/demo-vault --backend smart --limit 10
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs demo
 ```
 
 用于你自己的 vault：

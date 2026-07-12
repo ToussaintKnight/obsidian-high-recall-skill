@@ -33,11 +33,13 @@ npm test
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help
 ```
 
-3. Query the public fixture:
+3. Inspect one public fixture recall pack:
 
 ```bash
-node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10
+npm run demo:query
 ```
+
+This uses the bundled public fixture vault at `docs/fixtures/demo-vault` and redacts local fixture/database paths in the JSON output.
 
 4. Run a privacy-safe diagnostic on your real vault:
 
@@ -58,6 +60,7 @@ Do not paste real-vault query output into public issues. Use `doctor --json` for
 GitHub-backed `npx` can run the package directly:
 
 ```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
 npx --yes github:ToussaintKnight/obsidian-high-recall-skill query "your broad research query" --vault "/absolute/path/to/your-vault" --backend auto --limit 120
 ```
 

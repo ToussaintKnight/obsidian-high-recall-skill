@@ -5,12 +5,15 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-const COMMANDS = new Set(["query", "status", "reindex", "detect", "doctor", "help"]);
+const COMMANDS = new Set(["query", "demo", "status", "reindex", "detect", "doctor", "help"]);
+const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
+const PACKAGE_ROOT = path.resolve(SCRIPT_DIR, "..", "..", "..");
 const DEFAULT_SNIPPET_LENGTH = 320;
 const SMART_MODEL_KEY = "TaylorAI/bge-micro-v2";
 const OUTPUT_SCHEMA_VERSION = "0.1";
+const DEMO_QUERY = "data collection for embodied AI robot demonstrations";
 
 function parseArgs(argv) {
   const opts = {
@@ -28,6 +31,8 @@ function parseArgs(argv) {
     rerank: false,
     profile: "quick",
     backend: "auto",
+    backendExplicit: false,
+    demo: false,
     extra: [],
     queryParts: [],
   };
@@ -62,7 +67,10 @@ function parseArgs(argv) {
     else if (a === "--rerank") opts.rerank = true;
     else if (a === "--profile") opts.profile = next();
     else if (a === "--deep") opts.profile = "deep";
-    else if (a === "--backend") opts.backend = next();
+    else if (a === "--backend") {
+      opts.backend = next();
+      opts.backendExplicit = true;
+    }
     else if (a === "--extra") opts.extra.push(...splitExtra(next()));
     else if (a === "-h" || a === "--help") {
       printHelp();
@@ -94,6 +102,7 @@ function printHelp() {
   obsidian_high_recall.mjs help
   obsidian_high_recall.mjs detect [--vault PATH] [--db PATH]
   obsidian_high_recall.mjs doctor [--vault PATH] [--json]
+  obsidian_high_recall.mjs demo [--json]
   obsidian_high_recall.mjs status [--vault PATH] [--db PATH] [--json]
   obsidian_high_recall.mjs reindex [--vault PATH] [--db PATH] [--force]
   obsidian_high_recall.mjs query "query text" [--vault PATH] [--backend auto] [--limit 120] [--json]
@@ -110,6 +119,14 @@ Options:
   --neighbor-seeds N    Add links/backlinks from top N results as recall candidates.
   --no-auto-index       Do not auto-reindex when the DB is empty.
 `);
+}
+
+function defaultDemoVault() {
+  const fixture = path.join(PACKAGE_ROOT, "docs", "fixtures", "demo-vault");
+  if (!fs.existsSync(fixture)) {
+    throw new Error("Public fixture vault is missing from the package. Reinstall or clone the repository, then retry demo.");
+  }
+  return fixture;
 }
 
 function resolveVault(cliVault) {
@@ -964,6 +981,19 @@ function redactLocalText(text) {
     .replace(/\/(?:Users|home)\/[^\s"'<>]+/g, "<local-path>");
 }
 
+function redactDemoPack(pack) {
+  pack.vault = "<local-fixture-vault-path>";
+  pack.db = "<local-ohs-db-path>";
+  pack.privacy = {
+    safeToShare: true,
+    rawQueryIncluded: true,
+    localPathsIncluded: false,
+    snippetsIncluded: true,
+    noteNamesIncluded: true,
+  };
+  return pack;
+}
+
 function makeDoctorReport(opts) {
   const report = {
     schemaVersion: OUTPUT_SCHEMA_VERSION,
@@ -1070,6 +1100,16 @@ async function main() {
     else printDoctor(report);
     return;
   }
+  if (opts.command === "demo") {
+    opts.command = "query";
+    opts.demo = true;
+    opts.vault = defaultDemoVault();
+    opts.query = DEMO_QUERY;
+    opts.limit = Math.min(opts.limit, 10);
+    opts.perChannel = Math.min(opts.perChannel, 20);
+    opts.neighborSeeds = 0;
+    if (!opts.backendExplicit) opts.backend = "smart";
+  }
   const vault = resolveVault(opts.vault);
   const db = path.resolve(opts.db || defaultDbPath(vault));
 
@@ -1093,6 +1133,7 @@ async function main() {
     throw new Error("Query text is required. Example: query \"数据采集 for 具身\"");
   }
   const pack = await makePack(vault, db, opts);
+  if (opts.demo) redactDemoPack(pack);
   if (opts.json) console.log(JSON.stringify(pack, null, 2));
   else printPack(pack);
 }

@@ -42,12 +42,18 @@ Expected fixture output and pass criteria are documented in [docs/demo/fixture_w
 
 Redacted public JSON examples are in [docs/examples](docs/examples/README.md).
 
+Inspect one safe public recall pack:
+
+```bash
+npm run demo:query
+```
+
 **Early tester path.** If the fixture passes, try one broad real-vault query, then share privacy-safe [tester feedback](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml) or an anonymized [benchmark report](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=benchmark_report.yml). If the tool is useful, star/watch the repo so other Obsidian users can find it.
 
 Query the fixture vault directly:
 
 ```bash
-node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI robot demonstrations" --vault docs/fixtures/demo-vault --backend smart --limit 10
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs demo
 ```
 
 Use it on your own vault:

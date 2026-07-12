@@ -20,6 +20,7 @@ requireIncludes("docs/demo/README.md", demoReadme, [
   "fixture_demo.gif",
   "fixture_walkthrough.md",
   "npm run demo:gif",
+  "npm run demo:query",
 ]);
 
 const walkthrough = read("docs/demo/fixture_walkthrough.md");
@@ -27,6 +28,8 @@ requireIncludes("docs/demo/fixture_walkthrough.md", walkthrough, [
   "# Fixture Walkthrough",
   "docs/fixtures/demo-vault",
   "npm test",
+  "npm run demo:query",
+  "obsidian_high_recall.mjs demo --json",
   "Recall@10 > 0",
   "Embodied AI Data Collection",
   "World Models and Simulation",
@@ -39,13 +42,13 @@ requireIncludes("docs/demo/fixture_walkthrough.md", walkthrough, [
 ]);
 
 const readme = read("README.md");
-requireIncludes("README.md", readme, ["docs/demo/fixture_walkthrough.md"]);
+requireIncludes("README.md", readme, ["docs/demo/fixture_walkthrough.md", "npm run demo:query"]);
 
 const zhReadme = read("README.zh-CN.md");
-requireIncludes("README.zh-CN.md", zhReadme, ["docs/demo/fixture_walkthrough.md"]);
+requireIncludes("README.zh-CN.md", zhReadme, ["docs/demo/fixture_walkthrough.md", "npm run demo:query"]);
 
 const testingGuide = read("docs/testing_guide.md");
-requireIncludes("docs/testing_guide.md", testingGuide, ["demo/fixture_walkthrough.md"]);
+requireIncludes("docs/testing_guide.md", testingGuide, ["demo/fixture_walkthrough.md", "npm run demo:query"]);
 
 if (!fs.existsSync("docs/demo/fixture_demo.gif")) {
   throw new Error("docs/demo/fixture_demo.gif is missing.");

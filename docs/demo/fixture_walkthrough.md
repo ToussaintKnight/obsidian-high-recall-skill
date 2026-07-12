@@ -23,7 +23,13 @@ This means the public evaluator found at least one relevant public fixture note 
 ## Run One Public Query
 
 ```bash
-node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI robot demonstrations" --vault docs/fixtures/demo-vault --backend smart --limit 10 --json
+npm run demo:query
+```
+
+The same safe demo path also works through the CLI:
+
+```bash
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs demo --json
 ```
 
 Expected stable facts:
@@ -67,7 +73,7 @@ Example redacted shape:
 }
 ```
 
-The real JSON also includes local `vault` and `db` paths, timestamps, snippets, expansions, and scores. Do not paste real-vault JSON into public issues without redacting local paths, snippets, raw queries, note names, vault names, and usernames.
+The demo JSON redacts local `vault` and `db` paths and uses only public fixture snippets. Normal real-vault `query --json` output is different: it can include local paths, snippets, raw queries, note names, vault names, and usernames. Do not paste real-vault JSON into public issues without redaction.
 
 For a fuller redacted JSON example, see [fixture_query_pack.redacted.json](../examples/fixture_query_pack.redacted.json).
 
@@ -87,6 +93,7 @@ Run:
 
 ```bash
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help
+node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs demo
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs detect --vault docs/fixtures/demo-vault
 ```
 

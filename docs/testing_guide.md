@@ -30,7 +30,7 @@ Expected output and stable fixture result facts are listed in [demo/fixture_walk
 
 ```bash
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs help
-node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10
+npm run demo:query
 ```
 
 For command and option details, see [cli_reference.md](cli_reference.md).
@@ -109,7 +109,7 @@ Try to reduce the failure to the public fixture first:
 
 ```bash
 npm test
-node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "data collection for embodied AI" --vault docs/fixtures/demo-vault --backend smart --limit 10 --json
+npm run demo:query
 ```
 
 If the fixture passes but your real vault fails, run:
