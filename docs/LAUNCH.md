@@ -32,6 +32,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `npm run recipes:check` passes after usage recipes, copy-paste workflow commands, or scenario guidance changes.
 - GitHub Actions runs `npm test` on Linux, Windows, and macOS.
 - GitHub CodeQL code scanning is configured at `.github/workflows/codeql.yml` for pushes, pull requests, and weekly static analysis.
+- OpenSSF Scorecard is configured at `.github/workflows/scorecard.yml` and visible through the README badge after the public workflow runs.
 - `npm run privacy:scan` passes before release or launch posts are updated.
 - `npm run privacy:docs` passes after [privacy_threat_model.md](privacy_threat_model.md), `SECURITY.md`, README, or launch privacy wording changes.
 - `npm run dependency:check` passes after dependency, model-download, runtime-cache, or privacy-link wording changes.

@@ -38,6 +38,7 @@ const requiredFiles = [
   "scripts/github_discussions.mjs",
   ".github/dependabot.yml",
   ".github/workflows/codeql.yml",
+  ".github/workflows/scorecard.yml",
   ".github/labels.yml",
   ".github/pull_request_template.md",
   ".github/ISSUE_TEMPLATE/config.yml",
@@ -310,6 +311,7 @@ requireIncludes("docs/community/github_setup_commands.md", githubSetupDocs, [
   "GitHub Pages",
   "security advisories",
   "Code scanning",
+  "OpenSSF Scorecard",
   "npm run github:discussions -- --apply",
   "npm run community:check",
 ]);

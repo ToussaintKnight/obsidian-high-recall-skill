@@ -20,6 +20,7 @@ requireIncludes("SECURITY.md", [
   "docs/dependency_inventory.md",
   "npm run privacy:scan",
   ".github/workflows/codeql.yml",
+  ".github/workflows/scorecard.yml",
   "Security Advisories",
 ]);
 
@@ -33,6 +34,7 @@ requireIncludes("docs/privacy_threat_model.md", [
   "Out Of Scope",
   "dependency_inventory.md",
   ".github/workflows/codeql.yml",
+  ".github/workflows/scorecard.yml",
   "raw_runs.json",
   "metrics.json",
   "metrics.csv",

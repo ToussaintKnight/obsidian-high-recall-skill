@@ -41,13 +41,14 @@ GitHub does not expose every trust/discovery setting cleanly through the same CL
 - GitHub Pages serves the `docs/` site;
 - security advisories are enabled;
 - Code scanning is visible after `.github/workflows/codeql.yml` runs;
+- OpenSSF Scorecard badge resolves after `.github/workflows/scorecard.yml` publishes results;
 - the `v0.1.0` release is visible;
 - issue chooser links and the tester discussion link resolve;
 - seeded Discussions exist after running `npm run github:discussions -- --apply`.
 
 ## Why This Matters
 
-The original launch critique found almost no human page-view distribution. Repository metadata, topics, labels, discussions, Pages, releases, Code scanning, and social preview are not cosmetic; they help visitors understand whether the project is alive, searchable, and safe to try.
+The original launch critique found almost no human page-view distribution. Repository metadata, topics, labels, discussions, Pages, releases, Code scanning, OpenSSF Scorecard, and social preview are not cosmetic; they help visitors understand whether the project is alive, searchable, and safe to try.
 
 ## Verification
 

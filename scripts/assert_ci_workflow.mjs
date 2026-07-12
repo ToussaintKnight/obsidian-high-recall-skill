@@ -45,12 +45,46 @@ if (!/cron:\s*["']?\d+\s+\d+\s+\*\s+\*\s+\d["']?/.test(codeql)) {
   throw new Error("CodeQL workflow should include a weekly scheduled cron.");
 }
 
+const scorecardPath = path.join(".github", "workflows", "scorecard.yml");
+if (!fs.existsSync(scorecardPath)) {
+  throw new Error("OpenSSF Scorecard workflow is missing: .github/workflows/scorecard.yml");
+}
+
+const scorecard = fs.readFileSync(scorecardPath, "utf8");
+const requiredScorecard = [
+  "name: OpenSSF Scorecard",
+  "push:",
+  "schedule:",
+  "permissions: read-all",
+  "security-events: write",
+  "id-token: write",
+  "actions/checkout@v4",
+  "persist-credentials: false",
+  "ossf/scorecard-action@v2.4.3",
+  "results_file: scorecard.sarif",
+  "results_format: sarif",
+  "publish_results: true",
+  "actions/upload-artifact@v4",
+  "github/codeql-action/upload-sarif@v3",
+];
+const missingScorecard = requiredScorecard.filter((item) => !scorecard.includes(item));
+if (missingScorecard.length) {
+  throw new Error(`OpenSSF Scorecard workflow is missing required entries:\n- ${missingScorecard.join("\n- ")}`);
+}
+
+if (!/cron:\s*["']?\d+\s+\d+\s+\*\s+\*\s+\d["']?/.test(scorecard)) {
+  throw new Error("OpenSSF Scorecard workflow should include a weekly scheduled cron.");
+}
+
 for (const readmePath of ["README.md", "README.zh-CN.md"]) {
   const readme = fs.readFileSync(readmePath, "utf8");
   for (const snippet of [
     "[![CodeQL]",
     "actions/workflows/codeql.yml/badge.svg",
     "actions/workflows/codeql.yml",
+    "[![OpenSSF Scorecard]",
+    "api.scorecard.dev/projects/github.com/ToussaintKnight/obsidian-high-recall-skill/badge",
+    "scorecard.dev/viewer/?uri=github.com/ToussaintKnight/obsidian-high-recall-skill",
   ]) {
     if (!readme.includes(snippet)) {
       throw new Error(`${readmePath} is missing CodeQL badge snippet: ${snippet}`);

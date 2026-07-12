@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added an OpenSSF Scorecard workflow and README badges for visible supply-chain security posture.
 - Added visible CodeQL badges to both READMEs so code scanning is part of the first-screen trust surface.
 - Added a GitHub CodeQL code-scanning workflow for JavaScript/TypeScript static analysis on pushes, pull requests, and weekly schedules.
 - Made the README, install guide, demo walkthrough, and launch copy lead with the no-vault `npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo` path before full fixture validation.
