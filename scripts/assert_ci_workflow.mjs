@@ -45,4 +45,17 @@ if (!/cron:\s*["']?\d+\s+\d+\s+\*\s+\*\s+\d["']?/.test(codeql)) {
   throw new Error("CodeQL workflow should include a weekly scheduled cron.");
 }
 
+for (const readmePath of ["README.md", "README.zh-CN.md"]) {
+  const readme = fs.readFileSync(readmePath, "utf8");
+  for (const snippet of [
+    "[![CodeQL]",
+    "actions/workflows/codeql.yml/badge.svg",
+    "actions/workflows/codeql.yml",
+  ]) {
+    if (!readme.includes(snippet)) {
+      throw new Error(`${readmePath} is missing CodeQL badge snippet: ${snippet}`);
+    }
+  }
+}
+
 console.log("CI workflow smoke passed.");

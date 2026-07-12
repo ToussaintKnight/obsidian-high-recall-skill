@@ -3,6 +3,7 @@
 Language: [English](README.md) | [中文](README.zh-CN.md)
 
 [![CI](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/codeql.yml/badge.svg)](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/codeql.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Local-first](https://img.shields.io/badge/privacy-local--first-blue.svg)](SECURITY.md)
 
