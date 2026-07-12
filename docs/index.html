@@ -632,16 +632,24 @@
       <div class="section-inner">
         <div class="section-head">
           <h2>Try it without sharing a vault.</h2>
-          <p>The public fixture checks install, syntax, query execution, and recall metrics before anyone points the tool at private notes. If the fixture passes, try one broad real-vault query, report privacy-safe results, and star/watch the repo if it is useful.</p>
+          <p>Start with the one-command no-vault demo or the browser sandbox. The full public fixture checks install, syntax, query execution, and recall metrics before anyone points the tool at private notes. If it works, try one broad real-vault query, share privacy-safe feedback, and star/watch the repo so other Obsidian users can find it.</p>
         </div>
         <div class="demo-grid">
           <div class="media-frame">
             <img src="demo/fixture_demo.gif" alt="Terminal demo running the fixture benchmark and query">
           </div>
-          <pre class="terminal"><code>git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
+          <pre class="terminal"><code># Fastest no-vault path
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+
+# Browser sandbox
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+
+# Full fixture validation
+git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
 cd obsidian-high-recall-skill
 npm test
 
+# Public fixture query
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query \
   "data collection for embodied AI robot demonstrations" \
   --vault docs/fixtures/demo-vault \
