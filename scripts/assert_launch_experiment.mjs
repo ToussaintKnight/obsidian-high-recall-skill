@@ -84,6 +84,7 @@ requireIncludes("docs/LAUNCH.md", launchPlaybook, [
   "Stable Public Launch Links",
   "docs/releases/v0.1.0.md",
   "label%3A%22good%20first%20issue%22",
+  "label%3A%22help%20wanted%22",
   "label%3A%22tester-feedback%22",
 ]);
 if (/https:\/\/github\.com\/ToussaintKnight\/obsidian-high-recall-skill\/issues\/\d+/u.test(launchPlaybook)) {

@@ -67,6 +67,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Share page: https://toussaintknight.github.io/obsidian-high-recall-skill/
 - Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions
 - Good first issues: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22
+- Help wanted tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22
 - Tester-feedback tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22tester-feedback%22
 - Compatibility tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3Acompatibility
 - Benchmark tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3Abenchmark

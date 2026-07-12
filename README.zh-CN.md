@@ -303,6 +303,8 @@ node skills/obsidian-high-recall/scripts/evaluate_recall.mjs ./obsidian_recall_e
 
 早期最有价值的贡献，是从真实操作系统和 vault 设置里给出 privacy-safe install/recall report。先看 [docs/testing_guide.md](docs/testing_guide.md)，然后通过 [tester feedback template](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml) 分享结果。
 
+如果你想认领一个边界清楚的小任务，先看开放的 [help wanted task board](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)。
+
 公开 OS/backend 覆盖情况记录在 [docs/compatibility.md](docs/compatibility.md)。
 
 ## Repo 结构
@@ -347,6 +349,7 @@ skills/
 - 支持入口：[SUPPORT.md](SUPPORT.md)
 - 贡献指南：[CONTRIBUTING.md](CONTRIBUTING.md)
 - Issue templates 和 tester feedback：[new issue chooser](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose)
+- Help-wanted task board：[open `help wanted` issues](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
 - Starter issue playbook：[docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Starter issue commands：[docs/community/starter_issue_commands.md](docs/community/starter_issue_commands.md)
 - Discussion seeds：[docs/community/discussion_seeds.md](docs/community/discussion_seeds.md)，`npm run github:discussions`

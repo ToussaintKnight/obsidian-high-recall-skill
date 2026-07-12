@@ -295,6 +295,8 @@ See [docs/benchmark/reporting_guide.md](docs/benchmark/reporting_guide.md) for t
 
 The most useful early contribution is a privacy-safe install and recall report from a real operating system and vault setup. Start with [docs/testing_guide.md](docs/testing_guide.md), then share results through the [tester feedback template](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml).
 
+If you want a scoped task instead of a free-form report, start from the open [help wanted task board](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22).
+
 Public OS/backend coverage is tracked in [docs/compatibility.md](docs/compatibility.md).
 
 ## Repository Layout
@@ -339,6 +341,7 @@ skills/
 - Support: [SUPPORT.md](SUPPORT.md)
 - Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Issue templates and tester feedback: [new issue chooser](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose)
+- Help-wanted task board: [open `help wanted` issues](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
 - Starter issue playbook: [docs/community/starter_issues.md](docs/community/starter_issues.md)
 - Starter issue commands: [docs/community/starter_issue_commands.md](docs/community/starter_issue_commands.md)
 - Discussion seeds: [docs/community/discussion_seeds.md](docs/community/discussion_seeds.md), `npm run github:discussions`

@@ -31,6 +31,8 @@ const requiredIndexSnippets = [
   "Usage recipes",
   "https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1",
   "Open in Codespaces",
+  "Help wanted tasks",
+  "label%3A%22help%20wanted%22",
   "Fastest no-vault path",
   "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "llms.txt",
