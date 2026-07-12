@@ -16,6 +16,7 @@ function requireIncludes(file, text, snippets) {
   }
 }
 
+const codespacesUrl = "https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1";
 const devcontainerPath = path.join(".devcontainer", "devcontainer.json");
 const devcontainer = JSON.parse(read(devcontainerPath));
 if (devcontainer.name !== "Obsidian High Recall") {
@@ -34,6 +35,8 @@ if (!String(devcontainer.postCreateCommand || "").includes("npm run demo:query")
 const codespaces = read(path.join("docs", "codespaces.md"));
 requireIncludes("docs/codespaces.md", codespaces, [
   "# Codespaces Demo",
+  "[![Open in GitHub Codespaces]",
+  codespacesUrl,
   "zero-private-vault smoke test",
   "Codespaces cannot access your local Obsidian vault",
   "npm test",
@@ -46,6 +49,8 @@ requireIncludes("docs/codespaces.md", codespaces, [
 const readme = read("README.md");
 requireIncludes("README.md", readme, [
   "Codespaces",
+  "[![Open in GitHub Codespaces]",
+  codespacesUrl,
   "[docs/codespaces.md](docs/codespaces.md)",
   "zero-private-vault",
 ]);
@@ -53,6 +58,8 @@ requireIncludes("README.md", readme, [
 const zhReadme = read("README.zh-CN.md");
 requireIncludes("README.zh-CN.md", zhReadme, [
   "Codespaces",
+  "[![Open in GitHub Codespaces]",
+  codespacesUrl,
   "[docs/codespaces.md](docs/codespaces.md)",
   "zero-private-vault",
 ]);
@@ -60,6 +67,7 @@ requireIncludes("README.zh-CN.md", zhReadme, [
 const install = read(path.join("docs", "install.md"));
 requireIncludes("docs/install.md", install, [
   "Run In GitHub Codespaces",
+  codespacesUrl,
   "docs/codespaces.md",
   "Codespaces cannot access your local Obsidian vault",
 ]);
@@ -68,6 +76,12 @@ const contributing = read("CONTRIBUTING.md");
 requireIncludes("CONTRIBUTING.md", contributing, [
   "npm run codespaces:check",
   "docs/codespaces.md",
+]);
+
+const site = read(path.join("docs", "index.html"));
+requireIncludes("docs/index.html", site, [
+  codespacesUrl,
+  "Open in Codespaces",
 ]);
 
 console.log("Codespaces docs smoke passed.");

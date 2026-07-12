@@ -2,11 +2,13 @@
 
 GitHub Codespaces is useful for a zero-private-vault smoke test. It lets a new reader run the public fixture, inspect the CLI, and see the recall-pack shape before installing anything locally.
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1)
+
 Codespaces cannot access your local Obsidian vault. Use it only for the bundled public fixture and repository tests. Real-vault recall still needs a local machine where the vault and optional Smart Connections `.smart-env` index are present.
 
 ## Quick Path
 
-1. Open the repository in GitHub Codespaces.
+1. Open the repository in GitHub Codespaces: <https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1>.
 2. Wait for the devcontainer `postCreateCommand` to finish `npm ci` and `npm run demo:query`.
 3. Run the public fixture test:
 

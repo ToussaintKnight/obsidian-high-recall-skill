@@ -28,7 +28,7 @@ This command uses only bundled public fixture notes and redacts local fixture/da
 
 ## Run In GitHub Codespaces
 
-If you want a browser-based zero-private-vault sandbox, open the repository in GitHub Codespaces. The devcontainer installs dependencies and runs `npm run demo:query` after creation.
+If you want a browser-based zero-private-vault sandbox, [open the repository in GitHub Codespaces](https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1). The devcontainer installs dependencies and runs `npm run demo:query` after creation.
 
 Codespaces cannot access your local Obsidian vault, so it is only for public fixture validation, CLI inspection, and contributor setup. Use your local machine for real-vault recall. Full details: [docs/codespaces.md](codespaces.md).
 

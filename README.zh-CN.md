@@ -5,6 +5,7 @@
 [![CI](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/codeql.yml/badge.svg)](https://github.com/ToussaintKnight/obsidian-high-recall-skill/actions/workflows/codeql.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/ToussaintKnight/obsidian-high-recall-skill/badge)](https://scorecard.dev/viewer/?uri=github.com/ToussaintKnight/obsidian-high-recall-skill)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Local-first](https://img.shields.io/badge/privacy-local--first-blue.svg)](SECURITY.md)
 
@@ -38,7 +39,7 @@ npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
 
 这个命令只使用 bundled public fixture notes，并会 redacts 本地 fixture/database paths。
 
-Prefer browser sandbox first? 可以在 GitHub Codespaces 里先跑一次 zero-private-vault fixture demo。Devcontainer 会自动安装依赖并运行 public demo query，详见 [docs/codespaces.md](docs/codespaces.md)。
+Prefer browser sandbox first? 可以先 [Open in GitHub Codespaces](https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1) 跑一次 zero-private-vault fixture demo。Devcontainer 会自动安装依赖并运行 public demo query，详见 [docs/codespaces.md](docs/codespaces.md)。
 
 完整 public fixture benchmark：
 

@@ -29,6 +29,8 @@ const requiredIndexSnippets = [
   "Output examples",
   "docs/recipes.md",
   "Usage recipes",
+  "https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1",
+  "Open in Codespaces",
   "llms.txt",
 ];
 
