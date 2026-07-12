@@ -299,7 +299,7 @@ skills/
 
 - Security and privacy model: [SECURITY.md](SECURITY.md)
 - Install guide: [docs/install.md](docs/install.md)
-- NPM publish readiness: [docs/npm_publish.md](docs/npm_publish.md), `npm run publish:check`
+- NPM publish readiness and workflow: [docs/npm_publish.md](docs/npm_publish.md), `npm run publish:check`
 - CI matrix: Linux, Windows, and macOS run `npm test`
 - Privacy leak gate: `npm run privacy:scan`
 - Privacy threat model: [docs/privacy_threat_model.md](docs/privacy_threat_model.md), `npm run privacy:docs`

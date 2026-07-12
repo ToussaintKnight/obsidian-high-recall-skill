@@ -32,6 +32,25 @@ npm run publish:check
 
 `npm run publish:check` verifies package metadata, package contents, bin entries, publish configuration, release docs, privacy docs, and installed-package CLI behavior through the existing package smoke tests.
 
+## GitHub Actions Publish Workflow
+
+The repeatable registry publish path is `.github/workflows/npm-publish.yml`.
+
+Before using it:
+
+1. Configure an npm automation token as the repository secret `NPM_TOKEN`.
+2. Push the release commit and confirm CI is green.
+3. Confirm the GitHub release tag exactly matches `package.json`, for example `v0.1.0`.
+4. Trigger the workflow by publishing a GitHub release, or run `workflow_dispatch` with the same tag.
+
+The workflow runs `npm test`, `npm run privacy:scan`, and `npm run publish:check`, rejects a tag/version mismatch, rejects an already-published package version, and publishes with:
+
+```bash
+npm publish --access public --provenance
+```
+
+Keep the workflow disabled by omission of `NPM_TOKEN` until the repo is pushed, CI is green, and the release notes are final.
+
 ## Dry Run
 
 Inspect the exact package payload:
@@ -43,6 +62,8 @@ npm pack --dry-run --json --cache .tmp/npm-cache
 The package should include source, skill files, public fixtures, docs, release notes, security policy, contribution docs, citation metadata, and public benchmark artifacts. It must not include local evaluation runs, private cases, raw snippets, private vault paths, `.smart-env`, OHS databases, or local cache directories.
 
 ## Publish Steps
+
+Manual publishing is the fallback path. Prefer the GitHub Actions workflow above after `NPM_TOKEN` is configured.
 
 1. Confirm the GitHub repository is pushed and CI is green.
 2. Confirm the release notes match `package.json` version.

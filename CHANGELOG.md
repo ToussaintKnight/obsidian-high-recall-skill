@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added a guarded npm registry publish workflow with tag/version checks, privacy gates, and provenance publishing.
 - Added a repeatable GitHub launch metrics collector and documentation for baseline, 24-hour, and 7-day channel snapshots.
 - Added `docs/llms.txt` and site metadata checks so AI tools can discover the project summary, privacy model, quick start, benchmark context, and feedback paths.
 - Added repeatable GitHub Discussion seed drafts and commands for tester calls, install/privacy Q&A, recall wins/misses, and roadmap feedback.

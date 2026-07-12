@@ -51,16 +51,34 @@ requireIncludes("docs/npm_publish.md", npmPublish, [
   "# NPM Publish Readiness",
   "GitHub-backed `npx`",
   "Do not advertise the registry command until the package has actually been published and verified.",
+  ".github/workflows/npm-publish.yml",
+  "NPM_TOKEN",
   "Package name: `obsidian-high-recall`",
   "Declared runtime dependencies: none",
   "npm run publish:check",
   "npm pack --dry-run --json --cache .tmp/npm-cache",
+  "npm publish --access public --provenance",
   "npm publish --access public",
   "npx --yes obsidian-high-recall help",
   "raw_runs.json",
   ".smart-env",
   "dependency_inventory.md",
   "privacy_threat_model.md",
+]);
+
+const npmWorkflow = read(path.join(".github", "workflows", "npm-publish.yml"));
+requireIncludes(".github/workflows/npm-publish.yml", npmWorkflow, [
+  "name: Publish npm",
+  "release:",
+  "workflow_dispatch:",
+  "id-token: write",
+  "registry-url: \"https://registry.npmjs.org\"",
+  "npm test",
+  "npm run privacy:scan",
+  "npm run publish:check",
+  "NPM_TOKEN",
+  "npm publish --access public --provenance",
+  "obsidian-high-recall@$VERSION",
 ]);
 
 const install = read(path.join("docs", "install.md"));
@@ -71,13 +89,13 @@ requireIncludes("docs/install.md", install, [
 
 const readme = read("README.md");
 requireIncludes("README.md", readme, [
-  "NPM publish readiness",
+  "NPM publish readiness and workflow",
   "docs/npm_publish.md",
 ]);
 
 const zhReadme = read("README.zh-CN.md");
 requireIncludes("README.zh-CN.md", zhReadme, [
-  "NPM publish readiness",
+  "NPM publish readiness and workflow",
   "docs/npm_publish.md",
 ]);
 

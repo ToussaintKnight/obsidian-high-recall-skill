@@ -40,6 +40,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - `npm run site:check` passes after the GitHub Pages share page, social preview card, sitemap, or robots file changes.
 - `docs/llms.txt` summarizes the project for AI tools and stays aligned with README positioning, privacy guardrails, benchmark limitations, and tester feedback links.
 - `npm run release:check` passes after `package.json`, `CHANGELOG.md`, or release notes change.
+- The npm publish workflow exists at `.github/workflows/npm-publish.yml`, requires `NPM_TOKEN`, checks tag/version parity, and runs `npm publish --access public --provenance` only after test/privacy/publish gates pass.
 - `npm run community:check` passes after issue template, PR template, support, or starter issue changes.
 - `SECURITY.md` explains the privacy model.
 - `CONTRIBUTING.md` and issue templates are present.
