@@ -160,6 +160,7 @@ requireIncludes("docs/community/starter_issues.md", starterIssues, [
   "Privacy Redaction Checklist Test",
   "Obsidian Forum Launch Feedback",
   "Compatibility Matrix Report",
+  "help wanted",
   "docs/testing_guide.md",
 ]);
 
@@ -193,6 +194,8 @@ requireIncludes("docs/community/maintenance.md", maintenance, [
   "npm run demo:check",
   "npm run release:check",
   "Issue Triage",
+  "`help wanted`",
+  "`question`",
   "Security And Privacy Maintenance",
   "At least five live starter issues",
 ]);
@@ -249,6 +252,8 @@ const requiredLabels = [
   "enhancement",
   "documentation",
   "good first issue",
+  "help wanted",
+  "question",
   "tester-feedback",
   "benchmark",
   "privacy",

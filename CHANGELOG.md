@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added `help wanted` and `question` labels, and marked starter issues with `help wanted` for contributor discovery.
 - Made the project-page demo section lead with the one-command no-vault demo and Codespaces sandbox before full fixture validation.
 - Replaced hard-coded launch issue numbers with stable label query links and release-note entrypoints.
 - Replaced brittle numeric tester Discussion links with the stable repository Discussions entrypoint.

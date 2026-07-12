@@ -4,7 +4,7 @@ Use these issue drafts to keep the project easy for outside testers to enter. Th
 
 ## 1. Windows Install And Fixture Smoke Test
 
-Labels: `good first issue`, `windows`, `tester-feedback`
+Labels: `help wanted`, `good first issue`, `windows`, `tester-feedback`
 
 Goal: Verify a clean Windows machine can install dependencies and run the public fixture without private vault data.
 
@@ -20,7 +20,7 @@ Privacy note: use only the fixture vault. Do not paste local paths or private va
 
 ## 2. macOS Install And Fixture Smoke Test
 
-Labels: `good first issue`, `macos`, `tester-feedback`
+Labels: `help wanted`, `good first issue`, `macos`, `tester-feedback`
 
 Goal: Verify the same fixture path on macOS, including shell quoting for vault paths.
 
@@ -36,7 +36,7 @@ Privacy note: redact usernames and local paths from command output.
 
 ## 3. Linux Install And Fixture Smoke Test
 
-Labels: `good first issue`, `linux`, `tester-feedback`
+Labels: `help wanted`, `good first issue`, `linux`, `tester-feedback`
 
 Goal: Verify the package on a common Linux desktop or WSL environment.
 
@@ -52,7 +52,7 @@ Privacy note: use only the public fixture or privacy-safe doctor output.
 
 ## 4. Smart Connections Compatibility Report
 
-Labels: `smart-connections`, `compatibility`, `tester-feedback`
+Labels: `help wanted`, `smart-connections`, `compatibility`, `tester-feedback`
 
 Goal: Collect aggregate compatibility reports across Smart Connections versions and vault states.
 
@@ -68,7 +68,7 @@ Privacy note: do not share note names, snippets, raw queries, or vault names.
 
 ## 5. Codespaces No-Vault Fixture Smoke Test
 
-Labels: `codespaces`, `good first issue`, `tester-feedback`
+Labels: `help wanted`, `codespaces`, `good first issue`, `tester-feedback`
 
 Goal: Verify the browser-based Codespaces sandbox opens, installs dependencies, and runs the public fixture without private vault data.
 
@@ -84,7 +84,7 @@ Privacy note: use only the fixture vault. Codespaces cannot access your local Ob
 
 ## 6. Anonymized Benchmark Report
 
-Labels: `benchmark`, `research`, `tester-feedback`
+Labels: `help wanted`, `benchmark`, `research`, `tester-feedback`
 
 Goal: Add aggregate real-vault evidence without exposing private notes.
 
@@ -99,7 +99,7 @@ Privacy note: never attach `raw_runs.json`, local cases files, raw snippets, pri
 
 ## 7. OHS First-Run Diagnostics
 
-Labels: `ohs`, `diagnostics`, `good first issue`
+Labels: `help wanted`, `ohs`, `diagnostics`, `good first issue`
 
 Goal: Improve the docs and error messages for users whose OHS index is missing, stale, or slow on first run.
 
@@ -114,7 +114,7 @@ Privacy note: use fixture examples or redact all local paths.
 
 ## 8. Privacy Redaction Checklist Test
 
-Labels: `privacy`, `documentation`, `good first issue`
+Labels: `help wanted`, `privacy`, `documentation`, `good first issue`
 
 Goal: Stress-test whether bug reports, benchmark reports, screenshots, and logs are safe enough to post publicly.
 
@@ -129,7 +129,7 @@ Privacy note: do not include real private examples; use synthetic placeholders.
 
 ## 9. Obsidian Forum Launch Feedback
 
-Labels: `community`, `documentation`, `launch`
+Labels: `help wanted`, `community`, `documentation`, `launch`
 
 Goal: Make the launch post understandable to Obsidian users who do not care about Codex internals.
 
@@ -144,7 +144,7 @@ Privacy note: launch screenshots and examples must use the fixture vault or synt
 
 ## 10. Compatibility Matrix Report
 
-Labels: `compatibility`, `tester-feedback`, `good first issue`
+Labels: `help wanted`, `compatibility`, `tester-feedback`, `good first issue`
 
 Goal: Fill one missing OS/backend cell in [docs/compatibility.md](../compatibility.md) with a privacy-safe report.
 

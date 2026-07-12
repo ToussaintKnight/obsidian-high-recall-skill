@@ -71,6 +71,8 @@ Details are in [github_setup_commands.md](github_setup_commands.md). At minimum,
 - `enhancement`
 - `documentation`
 - `good first issue`
+- `help wanted`
+- `question`
 - `tester-feedback`
 - `benchmark`
 - `privacy`

@@ -56,6 +56,8 @@ Use these labels consistently:
 - `compatibility`: OS, Node.js, Obsidian, Smart Connections, or OHS version problems.
 - `dependencies`: Dependabot, package, lockfile, or GitHub Actions updates.
 - `good first issue`: public-fixture-only tasks with no private data required.
+- `help wanted`: tasks where outside OS, vault, backend, or community feedback is explicitly useful.
+- `question`: non-bug setup or usage questions; redirect broad Q&A to Discussions when possible.
 
 Close or redirect reports that require private note content in public. Ask the reporter to use privacy-safe `doctor --json`, synthetic examples, public fixture reproduction, or GitHub Security Advisories for sensitive details.
 

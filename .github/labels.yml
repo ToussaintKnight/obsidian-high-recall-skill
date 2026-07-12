@@ -10,6 +10,12 @@
 - name: good first issue
   color: 7057ff
   description: Small, well-scoped contribution suitable for a new contributor.
+- name: help wanted
+  color: 008672
+  description: Needs external tester, contributor, or community input.
+- name: question
+  color: d876e3
+  description: Non-bug support question or discussion that may belong in Q&A.
 - name: tester-feedback
   color: 0e8a16
   description: Install, fixture, or real-vault smoke-test feedback from users.
