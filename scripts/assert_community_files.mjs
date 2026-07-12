@@ -330,8 +330,34 @@ for (const field of ["repo", "description", "homepage", "topics", "labels", "man
 if (setupPlan.repo !== "ToussaintKnight/obsidian-high-recall-skill") {
   throw new Error(`GitHub setup plan has wrong repo: ${setupPlan.repo}`);
 }
-for (const topic of ["obsidian", "local-first", "rag", "pkm", "codex", "smart-connections", "ai-agents", "semantic-search"]) {
+const requiredDiscoveryTopics = [
+  "obsidian",
+  "obsidian-md",
+  "local-first",
+  "search",
+  "semantic-search",
+  "vector-search",
+  "hybrid-search",
+  "rag",
+  "local-rag",
+  "pkm",
+  "knowledge-management",
+  "codex",
+  "codex-skill",
+  "smart-connections",
+  "ai-agents",
+  "ai-memory",
+  "agent-memory",
+  "retrieval",
+  "research-tools",
+  "local-ai",
+];
+if (setupPlan.topics.length !== requiredDiscoveryTopics.length) {
+  throw new Error(`GitHub setup plan should contain ${requiredDiscoveryTopics.length} discovery topics, found ${setupPlan.topics.length}.`);
+}
+for (const topic of requiredDiscoveryTopics) {
   if (!setupPlan.topics.includes(topic)) throw new Error(`GitHub setup plan missing topic: ${topic}`);
+  if (!repoSetup.includes(`- \`${topic}\``)) throw new Error(`repository_setup.md missing topic: ${topic}`);
 }
 if (setupPlan.labels.length !== labelNames.length) {
   throw new Error(`GitHub setup plan label count ${setupPlan.labels.length} does not match labels.yml count ${labelNames.length}.`);

@@ -16,6 +16,10 @@ Obsidian High Recall helps agents and humans search large private Obsidian vault
 - Output contract: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/output_contract.md
 - Security and privacy: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/SECURITY.md
 
+## Discovery Terms
+
+Obsidian, Obsidian MD, local-first search, semantic search, vector search, hybrid search, local RAG, AI memory, agent memory, Codex skill, Smart Connections, PKM, knowledge management, and research tooling.
+
 ## Quick Start
 
 Run the public fixture without a private vault:

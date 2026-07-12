@@ -8,15 +8,25 @@ Use this checklist after authentication is restored and the local commits are pu
 - Website: `https://toussaintknight.github.io/obsidian-high-recall-skill/`
 - Topics:
   - `obsidian`
+  - `obsidian-md`
   - `local-first`
   - `search`
+  - `semantic-search`
+  - `vector-search`
+  - `hybrid-search`
   - `rag`
+  - `local-rag`
   - `pkm`
+  - `knowledge-management`
   - `codex`
+  - `codex-skill`
   - `smart-connections`
   - `ai-agents`
+  - `ai-memory`
+  - `agent-memory`
   - `retrieval`
-  - `semantic-search`
+  - `research-tools`
+  - `local-ai`
 
 ## Social Preview
 

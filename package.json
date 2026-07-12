@@ -64,13 +64,24 @@
   },
   "keywords": [
     "obsidian",
+    "obsidian-md",
     "local-first",
     "search",
+    "semantic-search",
+    "vector-search",
+    "hybrid-search",
     "rag",
+    "local-rag",
+    "ai-memory",
+    "agent-memory",
     "codex",
+    "codex-skill",
     "smart-connections",
     "notes",
-    "pkm"
+    "pkm",
+    "knowledge-management",
+    "research-tools",
+    "local-ai"
   ],
   "repository": {
     "type": "git",

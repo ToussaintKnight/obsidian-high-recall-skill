@@ -38,7 +38,26 @@ for (const bin of ["obsidian-high-recall", "obsidian-high-recall-eval"]) {
   requireJsonField(pkg.bin?.[bin]?.startsWith("skills/obsidian-high-recall/scripts/"), `package.json missing bin ${bin}.`);
 }
 
-for (const keyword of ["obsidian", "local-first", "search", "rag", "codex", "smart-connections", "pkm"]) {
+for (const keyword of [
+  "obsidian",
+  "obsidian-md",
+  "local-first",
+  "search",
+  "semantic-search",
+  "vector-search",
+  "hybrid-search",
+  "rag",
+  "local-rag",
+  "ai-memory",
+  "agent-memory",
+  "codex",
+  "codex-skill",
+  "smart-connections",
+  "pkm",
+  "knowledge-management",
+  "research-tools",
+  "local-ai",
+]) {
   requireJsonField(pkg.keywords?.includes(keyword), `package.json keywords missing ${keyword}.`);
 }
 

@@ -7,15 +7,25 @@ const description = "Local-first high-recall search for Obsidian vaults, usable 
 const homepage = "https://toussaintknight.github.io/obsidian-high-recall-skill/";
 const topics = [
   "obsidian",
+  "obsidian-md",
   "local-first",
   "search",
+  "semantic-search",
+  "vector-search",
+  "hybrid-search",
   "rag",
+  "local-rag",
   "pkm",
+  "knowledge-management",
   "codex",
+  "codex-skill",
   "smart-connections",
   "ai-agents",
+  "ai-memory",
+  "agent-memory",
   "retrieval",
-  "semantic-search",
+  "research-tools",
+  "local-ai",
 ];
 
 function parseLabels(text) {
