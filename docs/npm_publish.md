@@ -41,7 +41,7 @@ Before using it:
 1. Configure an npm automation token as the repository secret `NPM_TOKEN`.
 2. Push the release commit and confirm CI is green.
 3. Confirm the GitHub release tag exactly matches `package.json`, for example `v0.2.0`.
-4. Trigger the workflow by publishing a GitHub release, or run `workflow_dispatch` with the same tag.
+4. Run `workflow_dispatch` with the same tag. The workflow is intentionally manual-only so publishing a GitHub release cannot publish to npm by surprise.
 
 The workflow runs `npm test`, `npm run privacy:scan`, and `npm run publish:check`, rejects a tag/version mismatch, rejects an already-published package version, and publishes with:
 
@@ -49,7 +49,7 @@ The workflow runs `npm test`, `npm run privacy:scan`, and `npm run publish:check
 npm publish --access public --provenance
 ```
 
-Keep the workflow disabled by omission of `NPM_TOKEN` until the repo is pushed, CI is green, and the release notes are final.
+Keep `NPM_TOKEN` unset until the repo is pushed, CI is green, the release notes are final, and an npm publish is explicitly intended. Without that secret, do not dispatch the workflow.
 
 ## Dry Run
 

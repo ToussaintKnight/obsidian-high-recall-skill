@@ -88,7 +88,6 @@ requireIncludes("docs/npm_publish.md", npmPublish, [
 const npmWorkflow = read(path.join(".github", "workflows", "npm-publish.yml"));
 requireIncludes(".github/workflows/npm-publish.yml", npmWorkflow, [
   "name: Publish npm",
-  "release:",
   "workflow_dispatch:",
   "id-token: write",
   "registry-url: \"https://registry.npmjs.org\"",
@@ -99,6 +98,9 @@ requireIncludes(".github/workflows/npm-publish.yml", npmWorkflow, [
   "npm publish --access public --provenance",
   "obsidian-high-recall@$VERSION",
 ]);
+if (/^\s{2}release:/m.test(npmWorkflow)) {
+  throw new Error("npm-publish.yml must remain manual-only until registry publishing is explicitly enabled.");
+}
 
 const install = read(path.join("docs", "install.md"));
 requireIncludes("docs/install.md", install, [
