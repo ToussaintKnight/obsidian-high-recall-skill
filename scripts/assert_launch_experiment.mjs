@@ -16,6 +16,7 @@ function requireIncludes(file, text, required) {
   }
 }
 
+const codespacesUrl = "https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1";
 const experimentPath = path.join("docs", "marketing", "launch_experiment.md");
 const experiment = read(experimentPath);
 
@@ -25,6 +26,8 @@ requireIncludes(experimentPath, experiment, [
   "20 serious users",
   "Obsidian Forum Share & Showcase",
   "Pre-Post Checklist",
+  "Codespaces no-vault sandbox",
+  "Codespaces conversion",
   "npm test",
   "npm run privacy:scan",
   "npm run site:check",
@@ -62,6 +65,7 @@ requireIncludes("docs/marketing/README.md", marketingReadme, [
   "../metrics/collection.md",
   "Launch experiment plan",
   "Landscape positioning and reply kit",
+  codespacesUrl,
   "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "Conversion Ladder",
   "Star/watch the repo",
@@ -72,6 +76,7 @@ requireIncludes("docs/LAUNCH.md", launchPlaybook, [
   "marketing/launch_experiment.md",
   "marketing/landscape_positioning.md",
   "metrics/collection.md",
+  codespacesUrl,
   "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "npm run github:metrics -- --collect",
   "npm run launch:check",
@@ -103,6 +108,7 @@ requireIncludes("README.zh-CN.md", zhReadme, [
 const communityPosts = read(path.join("docs", "marketing", "community_launch_posts.md"));
 requireIncludes("docs/marketing/community_launch_posts.md", communityPosts, [
   "Try the safe no-vault demo first",
+  codespacesUrl,
   "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "For full fixture validation",
 ]);
@@ -116,6 +122,7 @@ requireIncludes("docs/marketing/landscape_positioning.md", landscape, [
   "Obsidian agent hosts and plugins",
   "Smart Connections and semantic search users",
   "Local-first AI and privacy RAG",
+  codespacesUrl,
   "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "Do not ask for raw notes",
   "npm run github:metrics -- --collect",

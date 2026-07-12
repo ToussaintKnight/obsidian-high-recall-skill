@@ -25,6 +25,7 @@ Do not present it as a replacement for Obsidian, Smart Connections, or vault-nat
 - Lead with the user's pain: missed notes in a large vault, not Codex internals.
 - Acknowledge the host project's value before mentioning this repo.
 - State the complementary role: high-recall local note recall, not a replacement UI.
+- Prefer the Codespaces link when a browser-based no-vault trial is easier than asking someone to install locally.
 - Include one safe test command, preferably `npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo` for a no-vault fixture demo.
 - Point advanced users to `npm test` before real-vault testing.
 - Ask for privacy-safe setup reports, not raw note content.
@@ -40,6 +41,8 @@ This is a useful direction: bringing agents closer to the vault removes a lot of
 One complementary piece I have been working on is high-recall local retrieval before the agent acts. Obsidian High Recall is not an Obsidian UI replacement; it produces a local recall pack from a vault, reuses Smart Connections vectors when available, and falls back to local search when needed.
 
 Safe fixture demo:
+
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
 
 ```bash
 npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
@@ -57,6 +60,8 @@ Obsidian High Recall uses Smart Connections vectors when available, adds local f
 
 Try the public fixture first:
 
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+
 ```bash
 npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
 ```
@@ -71,6 +76,8 @@ For people building local-first agent workflows, this project is a recall-first 
 
 Safe fixture demo:
 
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+
 ```bash
 npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
 ```
@@ -82,6 +89,8 @@ Threat model and privacy docs: https://github.com/ToussaintKnight/obsidian-high-
 For Codex-style workflows, the useful unit is often a context pack rather than a chat UI. Obsidian High Recall takes a broad local query, searches the vault with Smart/OHS/fallback channels, dedupes and ranks hits, then returns a JSON pack the agent can inspect before acting.
 
 Safe fixture demo:
+
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
 
 ```bash
 npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo

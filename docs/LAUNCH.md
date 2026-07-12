@@ -76,6 +76,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 
 Repeatable GitHub release commands are in [releases/publish_release.md](releases/publish_release.md).
 Full copy-ready launch posts are in [marketing/community_launch_posts.md](marketing/community_launch_posts.md).
+Codespaces no-vault sandbox: https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
 Launch experiment and conversion tracking are in [marketing/launch_experiment.md](marketing/launch_experiment.md).
 Landscape positioning and reply templates are in [marketing/landscape_positioning.md](marketing/landscape_positioning.md).
 Repeatable GitHub metric collection is documented in [metrics/collection.md](metrics/collection.md).

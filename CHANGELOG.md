@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added Codespaces no-vault sandbox links to the launch kit, external post drafts, and reply templates.
 - Added visible GitHub Codespaces badges and project-page CTAs for the no-vault fixture sandbox.
 - Added a GitHub Codespaces/devcontainer path for a browser-based, zero-private-vault fixture demo.
 - Expanded npm, GitHub topic, site, and AI-readable discovery metadata for Obsidian, PKM, semantic/vector search, local RAG, and agent-memory search paths.

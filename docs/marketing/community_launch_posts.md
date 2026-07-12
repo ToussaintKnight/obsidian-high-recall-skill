@@ -30,6 +30,10 @@ Tester discussion:
 
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
 
+Codespaces no-vault sandbox:
+
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+
 ## Launch Sequence
 
 Use [launch_experiment.md](launch_experiment.md) to record baseline metrics, 24-hour results, 7-day results, conversion ratios, and after-action notes for each channel.
@@ -72,6 +76,9 @@ https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/faq
 
 Output examples:
 https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/examples/README.md
+
+Browser sandbox:
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
 
 It is a local-first recall-first search wrapper. It reuses Smart Connections vectors when available, falls back to local hybrid/fulltext search, and can merge both result sets when recall matters more than latency.
 
@@ -123,6 +130,9 @@ I released a small local-first tool for large Obsidian vaults:
 
 https://toussaintknight.github.io/obsidian-high-recall-skill/
 
+Browser sandbox:
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+
 The problem: when a vault gets large, normal search and agent memory can miss relevant notes. This tool intentionally favors recall over precision. It reuses Smart Connections vectors when available, falls back to local hybrid/fulltext search, and returns broad context packs for Codex or CLI workflows.
 
 Safe no-vault demo:
@@ -161,6 +171,9 @@ I built Obsidian High Recall, a local-first recall-first search wrapper for larg
 
 https://toussaintknight.github.io/obsidian-high-recall-skill/
 
+Browser sandbox:
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+
 It reuses Smart Connections vectors when available, falls back to local hybrid/fulltext search, and returns broad context packs for agent/CLI workflows. The goal is not perfect precision; it is avoiding silent misses when a relevant note exists somewhere in a large private vault.
 
 There is a safe no-vault demo and a public fixture vault so people can inspect output, then test install/evaluator behavior without sharing private notes:
@@ -189,6 +202,9 @@ It reuses Smart Connections vectors when available, falls back locally, includes
 
 Looking for testers:
 https://toussaintknight.github.io/obsidian-high-recall-skill/
+
+Browser sandbox:
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
 ```
 
 ## Follow-Up Reply

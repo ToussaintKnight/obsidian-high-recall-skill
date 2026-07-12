@@ -10,6 +10,10 @@ Share page:
 
 https://toussaintknight.github.io/obsidian-high-recall-skill/
 
+Codespaces no-vault sandbox:
+
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+
 AI-readable summary:
 
 https://toussaintknight.github.io/obsidian-high-recall-skill/llms.txt
@@ -69,6 +73,7 @@ Obsidian High Recall helps agents and humans search large private Obsidian vault
 ## Proof Points
 
 - Public fixture vault: `npm test` runs without a private vault.
+- Browser sandbox: GitHub Codespaces opens a zero-private-vault fixture environment before local install.
 - Privacy model: raw notes, snippets, private queries, and local labels stay local.
 - Backends: Smart Connections, OHS fallback, and evaluator-derived RRF union.
 - Benchmark: private-vault aggregate results are published with anonymized metrics and limitations.
@@ -76,7 +81,11 @@ Obsidian High Recall helps agents and humans search large private Obsidian vault
 
 ## Primary Call To Action
 
-Try the no-vault fixture demo first:
+Open the no-vault browser sandbox first:
+
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+
+Or run the no-vault fixture demo directly:
 
 ```bash
 npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
@@ -101,12 +110,13 @@ Usage recipes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blo
 Use this order in launch posts and replies. It turns cold readers into useful early signal without asking everyone for the same thing.
 
 1. Visit the project page or README.
-2. Run the no-vault demo with `npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo`.
-3. Run the full public fixture with `npm test`.
-4. Try one broad real-vault query with private notes kept local.
-5. Submit privacy-safe tester feedback or an anonymized benchmark report.
-6. Star/watch the repo if the tool is useful.
-7. Open a focused issue for repeated setup friction or missing backend support.
+2. Open the Codespaces no-vault sandbox.
+3. Run the no-vault demo with `npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo`.
+4. Run the full public fixture with `npm test`.
+5. Try one broad real-vault query with private notes kept local.
+6. Submit privacy-safe tester feedback or an anonymized benchmark report.
+7. Star/watch the repo if the tool is useful.
+8. Open a focused issue for repeated setup friction or missing backend support.
 
 Do not optimize for clone count alone. Serious-user reports, benchmark reports, issues, and star/watch conversion after actual reading are stronger launch signals.
 
@@ -133,6 +143,8 @@ FAQ: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/doc
 Output examples: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/examples/README.md
 Usage recipes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
 Demo GIF: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/demo/fixture_demo.gif
+
+Browser sandbox: https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
 
 Try the safe no-vault demo first:
 

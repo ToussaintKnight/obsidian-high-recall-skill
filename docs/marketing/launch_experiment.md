@@ -50,7 +50,7 @@ Then verify:
 - Project page loads the demo GIF, architecture image, benchmark table, and GitHub CTA.
 - GitHub issue chooser shows tester feedback, bug report, benchmark report, and feature request templates.
 - `docs/marketing/social_preview.png` is set as the repository social preview.
-- Post copy includes the public fixture command and privacy warning.
+- Post copy includes the Codespaces no-vault sandbox, public fixture command, and privacy warning.
 
 ## Measurement Window
 
@@ -86,6 +86,7 @@ Use these ratios after each channel:
 | Star conversion | `new stars / new unique views` | Did the repo page convince readers? |
 | Tester conversion | `tester reports / new unique views` | Did readers become useful early users? |
 | Fixture conversion | `fixture reports / post clicks or new unique views` | Did the quickstart feel low-friction? |
+| Codespaces conversion | `Codespaces opens or reports / post clicks or new unique views` | Did the browser sandbox reduce first-run friction? |
 | Issue quality | `actionable issues / total issues` | Did the channel produce useful feedback? |
 | Benchmark yield | `benchmark reports / tester reports` | Did advanced users trust the reporting path? |
 
