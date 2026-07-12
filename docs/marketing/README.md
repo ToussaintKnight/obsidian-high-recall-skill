@@ -99,7 +99,7 @@ cd obsidian-high-recall-skill
 npm test
 ```
 
-Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
+Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions
 Testing guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
 FAQ: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/faq.md
 Output examples: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/examples/README.md

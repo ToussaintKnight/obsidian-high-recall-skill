@@ -79,7 +79,7 @@ Benchmark files:
 - Tester feedback: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml
 - Benchmark report: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=benchmark_report.yml
 - Issue chooser: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new/choose
-- Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
+- Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions
 
 ## Positioning
 

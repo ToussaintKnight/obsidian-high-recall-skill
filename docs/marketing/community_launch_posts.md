@@ -28,7 +28,7 @@ https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/exa
 
 Tester discussion:
 
-https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions/9
+https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions
 
 Codespaces no-vault sandbox:
 

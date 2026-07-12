@@ -53,6 +53,22 @@ const requiredFiles = [
 
 for (const file of requiredFiles) requireFile(file);
 
+const stableDiscussionUrl = "https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions";
+const discussionLinkFiles = [
+  ".github/ISSUE_TEMPLATE/config.yml",
+  "docs/llms.txt",
+  "docs/index.html",
+  "docs/LAUNCH.md",
+  "docs/marketing/README.md",
+  "docs/marketing/community_launch_posts.md",
+];
+for (const file of discussionLinkFiles) {
+  const text = requireFile(file);
+  if (/https:\/\/github\.com\/ToussaintKnight\/obsidian-high-recall-skill\/discussions\/\d+/u.test(text)) {
+    throw new Error(`${file} must link to the stable Discussions entrypoint, not a numeric thread id.`);
+  }
+}
+
 const issueTemplates = [
   ".github/ISSUE_TEMPLATE/bug_report.yml",
   ".github/ISSUE_TEMPLATE/benchmark_report.yml",
@@ -77,6 +93,7 @@ requireIncludes(
     "Troubleshooting before filing",
     "Compatibility matrix",
     "Tester discussion",
+    stableDiscussionUrl,
     "Security and privacy concern",
   ],
 );
