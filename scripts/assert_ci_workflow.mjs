@@ -9,7 +9,7 @@ const actionRefs = {
   codeqlInit: "github/codeql-action/init@641a925cfafe92d0fdf8b239ba4053e3f8d99d6d",
   codeqlAnalyze: "github/codeql-action/analyze@641a925cfafe92d0fdf8b239ba4053e3f8d99d6d",
   codeqlUploadSarif: "github/codeql-action/upload-sarif@641a925cfafe92d0fdf8b239ba4053e3f8d99d6d",
-  scorecard: "ossf/scorecard-action@99c09fe975337306107572b4fdf4db224cf8e2f2",
+  scorecard: "ossf/scorecard-action@4eaacf0543bb3f2c246792bd56e8cdeffafb205a",
 };
 
 function assertWorkflowActionsPinned(workflowPath) {
