@@ -11,7 +11,7 @@ Obsidian High Recall is designed as a local-first tool for private Obsidian vaul
 - Benchmark outputs such as `raw_runs.json`, local cases files, and private labels are ignored by git and should not be committed.
 - CI runs `npm run privacy:scan` to block public-file leaks such as local absolute paths, common API tokens, `raw_runs.json`, and local cases files.
 - GitHub CodeQL runs on pushes, pull requests, and a weekly schedule to provide JavaScript/TypeScript code scanning for the CLI and repository scripts.
-- OpenSSF Scorecard runs on pushes and a weekly schedule to publish supply-chain security posture results and SARIF findings for repository practices.
+- OpenSSF Scorecard runs on pushes and a weekly schedule to upload supply-chain security posture SARIF findings into GitHub code scanning.
 - GitHub Actions checkout steps use `persist-credentials: false` so workflow jobs do not retain a push-capable repository token after checkout.
 
 For the full data classification, network behavior, leak scenarios, and safe-sharing checklist, see [docs/privacy_threat_model.md](docs/privacy_threat_model.md). For runtime downloads, cache paths, and dependency review steps, see [docs/dependency_inventory.md](docs/dependency_inventory.md).

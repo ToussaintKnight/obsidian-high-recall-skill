@@ -97,7 +97,7 @@ Details are in [github_setup_commands.md](github_setup_commands.md). At minimum,
 - GitHub Pages: enabled from `main` / `docs` or the already configured Pages source.
 - Security advisories: enabled for private privacy/security reports.
 - Code scanning: enabled by [.github/workflows/codeql.yml](../../.github/workflows/codeql.yml) after the workflow runs on the public repo.
-- OpenSSF Scorecard: enabled by [.github/workflows/scorecard.yml](../../.github/workflows/scorecard.yml) and visible through the README badge after the public workflow publishes results.
+- OpenSSF Scorecard: enabled by [.github/workflows/scorecard.yml](../../.github/workflows/scorecard.yml), uploaded into GitHub code scanning as SARIF, and linked from the README badge when public OpenSSF results are available.
 - Releases: keep the latest release visible and update release notes when package behavior changes.
 - Dependabot: configured by [.github/dependabot.yml](../../.github/dependabot.yml) for npm and GitHub Actions updates.
 
