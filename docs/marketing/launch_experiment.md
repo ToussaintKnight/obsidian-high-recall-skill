@@ -123,6 +123,7 @@ Copy this block below the tracking table in [community_launch_posts.md](communit
 - Baseline metrics: [../metrics/launch_baseline.md](../metrics/launch_baseline.md)
 - Metrics collection: [../metrics/collection.md](../metrics/collection.md)
 - Copy-ready launch posts: [community_launch_posts.md](community_launch_posts.md)
+- Landscape positioning and reply kit: [landscape_positioning.md](landscape_positioning.md)
 - Launch playbook: [../LAUNCH.md](../LAUNCH.md)
 - Repository setup checklist: [../community/repository_setup.md](../community/repository_setup.md)
 - External contribution strategy: [../community/external_contribution_strategy.md](../community/external_contribution_strategy.md)

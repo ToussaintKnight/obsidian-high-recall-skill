@@ -22,6 +22,10 @@ Launch experiment plan:
 
 [launch_experiment.md](launch_experiment.md)
 
+Landscape positioning and reply kit:
+
+[landscape_positioning.md](landscape_positioning.md)
+
 Launch metrics collection:
 
 [../metrics/collection.md](../metrics/collection.md)

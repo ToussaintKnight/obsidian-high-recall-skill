@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added a landscape positioning and reply kit for joining Obsidian, local-first AI, and agent-workflow conversations without overclaiming or requesting private data.
 - Added a `demo` CLI command and `npm run demo:query` for one-command public fixture recall output.
 - Added a guarded npm registry publish workflow with tag/version checks, privacy gates, and provenance publishing.
 - Added a repeatable GitHub launch metrics collector and documentation for baseline, 24-hour, and 7-day channel snapshots.

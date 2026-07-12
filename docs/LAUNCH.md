@@ -22,6 +22,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Fixture walkthrough documents expected output and pass criteria at [demo/fixture_walkthrough.md](demo/fixture_walkthrough.md); `npm run demo:check` passes after demo changes.
 - Social preview card exists at `docs/marketing/social_preview.png`; use it for GitHub social preview and community posts.
 - Launch experiment plan is visible at [marketing/launch_experiment.md](marketing/launch_experiment.md); `npm run launch:check` passes after channel tracking or outreach-measurement changes.
+- Landscape positioning and reply kit is visible at [marketing/landscape_positioning.md](marketing/landscape_positioning.md); use it before replying to existing Obsidian, local-first AI, PKM, or agent-workflow threads.
 - Launch metric collection is documented in [metrics/collection.md](metrics/collection.md); use `npm run github:metrics -- --collect` before each channel post, after 24 hours, and after 7 days.
 - `npm test` passes on the public fixture vault.
 - `npm run rrf:check` passes after evaluator, benchmark, or union-ranking changes.
@@ -72,6 +73,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 Repeatable GitHub release commands are in [releases/publish_release.md](releases/publish_release.md).
 Full copy-ready launch posts are in [marketing/community_launch_posts.md](marketing/community_launch_posts.md).
 Launch experiment and conversion tracking are in [marketing/launch_experiment.md](marketing/launch_experiment.md).
+Landscape positioning and reply templates are in [marketing/landscape_positioning.md](marketing/landscape_positioning.md).
 Repeatable GitHub metric collection is documented in [metrics/collection.md](metrics/collection.md).
 Repository setup notes are in [community/repository_setup.md](community/repository_setup.md).
 Repeatable GitHub setup commands are in [community/github_setup_commands.md](community/github_setup_commands.md).
@@ -123,6 +125,7 @@ I am looking for 5-10 testers with different vault sizes and operating systems. 
 - Local-first AI and PKM communities.
 - Codex/agent workflow communities.
 - Researcher tooling circles where recall over private notes is a real pain.
+- Existing Obsidian, Smart Connections, local-first AI, and agent-workflow threads where a complementary high-recall recall layer is directly relevant.
 
 ## What To Measure
 

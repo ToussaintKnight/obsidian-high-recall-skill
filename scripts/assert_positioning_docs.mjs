@@ -55,14 +55,27 @@ requireIncludes("README.zh-CN.md", zhReadme, [
 
 const marketing = read("docs/marketing/README.md");
 requireIncludes("docs/marketing/README.md", marketing, [
+  "landscape_positioning.md",
   "../comparison.md",
   "../faq.md",
   "../recipes.md",
   "../examples/README.md",
+  "Landscape positioning and reply kit",
   "Comparison and fit guide",
   "FAQ",
   "Usage recipes",
   "Public output examples",
+]);
+
+const landscape = read("docs/marketing/landscape_positioning.md");
+requireIncludes("docs/marketing/landscape_positioning.md", landscape, [
+  "complementary recall layer",
+  "not a replacement",
+  "Smart Connections",
+  "obsidian-hybrid-search",
+  "Codex and terminal-agent workflows",
+  "Do not claim this replaces Smart Connections",
+  "privacy-safe setup reports",
 ]);
 
 console.log("Positioning docs smoke passed: comparison guide and public entry links checked.");

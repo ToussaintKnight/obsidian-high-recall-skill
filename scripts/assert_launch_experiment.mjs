@@ -58,8 +58,10 @@ requireIncludes("docs/metrics/collection.md", metricsCollection, [
 const marketingReadme = read(path.join("docs", "marketing", "README.md"));
 requireIncludes("docs/marketing/README.md", marketingReadme, [
   "launch_experiment.md",
+  "landscape_positioning.md",
   "../metrics/collection.md",
   "Launch experiment plan",
+  "Landscape positioning and reply kit",
   "Conversion Ladder",
   "Star/watch the repo",
 ]);
@@ -67,6 +69,7 @@ requireIncludes("docs/marketing/README.md", marketingReadme, [
 const launchPlaybook = read(path.join("docs", "LAUNCH.md"));
 requireIncludes("docs/LAUNCH.md", launchPlaybook, [
   "marketing/launch_experiment.md",
+  "marketing/landscape_positioning.md",
   "metrics/collection.md",
   "npm run github:metrics -- --collect",
   "npm run launch:check",
@@ -77,6 +80,7 @@ const rootReadme = read("README.md");
 requireIncludes("README.md", rootReadme, [
   "Launch experiment plan",
   "docs/marketing/launch_experiment.md",
+  "docs/marketing/landscape_positioning.md",
   "docs/metrics/collection.md",
   "Early tester path",
   "star/watch the repo",
@@ -86,9 +90,25 @@ const zhReadme = read("README.zh-CN.md");
 requireIncludes("README.zh-CN.md", zhReadme, [
   "Launch experiment plan",
   "docs/marketing/launch_experiment.md",
+  "docs/marketing/landscape_positioning.md",
   "docs/metrics/collection.md",
   "早期 tester 路径",
   "star/watch 这个 repo",
+]);
+
+const landscape = read(path.join("docs", "marketing", "landscape_positioning.md"));
+requireIncludes("docs/marketing/landscape_positioning.md", landscape, [
+  "# Landscape Positioning And Reply Kit",
+  "Adjacent Conversations",
+  "Reply Principles",
+  "Copy-Ready Replies",
+  "Obsidian agent hosts and plugins",
+  "Smart Connections and semantic search users",
+  "Local-first AI and privacy RAG",
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
+  "Do not ask for raw notes",
+  "npm run github:metrics -- --collect",
+  "community_launch_posts.md",
 ]);
 
 const site = read(path.join("docs", "index.html"));
