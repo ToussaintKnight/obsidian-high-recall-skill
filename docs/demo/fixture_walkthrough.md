@@ -4,6 +4,16 @@ This walkthrough shows what a successful first run looks like using only the pub
 
 Redacted JSON examples are checked in under [examples](../examples/README.md).
 
+## Fast No-Vault Demo
+
+Run one safe public recall pack without cloning the repo or pointing at a private vault:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+This command uses only the bundled public fixture notes and redacts local fixture/database paths. It is the lowest-friction way to see the output shape before running a real-vault query.
+
 ## Run The Fixture Smoke Test
 
 ```bash

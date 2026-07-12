@@ -81,7 +81,13 @@ Privacy model:
 - private snippets and gold labels stay local,
 - public benchmark artifacts are aggregate/anonymized only.
 
-Try the public fixture first:
+Try the safe no-vault demo first:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+For full fixture validation:
 
 ```bash
 git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
@@ -119,7 +125,13 @@ https://toussaintknight.github.io/obsidian-high-recall-skill/
 
 The problem: when a vault gets large, normal search and agent memory can miss relevant notes. This tool intentionally favors recall over precision. It reuses Smart Connections vectors when available, falls back to local hybrid/fulltext search, and returns broad context packs for Codex or CLI workflows.
 
-Public fixture test:
+Safe no-vault demo:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+Full fixture validation:
 
 ```bash
 git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
@@ -151,7 +163,13 @@ https://toussaintknight.github.io/obsidian-high-recall-skill/
 
 It reuses Smart Connections vectors when available, falls back to local hybrid/fulltext search, and returns broad context packs for agent/CLI workflows. The goal is not perfect precision; it is avoiding silent misses when a relevant note exists somewhere in a large private vault.
 
-There is a public fixture vault so people can test install and evaluator behavior without sharing private notes:
+There is a safe no-vault demo and a public fixture vault so people can inspect output, then test install/evaluator behavior without sharing private notes:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+Full validation:
 
 ```bash
 git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git

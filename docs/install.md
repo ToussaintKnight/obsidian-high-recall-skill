@@ -16,6 +16,16 @@ Check Node.js:
 node --version
 ```
 
+## Fastest Safe Demo
+
+Run one public fixture recall pack without cloning the repo or using a private vault:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+This command uses only bundled public fixture notes and redacts local fixture/database paths. Use it to confirm the package entrypoint and output shape before pointing the tool at a real vault.
+
 ## Recommended Path
 
 1. Clone and run the public fixture:

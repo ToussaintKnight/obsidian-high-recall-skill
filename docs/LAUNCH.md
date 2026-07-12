@@ -102,7 +102,13 @@ Testing guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blo
 
 Demo GIF: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/demo/fixture_demo.gif
 
-Try the public fixture first:
+Try the safe no-vault demo first:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+For full fixture validation:
 
 ```bash
 git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git

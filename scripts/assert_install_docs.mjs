@@ -5,6 +5,7 @@ const install = fs.readFileSync(path.join("docs", "install.md"), "utf8");
 const requiredInstallSnippets = [
   "# Installation Guide",
   "Node.js 20",
+  "Fastest Safe Demo",
   "npm test",
   "npm run demo:query",
   "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",

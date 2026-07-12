@@ -26,6 +26,8 @@ requireIncludes("docs/demo/README.md", demoReadme, [
 const walkthrough = read("docs/demo/fixture_walkthrough.md");
 requireIncludes("docs/demo/fixture_walkthrough.md", walkthrough, [
   "# Fixture Walkthrough",
+  "Fast No-Vault Demo",
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "docs/fixtures/demo-vault",
   "npm test",
   "npm run demo:query",
@@ -42,10 +44,18 @@ requireIncludes("docs/demo/fixture_walkthrough.md", walkthrough, [
 ]);
 
 const readme = read("README.md");
-requireIncludes("README.md", readme, ["docs/demo/fixture_walkthrough.md", "npm run demo:query"]);
+requireIncludes("README.md", readme, [
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
+  "docs/demo/fixture_walkthrough.md",
+  "npm run demo:query",
+]);
 
 const zhReadme = read("README.zh-CN.md");
-requireIncludes("README.zh-CN.md", zhReadme, ["docs/demo/fixture_walkthrough.md", "npm run demo:query"]);
+requireIncludes("README.zh-CN.md", zhReadme, [
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
+  "docs/demo/fixture_walkthrough.md",
+  "npm run demo:query",
+]);
 
 const testingGuide = read("docs/testing_guide.md");
 requireIncludes("docs/testing_guide.md", testingGuide, ["demo/fixture_walkthrough.md", "npm run demo:query"]);

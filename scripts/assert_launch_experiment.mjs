@@ -62,6 +62,7 @@ requireIncludes("docs/marketing/README.md", marketingReadme, [
   "../metrics/collection.md",
   "Launch experiment plan",
   "Landscape positioning and reply kit",
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "Conversion Ladder",
   "Star/watch the repo",
 ]);
@@ -71,6 +72,7 @@ requireIncludes("docs/LAUNCH.md", launchPlaybook, [
   "marketing/launch_experiment.md",
   "marketing/landscape_positioning.md",
   "metrics/collection.md",
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "npm run github:metrics -- --collect",
   "npm run launch:check",
   "GitHub views, not only clones",
@@ -82,6 +84,7 @@ requireIncludes("README.md", rootReadme, [
   "docs/marketing/launch_experiment.md",
   "docs/marketing/landscape_positioning.md",
   "docs/metrics/collection.md",
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "Early tester path",
   "star/watch the repo",
 ]);
@@ -92,8 +95,16 @@ requireIncludes("README.zh-CN.md", zhReadme, [
   "docs/marketing/launch_experiment.md",
   "docs/marketing/landscape_positioning.md",
   "docs/metrics/collection.md",
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
   "早期 tester 路径",
   "star/watch 这个 repo",
+]);
+
+const communityPosts = read(path.join("docs", "marketing", "community_launch_posts.md"));
+requireIncludes("docs/marketing/community_launch_posts.md", communityPosts, [
+  "Try the safe no-vault demo first",
+  "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
+  "For full fixture validation",
 ]);
 
 const landscape = read(path.join("docs", "marketing", "landscape_positioning.md"));

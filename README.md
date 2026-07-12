@@ -28,7 +28,15 @@ Common privacy, backend, benchmark, and installation questions are answered in [
 
 ![Fixture demo: install, test, query, recall pack](docs/demo/fixture_demo.gif)
 
-Run the public fixture benchmark without any private vault:
+Try one safe public recall pack without cloning the repo or pointing at a private vault:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+This uses only the bundled public fixture notes and redacts local fixture/database paths.
+
+For the full public fixture benchmark:
 
 ```bash
 git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
@@ -42,7 +50,7 @@ Expected fixture output and pass criteria are documented in [docs/demo/fixture_w
 
 Redacted public JSON examples are in [docs/examples](docs/examples/README.md).
 
-Inspect one safe public recall pack:
+From a local clone, inspect the same safe public recall pack:
 
 ```bash
 npm run demo:query
@@ -50,7 +58,7 @@ npm run demo:query
 
 **Early tester path.** If the fixture passes, try one broad real-vault query, then share privacy-safe [tester feedback](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml) or an anonymized [benchmark report](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=benchmark_report.yml). If the tool is useful, star/watch the repo so other Obsidian users can find it.
 
-Query the fixture vault directly:
+The direct local CLI equivalent is:
 
 ```bash
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs demo

@@ -76,7 +76,13 @@ Obsidian High Recall helps agents and humans search large private Obsidian vault
 
 ## Primary Call To Action
 
-Try the fixture demo, then report whether it works on your OS and vault setup:
+Try the no-vault fixture demo first:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+Then run the full fixture validation before reporting OS/backend setup:
 
 ```bash
 git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
@@ -95,11 +101,12 @@ Usage recipes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blo
 Use this order in launch posts and replies. It turns cold readers into useful early signal without asking everyone for the same thing.
 
 1. Visit the project page or README.
-2. Run the public fixture with `npm test`.
-3. Try one broad real-vault query with private notes kept local.
-4. Submit privacy-safe tester feedback or an anonymized benchmark report.
-5. Star/watch the repo if the tool is useful.
-6. Open a focused issue for repeated setup friction or missing backend support.
+2. Run the no-vault demo with `npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo`.
+3. Run the full public fixture with `npm test`.
+4. Try one broad real-vault query with private notes kept local.
+5. Submit privacy-safe tester feedback or an anonymized benchmark report.
+6. Star/watch the repo if the tool is useful.
+7. Open a focused issue for repeated setup friction or missing backend support.
 
 Do not optimize for clone count alone. Serious-user reports, benchmark reports, issues, and star/watch conversion after actual reading are stronger launch signals.
 
@@ -127,7 +134,13 @@ Output examples: https://github.com/ToussaintKnight/obsidian-high-recall-skill/b
 Usage recipes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/recipes.md
 Demo GIF: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/demo/fixture_demo.gif
 
-Try the public fixture first:
+Try the safe no-vault demo first:
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+For full fixture validation:
 
 ```bash
 git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git

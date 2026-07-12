@@ -28,7 +28,15 @@ Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
 
 ![Fixture demo：安装、测试、查询、召回包](docs/demo/fixture_demo.gif)
 
-不需要私人 vault，先跑公开 fixture benchmark：
+不需要 clone repo，也不需要指向私人 vault，先用一条命令查看安全的 public recall pack：
+
+```bash
+npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
+```
+
+这个命令只使用 bundled public fixture notes，并会 redacts 本地 fixture/database paths。
+
+完整 public fixture benchmark：
 
 ```bash
 git clone https://github.com/ToussaintKnight/obsidian-high-recall-skill.git
@@ -42,7 +50,7 @@ Fixture 的预期输出和通过标准见：[docs/demo/fixture_walkthrough.md](d
 
 Redacted public JSON examples 见：[docs/examples](docs/examples/README.md)。
 
-先查看一个安全的 public recall pack：
+如果已经 clone 到本地，可以用下面命令查看同一个安全 public recall pack：
 
 ```bash
 npm run demo:query
@@ -50,7 +58,7 @@ npm run demo:query
 
 **早期 tester 路径。** 如果 fixture 通过，请再用自己的真实 vault 跑一个宽泛 query，然后提交 privacy-safe [tester feedback](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml) 或匿名 [benchmark report](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=benchmark_report.yml)。如果工具有用，请 star/watch 这个 repo，帮助其他 Obsidian 用户发现它。
 
-直接查询 fixture vault：
+等价的本地 CLI 命令是：
 
 ```bash
 node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs demo

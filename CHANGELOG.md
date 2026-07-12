@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Made the README, install guide, demo walkthrough, and launch copy lead with the no-vault `npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo` path before full fixture validation.
 - Added a landscape positioning and reply kit for joining Obsidian, local-first AI, and agent-workflow conversations without overclaiming or requesting private data.
 - Added a `demo` CLI command and `npm run demo:query` for one-command public fixture recall output.
 - Added a guarded npm registry publish workflow with tag/version checks, privacy gates, and provenance publishing.
