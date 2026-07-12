@@ -83,6 +83,7 @@ Details are in [github_setup_commands.md](github_setup_commands.md). At minimum,
 - Discussions: enabled for tester coordination.
 - GitHub Pages: enabled from `main` / `docs` or the already configured Pages source.
 - Security advisories: enabled for private privacy/security reports.
+- Code scanning: enabled by [.github/workflows/codeql.yml](../../.github/workflows/codeql.yml) after the workflow runs on the public repo.
 - Releases: keep `v0.1.0` visible and update release notes when package behavior changes.
 - Dependabot: configured by [.github/dependabot.yml](../../.github/dependabot.yml) for npm and GitHub Actions updates.
 

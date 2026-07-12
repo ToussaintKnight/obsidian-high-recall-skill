@@ -50,6 +50,7 @@ The concrete runtime download points, cache locations, and review checklist are 
 
 - `.gitignore` excludes common local run artifacts and private cases files.
 - `npm run privacy:scan` checks public candidate files for local paths, common API tokens, private artifact filenames, and blocked local output filenames.
+- GitHub CodeQL runs JavaScript/TypeScript static analysis on pushes, pull requests, and a weekly schedule through `.github/workflows/codeql.yml`.
 - `doctor --json` is designed for support reports and avoids local paths, snippets, queries, and note names.
 - Issue templates and the PR template warn contributors not to paste private note data.
 - The public fixture vault supports demos, tests, screenshots, and reproduction without private data.

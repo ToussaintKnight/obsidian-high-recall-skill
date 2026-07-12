@@ -362,6 +362,7 @@ skills/
 - External contribution strategy: [docs/community/external_contribution_strategy.md](docs/community/external_contribution_strategy.md)
 - GitHub labels manifest: [.github/labels.yml](.github/labels.yml)
 - Community file gate: `npm run community:check`
+- Code scanning workflow: [.github/workflows/codeql.yml](.github/workflows/codeql.yml)
 - Public fixture vault: [docs/fixtures/demo-vault](docs/fixtures/demo-vault)
 - Citation metadata: [CITATION.cff](CITATION.cff)
 

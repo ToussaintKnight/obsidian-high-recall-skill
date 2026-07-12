@@ -37,6 +37,7 @@ const requiredFiles = [
   "scripts/github_starter_issues.mjs",
   "scripts/github_discussions.mjs",
   ".github/dependabot.yml",
+  ".github/workflows/codeql.yml",
   ".github/labels.yml",
   ".github/pull_request_template.md",
   ".github/ISSUE_TEMPLATE/config.yml",
@@ -308,6 +309,7 @@ requireIncludes("docs/community/github_setup_commands.md", githubSetupDocs, [
   "docs/marketing/social_preview.png",
   "GitHub Pages",
   "security advisories",
+  "Code scanning",
   "npm run github:discussions -- --apply",
   "npm run community:check",
 ]);

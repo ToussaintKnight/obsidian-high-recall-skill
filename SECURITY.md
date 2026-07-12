@@ -10,6 +10,7 @@ Obsidian High Recall is designed as a local-first tool for private Obsidian vaul
 - The Smart backend may download local inference packages and model files on first use. After dependencies are available, retrieval and embedding inference run locally.
 - Benchmark outputs such as `raw_runs.json`, local cases files, and private labels are ignored by git and should not be committed.
 - CI runs `npm run privacy:scan` to block public-file leaks such as local absolute paths, common API tokens, `raw_runs.json`, and local cases files.
+- GitHub CodeQL runs on pushes, pull requests, and a weekly schedule to provide JavaScript/TypeScript code scanning for the CLI and repository scripts.
 
 For the full data classification, network behavior, leak scenarios, and safe-sharing checklist, see [docs/privacy_threat_model.md](docs/privacy_threat_model.md). For runtime downloads, cache paths, and dependency review steps, see [docs/dependency_inventory.md](docs/dependency_inventory.md).
 
@@ -34,6 +35,8 @@ To verify that privacy documentation and public safety links stay present, run:
 ```bash
 npm run privacy:docs
 ```
+
+GitHub code scanning is configured in `.github/workflows/codeql.yml`. It is a static-analysis guardrail for public code quality; it does not inspect private vault contents and does not replace `npm run privacy:scan`.
 
 ## Reporting A Vulnerability
 
