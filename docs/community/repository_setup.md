@@ -98,7 +98,7 @@ Details are in [github_setup_commands.md](github_setup_commands.md). At minimum,
 - Security advisories: enabled for private privacy/security reports.
 - Code scanning: enabled by [.github/workflows/codeql.yml](../../.github/workflows/codeql.yml) after the workflow runs on the public repo.
 - OpenSSF Scorecard: enabled by [.github/workflows/scorecard.yml](../../.github/workflows/scorecard.yml) and visible through the README badge after the public workflow publishes results.
-- Releases: keep `v0.1.0` visible and update release notes when package behavior changes.
+- Releases: keep the latest release visible and update release notes when package behavior changes.
 - Dependabot: configured by [.github/dependabot.yml](../../.github/dependabot.yml) for npm and GitHub Actions updates.
 
 ## Starter Issues
@@ -127,7 +127,7 @@ Details are in [discussion_commands.md](discussion_commands.md). The live repo s
 
 ## Release
 
-Release notes live in [../releases/v0.1.0.md](../releases/v0.1.0.md). After commits are pushed and CI is green, publish or inspect the GitHub release with:
+Release notes live in [../releases/v0.2.0.md](../releases/v0.2.0.md). After commits are pushed and CI is green, publish or inspect the GitHub release with:
 
 ```bash
 npm run github:release

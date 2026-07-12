@@ -11,7 +11,7 @@ Do not advertise the registry command until the package has actually been publis
 ## Current Status
 
 - Package name: `obsidian-high-recall`
-- Version: `0.1.0`
+- Version: `0.2.0`
 - Access: public
 - License: MIT
 - Runtime: Node.js 20+
@@ -40,7 +40,7 @@ Before using it:
 
 1. Configure an npm automation token as the repository secret `NPM_TOKEN`.
 2. Push the release commit and confirm CI is green.
-3. Confirm the GitHub release tag exactly matches `package.json`, for example `v0.1.0`.
+3. Confirm the GitHub release tag exactly matches `package.json`, for example `v0.2.0`.
 4. Trigger the workflow by publishing a GitHub release, or run `workflow_dispatch` with the same tag.
 
 The workflow runs `npm test`, `npm run privacy:scan`, and `npm run publish:check`, rejects a tag/version mismatch, rejects an already-published package version, and publishes with:
@@ -81,7 +81,7 @@ npm view obsidian-high-recall version
 npx --yes obsidian-high-recall help
 ```
 
-6. Update [docs/install.md](install.md), [README.md](../README.md), [README.zh-CN.md](../README.zh-CN.md), and [docs/releases/v0.1.0.md](releases/v0.1.0.md) only after the registry command works.
+6. Update [docs/install.md](install.md), [README.md](../README.md), [README.zh-CN.md](../README.zh-CN.md), and [docs/releases/v0.2.0.md](releases/v0.2.0.md) only after the registry command works.
 
 ## If A Publish Goes Wrong
 
@@ -94,4 +94,4 @@ npx --yes obsidian-high-recall help
 - Install guide: [install.md](install.md)
 - Dependency inventory: [dependency_inventory.md](dependency_inventory.md)
 - Privacy threat model: [privacy_threat_model.md](privacy_threat_model.md)
-- Release notes: [releases/v0.1.0.md](releases/v0.1.0.md)
+- Release notes: [releases/v0.2.0.md](releases/v0.2.0.md)

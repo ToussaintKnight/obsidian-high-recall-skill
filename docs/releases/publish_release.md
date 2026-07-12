@@ -30,12 +30,12 @@ Apply mode runs:
 - `npm test`;
 - `npm run privacy:scan`;
 - `npm run release:check`;
-- `gh release view v0.1.0`;
-- `gh release create v0.1.0 --notes-file docs/releases/v0.1.0.md --latest` if the release is missing.
+- `gh release view v0.2.0`;
+- `gh release create v0.2.0 --notes-file docs/releases/v0.2.0.md --latest` if the release is missing.
 
 ## Release Notes Source
 
-The release notes source is [v0.1.0.md](v0.1.0.md). Keep it aligned with:
+The release notes source is [v0.2.0.md](v0.2.0.md). Keep it aligned with:
 
 - [CHANGELOG.md](../../CHANGELOG.md);
 - `package.json` version;

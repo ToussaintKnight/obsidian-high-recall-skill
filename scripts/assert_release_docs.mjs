@@ -30,7 +30,7 @@ if (missingChangelog.length) {
 
 const requiredReleaseSnippets = [
   `# v${version}`,
-  "First public release",
+  "Release Summary",
   "Privacy Notes",
   "Limitations",
   "docs/npm_publish.md",
