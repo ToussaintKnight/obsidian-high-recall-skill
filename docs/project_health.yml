@@ -1,0 +1,57 @@
+project_health:
+  version: 1
+  last_reviewed: "2026-07-12"
+  status: "launch-ready, early adoption"
+  score_basis: "github-repo-influence v1"
+  readiness_score: 92
+  audience:
+    primary:
+      - "Obsidian users with large local vaults"
+      - "AI-agent users who need broad private-note recall"
+      - "researchers and PKM users who prefer local-first workflows"
+    secondary:
+      - "Codex skill users"
+      - "Smart Connections users"
+      - "local RAG and search-tool maintainers"
+  trust_surfaces:
+    readme: true
+    license: true
+    security_policy: true
+    contributing_guide: true
+    support_policy: true
+    code_of_conduct: true
+    issue_templates: true
+    pull_request_template: true
+    ci: true
+    release: "v0.1.0"
+  verification:
+    commands:
+      - "npm run check"
+      - "npm run privacy:scan"
+      - "npm run smoke:fixture"
+      - "npm test"
+    public_fixture: "docs/fixtures/demo-vault"
+    private_data_required_for_smoke_test: false
+  strengths:
+    - "README leads with user pain, fixture demo, and local-first privacy."
+    - "Package manifest exposes CLI bins and Node.js engine requirements."
+    - "Fixture benchmark lets users test without private vault data."
+    - "Security policy documents local data, dependency, and reporting behavior."
+    - "Issue templates request privacy-safe OS, Node, Obsidian, and benchmark reports."
+  remaining_gaps:
+    - "Collect real-world tester reports across OSes and vault sizes."
+    - "Document Smart Connections cache compatibility by plugin version."
+    - "Improve OHS first-run latency diagnostics."
+    - "Expand privacy scans as new generated artifacts are added."
+  launch_funnel:
+    leading_indicators:
+      - "human GitHub views"
+      - "fixture test runs"
+      - "clean install reports"
+      - "tester discussion comments"
+      - "privacy-safe benchmark reports"
+    lagging_indicators:
+      - "stars"
+      - "forks with meaningful changes"
+      - "external mentions"
+      - "accepted ecosystem-list PRs"
