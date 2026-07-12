@@ -2,11 +2,36 @@
 import fs from "node:fs";
 import path from "node:path";
 
+const actionRefs = {
+  checkout: "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+  setupNode: "actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+  uploadArtifact: "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+  codeqlInit: "github/codeql-action/init@641a925cfafe92d0fdf8b239ba4053e3f8d99d6d",
+  codeqlAnalyze: "github/codeql-action/analyze@641a925cfafe92d0fdf8b239ba4053e3f8d99d6d",
+  codeqlUploadSarif: "github/codeql-action/upload-sarif@641a925cfafe92d0fdf8b239ba4053e3f8d99d6d",
+  scorecard: "ossf/scorecard-action@99c09fe975337306107572b4fdf4db224cf8e2f2",
+};
+
+function assertWorkflowActionsPinned(workflowPath) {
+  const text = fs.readFileSync(workflowPath, "utf8");
+  for (const [index, line] of text.split(/\r?\n/).entries()) {
+    const match = line.match(/uses:\s+["']?([^"'\s#]+)["']?/);
+    if (!match) continue;
+    const spec = match[1];
+    if (spec.startsWith("./")) continue;
+    const atIndex = spec.lastIndexOf("@");
+    const ref = atIndex === -1 ? "" : spec.slice(atIndex + 1);
+    if (!/^[a-f0-9]{40}$/i.test(ref)) {
+      throw new Error(`${workflowPath}:${index + 1} should pin GitHub Action '${spec}' to a 40-character commit SHA.`);
+    }
+  }
+}
+
 function assertCheckoutCredentialsDisabled(workflowPath) {
   const text = fs.readFileSync(workflowPath, "utf8");
-  if (!text.includes("actions/checkout@v4")) return;
-  const checkoutSteps = text.split("uses: actions/checkout@v4").slice(1);
-  for (const [index, afterCheckout] of checkoutSteps.entries()) {
+  const checkoutUses = [...text.matchAll(/uses:\s+actions\/checkout@[a-f0-9]{40}/gi)];
+  for (const [index, checkoutUse] of checkoutUses.entries()) {
+    const afterCheckout = text.slice(checkoutUse.index + checkoutUse[0].length);
     const stepBlock = afterCheckout.split(/\n\s*-\s+name:\s+/)[0];
     if (!stepBlock.includes("persist-credentials: false")) {
       throw new Error(`${workflowPath} checkout step ${index + 1} should set persist-credentials: false.`);
@@ -46,8 +71,9 @@ const requiredCodeql = [
   "schedule:",
   "persist-credentials: false",
   "security-events: write",
-  "github/codeql-action/init@v3",
-  "github/codeql-action/analyze@v3",
+  actionRefs.checkout,
+  actionRefs.codeqlInit,
+  actionRefs.codeqlAnalyze,
   "languages: javascript-typescript",
 ];
 const missingCodeql = requiredCodeql.filter((item) => !codeql.includes(item));
@@ -57,6 +83,11 @@ if (missingCodeql.length) {
 
 if (!/cron:\s*["']?\d+\s+\d+\s+\*\s+\*\s+\d["']?/.test(codeql)) {
   throw new Error("CodeQL workflow should include a weekly scheduled cron.");
+}
+
+const codeqlTopLevelPermissions = codeql.match(/permissions:\s*\n([\s\S]*?)\njobs:/)?.[1] ?? "";
+if (/security-events:\s*write/.test(codeqlTopLevelPermissions)) {
+  throw new Error("CodeQL workflow should scope security-events: write to the analyze job, not top-level permissions.");
 }
 
 const scorecardPath = path.join(".github", "workflows", "scorecard.yml");
@@ -72,14 +103,14 @@ const requiredScorecard = [
   "permissions: read-all",
   "security-events: write",
   "id-token: write",
-  "actions/checkout@v4",
+  actionRefs.checkout,
   "persist-credentials: false",
-  "ossf/scorecard-action@v2.4.3",
+  actionRefs.scorecard,
   "results_file: scorecard.sarif",
   "results_format: sarif",
   "publish_results: true",
-  "actions/upload-artifact@v4",
-  "github/codeql-action/upload-sarif@v3",
+  actionRefs.uploadArtifact,
+  actionRefs.codeqlUploadSarif,
 ];
 const missingScorecard = requiredScorecard.filter((item) => !scorecard.includes(item));
 if (missingScorecard.length) {
@@ -92,7 +123,9 @@ if (!/cron:\s*["']?\d+\s+\d+\s+\*\s+\*\s+\d["']?/.test(scorecard)) {
 
 for (const workflowFile of fs.readdirSync(path.join(".github", "workflows"))) {
   if (!workflowFile.endsWith(".yml") && !workflowFile.endsWith(".yaml")) continue;
-  assertCheckoutCredentialsDisabled(path.join(".github", "workflows", workflowFile));
+  const workflowPath = path.join(".github", "workflows", workflowFile);
+  assertWorkflowActionsPinned(workflowPath);
+  assertCheckoutCredentialsDisabled(workflowPath);
 }
 
 for (const readmePath of ["README.md", "README.zh-CN.md"]) {

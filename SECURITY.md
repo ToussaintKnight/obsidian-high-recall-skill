@@ -42,6 +42,8 @@ GitHub code scanning is configured in `.github/workflows/codeql.yml`, and OpenSS
 
 ## Reporting A Vulnerability
 
-For sensitive reports, use GitHub Security Advisories if enabled for the repository. If that is unavailable, open a minimal public issue without private note content, paths, snippets, tokens, or secrets, and ask for a private maintainer contact path.
+For sensitive reports, use [GitHub Security Advisories private vulnerability reporting](https://github.com/ToussaintKnight/obsidian-high-recall-skill/security/advisories/new). If that is unavailable, open a minimal public issue without private note content, paths, snippets, tokens, or secrets, and ask for a private maintainer contact path.
+
+Please do not publicly disclose a vulnerability before the maintainer has had a reasonable chance to investigate and ship a fix. The target response window is an initial acknowledgement within 7 days and a public disclosure note after a fix or mitigation is available.
 
 For non-sensitive bugs, use the bug report issue template.
