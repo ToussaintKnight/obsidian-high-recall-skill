@@ -10,6 +10,12 @@ Run:
 npm test
 ```
 
+This runs syntax checks, a conservative public-artifact privacy scan, and the fixture-vault smoke test. To run the privacy scan by itself:
+
+```bash
+npm run privacy:scan
+```
+
 For skill-specific validation in Codex environments, also run:
 
 ```bash
@@ -28,6 +34,7 @@ node skills/obsidian-high-recall/scripts/evaluate_recall.mjs .tmp/fixture-eval -
 - Do not commit `raw_runs.json`, local cases files, local database files, `.smart-env`, or dependency caches.
 - Use `docs/fixtures/demo-vault` for reproducible tests and documentation examples.
 - Redact local paths and usernames from screenshots and logs.
+- Run `npm run privacy:scan` before publishing benchmark docs, screenshots, or generated artifacts.
 
 ## Good First Contributions
 
