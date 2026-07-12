@@ -5,7 +5,7 @@
     "title": "Obsidian High Recall Skill",
     "subtitle": "Local-first recall architecture, backend routing, privacy boundary, and public benchmark artifacts",
     "output": "architecture_option_b_archify.html",
-    "viewBox": [1060, 370]
+    "viewBox": [830, 500]
   },
   "components": [
     {
@@ -13,8 +13,8 @@
       "type": "external",
       "label": "Codex user",
       "sublabel": "recall query",
-      "pos": [30, 146],
-      "size": [110, 60]
+      "pos": [32, 158],
+      "size": [104, 58]
     },
     {
       "id": "skill",
@@ -22,8 +22,8 @@
       "label": "Skill runtime",
       "sublabel": "SKILL.md + Node CLI",
       "tag": "auto route",
-      "pos": [174, 138],
-      "size": [128, 76]
+      "pos": [166, 150],
+      "size": [124, 74]
     },
     {
       "id": "vault",
@@ -31,8 +31,8 @@
       "label": "Obsidian vault",
       "sublabel": "Markdown notes",
       "tag": "private local",
-      "pos": [174, 258],
-      "size": [128, 64]
+      "pos": [166, 280],
+      "size": [124, 62]
     },
     {
       "id": "smart",
@@ -40,8 +40,8 @@
       "label": "Smart backend",
       "sublabel": ".smart-env vectors",
       "tag": "fast recall",
-      "pos": [348, 62],
-      "size": [140, 66]
+      "pos": [326, 68],
+      "size": [136, 64]
     },
     {
       "id": "ohs",
@@ -49,8 +49,8 @@
       "label": "OHS backend",
       "sublabel": "hybrid + local index",
       "tag": "local fallback",
-      "pos": [348, 258],
-      "size": [140, 64]
+      "pos": [326, 280],
+      "size": [136, 62]
     },
     {
       "id": "merge",
@@ -58,8 +58,8 @@
       "label": "Merge + rank",
       "sublabel": "dedupe + RRF",
       "tag": "high recall",
-      "pos": [522, 138],
-      "size": [138, 76]
+      "pos": [500, 150],
+      "size": [132, 74]
     },
     {
       "id": "pack",
@@ -67,8 +67,8 @@
       "label": "Recall pack",
       "sublabel": "JSON hits + snippets",
       "tag": "to Codex",
-      "pos": [696, 62],
-      "size": [138, 66]
+      "pos": [660, 68],
+      "size": [132, 64]
     },
     {
       "id": "eval",
@@ -76,8 +76,8 @@
       "label": "Private evaluation",
       "sublabel": "gold labels + runs",
       "tag": "local only",
-      "pos": [696, 258],
-      "size": [138, 64]
+      "pos": [660, 280],
+      "size": [132, 62]
     },
     {
       "id": "repo",
@@ -85,8 +85,8 @@
       "label": "Public repo",
       "sublabel": "docs + figures",
       "tag": "aggregate only",
-      "pos": [890, 138],
-      "size": [126, 76]
+      "pos": [660, 402],
+      "size": [132, 62]
     }
   ],
   "boundaries": [
@@ -94,13 +94,13 @@
       "kind": "security-group",
       "label": "Private local machine: raw notes, snippets, queries, and labels stay here",
       "wraps": ["codex", "skill", "vault", "smart", "ohs", "merge", "pack", "eval"],
-      "pad": 22
+      "pad": 24
     },
     {
       "kind": "region",
       "label": "Public artifacts",
       "wraps": ["repo"],
-      "pad": 28
+      "pad": 24
     }
   ],
   "connections": [
@@ -111,7 +111,7 @@
       "variant": "emphasis",
       "fromSide": "right",
       "toSide": "left",
-      "labelAt": [156, 128]
+      "labelAt": [146, 144]
     },
     {
       "from": "skill",
@@ -121,7 +121,7 @@
       "fromSide": "bottom",
       "toSide": "top",
       "route": "orthogonal-v",
-      "labelAt": [238, 244]
+      "labelAt": [228, 262]
     },
     {
       "from": "skill",
@@ -130,8 +130,8 @@
       "variant": "emphasis",
       "fromSide": "right",
       "toSide": "left",
-      "via": [[324, 176], [324, 95]],
-      "labelAt": [282, 116]
+      "via": [[306, 187], [306, 100]],
+      "labelAt": [254, 121]
     },
     {
       "from": "skill",
@@ -140,8 +140,8 @@
       "variant": "dashed",
       "fromSide": "right",
       "toSide": "left",
-      "via": [[324, 176], [324, 290]],
-      "labelAt": [324, 234]
+      "via": [[306, 187], [306, 311]],
+      "labelAt": [306, 260]
     },
     {
       "from": "smart",
@@ -150,7 +150,7 @@
       "variant": "emphasis",
       "fromSide": "right",
       "toSide": "left",
-      "labelAt": [506, 54]
+      "labelAt": [506, 56]
     },
     {
       "from": "ohs",
@@ -159,7 +159,7 @@
       "variant": "dashed",
       "fromSide": "right",
       "toSide": "left",
-      "labelAt": [506, 242]
+      "labelAt": [506, 264]
     },
     {
       "from": "merge",
@@ -168,7 +168,7 @@
       "variant": "emphasis",
       "fromSide": "right",
       "toSide": "left",
-      "labelAt": [678, 54]
+      "labelAt": [644, 56]
     },
     {
       "from": "merge",
@@ -177,17 +177,15 @@
       "variant": "security",
       "fromSide": "right",
       "toSide": "left",
-      "labelAt": [678, 242]
+      "labelAt": [644, 264]
     },
     {
       "from": "eval",
       "to": "repo",
-      "label": "aggregate CSV/PNG",
       "variant": "security",
-      "fromSide": "right",
-      "toSide": "left",
-      "via": [[870, 290], [870, 176]],
-      "labelAt": [870, 246]
+      "fromSide": "bottom",
+      "toSide": "top",
+      "route": "straight"
     }
   ],
   "cards": [
