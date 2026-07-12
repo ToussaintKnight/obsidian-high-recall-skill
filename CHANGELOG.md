@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Replaced hard-coded launch issue numbers with stable label query links and release-note entrypoints.
 - Replaced brittle numeric tester Discussion links with the stable repository Discussions entrypoint.
 - Added Codespaces result capture to tester feedback, bug reports, compatibility reporting, and starter issues.
 - Added Codespaces no-vault sandbox links to the launch kit, external post drafts, and reply templates.

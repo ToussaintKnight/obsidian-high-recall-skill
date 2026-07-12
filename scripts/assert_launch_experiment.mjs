@@ -81,7 +81,14 @@ requireIncludes("docs/LAUNCH.md", launchPlaybook, [
   "npm run github:metrics -- --collect",
   "npm run launch:check",
   "GitHub views, not only clones",
+  "Stable Public Launch Links",
+  "docs/releases/v0.1.0.md",
+  "label%3A%22good%20first%20issue%22",
+  "label%3A%22tester-feedback%22",
 ]);
+if (/https:\/\/github\.com\/ToussaintKnight\/obsidian-high-recall-skill\/issues\/\d+/u.test(launchPlaybook)) {
+  throw new Error("docs/LAUNCH.md must use stable issue list or label-query links, not hard-coded issue numbers.");
+}
 
 const rootReadme = read("README.md");
 requireIncludes("README.md", rootReadme, [

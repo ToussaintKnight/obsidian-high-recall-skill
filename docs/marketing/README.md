@@ -137,7 +137,7 @@ Obsidian High Recall favors recall over precision. It reuses Smart Connections v
 
 Repo: https://github.com/ToussaintKnight/obsidian-high-recall-skill
 Project page: https://toussaintknight.github.io/obsidian-high-recall-skill/
-Release: https://github.com/ToussaintKnight/obsidian-high-recall-skill/releases/tag/v0.1.0
+Release notes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/releases/v0.1.0.md
 Testing guide: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/testing_guide.md
 FAQ: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/faq.md
 Output examples: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/examples/README.md

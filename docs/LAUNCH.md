@@ -60,19 +60,20 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - Tester onboarding points to [testing_guide.md](testing_guide.md) for the ten-minute fixture, CLI, doctor, and real-vault smoke-test path.
 - Compatibility reporting points to [compatibility.md](compatibility.md) so external testers know which OS/backend cells still need reports.
 
-## Current Public Launch Links
+## Stable Public Launch Links
 
-- Release: https://github.com/ToussaintKnight/obsidian-high-recall-skill/releases/tag/v0.1.0
+- Releases: https://github.com/ToussaintKnight/obsidian-high-recall-skill/releases
+- v0.1.0 release notes: https://github.com/ToussaintKnight/obsidian-high-recall-skill/blob/main/docs/releases/v0.1.0.md
 - Share page: https://toussaintknight.github.io/obsidian-high-recall-skill/
 - Tester discussion: https://github.com/ToussaintKnight/obsidian-high-recall-skill/discussions
-- Windows install test: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/1
-- Linux install test: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/2
-- macOS install test: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/3
-- Benchmark reports: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/4
-- Privacy redaction tests: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/5
-- OHS first-run diagnostics: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/6
-- Smart Connections compatibility: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/7
-- Obsidian Forum launch task: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/8
+- Good first issues: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22
+- Tester-feedback tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22tester-feedback%22
+- Compatibility tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3Acompatibility
+- Benchmark tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3Abenchmark
+- Privacy tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3Aprivacy
+- OHS diagnostics tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3Aohs
+- Smart Connections tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22smart-connections%22
+- Launch tasks: https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues?q=is%3Aissue%20state%3Aopen%20label%3Alaunch
 
 Repeatable GitHub release commands are in [releases/publish_release.md](releases/publish_release.md).
 Full copy-ready launch posts are in [marketing/community_launch_posts.md](marketing/community_launch_posts.md).
