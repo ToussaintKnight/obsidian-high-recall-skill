@@ -41,7 +41,7 @@ GitHub does not expose every trust/discovery setting cleanly through the same CL
 - GitHub Pages serves the `docs/` site;
 - security advisories are enabled;
 - Code scanning is visible after `.github/workflows/codeql.yml` runs;
-- OpenSSF Scorecard badge resolves after `.github/workflows/scorecard.yml` publishes results;
+- OpenSSF Scorecard uploads SARIF through `.github/workflows/scorecard.yml`, and the README badge resolves when public OpenSSF results are available;
 - the `v0.1.0` release is visible;
 - issue chooser links and the tester discussion link resolve;
 - seeded Discussions exist after running `npm run github:discussions -- --apply`.
