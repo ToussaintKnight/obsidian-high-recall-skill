@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added a GitHub Codespaces/devcontainer path for a browser-based, zero-private-vault fixture demo.
 - Expanded npm, GitHub topic, site, and AI-readable discovery metadata for Obsidian, PKM, semantic/vector search, local RAG, and agent-memory search paths.
 - Added an OpenSSF Scorecard workflow and README badges for visible supply-chain security posture.
 - Added visible CodeQL badges to both READMEs so code scanning is part of the first-screen trust surface.

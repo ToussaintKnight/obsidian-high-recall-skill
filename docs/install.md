@@ -26,6 +26,12 @@ npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
 
 This command uses only bundled public fixture notes and redacts local fixture/database paths. Use it to confirm the package entrypoint and output shape before pointing the tool at a real vault.
 
+## Run In GitHub Codespaces
+
+If you want a browser-based zero-private-vault sandbox, open the repository in GitHub Codespaces. The devcontainer installs dependencies and runs `npm run demo:query` after creation.
+
+Codespaces cannot access your local Obsidian vault, so it is only for public fixture validation, CLI inspection, and contributor setup. Use your local machine for real-vault recall. Full details: [docs/codespaces.md](codespaces.md).
+
 ## Recommended Path
 
 1. Clone and run the public fixture:
@@ -154,6 +160,7 @@ Then report only privacy-safe fields through the issue templates. Useful setup f
 ## Next References
 
 - FAQ: [faq.md](faq.md)
+- Codespaces no-vault demo: [docs/codespaces.md](codespaces.md)
 - Command details: [cli_reference.md](cli_reference.md)
 - Public redacted output examples: [examples](examples/README.md)
 - Copy-paste usage recipes: [recipes.md](recipes.md)

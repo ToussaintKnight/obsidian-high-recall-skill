@@ -30,6 +30,12 @@ When changing install commands, first-run setup, or OS-specific onboarding docs,
 npm run install:check
 ```
 
+When changing Codespaces or devcontainer onboarding, update [docs/codespaces.md](docs/codespaces.md) and run:
+
+```bash
+npm run codespaces:check
+```
+
 When changing FAQ answers about privacy, backends, benchmarks, installation, or limitations, run:
 
 ```bash

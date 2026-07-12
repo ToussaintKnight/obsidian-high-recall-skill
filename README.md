@@ -38,6 +38,8 @@ npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo
 
 This uses only the bundled public fixture notes and redacts local fixture/database paths.
 
+Prefer a browser sandbox first? Open the repo in GitHub Codespaces for a zero-private-vault fixture run. The devcontainer installs dependencies and runs the public demo query automatically; details are in [docs/codespaces.md](docs/codespaces.md).
+
 For the full public fixture benchmark:
 
 ```bash
@@ -87,7 +89,7 @@ node skills/obsidian-high-recall/scripts/obsidian_high_recall.mjs query "robot f
 
 ## Install
 
-Use [docs/install.md](docs/install.md) for the full first-run path, including public fixture validation, GitHub-backed `npx`, Codex skill installation, backend setup, and OS notes.
+Use [docs/install.md](docs/install.md) for the full first-run path, including public fixture validation, GitHub-backed `npx`, GitHub Codespaces, Codex skill installation, backend setup, and OS notes.
 
 ### CLI From GitHub
 
@@ -315,6 +317,7 @@ skills/
 
 - Security and privacy model: [SECURITY.md](SECURITY.md)
 - Install guide: [docs/install.md](docs/install.md)
+- Codespaces no-vault demo: [docs/codespaces.md](docs/codespaces.md), `npm run codespaces:check`
 - NPM publish readiness and workflow: [docs/npm_publish.md](docs/npm_publish.md), `npm run publish:check`
 - CI matrix: Linux, Windows, and macOS run `npm test`
 - Privacy leak gate: `npm run privacy:scan`

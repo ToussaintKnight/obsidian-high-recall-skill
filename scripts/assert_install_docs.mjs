@@ -6,6 +6,8 @@ const requiredInstallSnippets = [
   "# Installation Guide",
   "Node.js 20",
   "Fastest Safe Demo",
+  "Run In GitHub Codespaces",
+  "codespaces.md",
   "npm test",
   "npm run demo:query",
   "npx --yes github:ToussaintKnight/obsidian-high-recall-skill demo",
@@ -34,6 +36,7 @@ const readme = fs.readFileSync("README.md", "utf8");
 for (const snippet of [
   "[docs/install.md](docs/install.md)",
   "Install guide",
+  "[docs/codespaces.md](docs/codespaces.md)",
 ]) {
   if (!readme.includes(snippet)) {
     throw new Error(`README.md is missing install guide link/snippet: ${snippet}`);
@@ -43,6 +46,9 @@ for (const snippet of [
 const zhReadme = fs.readFileSync("README.zh-CN.md", "utf8");
 if (!zhReadme.includes("[docs/install.md](docs/install.md)")) {
   throw new Error("README.zh-CN.md is missing docs/install.md link.");
+}
+if (!zhReadme.includes("[docs/codespaces.md](docs/codespaces.md)")) {
+  throw new Error("README.zh-CN.md is missing docs/codespaces.md link.");
 }
 
 const testingGuide = fs.readFileSync(path.join("docs", "testing_guide.md"), "utf8");

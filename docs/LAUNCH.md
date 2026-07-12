@@ -16,6 +16,7 @@ Avoid leading with "Codex skill" outside Codex communities. The larger audience 
 - FAQ is visible at [faq.md](faq.md) and `npm run faq:check` passes after objection-handling docs change.
 - Public output examples are visible at [examples](examples/README.md) and `npm run examples:check` passes after output-example changes.
 - Install guide is visible at [install.md](install.md) and `npm run install:check` passes after install/onboarding changes.
+- Codespaces no-vault demo path is visible at [codespaces.md](codespaces.md) and `npm run codespaces:check` passes after devcontainer or browser-sandbox onboarding changes.
 - Usage recipes are visible at [recipes.md](recipes.md) and `npm run recipes:check` passes after workflow guidance changes.
 - Compatibility matrix is visible at [compatibility.md](compatibility.md) and separates CI fixture coverage from real-vault tester reports.
 - Demo GIF is visible in the README and uses only public fixture data.
