@@ -2,6 +2,18 @@
 import fs from "node:fs";
 import path from "node:path";
 
+function assertCheckoutCredentialsDisabled(workflowPath) {
+  const text = fs.readFileSync(workflowPath, "utf8");
+  if (!text.includes("actions/checkout@v4")) return;
+  const checkoutSteps = text.split("uses: actions/checkout@v4").slice(1);
+  for (const [index, afterCheckout] of checkoutSteps.entries()) {
+    const stepBlock = afterCheckout.split(/\n\s*-\s+name:\s+/)[0];
+    if (!stepBlock.includes("persist-credentials: false")) {
+      throw new Error(`${workflowPath} checkout step ${index + 1} should set persist-credentials: false.`);
+    }
+  }
+}
+
 const workflow = fs.readFileSync(path.join(".github", "workflows", "ci.yml"), "utf8");
 const required = [
   "ubuntu-latest",
@@ -9,6 +21,7 @@ const required = [
   "macos-latest",
   "npm ci",
   "npm test",
+  "persist-credentials: false",
 ];
 
 const missing = required.filter((item) => !workflow.includes(item));
@@ -31,6 +44,7 @@ const requiredCodeql = [
   "push:",
   "pull_request:",
   "schedule:",
+  "persist-credentials: false",
   "security-events: write",
   "github/codeql-action/init@v3",
   "github/codeql-action/analyze@v3",
@@ -74,6 +88,11 @@ if (missingScorecard.length) {
 
 if (!/cron:\s*["']?\d+\s+\d+\s+\*\s+\*\s+\d["']?/.test(scorecard)) {
   throw new Error("OpenSSF Scorecard workflow should include a weekly scheduled cron.");
+}
+
+for (const workflowFile of fs.readdirSync(path.join(".github", "workflows"))) {
+  if (!workflowFile.endsWith(".yml") && !workflowFile.endsWith(".yaml")) continue;
+  assertCheckoutCredentialsDisabled(path.join(".github", "workflows", workflowFile));
 }
 
 for (const readmePath of ["README.md", "README.zh-CN.md"]) {
