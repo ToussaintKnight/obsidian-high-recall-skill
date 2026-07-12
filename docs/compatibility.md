@@ -16,6 +16,7 @@ This page tracks what has been validated publicly and what still needs tester re
 
 | Environment | Fixture `npm test` | CLI query fixture | `doctor --json` real vault | Smart backend real vault | OHS backend real vault | Notes |
 |---|---|---|---|---|---|---|
+| GitHub Codespaces, Node 20+ | `Needs report` | `Needs report` | n/a | n/a | n/a | Browser sandbox should validate only public fixture/demo behavior, not local vault access. |
 | Windows, Node 20+ | `CI fixture pass` | `CI fixture pass` | `Needs report` | `Needs report` | `Needs report` | Need clean Windows tester reports with Smart indexed and not indexed. |
 | macOS, Node 20+ | `CI fixture pass` | `CI fixture pass` | `Needs report` | `Needs report` | `Needs report` | Need path quoting and Obsidian config discovery reports. |
 | Linux desktop, Node 20+ | `CI fixture pass` | `CI fixture pass` | `Needs report` | `Needs report` | `Needs report` | Need distro, shell, and OHS first-run reports. |
@@ -38,6 +39,7 @@ This page tracks what has been validated publicly and what still needs tester re
 3. Run `doctor --json` on your vault and manually confirm it contains no private paths, note names, snippets, raw queries, vault names, usernames, tokens, or gold labels.
 4. Open a [tester feedback issue](https://github.com/ToussaintKnight/obsidian-high-recall-skill/issues/new?template=tester_feedback.yml).
 5. Include operating system, Node.js version, Obsidian version, Smart Connections indexed/not indexed, backend used, fixture pass/fail, and qualitative real-vault outcome.
+6. If you used Codespaces, include whether the no-vault sandbox opened and whether `npm run demo:query` completed.
 
 Do not attach `query --json` recall packs from a real vault. The output contract marks them as `privacy.safeToShare: false`.
 

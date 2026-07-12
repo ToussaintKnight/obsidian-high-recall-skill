@@ -66,7 +66,23 @@ Checklist:
 
 Privacy note: do not share note names, snippets, raw queries, or vault names.
 
-## 5. Anonymized Benchmark Report
+## 5. Codespaces No-Vault Fixture Smoke Test
+
+Labels: `codespaces`, `good first issue`, `tester-feedback`
+
+Goal: Verify the browser-based Codespaces sandbox opens, installs dependencies, and runs the public fixture without private vault data.
+
+Checklist:
+
+- Open `https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1`.
+- Wait for the devcontainer `postCreateCommand` to finish.
+- Confirm `npm run demo:query` completed or report the failure.
+- Run `npm test`.
+- Report browser, Codespaces startup status, Node.js version, and pass/fail summary.
+
+Privacy note: use only the fixture vault. Codespaces cannot access your local Obsidian vault; do not paste private note data.
+
+## 6. Anonymized Benchmark Report
 
 Labels: `benchmark`, `research`, `tester-feedback`
 
@@ -81,7 +97,7 @@ Checklist:
 
 Privacy note: never attach `raw_runs.json`, local cases files, raw snippets, private labels, raw queries, or note paths.
 
-## 6. OHS First-Run Diagnostics
+## 7. OHS First-Run Diagnostics
 
 Labels: `ohs`, `diagnostics`, `good first issue`
 
@@ -96,7 +112,7 @@ Checklist:
 
 Privacy note: use fixture examples or redact all local paths.
 
-## 7. Privacy Redaction Checklist Test
+## 8. Privacy Redaction Checklist Test
 
 Labels: `privacy`, `documentation`, `good first issue`
 
@@ -111,7 +127,7 @@ Checklist:
 
 Privacy note: do not include real private examples; use synthetic placeholders.
 
-## 8. Obsidian Forum Launch Feedback
+## 9. Obsidian Forum Launch Feedback
 
 Labels: `community`, `documentation`, `launch`
 
@@ -126,7 +142,7 @@ Checklist:
 
 Privacy note: launch screenshots and examples must use the fixture vault or synthetic content only.
 
-## 9. Compatibility Matrix Report
+## 10. Compatibility Matrix Report
 
 Labels: `compatibility`, `tester-feedback`, `good first issue`
 

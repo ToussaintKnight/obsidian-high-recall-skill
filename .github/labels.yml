@@ -34,6 +34,9 @@
 - name: linux
   color: c5def5
   description: Linux or WSL install, path, shell, or environment behavior.
+- name: codespaces
+  color: c5def5
+  description: GitHub Codespaces no-vault fixture sandbox behavior.
 - name: smart-connections
   color: 5319e7
   description: Smart Connections backend, cache, embedding, or index compatibility.

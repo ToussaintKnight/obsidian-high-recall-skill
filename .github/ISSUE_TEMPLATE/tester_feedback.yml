@@ -14,10 +14,24 @@ body:
       label: Result
       options:
         - Install and fixture smoke test passed
+        - Codespaces no-vault sandbox passed
+        - Codespaces no-vault sandbox failed
         - Install passed but fixture smoke test failed
         - Fixture passed but real-vault recall failed
         - Real-vault recall worked
         - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: codespaces
+    attributes:
+      label: Codespaces no-vault sandbox
+      description: Did you try the browser sandbox at codespaces.new before local install?
+      options:
+        - Did not try Codespaces
+        - Codespaces opened and demo query ran
+        - Codespaces opened but demo query failed
+        - Codespaces did not open
     validations:
       required: true
   - type: input

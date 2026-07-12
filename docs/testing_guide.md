@@ -6,6 +6,22 @@ If you are installing from scratch, start with [install.md](install.md), then re
 
 Public OS/backend coverage is tracked in [compatibility.md](compatibility.md); a useful tester report should be specific enough to update that matrix without exposing private notes.
 
+## Browser-First Path
+
+If you want to test without local setup, open the Codespaces no-vault sandbox first:
+
+```text
+https://codespaces.new/ToussaintKnight/obsidian-high-recall-skill?quickstart=1
+```
+
+Wait for the devcontainer to run `npm ci` and `npm run demo:query`, then run:
+
+```bash
+npm test
+```
+
+Codespaces cannot access your local Obsidian vault. Treat it as a fixture-only compatibility report, then use a local machine for real-vault recall.
+
 ## Ten-Minute Path
 
 1. Clone and install:
@@ -63,6 +79,7 @@ Useful public fields:
 
 - Operating system and version.
 - Node.js version.
+- Whether Codespaces opened and the no-vault demo query ran.
 - Whether `npm test` passed.
 - Whether CLI entry points worked.
 - Obsidian version if a real vault was tested.

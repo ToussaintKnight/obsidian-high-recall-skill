@@ -79,6 +79,7 @@ Details are in [github_setup_commands.md](github_setup_commands.md). At minimum,
 - `windows`
 - `macos`
 - `linux`
+- `codespaces`
 - `smart-connections`
 - `compatibility`
 - `research`

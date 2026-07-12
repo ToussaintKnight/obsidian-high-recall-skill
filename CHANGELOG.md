@@ -4,6 +4,7 @@ All notable public changes are tracked here. This project follows a pragmatic re
 
 ## Unreleased
 
+- Added Codespaces result capture to tester feedback, bug reports, compatibility reporting, and starter issues.
 - Added Codespaces no-vault sandbox links to the launch kit, external post drafts, and reply templates.
 - Added visible GitHub Codespaces badges and project-page CTAs for the no-vault fixture sandbox.
 - Added a GitHub Codespaces/devcontainer path for a browser-based, zero-private-vault fixture demo.

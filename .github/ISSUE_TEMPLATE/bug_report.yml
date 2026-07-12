@@ -26,6 +26,16 @@ body:
     attributes:
       label: Obsidian and Smart Connections status
       placeholder: "Obsidian version, Smart Connections installed/indexed?"
+  - type: dropdown
+    id: codespaces
+    attributes:
+      label: Reproduces in Codespaces no-vault sandbox?
+      description: Use Codespaces only for fixture/demo failures, not private-vault behavior.
+      options:
+        - Not tested in Codespaces
+        - Yes, fixture/demo also fails in Codespaces
+        - No, only local environment fails
+        - Not applicable to Codespaces
   - type: textarea
     id: doctor
     attributes:
